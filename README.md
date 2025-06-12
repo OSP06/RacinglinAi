@@ -1,17 +1,46 @@
-# RacinglinAi
-# RacingLineAI 🏎️📊
+# RacinglinAI Project
 
-**F1 Strategy AI Dashboard using Python + Power BI**
+## Project Overview
+A data analysis and visualization project focused on racing data, featuring Jupyter notebooks for data processing and a Streamlit web application for interactive exploration.
 
-This project predicts pit stops and analyzes tyre degradation using FastF1 telemetry data. Built to showcase real-time data insights for Formula 1 teams.
+## Project Structure
+```
+RacinglinAi/
+├── data/               # Processed data files
+├── notebooks/          # Jupyter notebooks (e.g., export_monza_data.ipynb)
+├── reports/            # Analysis reports
+├── streamlit_app.py    # Streamlit application
+└── requirements.txt    # Python dependencies
+```
 
-## Features
-- Lap-by-lap race data from 2023 season
-- Tyre wear modeling
-- Pit strategy predictor
-- Interactive Power BI visuals
+## Getting Started
 
-## Tech Stack
-- Python (FastF1, pandas, scikit-learn)
-- Power BI for dashboarding
-- Jupyter Notebook for development
+### Prerequisites
+- Python 3.8+
+- pip package manager
+
+### Installation
+1. Clone the repository
+2. Create virtual environment: `python -m venv venv`
+3. Activate environment:
+   - Mac/Linux: `source venv/bin/activate`
+   - Windows: `venv\Scripts\activate`
+4. Install dependencies: `pip install -r requirements.txt`
+
+## Usage
+- Run Streamlit app: `streamlit run streamlit_app.py`
+- Launch Jupyter: `jupyter notebook`
+
+## Data Processing
+The `export_monza_data.ipynb` notebook contains the data processing pipeline for:
+- Data extraction
+- Cleaning and transformation
+- Feature engineering
+- Export to processed formats
+
+## Contributing
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a pull request
