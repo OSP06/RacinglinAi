@@ -32,11 +32,25 @@ RacinglinAi/
 - Launch Jupyter: `jupyter notebook`
 
 ## Data Processing
-The `export_monza_data.ipynb` notebook contains the data processing pipeline for:
-- Data extraction
-- Cleaning and transformation
-- Feature engineering
-- Export to processed formats
+Our data pipeline now processes all 2023 Formula 1 races:
+
+### Notebooks:
+- `export_all_race_data_2023.ipynb`: Processes all 2023 Grand Prix data including:
+  - Lap time analysis
+  - Sector timing breakdowns
+  - Driver performance metrics
+  - Generates unified dataset (`all_races_combined_with_sectors.csv`)
+
+### Processed Data Includes:
+- 20+ individual race datasets
+- Combined dataset with sector analysis
+- Cleaned and normalized timing data
+
+### Current Progress:
+- Completed data extraction for all 2023 races
+- Implemented sector-based performance analysis
+- Developed unified data schema across all races
+- Streamlit visualization app in development
 
 ## Contributing
 1. Fork the repository
