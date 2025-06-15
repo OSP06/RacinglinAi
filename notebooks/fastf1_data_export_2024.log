@@ -1114,3 +1114,291 @@
 2025-06-13 14:09:43,906 - INFO - Finished loading data for 20 drivers: ['4', '55', '16', '44', '63', '1', '10', '27', '14', '81', '23', '22', '24', '18', '61', '20', '30', '77', '43', '11']
 2025-06-13 14:09:43,961 - INFO - [EXPORT OK] abu_dhabi_grand_prix
 2025-06-13 14:09:44,797 - INFO - [COMBINED EXPORT] 2024 complete
+2025-06-14 19:56:22,690 - INFO - Loading data for Bahrain Grand Prix - Race [v3.5.3]
+2025-06-14 19:56:22,692 - INFO - Using cached data for session_info
+2025-06-14 19:56:22,692 - INFO - Using cached data for driver_info
+2025-06-14 19:56:23,372 - INFO - Using cached data for session_status_data
+2025-06-14 19:56:23,374 - INFO - Using cached data for lap_count
+2025-06-14 19:56:23,374 - INFO - Using cached data for track_status_data
+2025-06-14 19:56:23,404 - INFO - Using cached data for _extended_timing_data
+2025-06-14 19:56:23,407 - INFO - Using cached data for timing_app_data
+2025-06-14 19:56:23,407 - INFO - Processing timing data...
+2025-06-14 19:56:24,141 - INFO - Using cached data for car_data
+2025-06-14 19:56:24,384 - INFO - Using cached data for position_data
+2025-06-14 19:56:25,501 - INFO - Using cached data for weather_data
+2025-06-14 19:56:25,503 - INFO - Using cached data for race_control_messages
+2025-06-14 19:56:25,531 - INFO - Finished loading data for 20 drivers: ['1', '11', '55', '16', '63', '4', '44', '81', '14', '18', '24', '20', '3', '22', '23', '27', '31', '10', '77', '2']
+2025-06-14 19:56:26,444 - INFO - [EXPORT OK] bahrain_grand_prix
+2025-06-14 19:56:26,451 - INFO - Loading data for Saudi Arabian Grand Prix - Race [v3.5.3]
+2025-06-14 19:56:26,451 - INFO - Using cached data for session_info
+2025-06-14 19:56:26,452 - INFO - Using cached data for driver_info
+2025-06-14 19:56:26,597 - INFO - Using cached data for session_status_data
+2025-06-14 19:56:26,598 - INFO - Using cached data for lap_count
+2025-06-14 19:56:26,599 - INFO - Using cached data for track_status_data
+2025-06-14 19:56:26,604 - INFO - Using cached data for _extended_timing_data
+2025-06-14 19:56:26,605 - INFO - Using cached data for timing_app_data
+2025-06-14 19:56:26,605 - INFO - Processing timing data...
+2025-06-14 19:56:27,173 - INFO - Using cached data for car_data
+2025-06-14 19:56:27,324 - INFO - Using cached data for position_data
+2025-06-14 19:56:28,189 - INFO - Using cached data for weather_data
+2025-06-14 19:56:28,191 - INFO - Using cached data for race_control_messages
+2025-06-14 19:56:28,227 - INFO - Finished loading data for 20 drivers: ['1', '11', '16', '81', '14', '63', '38', '4', '44', '27', '23', '20', '31', '2', '22', '3', '77', '24', '18', '10']
+2025-06-14 19:56:28,523 - INFO - [EXPORT OK] saudi_arabian_grand_prix
+2025-06-14 19:56:28,529 - INFO - Loading data for Australian Grand Prix - Race [v3.5.3]
+2025-06-14 19:56:28,530 - INFO - Using cached data for session_info
+2025-06-14 19:56:28,530 - INFO - Using cached data for driver_info
+2025-06-14 19:56:28,649 - DEBUG - Failed to parse timestamp '-1:57:37.891' in Ergastresponse.
+2025-06-14 19:56:28,660 - INFO - Using cached data for session_status_data
+2025-06-14 19:56:28,661 - INFO - Using cached data for lap_count
+2025-06-14 19:56:28,662 - INFO - Using cached data for track_status_data
+2025-06-14 19:56:28,668 - INFO - Using cached data for _extended_timing_data
+2025-06-14 19:56:28,670 - INFO - Using cached data for timing_app_data
+2025-06-14 19:56:28,670 - INFO - Processing timing data...
+2025-06-14 19:56:29,249 - INFO - Using cached data for car_data
+2025-06-14 19:56:29,322 - INFO - Using cached data for position_data
+2025-06-14 19:56:30,025 - INFO - Using cached data for weather_data
+2025-06-14 19:56:30,026 - INFO - Using cached data for race_control_messages
+2025-06-14 19:56:30,058 - INFO - Finished loading data for 19 drivers: ['55', '16', '4', '81', '11', '18', '22', '14', '27', '20', '23', '3', '10', '77', '24', '31', '63', '44', '1']
+2025-06-14 19:56:30,371 - INFO - [EXPORT OK] australian_grand_prix
+2025-06-14 19:56:30,377 - INFO - Loading data for Japanese Grand Prix - Race [v3.5.3]
+2025-06-14 19:56:30,378 - INFO - Using cached data for session_info
+2025-06-14 19:56:30,378 - INFO - Using cached data for driver_info
+2025-06-14 19:56:30,514 - INFO - Using cached data for session_status_data
+2025-06-14 19:56:30,515 - INFO - Using cached data for lap_count
+2025-06-14 19:56:30,516 - INFO - Using cached data for track_status_data
+2025-06-14 19:56:30,521 - INFO - Using cached data for _extended_timing_data
+2025-06-14 19:56:30,522 - INFO - Using cached data for timing_app_data
+2025-06-14 19:56:30,522 - INFO - Processing timing data...
+2025-06-14 19:56:31,091 - INFO - Using cached data for car_data
+2025-06-14 19:56:31,159 - INFO - Using cached data for position_data
+2025-06-14 19:56:32,055 - INFO - Using cached data for weather_data
+2025-06-14 19:56:32,057 - INFO - Using cached data for race_control_messages
+2025-06-14 19:56:32,081 - INFO - Finished loading data for 20 drivers: ['1', '11', '55', '16', '4', '14', '63', '81', '44', '22', '27', '18', '20', '77', '31', '10', '2', '24', '3', '23']
+2025-06-14 19:56:32,492 - INFO - [EXPORT OK] japanese_grand_prix
+2025-06-14 19:56:32,498 - INFO - Loading data for Emilia Romagna Grand Prix - Race [v3.5.3]
+2025-06-14 19:56:32,499 - INFO - Using cached data for session_info
+2025-06-14 19:56:32,500 - INFO - Using cached data for driver_info
+2025-06-14 19:56:32,744 - INFO - Using cached data for session_status_data
+2025-06-14 19:56:32,745 - INFO - Using cached data for lap_count
+2025-06-14 19:56:32,746 - INFO - Using cached data for track_status_data
+2025-06-14 19:56:32,752 - INFO - Using cached data for _extended_timing_data
+2025-06-14 19:56:32,754 - INFO - Using cached data for timing_app_data
+2025-06-14 19:56:32,754 - INFO - Processing timing data...
+2025-06-14 19:56:33,549 - INFO - Using cached data for car_data
+2025-06-14 19:56:33,623 - INFO - Using cached data for position_data
+2025-06-14 19:56:34,304 - INFO - Using cached data for weather_data
+2025-06-14 19:56:34,306 - INFO - Using cached data for race_control_messages
+2025-06-14 19:56:34,329 - INFO - Finished loading data for 20 drivers: ['1', '4', '16', '81', '55', '44', '63', '11', '18', '22', '27', '20', '3', '31', '24', '10', '2', '77', '14', '23']
+2025-06-14 19:56:34,668 - INFO - [EXPORT OK] emilia_romagna_grand_prix
+2025-06-14 19:56:34,674 - INFO - Loading data for Monaco Grand Prix - Race [v3.5.3]
+2025-06-14 19:56:34,674 - INFO - Using cached data for session_info
+2025-06-14 19:56:34,675 - INFO - Using cached data for driver_info
+2025-06-14 19:56:35,091 - INFO - Using cached data for session_status_data
+2025-06-14 19:56:35,092 - INFO - Using cached data for lap_count
+2025-06-14 19:56:35,093 - INFO - Using cached data for track_status_data
+2025-06-14 19:56:35,099 - INFO - Using cached data for _extended_timing_data
+2025-06-14 19:56:35,100 - INFO - Using cached data for timing_app_data
+2025-06-14 19:56:35,101 - INFO - Processing timing data...
+2025-06-14 19:56:35,931 - INFO - Using cached data for car_data
+2025-06-14 19:56:36,337 - INFO - Using cached data for position_data
+2025-06-14 19:56:37,380 - INFO - Using cached data for weather_data
+2025-06-14 19:56:37,382 - INFO - Using cached data for race_control_messages
+2025-06-14 19:56:37,402 - INFO - Finished loading data for 20 drivers: ['16', '81', '55', '4', '63', '1', '44', '22', '23', '10', '14', '3', '77', '18', '2', '24', '31', '11', '27', '20']
+2025-06-14 19:56:37,781 - INFO - [EXPORT OK] monaco_grand_prix
+2025-06-14 19:56:37,787 - INFO - Loading data for Canadian Grand Prix - Race [v3.5.3]
+2025-06-14 19:56:37,788 - INFO - Using cached data for session_info
+2025-06-14 19:56:37,788 - INFO - Using cached data for driver_info
+2025-06-14 19:56:38,209 - INFO - Using cached data for session_status_data
+2025-06-14 19:56:38,210 - INFO - Using cached data for lap_count
+2025-06-14 19:56:38,211 - INFO - Using cached data for track_status_data
+2025-06-14 19:56:38,221 - INFO - Using cached data for _extended_timing_data
+2025-06-14 19:56:38,223 - INFO - Using cached data for timing_app_data
+2025-06-14 19:56:38,223 - INFO - Processing timing data...
+2025-06-14 19:56:38,920 - INFO - Using cached data for car_data
+2025-06-14 19:56:38,978 - INFO - Using cached data for position_data
+2025-06-14 19:56:39,584 - INFO - Using cached data for weather_data
+2025-06-14 19:56:39,585 - INFO - Using cached data for race_control_messages
+2025-06-14 19:56:39,643 - INFO - Finished loading data for 20 drivers: ['1', '4', '63', '44', '81', '14', '18', '3', '10', '31', '27', '20', '77', '22', '24', '55', '23', '11', '16', '2']
+2025-06-14 19:56:39,960 - INFO - [EXPORT OK] canadian_grand_prix
+2025-06-14 19:56:39,966 - INFO - Loading data for Spanish Grand Prix - Race [v3.5.3]
+2025-06-14 19:56:39,967 - INFO - Using cached data for session_info
+2025-06-14 19:56:39,968 - INFO - Using cached data for driver_info
+2025-06-14 19:56:40,111 - INFO - Using cached data for session_status_data
+2025-06-14 19:56:40,112 - INFO - Using cached data for lap_count
+2025-06-14 19:56:40,112 - INFO - Using cached data for track_status_data
+2025-06-14 19:56:40,118 - INFO - Using cached data for _extended_timing_data
+2025-06-14 19:56:40,120 - INFO - Using cached data for timing_app_data
+2025-06-14 19:56:40,120 - INFO - Processing timing data...
+2025-06-14 19:56:40,781 - INFO - Using cached data for car_data
+2025-06-14 19:56:40,843 - INFO - Using cached data for position_data
+2025-06-14 19:56:41,602 - INFO - Using cached data for weather_data
+2025-06-14 19:56:41,603 - INFO - Using cached data for race_control_messages
+2025-06-14 19:56:41,606 - WARNING - Driver 1 completed the race distance 00:00.015000 before the recorded end of the session.
+2025-06-14 19:56:41,630 - INFO - Finished loading data for 20 drivers: ['1', '4', '44', '63', '16', '55', '81', '11', '10', '31', '27', '14', '24', '18', '3', '77', '20', '23', '22', '2']
+2025-06-14 19:56:41,966 - INFO - [EXPORT OK] spanish_grand_prix
+2025-06-14 19:56:41,972 - INFO - Loading data for British Grand Prix - Race [v3.5.3]
+2025-06-14 19:56:41,973 - INFO - Using cached data for session_info
+2025-06-14 19:56:41,974 - INFO - Using cached data for driver_info
+2025-06-14 19:56:42,191 - INFO - Using cached data for session_status_data
+2025-06-14 19:56:42,192 - INFO - Using cached data for lap_count
+2025-06-14 19:56:42,193 - INFO - Using cached data for track_status_data
+2025-06-14 19:56:42,198 - INFO - Using cached data for _extended_timing_data
+2025-06-14 19:56:42,200 - INFO - Using cached data for timing_app_data
+2025-06-14 19:56:42,200 - INFO - Processing timing data...
+2025-06-14 19:56:42,830 - INFO - Using cached data for car_data
+2025-06-14 19:56:42,889 - INFO - Using cached data for position_data
+2025-06-14 19:56:43,596 - INFO - Using cached data for weather_data
+2025-06-14 19:56:43,598 - INFO - Using cached data for race_control_messages
+2025-06-14 19:56:43,620 - INFO - Finished loading data for 20 drivers: ['44', '1', '4', '81', '55', '27', '18', '14', '23', '22', '2', '20', '3', '16', '77', '31', '11', '24', '63', '10']
+2025-06-14 19:56:44,037 - INFO - [EXPORT OK] british_grand_prix
+2025-06-14 19:56:44,043 - INFO - Loading data for Hungarian Grand Prix - Race [v3.5.3]
+2025-06-14 19:56:44,044 - INFO - Using cached data for session_info
+2025-06-14 19:56:44,044 - INFO - Using cached data for driver_info
+2025-06-14 19:56:44,185 - INFO - Using cached data for session_status_data
+2025-06-14 19:56:44,186 - INFO - Using cached data for lap_count
+2025-06-14 19:56:44,187 - INFO - Using cached data for track_status_data
+2025-06-14 19:56:44,193 - INFO - Using cached data for _extended_timing_data
+2025-06-14 19:56:44,194 - INFO - Using cached data for timing_app_data
+2025-06-14 19:56:44,194 - INFO - Processing timing data...
+2025-06-14 19:56:44,860 - INFO - Using cached data for car_data
+2025-06-14 19:56:44,938 - INFO - Using cached data for position_data
+2025-06-14 19:56:45,662 - INFO - Using cached data for weather_data
+2025-06-14 19:56:45,663 - INFO - Using cached data for race_control_messages
+2025-06-14 19:56:45,684 - INFO - Finished loading data for 20 drivers: ['81', '4', '44', '16', '1', '55', '11', '63', '22', '18', '14', '3', '27', '23', '20', '77', '2', '31', '24', '10']
+2025-06-14 19:56:46,037 - INFO - [EXPORT OK] hungarian_grand_prix
+2025-06-14 19:56:46,044 - INFO - Loading data for Belgian Grand Prix - Race [v3.5.3]
+2025-06-14 19:56:46,044 - INFO - Using cached data for session_info
+2025-06-14 19:56:46,045 - INFO - Using cached data for driver_info
+2025-06-14 19:56:46,254 - DEBUG - Failed to parse timestamp '-1:59:59.474' in Ergastresponse.
+2025-06-14 19:56:46,268 - INFO - Using cached data for session_status_data
+2025-06-14 19:56:46,270 - INFO - Using cached data for lap_count
+2025-06-14 19:56:46,270 - INFO - Using cached data for track_status_data
+2025-06-14 19:56:46,275 - INFO - Using cached data for _extended_timing_data
+2025-06-14 19:56:46,276 - INFO - Using cached data for timing_app_data
+2025-06-14 19:56:46,277 - INFO - Processing timing data...
+2025-06-14 19:56:46,885 - INFO - Using cached data for car_data
+2025-06-14 19:56:46,960 - INFO - Using cached data for position_data
+2025-06-14 19:56:47,679 - INFO - Using cached data for weather_data
+2025-06-14 19:56:47,680 - INFO - Using cached data for race_control_messages
+2025-06-14 19:56:47,702 - INFO - Finished loading data for 20 drivers: ['44', '81', '16', '1', '4', '55', '11', '14', '31', '3', '18', '23', '10', '20', '77', '22', '2', '27', '24', '63']
+2025-06-14 19:56:48,006 - INFO - [EXPORT OK] belgian_grand_prix
+2025-06-14 19:56:48,013 - INFO - Loading data for Dutch Grand Prix - Race [v3.5.3]
+2025-06-14 19:56:48,014 - INFO - Using cached data for session_info
+2025-06-14 19:56:48,015 - INFO - Using cached data for driver_info
+2025-06-14 19:56:48,227 - INFO - Using cached data for session_status_data
+2025-06-14 19:56:48,228 - INFO - Using cached data for lap_count
+2025-06-14 19:56:48,229 - INFO - Using cached data for track_status_data
+2025-06-14 19:56:48,235 - INFO - Using cached data for _extended_timing_data
+2025-06-14 19:56:48,236 - INFO - Using cached data for timing_app_data
+2025-06-14 19:56:48,237 - INFO - Processing timing data...
+2025-06-14 19:56:48,946 - INFO - Using cached data for car_data
+2025-06-14 19:56:49,005 - INFO - Using cached data for position_data
+2025-06-14 19:56:49,813 - INFO - Using cached data for weather_data
+2025-06-14 19:56:49,815 - INFO - Using cached data for race_control_messages
+2025-06-14 19:56:49,841 - INFO - Finished loading data for 20 drivers: ['4', '1', '16', '81', '55', '11', '63', '44', '10', '14', '27', '3', '18', '23', '31', '2', '22', '20', '77', '24']
+2025-06-14 19:56:50,300 - INFO - [EXPORT OK] dutch_grand_prix
+2025-06-14 19:56:50,307 - INFO - Loading data for Italian Grand Prix - Race [v3.5.3]
+2025-06-14 19:56:50,307 - INFO - Using cached data for session_info
+2025-06-14 19:56:50,308 - INFO - Using cached data for driver_info
+2025-06-14 19:56:50,571 - INFO - Using cached data for session_status_data
+2025-06-14 19:56:50,572 - INFO - Using cached data for lap_count
+2025-06-14 19:56:50,572 - INFO - Using cached data for track_status_data
+2025-06-14 19:56:50,577 - INFO - Using cached data for _extended_timing_data
+2025-06-14 19:56:50,578 - INFO - Using cached data for timing_app_data
+2025-06-14 19:56:50,579 - INFO - Processing timing data...
+2025-06-14 19:56:51,209 - INFO - Using cached data for car_data
+2025-06-14 19:56:51,291 - INFO - Using cached data for position_data
+2025-06-14 19:56:51,987 - INFO - Using cached data for weather_data
+2025-06-14 19:56:51,988 - INFO - Using cached data for race_control_messages
+2025-06-14 19:56:52,014 - INFO - Finished loading data for 20 drivers: ['16', '81', '4', '55', '44', '1', '63', '11', '23', '20', '14', '43', '3', '31', '10', '77', '27', '24', '18', '22']
+2025-06-14 19:56:52,363 - INFO - [EXPORT OK] italian_grand_prix
+2025-06-14 19:56:52,376 - INFO - Loading data for Azerbaijan Grand Prix - Race [v3.5.3]
+2025-06-14 19:56:52,377 - INFO - Using cached data for session_info
+2025-06-14 19:56:52,380 - INFO - Using cached data for driver_info
+2025-06-14 19:56:52,508 - DEBUG - Failed to parse timestamp '-1:55:43.191' in Ergastresponse.
+2025-06-14 19:56:52,508 - DEBUG - Failed to parse timestamp '-1:55:43.761' in Ergastresponse.
+2025-06-14 19:56:52,508 - DEBUG - Failed to parse timestamp '-1:50:23.073' in Ergastresponse.
+2025-06-14 19:56:52,520 - INFO - Using cached data for session_status_data
+2025-06-14 19:56:52,521 - INFO - Using cached data for lap_count
+2025-06-14 19:56:52,522 - INFO - Using cached data for track_status_data
+2025-06-14 19:56:52,527 - INFO - Using cached data for _extended_timing_data
+2025-06-14 19:56:52,528 - INFO - Using cached data for timing_app_data
+2025-06-14 19:56:52,528 - INFO - Processing timing data...
+2025-06-14 19:56:53,119 - INFO - Using cached data for car_data
+2025-06-14 19:56:53,299 - INFO - Using cached data for position_data
+2025-06-14 19:56:54,148 - INFO - Using cached data for weather_data
+2025-06-14 19:56:54,150 - INFO - Using cached data for race_control_messages
+2025-06-14 19:56:54,194 - INFO - Finished loading data for 20 drivers: ['81', '16', '63', '4', '1', '14', '23', '43', '44', '50', '27', '10', '3', '24', '31', '77', '11', '55', '18', '22']
+2025-06-14 19:56:54,538 - INFO - [EXPORT OK] azerbaijan_grand_prix
+2025-06-14 19:56:54,544 - INFO - Loading data for Singapore Grand Prix - Race [v3.5.3]
+2025-06-14 19:56:54,544 - INFO - Using cached data for session_info
+2025-06-14 19:56:54,545 - INFO - Using cached data for driver_info
+2025-06-14 19:56:54,676 - DEBUG - Failed to parse timestamp '-1:55:59.335' in Ergastresponse.
+2025-06-14 19:56:54,688 - INFO - Using cached data for session_status_data
+2025-06-14 19:56:54,689 - INFO - Using cached data for lap_count
+2025-06-14 19:56:54,690 - INFO - Using cached data for track_status_data
+2025-06-14 19:56:54,695 - INFO - Using cached data for _extended_timing_data
+2025-06-14 19:56:54,697 - INFO - Using cached data for timing_app_data
+2025-06-14 19:56:54,698 - INFO - Processing timing data...
+2025-06-14 19:56:55,314 - INFO - Using cached data for car_data
+2025-06-14 19:56:55,396 - INFO - Using cached data for position_data
+2025-06-14 19:56:56,174 - INFO - Using cached data for weather_data
+2025-06-14 19:56:56,175 - INFO - Using cached data for race_control_messages
+2025-06-14 19:56:56,202 - INFO - Finished loading data for 20 drivers: ['4', '1', '81', '63', '16', '44', '55', '14', '27', '11', '43', '22', '31', '18', '24', '77', '10', '3', '20', '23']
+2025-06-14 19:56:56,600 - INFO - [EXPORT OK] singapore_grand_prix
+2025-06-14 19:56:56,605 - INFO - Loading data for Mexico City Grand Prix - Race [v3.5.3]
+2025-06-14 19:56:56,606 - INFO - Using cached data for session_info
+2025-06-14 19:56:56,607 - INFO - Using cached data for driver_info
+2025-06-14 19:56:57,029 - INFO - Using cached data for session_status_data
+2025-06-14 19:56:57,031 - INFO - Using cached data for lap_count
+2025-06-14 19:56:57,032 - INFO - Using cached data for track_status_data
+2025-06-14 19:56:57,037 - INFO - Using cached data for _extended_timing_data
+2025-06-14 19:56:57,039 - INFO - Using cached data for timing_app_data
+2025-06-14 19:56:57,039 - INFO - Processing timing data...
+2025-06-14 19:56:57,717 - INFO - Using cached data for car_data
+2025-06-14 19:56:57,817 - INFO - Using cached data for position_data
+2025-06-14 19:56:58,771 - INFO - Using cached data for weather_data
+2025-06-14 19:56:58,772 - INFO - Using cached data for race_control_messages
+2025-06-14 19:56:58,801 - INFO - Finished loading data for 20 drivers: ['55', '4', '16', '44', '63', '1', '20', '81', '27', '10', '18', '43', '31', '77', '24', '30', '11', '14', '23', '22']
+2025-06-14 19:56:59,138 - INFO - [EXPORT OK] mexico_city_grand_prix
+2025-06-14 19:56:59,144 - INFO - Loading data for Las Vegas Grand Prix - Race [v3.5.3]
+2025-06-14 19:56:59,145 - INFO - Using cached data for session_info
+2025-06-14 19:56:59,146 - INFO - Using cached data for driver_info
+2025-06-14 19:56:59,385 - INFO - Using cached data for session_status_data
+2025-06-14 19:56:59,386 - INFO - Using cached data for lap_count
+2025-06-14 19:56:59,387 - INFO - Using cached data for track_status_data
+2025-06-14 19:56:59,391 - INFO - Using cached data for _extended_timing_data
+2025-06-14 19:56:59,392 - INFO - Using cached data for timing_app_data
+2025-06-14 19:56:59,392 - INFO - Processing timing data...
+2025-06-14 19:56:59,722 - WARNING - Driver 63: Lap timing integrity check failed for 2 lap(s)
+2025-06-14 19:56:59,727 - WARNING - Driver 44: Lap timing integrity check failed for 1 lap(s)
+2025-06-14 19:56:59,732 - WARNING - Driver 55: Lap timing integrity check failed for 1 lap(s)
+2025-06-14 19:56:59,737 - WARNING - Driver 16: Lap timing integrity check failed for 2 lap(s)
+2025-06-14 19:56:59,742 - WARNING - Driver  1: Lap timing integrity check failed for 1 lap(s)
+2025-06-14 19:56:59,746 - WARNING - Driver  4: Lap timing integrity check failed for 1 lap(s)
+2025-06-14 19:56:59,752 - WARNING - Driver 81: Lap timing integrity check failed for 1 lap(s)
+2025-06-14 19:56:59,794 - WARNING - Driver 30: Lap timing integrity check failed for 2 lap(s)
+2025-06-14 19:56:59,803 - WARNING - Driver 77: Lap timing integrity check failed for 2 lap(s)
+2025-06-14 19:57:00,125 - INFO - Using cached data for car_data
+2025-06-14 19:57:00,194 - INFO - Using cached data for position_data
+2025-06-14 19:57:00,963 - INFO - Using cached data for weather_data
+2025-06-14 19:57:00,966 - INFO - Using cached data for race_control_messages
+2025-06-14 19:57:00,968 - WARNING - Driver 63 completed the race distance 00:00.427000 before the recorded end of the session.
+2025-06-14 19:57:00,990 - INFO - Finished loading data for 20 drivers: ['63', '44', '55', '16', '1', '4', '81', '27', '22', '11', '14', '20', '24', '43', '18', '30', '31', '77', '23', '10']
+2025-06-14 19:57:01,352 - INFO - [EXPORT OK] las_vegas_grand_prix
+2025-06-14 19:57:01,358 - INFO - Loading data for Abu Dhabi Grand Prix - Race [v3.5.3]
+2025-06-14 19:57:01,359 - INFO - Using cached data for session_info
+2025-06-14 19:57:01,360 - INFO - Using cached data for driver_info
+2025-06-14 19:57:01,788 - DEBUG - Failed to parse timestamp '-1:58:03.658' in Ergastresponse.
+2025-06-14 19:57:01,807 - INFO - Using cached data for session_status_data
+2025-06-14 19:57:01,809 - INFO - Using cached data for lap_count
+2025-06-14 19:57:01,810 - INFO - Using cached data for track_status_data
+2025-06-14 19:57:01,817 - INFO - Using cached data for _extended_timing_data
+2025-06-14 19:57:01,819 - INFO - Using cached data for timing_app_data
+2025-06-14 19:57:01,819 - INFO - Processing timing data...
+2025-06-14 19:57:02,517 - INFO - Using cached data for car_data
+2025-06-14 19:57:02,821 - INFO - Using cached data for position_data
+2025-06-14 19:57:03,661 - INFO - Using cached data for weather_data
+2025-06-14 19:57:03,663 - INFO - Using cached data for race_control_messages
+2025-06-14 19:57:03,706 - INFO - Finished loading data for 20 drivers: ['4', '55', '16', '44', '63', '1', '10', '27', '14', '81', '23', '22', '24', '18', '61', '20', '30', '77', '43', '11']
+2025-06-14 19:57:04,019 - INFO - [EXPORT OK] abu_dhabi_grand_prix

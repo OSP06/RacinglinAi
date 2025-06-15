@@ -1,12 +1,45 @@
 # streamlit_app.py - RacingLineAI v7.2 (Enhanced Data Safety + Pit Fallbacks + Heatmap Sorting)
-
 import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import os
+from fastf1 import get_session
+import matplotlib.pyplot as plt
 
-st.set_page_config(page_title="🏁 RacingLineAI v7.2", layout="wide", initial_sidebar_state="expanded")
+def plot_circuit_map(season: int, gp_name: str):
+    try:
+        session = get_session(season, gp_name, 'R')
+        session.load(telemetry=True, laps=True)
+        lap = session.laps.pick_fastest()
+        telemetry = lap.get_telemetry()
+        # Check if 'X' and 'Y' columns are present
+        if not {'X', 'Y'}.issubset(telemetry.columns):
+            st.warning(f"⚠️ Positional telemetry not available for {gp_name} {season}.")
+            return
+        fig, ax = plt.subplots(figsize=(6, 5))
+        ax.plot(telemetry['X'], telemetry['Y'], color='blue', linewidth=2, label='Fastest Lap')
+        # Optional: add sector markers
+        if hasattr(lap, "sector1_time") and hasattr(lap, "sector2_time"):
+            try:
+                s1_distance = lap.sector1_distance
+                s2_distance = lap.sector2_distance
+                s1_point = telemetry[telemetry['Distance'] >= s1_distance].iloc[0]
+                s2_point = telemetry[telemetry['Distance'] >= s2_distance].iloc[0]
+                ax.scatter(s1_point['X'], s1_point['Y'], color='green', s=80, label='S1')
+                ax.text(s1_point['X'], s1_point['Y'], 'S1', color='green', weight='bold')
+                ax.scatter(s2_point['X'], s2_point['Y'], color='orange', s=80, label='S2')
+                ax.text(s2_point['X'], s2_point['Y'], 'S2', color='orange', weight='bold')
+            except Exception as e:
+                st.warning(f"Could not plot sector markers: {e}")
+        ax.set_title(f"{gp_name.title()} Circuit Layout ({season})")
+        ax.axis('off')
+        st.pyplot(fig)
+    except Exception as e:
+        st.error(f"❌ Failed to load circuit layout for {gp_name} {season}: {e}")
+
+
+st.set_page_config(page_title="🏁 RacingLineAI v8.0", layout="wide", initial_sidebar_state="expanded")
 
 TEAM_COLORS = {
     'Red Bull Racing': '#1E41FF', 'Ferrari': '#DC0000', 'Mercedes': '#00D2BE',
@@ -18,14 +51,13 @@ TEAM_COLORS = {
 @st.cache_data
 
 def load_data():
-    path_2023 = os.path.join("data", "processed", "all_races_combined_with_sectors.csv")
+    path_2023 = os.path.join("data", "processed", "all_races_combined_2023.csv")
     path_2024 = os.path.join("data", "processed", "all_races_combined_2024.csv")
     df_2023 = pd.read_csv(path_2023)
     df_2023["SeasonYear"] = 2023
     df_2024 = pd.read_csv(path_2024)
     df_2024["SeasonYear"] = 2024
     df = pd.concat([df_2023, df_2024], ignore_index=True)
-    # Only drop rows where core time data is missing — retain Pit columns even if NaN
     df = df.dropna(subset=["LapTimeSeconds", "TyreLife", "Compound"])
     df["SeasonYear"] = df["SeasonYear"].astype(int)
     df["Team"] = df["Team"].fillna("Other")
@@ -37,38 +69,101 @@ def load_data():
     df["GP_Season"] = df["GrandPrix"] + " (" + df["SeasonYear"].astype(str) + ")"
     return df, driver_colors
 
-st.sidebar.title("🏎️ RacingLineAI Filters")
 df, driver_colors = load_data()
 
-seasons = sorted(df["SeasonYear"].unique())
-drivers = sorted(df["Driver"].unique())
-compounds = sorted(df["Compound"].dropna().unique())
-gps = sorted(df["GrandPrix"].unique())
+st.sidebar.title("🏎️ RacingLineAI Filters")
 
+# --- Smart season & GP filtering ---
+seasons = sorted(df["SeasonYear"].unique())
 selected_season = st.sidebar.selectbox("Season", ["All"] + list(map(str, seasons)))
+
+gps = sorted(df["GrandPrix"].unique())
 selected_gp = st.sidebar.selectbox("Grand Prix", ["All"] + gps)
-default_drivers = [d for d in ["VER", "LEC"] if d in drivers]
-selected_drivers = st.sidebar.multiselect("Drivers", drivers, default=default_drivers)
+
+# --- Dynamically filter drivers who raced in selected Season + GP ---
+driver_pool_df = df.copy()
+if selected_season != "All":
+    driver_pool_df = driver_pool_df[driver_pool_df["SeasonYear"] == int(selected_season)]
+if selected_gp != "All":
+    driver_pool_df = driver_pool_df[driver_pool_df["GrandPrix"] == selected_gp]
+
+available_drivers = sorted(driver_pool_df["Driver"].unique())
+
+# Set default drivers dynamically if VER or LEC are in the filtered list
+default_driver_set = [d for d in ["VER", "LEC"] if d in available_drivers]
+selected_drivers = st.sidebar.multiselect(
+    "Drivers", options=available_drivers, default=default_driver_set or available_drivers[:2]
+)
+# Filter data early to allow proper driver/compound lists
+temp_df = df.copy()
+if selected_season != "All":
+    temp_df = temp_df[temp_df["SeasonYear"] == int(selected_season)]
+if selected_gp != "All":
+    temp_df = temp_df[temp_df["GrandPrix"] == selected_gp]
+
+# --- Compound dropdowns mapped to user-friendly labels --
+
+# --- 1. Define compound maps ---
 compound_map = {
     'SOFT': 'Soft', 'MEDIUM': 'Medium', 'HARD': 'Hard',
     'INTERMEDIATE': 'Intermediate', 'WET': 'Wet'
 }
-compound_options_ui = list(compound_map.keys())
-selected_compounds_ui = st.sidebar.multiselect(
-    "Tyre Compounds", options=compound_options_ui, default=compound_options_ui
-)
-selected_compound = [compound_map[c] for c in selected_compounds_ui]
-
-#Apply Filters
-filtered_df = df[df["Driver"].isin(selected_drivers)]
+reverse_map = {v: k for k, v in compound_map.items()}
+# --- 2. Filter early for season + GP ---
+temp_df = df.copy()
 if selected_season != "All":
-    filtered_df = filtered_df[filtered_df["SeasonYear"] == int(selected_season)]
+    temp_df = temp_df[temp_df["SeasonYear"] == int(selected_season)]
 if selected_gp != "All":
-    filtered_df = filtered_df[filtered_df["GrandPrix"] == selected_gp]
-if selected_compound:
-    filtered_df = filtered_df[filtered_df["Compound"].isin(selected_compound)]
+    temp_df = temp_df[temp_df["GrandPrix"] == selected_gp]
+# --- 3. Extract only available compounds in current selection ---
+used_compounds = sorted(temp_df["Compound"].dropna().unique())
+compound_ui_options = [reverse_map.get(c, c.upper()) for c in used_compounds if c in reverse_map]
+# --- 4. UI for compound filter (based on filtered options) ---
+selected_compound_ui = st.sidebar.multiselect(
+    "Tyre Compounds", options=compound_ui_options, default=compound_ui_options
+)
+# --- 5. Final compound values in actual dataset form ---
+selected_compounds = [compound_map.get(c, c.title()) for c in selected_compound_ui]
+# --- 6. Final filtered dataframe ---
+filtered_df = temp_df[
+    (temp_df["Driver"].isin(selected_drivers)) &
+    (temp_df["Compound"].isin(selected_compounds))
+]
+# --- Safe exit on empty ---
+if filtered_df.empty:
+    st.warning("⚠️ No data found for this combination. Try adjusting the filters.")
+    st.stop()
 
-st.title("🏁 RacingLineAI v7.2 - AI Insights + Tyre-Weather Intelligence")
+# --- 🗺️ Dynamic Circuit Layout from Telemetry ---
+st.subheader("🗺️ Circuit Layout (Telemetry-Based)")
+
+if selected_gp != "All" and selected_season != "All":
+    season_val = int(selected_season)
+    gp_val = selected_gp.replace("_", " ").title()
+    # 🗺️ Circuit Layout Plot
+    plot_circuit_map(season_val, gp_val)
+    
+    # # 📍 Circuit Metadata Panel
+    # try:
+    #     metadata_session = get_session(season_val, gp_val, 'R')  # ✅ Reusing proper formatting
+    #     metadata_session.load()
+    #     track = metadata_session.track
+    #     if track is None:
+    #         raise ValueError("Track data not available")
+
+    #     with st.expander("📍 Circuit Info", expanded=True):
+    #         st.markdown(f"""
+    #             **Name:** {track.get('Name', 'Unknown')}  
+    #             **Location:** {track.get('Location', 'Unknown')}, {track.get('Country', 'Unknown')}  
+    #             **Length:** {track.get('Length', 0) / 1000:.2f} km  
+    #             **Altitude:** {track.get('Altitude', 'N/A')} m  
+    #         """)
+    # except Exception as e:
+    #     st.warning("⚠️ Circuit metadata not available.")
+else:
+    st.info("🎯 Select both a Season and a Grand Prix to view the circuit layout and info.")
+
+st.title("🏁 RacingLineAI v8.0 - AI Insights + Strategy Intelligence")
 
 # --- Driver Summary ---
 st.header("📌 Driver Performance Summary Table")
@@ -83,6 +178,50 @@ wet = filtered_df[filtered_df["IsWetLap"] == True].groupby("Driver")["LapTimeSec
 dry = filtered_df[filtered_df["IsWetLap"] == False].groupby("Driver")["LapTimeSeconds"].mean()
 summary["WetDryDelta"] = wet - dry
 st.dataframe(summary.round(2))
+
+
+# Get available drivers just for the simulator dropdown
+sim_available_drivers = sorted(temp_df["Driver"].dropna().unique())
+
+st.sidebar.markdown("🧪 **Strategy Simulator**")
+sim_driver = st.sidebar.selectbox("Simulate for Driver", sim_available_drivers)
+sim_compound = st.sidebar.selectbox("Compound", used_compounds)
+sim_temp = st.sidebar.slider("Track Temp (°C)", 15, 45, 30)
+sim_stint = st.sidebar.slider("Stint Length (laps)", 5, 30, 15)
+
+sim_df = temp_df[
+    (temp_df["Compound"] == sim_compound) &
+    (temp_df["TrackTemp"].between(sim_temp - 2, sim_temp + 2))
+]
+
+if sim_df.empty:
+    st.warning("🚫 Not enough matching data for simulation (tyre + temp).")
+else:
+    fit = sim_df.groupby("TyreLife")["LapTimeSeconds"].mean().reset_index()
+    fig = px.line(fit[fit["TyreLife"] <= sim_stint], x="TyreLife", y="LapTimeSeconds", title=f"{sim_compound} Degradation at ~{sim_temp}°C")
+    st.subheader("📊 Simulated Tyre Stint Projection")
+    st.plotly_chart(fig, use_container_width=True)
+
+
+# --- Driver Gap Chart ---
+st.header("📉 Driver Gap to Leader (per lap)")
+gap_df = filtered_df.copy()
+gap_df["LeaderLap"] = gap_df.groupby("LapNumber")["LapTimeSeconds"].transform("min")
+gap_df["GapToLeader"] = gap_df["LapTimeSeconds"] - gap_df["LeaderLap"]
+
+if not gap_df.empty:
+    fig = px.line(
+        gap_df,
+        x="LapNumber",
+        y="GapToLeader",
+        color="Driver_Season",
+        template="plotly_dark",
+        color_discrete_map=driver_colors
+    )
+    fig.update_layout(yaxis_title="Gap to Leader (s)")
+    st.plotly_chart(fig, use_container_width=True)
+else:
+    st.warning("No gap data available for selected filters.")
 
 # --- Weather Impact Index ---
 st.header("🌧️ Weather Impact Index")
@@ -111,6 +250,26 @@ fig = px.line(filtered_df, x="LapNumber", y="LapTimeSeconds", color="Driver_Seas
                 line_group="Stint", hover_data=["TyreLife", "Compound"],
                 template="plotly_dark", color_discrete_map=driver_colors)
 fig.update_layout(title="Lap Time Progression per Stint")
+st.plotly_chart(fig, use_container_width=True)
+
+# --- SC/VSC/Red Flag Overlay Helper ---
+def add_flag_regions(fig, df):
+    for flag, color, label in [("IsSC", "grey", "SC"), ("IsVSC", "orange", "VSC"), ("IsRedFlag", "red", "Red Flag")]:
+        if df[flag].any():
+            for lap in df[df[flag]]["LapNumber"].unique():
+                fig.add_vrect(
+                    x0=lap - 0.5, x1=lap + 0.5,
+                    fillcolor=color, opacity=0.3, line_width=0,
+                    annotation_text=label, annotation_position="top left"
+                )
+    return fig
+
+# Example usage:
+st.header("📈 Lap Time Evolution with Flags")
+fig = px.line(filtered_df, x="LapNumber", y="LapTimeSeconds", color="Driver_Season",
+            line_group="Stint", hover_data=["TyreLife", "Compound"],
+            template="plotly_dark", color_discrete_map=driver_colors)
+fig = add_flag_regions(fig, filtered_df)
 st.plotly_chart(fig, use_container_width=True)
 
 # --- Grip Degradation vs TrackTemp ---
