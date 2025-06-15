@@ -1,6 +1,5 @@
 .fastf1_cache/
 .sqlite
 data/processed/*
-data/processed/*
 !data/processed/all_races_combined_2023.csv
 !data/processed/all_races_combined_2024.csv
