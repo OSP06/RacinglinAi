@@ -3,3 +3,6 @@
 data/processed/*
 !data/processed/all_races_combined_2023.csv
 !data/processed/all_races_combined_2024.csv
+!data/processed/all_races_combined_2021.csv
+!data/processed/all_races_combined_2022.csv
+.venv
