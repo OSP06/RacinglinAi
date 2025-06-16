@@ -5,3 +5,7 @@ seaborn
 streamlit
 plotly
 statsmodels
+torch
+torchvision
+torchaudio
+scikit-learn

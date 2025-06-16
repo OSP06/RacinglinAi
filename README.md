@@ -1,108 +1,138 @@
-# 🧠 RacingLineAI – F1 Race Strategy & Tyre Degradation Intelligence Tool
+# 🏁 RacingLineAI
 
-**RacingLineAI** is a cutting-edge race intelligence platform designed to replicate the analytics mindset of a modern Formula 1 strategy engineer. It uses telemetry, weather data, tyre performance modeling, and regression-based ML techniques to break down every race, stint, and pit stop into data-driven insights.
+**RacingLineAI** is an advanced F1 race analytics platform powered by **PyTorch**, **FastF1**, and **Streamlit**, designed to provide deep insights into driver performance, tyre degradation, weather behavior, and AI-driven race predictions across multiple seasons.
 
-Built using **FastF1**, **Pandas**, **Scikit-learn**, and **Streamlit**, RacingLineAI is modularized, interactive, and engineered to be extensible for future use by motorsports data teams.
-
----
-
-## 🧩 Core Objective
-
-> Build a modular F1 strategy platform that analyzes race telemetry, tyre usage, weather conditions, and driver performance through a combination of traditional analytics and machine learning regression.
+Built by **Om Patel**, this project blends real-time data processing, race visualization, and machine learning models to help engineers, fans, and analysts decode what’s really happening on the track.
 
 ---
 
-## 🚦 What RacingLineAI Does
+## 🚀 Features Overview
 
-### 🧠 Real-World Alignment with F1 Team Use Cases
+### 🎯 Filters (Sidebar)
+- **Season & Grand Prix**: Filter race data from 2021 to 2025 (or latest available).
+- **Drivers**: Compare multiple drivers side-by-side.
+- **Tyre Compounds**: Focus on specific strategies (Soft, Medium, Hard, Inter, Wet).
 
-| Racing Team Use Case                            | RacingLineAI Feature                                                   |
-|-------------------------------------------------|------------------------------------------------------------------------|
-| Strategy Optimization & Pit Prediction          | 🔁 **Stint & Pit Timeline Analyzer**                                   |
-| Tyre Compound Selection Under Weather Variants  | 🌡️ **Tyre vs TrackTemp & Rainfall Synergy Heatmap**                    |
-| Tyre Wear Modeling                              | 📉 **Grip Degradation Modeling via Regression (TyreAge ~ LapTime)**    |
-| Driver Sector Comparison                        | ⏱️ **Sector Pace Analyzer with Session-wise Delta Charts**             |
-| AI-Powered Insights                             | 🧮 **Predictive Modeling for Degradation Slopes using Linear Regression** |
-| Real-Time Dashboard for Strategy Engineers      | 🖥️ **Streamlit Modular App with Session Selection & Caching**          |
+![Screenshot](reports/Dashboard.png)
+---
+
+## 📊 Visualization Panels & Graphs
+
+### 🗺️ Circuit Layout
+Plots the fastest lap telemetry (X-Y) from FastF1 to show the circuit trace.
+![Screenshot](reports/CircuitLayout.png)
+
+### 📉 Driver Gap to Leader
+Displays the time delta between each selected driver and the lap leader throughout the race.
+![Screenshot](reports/DriverToLeaderGap.png)
+- **Color-coded by Driver_Season**.
+- Shows who was gaining or losing time across stints.
+
+### 📉 Grip Degradation (Driver-Colored)
+Shows average lap time vs. tyre life per driver across dry or wet compounds.
+- Helps visualize tyre performance over stints.
+
+![Screenshot](reports/GripDegradation.png)
+- **Color-coded using dynamic team colors.**
+
+### 📊 Sector Dominance per Driver (Team Colors)
+Bar chart showing how many times each driver had the fastest time in each sector (S1, S2, S3).
+![Screenshot](reports/SectorDominance.png)
+
+- Stacked per sector, **colored by team**.
+
+### 🏋️ DNF Drivers
+List of drivers who retired or failed to complete enough laps.
+- Identified via `IsDNF` logic comparing laps to race max.
+![Screenshot](reports/DNF.png)
+
+### 🔢 Delta to Fastest Lap
+Shows the lap-by-lap gap between a driver and the **fastest lap overall**.
+- Excellent for performance benchmarking.
+![Screenshot](reports/DeltaToFastest.png)
+
+### 🛋️ Stint Type Pace
+Box plot of lap times by **stint type**:
+- Opening, Mid, Closing
+- Helps understand tyre strategy effectiveness across phases.
+![Screenshot](reports/StintTypePace.png)
 
 ---
 
-## 🧬 Technical Features & ML Work
+## 🧠 Predictive Intelligence Module
 
-### 1. 📊 **Stint & Pit Strategy Analyzer**
-- Extracts stints, compounds, and pit laps using FastF1 telemetry
-- Generates a per-driver **pit timeline** + average lap pace per stint
-- Enables visual inspection of undercut/overcut potential
+### 1. **LSTM Tyre Forecast** (Deep Learning)
+- Uses PyTorch LSTM to model degradation over tyre life.
+- Forecasts next 15 laps of lap time for a selected driver and compound.
+- Auto-scales data using `MinMaxScaler` and reshapes to 3D.
+![Screenshot](reports/LSTM1.png)
+![Screenshot](reports/LSTM2.png)
 
-> 🛠️ `strategy_analysis.py` parses all pit windows, tyre data, and stint transitions from the lap-by-lap metadata.
-![Stint & Pit Strategy Analyzer](reports/Stint_Evo.png)
+### 2. **Lap Time Regressor** (Linear Regression)
+- Predicts lap times using `TrackTemp`, `TyreLife`, and compound encoding.
+- Visual scatter plot of actual vs predicted lap times.
+![Screenshot](reports/LapTimeRegressor.png)
 
----
-
-### 2. 🌡️ **Tyre vs Weather Synergy Map**
-- Builds a **heatmap**: `Compound × TrackTemp Band` → `Avg LapTime`
-- Enables comparison of compound behavior in hot, mild, and wet conditions
-- Uses grouped binning logic on real telemetry + weather data
-
-> 🧮 Helps identify ideal compounds in various track temperatures (like Norris’s heat sensitivity or Piastri’s cold tyre warmup issues).
-![Tyre vs Weather Synergy Map](reports/Tyre_Vs_Weather_Map.png)
----
-
-### 3. 📉 **Grip Degradation vs Track Temperature (ML Regression)**
-- Uses `LapTime ~ TyreAge` regression, segmented by `TrackTemp`
-- Models degradation **slopes** for each tyre compound per stint
-- Uses **Linear Regression** (via `scikit-learn`) to plot and compare grip loss across temperatures
-
-> 📘 Used to answer: *"How much faster do Mediums degrade in hotter conditions?"*
-![Grip Degradation vs Track Temperature](reports/Grip_Vs_TrackTemp.png)
+### 3. **Strategy Predictor**
+- Historical box plots of stint lengths by compound.
+- Useful to understand optimal tyre change windows.
+![Screenshot](reports/StrategyPredictor.png)
 
 ---
 
-### 4. ⏱️ **Driver Sector Comparison Dashboard**
-- Visualizes driver sector performance across sessions
-- Highlights deltas vs leader or selected rival
-- Offers strategic visibility into:
-  - Sector-specific weaknesses
-  - Consistency over stints
+## ⚙️ Technology Stack
 
-> 💡 Useful for role-based comparison like Piastri vs Norris in S1/S2/S3.
-![Driver Sector Comparison](reports/Driver_Sector_Summary.png)
----
-
-## 💡 Sample Insights Enabled
-
-| Scenario                                                   | Insight Example                                                                 |
-|------------------------------------------------------------|----------------------------------------------------------------------------------|
-| High track temp in Qatar 2023                              | Soft tyres degrade ~3x faster than Mediums above 42°C                           |
-| Alonso vs Russell stint comparison                         | Alonso conserved tyres longer via lower corner-entry speed                      |
-| Rainfall & Intermediates at Zandvoort                      | Intermediates underperformed if deployed too early (<0.3mm rain accumulation)   |
-| Sainz degradation profile                                  | Linearly degrading Mediums with a slope of +0.25s/lap at 38°C track temperature |
+| Component      | Tool                        |
+|----------------|-----------------------------|
+| UI Framework   | Streamlit                   |
+| Data Source    | FastF1 API (`get_session`)  |
+| ML Framework   | PyTorch, Scikit-learn       |
+| Visualization  | Plotly, Matplotlib          |
+| Data Storage   | Pre-processed CSVs (2021–2025) |
+| Forecasting    | LSTM Model in PyTorch       |
 
 ---
 
-## 📚 ML & Statistical Methods Used
-
-| Model/Technique                    | Purpose                                  |
-|-----------------------------------|------------------------------------------|
-| Linear Regression                 | Grip degradation analysis (per compound) |
-| Binning + Aggregation             | Weather-tyre synergy heatmap             |
-| Pandas GroupBy + Filtering        | Stint & lap window segmentation          |
-| Rolling Averages & Moving Means  | Lap time smoothing                       |
-| Caching with `FastF1.Cache`       | Speed up data processing                 |
-
----
-
-## ✅ To Run It Locally
+## 🛠️ Project Structure
 
 ```bash
-# Clone the repository
-git clone https://github.com/osp06/RacinglinAi.git
-cd RacinglinAi
+📦 RacingLineAI/
+├── data/
+│   └── processed/
+│       ├── all_races_combined_2021.csv
+│       ├── ...
+│
+├── streamlit_app.py       # Main Streamlit dashboard
+├── requirements.txt
+├── README.md              # You are here
+└── .venv/                 # Virtual environment
 
-# Install dependencies
+
+### 📈 How Graphs Are Colored
+Driver_Season = Driver + Year (e.g. VER (2023))
+Dynamic mapping ensures team color changes per season are reflected across all plots.
+Automatically updates if driver-team associations change in newer seasons.
+
+### 🔮 Future Enhancements
+
+✅ Short-term (v8.3+)
+Add Pit Stop Prediction Model using classification.
+Enable real-time race data ingestion for live races.
+Introduce Team vs Team analysis.
+
+🚧 Medium-term
+Add clustering of driver styles using k-means or PCA.
+Build a Pit Strategy Optimizer based on compound degradation.
+
+🌐 Long-term
+Integrate Live Timing (via sockets or F1TV API if available).
+Deploy on cloud with auto-refresh (Render / HuggingFace Spaces).
+Add user login & data bookmarking via Firebase.
+
+🧪 How to Run Locally
+git clone https://github.com/yourusername/RacingLineAI.git
+cd RacingLineAI
+python -m venv .venv
+source .venv/bin/activate       # or .venv\Scripts\activate on Windows
 pip install -r requirements.txt
-
-# Launch the app
 streamlit run streamlit_app.py
-
-
