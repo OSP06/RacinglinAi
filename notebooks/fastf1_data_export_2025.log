@@ -3657,3 +3657,2488 @@ Traceback (most recent call last):
 fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
 2025-06-19 15:37:41,633 - INFO - Finished loading data for 0 drivers: []
 2025-06-19 15:37:41,634 - ERROR - [PROCESS FAIL] abu_dhabi_grand_prix: The data you are trying to access has not been loaded yet. See `Session.load`
+2025-06-29 20:58:20,342 - INFO - Loading data for Australian Grand Prix - Race [v3.5.3]
+2025-06-29 20:58:20,343 - INFO - Using cached data for session_info
+2025-06-29 20:58:20,344 - INFO - Using cached data for driver_info
+2025-06-29 20:58:20,878 - INFO - Using cached data for session_status_data
+2025-06-29 20:58:20,880 - INFO - Using cached data for lap_count
+2025-06-29 20:58:20,881 - INFO - Using cached data for track_status_data
+2025-06-29 20:58:20,886 - INFO - Using cached data for _extended_timing_data
+2025-06-29 20:58:20,888 - INFO - Using cached data for timing_app_data
+2025-06-29 20:58:20,888 - INFO - Processing timing data...
+2025-06-29 20:58:21,582 - INFO - Using cached data for car_data
+2025-06-29 20:58:21,659 - INFO - Using cached data for position_data
+2025-06-29 20:58:22,654 - INFO - Using cached data for weather_data
+2025-06-29 20:58:22,656 - INFO - Using cached data for race_control_messages
+2025-06-29 20:58:22,658 - WARNING - Driver 4 completed the race distance 00:00.022000 before the recorded end of the session.
+2025-06-29 20:58:22,719 - INFO - Finished loading data for 20 drivers: ['4', '1', '63', '12', '23', '18', '27', '16', '81', '44', '10', '22', '31', '87', '30', '5', '14', '55', '7', '6']
+2025-06-29 20:58:24,910 - INFO - [EXPORT OK] australian_grand_prix
+2025-06-29 20:58:24,919 - INFO - Loading data for Japanese Grand Prix - Race [v3.5.3]
+2025-06-29 20:58:24,920 - INFO - Using cached data for session_info
+2025-06-29 20:58:24,920 - INFO - Using cached data for driver_info
+2025-06-29 20:58:25,094 - INFO - Using cached data for session_status_data
+2025-06-29 20:58:25,095 - INFO - Using cached data for lap_count
+2025-06-29 20:58:25,096 - INFO - Using cached data for track_status_data
+2025-06-29 20:58:25,102 - INFO - Using cached data for _extended_timing_data
+2025-06-29 20:58:25,104 - INFO - Using cached data for timing_app_data
+2025-06-29 20:58:25,104 - INFO - Processing timing data...
+2025-06-29 20:58:25,687 - INFO - Using cached data for car_data
+2025-06-29 20:58:25,742 - INFO - Using cached data for position_data
+2025-06-29 20:58:26,608 - INFO - Using cached data for weather_data
+2025-06-29 20:58:26,609 - INFO - Using cached data for race_control_messages
+2025-06-29 20:58:26,628 - INFO - Finished loading data for 20 drivers: ['1', '4', '81', '16', '63', '12', '44', '6', '23', '87', '14', '22', '10', '55', '7', '27', '30', '31', '5', '18']
+2025-06-29 20:58:26,972 - INFO - [EXPORT OK] japanese_grand_prix
+2025-06-29 20:58:26,979 - INFO - Loading data for Bahrain Grand Prix - Race [v3.5.3]
+2025-06-29 20:58:26,979 - INFO - Using cached data for session_info
+2025-06-29 20:58:26,980 - INFO - Using cached data for driver_info
+2025-06-29 20:58:27,105 - INFO - Using cached data for session_status_data
+2025-06-29 20:58:27,106 - INFO - Using cached data for lap_count
+2025-06-29 20:58:27,106 - INFO - Using cached data for track_status_data
+2025-06-29 20:58:27,112 - INFO - Using cached data for _extended_timing_data
+2025-06-29 20:58:27,114 - INFO - Using cached data for timing_app_data
+2025-06-29 20:58:27,114 - INFO - Processing timing data...
+2025-06-29 20:58:27,446 - WARNING - Driver 63: Lap timing integrity check failed for 3 lap(s)
+2025-06-29 20:58:27,708 - INFO - Using cached data for car_data
+2025-06-29 20:58:27,838 - INFO - Using cached data for position_data
+2025-06-29 20:58:28,865 - INFO - Using cached data for weather_data
+2025-06-29 20:58:28,866 - INFO - Using cached data for race_control_messages
+2025-06-29 20:58:28,900 - INFO - Finished loading data for 20 drivers: ['81', '63', '4', '16', '44', '1', '10', '31', '22', '87', '12', '23', '6', '7', '14', '30', '18', '5', '55', '27']
+2025-06-29 20:58:29,257 - INFO - [EXPORT OK] bahrain_grand_prix
+2025-06-29 20:58:29,263 - INFO - Loading data for Saudi Arabian Grand Prix - Race [v3.5.3]
+2025-06-29 20:58:29,264 - INFO - Using cached data for session_info
+2025-06-29 20:58:29,265 - INFO - Using cached data for driver_info
+2025-06-29 20:58:29,390 - INFO - Using cached data for session_status_data
+2025-06-29 20:58:29,391 - INFO - Using cached data for lap_count
+2025-06-29 20:58:29,391 - INFO - Using cached data for track_status_data
+2025-06-29 20:58:29,396 - INFO - Using cached data for _extended_timing_data
+2025-06-29 20:58:29,397 - INFO - Using cached data for timing_app_data
+2025-06-29 20:58:29,397 - INFO - Processing timing data...
+2025-06-29 20:58:29,899 - INFO - Using cached data for car_data
+2025-06-29 20:58:29,954 - INFO - Using cached data for position_data
+2025-06-29 20:58:30,783 - INFO - Using cached data for weather_data
+2025-06-29 20:58:30,784 - INFO - Using cached data for race_control_messages
+2025-06-29 20:58:30,806 - INFO - Finished loading data for 20 drivers: ['81', '1', '16', '4', '63', '12', '44', '55', '23', '6', '14', '30', '87', '31', '27', '18', '7', '5', '22', '10']
+2025-06-29 20:58:31,147 - INFO - [EXPORT OK] saudi_arabian_grand_prix
+2025-06-29 20:58:31,154 - INFO - Loading data for Emilia Romagna Grand Prix - Race [v3.5.3]
+2025-06-29 20:58:31,155 - INFO - Using cached data for session_info
+2025-06-29 20:58:31,155 - INFO - Using cached data for driver_info
+2025-06-29 20:58:31,277 - INFO - Using cached data for session_status_data
+2025-06-29 20:58:31,278 - INFO - Using cached data for lap_count
+2025-06-29 20:58:31,278 - INFO - Using cached data for track_status_data
+2025-06-29 20:58:31,283 - INFO - Using cached data for _extended_timing_data
+2025-06-29 20:58:31,284 - INFO - Using cached data for timing_app_data
+2025-06-29 20:58:31,285 - INFO - Processing timing data...
+2025-06-29 20:58:31,886 - INFO - Using cached data for car_data
+2025-06-29 20:58:32,032 - INFO - Using cached data for position_data
+2025-06-29 20:58:33,088 - INFO - Using cached data for weather_data
+2025-06-29 20:58:33,089 - INFO - Using cached data for race_control_messages
+2025-06-29 20:58:33,125 - INFO - Finished loading data for 20 drivers: ['1', '4', '81', '44', '23', '16', '63', '55', '6', '22', '14', '27', '10', '30', '18', '43', '87', '5', '12', '31']
+2025-06-29 20:58:33,442 - INFO - [EXPORT OK] emilia_romagna_grand_prix
+2025-06-29 20:58:33,449 - INFO - Loading data for Monaco Grand Prix - Race [v3.5.3]
+2025-06-29 20:58:33,450 - INFO - Using cached data for session_info
+2025-06-29 20:58:33,450 - INFO - Using cached data for driver_info
+2025-06-29 20:58:33,575 - INFO - Using cached data for session_status_data
+2025-06-29 20:58:33,576 - INFO - Using cached data for lap_count
+2025-06-29 20:58:33,577 - INFO - Using cached data for track_status_data
+2025-06-29 20:58:33,582 - INFO - Using cached data for _extended_timing_data
+2025-06-29 20:58:33,583 - INFO - Using cached data for timing_app_data
+2025-06-29 20:58:33,583 - INFO - Processing timing data...
+2025-06-29 20:58:34,304 - INFO - Using cached data for car_data
+2025-06-29 20:58:34,357 - INFO - Using cached data for position_data
+2025-06-29 20:58:35,381 - INFO - Using cached data for weather_data
+2025-06-29 20:58:35,384 - INFO - Using cached data for race_control_messages
+2025-06-29 20:58:35,428 - INFO - Finished loading data for 20 drivers: ['4', '16', '81', '1', '44', '6', '31', '30', '23', '55', '63', '87', '43', '5', '18', '27', '22', '12', '14', '10']
+2025-06-29 20:58:35,775 - INFO - [EXPORT OK] monaco_grand_prix
+2025-06-29 20:58:35,782 - INFO - Loading data for Spanish Grand Prix - Race [v3.5.3]
+2025-06-29 20:58:35,783 - INFO - Using cached data for session_info
+2025-06-29 20:58:35,783 - INFO - Using cached data for driver_info
+2025-06-29 20:58:35,906 - INFO - Using cached data for session_status_data
+2025-06-29 20:58:35,907 - INFO - Using cached data for lap_count
+2025-06-29 20:58:35,908 - INFO - Using cached data for track_status_data
+2025-06-29 20:58:35,914 - INFO - Using cached data for _extended_timing_data
+2025-06-29 20:58:35,915 - INFO - Using cached data for timing_app_data
+2025-06-29 20:58:35,915 - INFO - Processing timing data...
+2025-06-29 20:58:36,532 - INFO - Using cached data for car_data
+2025-06-29 20:58:36,600 - INFO - Using cached data for position_data
+2025-06-29 20:58:37,559 - INFO - Using cached data for weather_data
+2025-06-29 20:58:37,560 - INFO - Using cached data for race_control_messages
+2025-06-29 20:58:37,589 - INFO - Finished loading data for 19 drivers: ['81', '4', '16', '63', '27', '44', '6', '10', '14', '1', '30', '5', '22', '55', '43', '31', '87', '12', '23']
+2025-06-29 20:58:37,914 - INFO - [EXPORT OK] spanish_grand_prix
+2025-06-29 20:58:37,921 - INFO - Loading data for Canadian Grand Prix - Race [v3.5.3]
+2025-06-29 20:58:37,922 - INFO - Using cached data for session_info
+2025-06-29 20:58:37,922 - INFO - Using cached data for driver_info
+2025-06-29 20:58:38,036 - DEBUG - Failed to parse timestamp '-1:52:09.782' in Ergastresponse.
+2025-06-29 20:58:38,046 - INFO - Using cached data for session_status_data
+2025-06-29 20:58:38,047 - INFO - Using cached data for lap_count
+2025-06-29 20:58:38,048 - INFO - Using cached data for track_status_data
+2025-06-29 20:58:38,053 - INFO - Using cached data for _extended_timing_data
+2025-06-29 20:58:38,053 - INFO - Using cached data for timing_app_data
+2025-06-29 20:58:38,054 - INFO - Processing timing data...
+2025-06-29 20:58:38,729 - INFO - Using cached data for car_data
+2025-06-29 20:58:38,804 - INFO - Using cached data for position_data
+2025-06-29 20:58:39,766 - INFO - Using cached data for weather_data
+2025-06-29 20:58:39,768 - INFO - Using cached data for race_control_messages
+2025-06-29 20:58:39,803 - INFO - Finished loading data for 20 drivers: ['63', '1', '12', '81', '16', '44', '14', '27', '31', '55', '87', '22', '43', '5', '10', '6', '18', '4', '30', '23']
+2025-06-29 20:58:40,170 - INFO - [EXPORT OK] canadian_grand_prix
+2025-06-29 20:58:40,176 - INFO - Loading data for Austrian Grand Prix - Race [v3.5.3]
+2025-06-29 20:58:40,177 - INFO - No cached data found for session_info. Loading data...
+2025-06-29 20:58:40,177 - INFO - Fetching session info data...
+2025-06-29 20:58:40,409 - INFO - Data has been written to cache!
+2025-06-29 20:58:40,410 - INFO - No cached data found for driver_info. Loading data...
+2025-06-29 20:58:40,410 - INFO - Fetching driver list...
+2025-06-29 20:58:40,590 - INFO - Data has been written to cache!
+2025-06-29 20:58:40,884 - INFO - No cached data found for session_status_data. Loading data...
+2025-06-29 20:58:40,885 - INFO - Fetching session status data...
+2025-06-29 20:58:41,073 - INFO - Data has been written to cache!
+2025-06-29 20:58:41,075 - INFO - No cached data found for lap_count. Loading data...
+2025-06-29 20:58:41,075 - INFO - Fetching lap count data...
+2025-06-29 20:58:41,323 - INFO - Data has been written to cache!
+2025-06-29 20:58:41,324 - INFO - No cached data found for track_status_data. Loading data...
+2025-06-29 20:58:41,325 - INFO - Fetching track status data...
+2025-06-29 20:58:41,584 - INFO - Data has been written to cache!
+2025-06-29 20:58:41,587 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-06-29 20:58:41,587 - INFO - Fetching timing data...
+2025-06-29 20:58:42,428 - INFO - Parsing timing data...
+2025-06-29 20:58:42,942 - INFO - Data has been written to cache!
+2025-06-29 20:58:42,942 - INFO - No cached data found for timing_app_data. Loading data...
+2025-06-29 20:58:42,943 - INFO - Fetching timing app data...
+2025-06-29 20:58:43,099 - INFO - Data has been written to cache!
+2025-06-29 20:58:43,099 - INFO - Processing timing data...
+2025-06-29 20:58:43,641 - INFO - No cached data found for car_data. Loading data...
+2025-06-29 20:58:43,641 - INFO - Fetching car data...
+2025-06-29 20:58:44,155 - INFO - Parsing car data...
+2025-06-29 20:58:46,156 - INFO - Data has been written to cache!
+2025-06-29 20:58:46,157 - INFO - No cached data found for position_data. Loading data...
+2025-06-29 20:58:46,157 - INFO - Fetching position data...
+2025-06-29 20:58:46,606 - INFO - Parsing position data...
+2025-06-29 20:58:48,490 - WARNING - Driver 241: Position data is incomplete!
+2025-06-29 20:58:48,495 - WARNING - Driver 242: Position data is incomplete!
+2025-06-29 20:58:48,501 - WARNING - Driver 243: Position data is incomplete!
+2025-06-29 20:58:48,669 - INFO - Data has been written to cache!
+2025-06-29 20:58:49,730 - INFO - No cached data found for weather_data. Loading data...
+2025-06-29 20:58:49,731 - INFO - Fetching weather data...
+2025-06-29 20:58:49,821 - INFO - Data has been written to cache!
+2025-06-29 20:58:49,822 - INFO - No cached data found for race_control_messages. Loading data...
+2025-06-29 20:58:49,822 - INFO - Fetching race control messages...
+2025-06-29 20:58:50,096 - INFO - Data has been written to cache!
+2025-06-29 20:58:50,133 - INFO - Finished loading data for 20 drivers: ['4', '81', '16', '44', '63', '30', '14', '5', '27', '31', '87', '6', '10', '18', '43', '22', '23', '1', '12', '55']
+2025-06-29 20:58:50,567 - INFO - [EXPORT OK] austrian_grand_prix
+2025-06-29 20:58:50,574 - INFO - Loading data for British Grand Prix - Race [v3.5.3]
+2025-06-29 20:58:50,574 - INFO - No cached data found for session_info. Loading data...
+2025-06-29 20:58:50,575 - INFO - Fetching session info data...
+2025-06-29 20:58:50,991 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:58:51,323 - WARNING - Failed to load session info data!
+2025-06-29 20:58:51,324 - DEBUG - Traceback for failure in session info data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 1470, in _load_session_info
+    self._session_info = api.session_info(self.api_path,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1687, in session_info
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:58:51,330 - INFO - No cached data found for driver_info. Loading data...
+2025-06-29 20:58:51,331 - INFO - Fetching driver list...
+2025-06-29 20:58:51,612 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:58:51,820 - WARNING - Failed to load extended driver information!
+2025-06-29 20:58:51,822 - DEBUG - Exception while loading driver list
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2291, in _drivers_from_f1_api
+    f1di = api.driver_info(self.api_path, livedata=livedata)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1535, in driver_info
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:58:51,989 - WARNING - No result data for this session available on Ergast! (This is expected for recent sessions)
+2025-06-29 20:58:51,990 - WARNING - Failed to load driver list and session results!
+2025-06-29 20:58:52,002 - INFO - No cached data found for session_status_data. Loading data...
+2025-06-29 20:58:52,002 - INFO - Fetching session status data...
+2025-06-29 20:58:52,396 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:58:52,663 - WARNING - Failed to load session status data!
+2025-06-29 20:58:52,665 - DEBUG - Traceback for failure in session status data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2052, in _load_session_status_data
+    session_status = api.session_status_data(self.api_path,
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1333, in session_status_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:58:52,667 - INFO - No cached data found for lap_count. Loading data...
+2025-06-29 20:58:52,667 - INFO - Fetching lap count data...
+2025-06-29 20:58:52,958 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:58:53,177 - WARNING - Failed to load total lap count!
+2025-06-29 20:58:53,178 - DEBUG - Traceback for failure in total lap count
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2034, in _load_total_lap_count
+    lap_count = api.lap_count(self.api_path, livedata=livedata)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1476, in lap_count
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:58:53,179 - INFO - No cached data found for track_status_data. Loading data...
+2025-06-29 20:58:53,179 - INFO - Fetching track status data...
+2025-06-29 20:58:53,497 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:58:53,722 - WARNING - Failed to load track status data!
+2025-06-29 20:58:53,723 - DEBUG - Traceback for failure in track status data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2021, in _load_track_status_data
+    track_status = api.track_status_data(self.api_path, livedata=livedata)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1277, in track_status_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:58:53,724 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-06-29 20:58:53,725 - INFO - Fetching timing data...
+2025-06-29 20:58:54,023 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:58:54,244 - WARNING - Failed to load timing data!
+2025-06-29 20:58:54,246 - DEBUG - Traceback for failure in lap timing data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 1476, in _load_laps_data
+    = api._extended_timing_data(self.api_path, livedata=livedata)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 200, in _extended_timing_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:58:54,394 - WARNING - Cannot load lap times for first lap from Ergast. Timing data is not available for this session.
+2025-06-29 20:58:54,395 - INFO - No cached data found for car_data. Loading data...
+2025-06-29 20:58:54,395 - INFO - Fetching car data...
+2025-06-29 20:58:54,811 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:58:55,105 - WARNING - Car telemetry data is unavailable!
+2025-06-29 20:58:55,107 - INFO - No cached data found for position_data. Loading data...
+2025-06-29 20:58:55,107 - INFO - Fetching position data...
+2025-06-29 20:58:55,385 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:58:55,598 - WARNING - Car position data is unavailable!
+2025-06-29 20:58:55,599 - WARNING - Failed to determine `Session.t0_date`!
+2025-06-29 20:58:55,601 - INFO - No cached data found for weather_data. Loading data...
+2025-06-29 20:58:55,602 - INFO - Fetching weather data...
+2025-06-29 20:58:55,927 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:58:56,147 - WARNING - Failed to load weather data!
+2025-06-29 20:58:56,148 - DEBUG - Traceback for failure in weather data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2442, in _load_weather_data
+    weather_data = api.weather_data(self.api_path, livedata=livedata)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1613, in weather_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:58:56,151 - INFO - No cached data found for race_control_messages. Loading data...
+2025-06-29 20:58:56,152 - INFO - Fetching race control messages...
+2025-06-29 20:58:56,460 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:58:56,678 - WARNING - Failed to load race control messages!
+2025-06-29 20:58:56,679 - DEBUG - Traceback for failure in race control messages
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2449, in _load_race_control_messages
+    race_control_messages = api.race_control_messages(self.api_path,
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1404, in race_control_messages
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:58:56,683 - INFO - Finished loading data for 0 drivers: []
+2025-06-29 20:58:56,684 - ERROR - [PROCESS FAIL] british_grand_prix: The data you are trying to access has not been loaded yet. See `Session.load`
+2025-06-29 20:58:56,708 - INFO - Loading data for Hungarian Grand Prix - Race [v3.5.3]
+2025-06-29 20:58:56,708 - INFO - No cached data found for session_info. Loading data...
+2025-06-29 20:58:56,709 - INFO - Fetching session info data...
+2025-06-29 20:58:56,984 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:58:57,188 - WARNING - Failed to load session info data!
+2025-06-29 20:58:57,190 - DEBUG - Traceback for failure in session info data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 1470, in _load_session_info
+    self._session_info = api.session_info(self.api_path,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1687, in session_info
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:58:57,191 - INFO - No cached data found for driver_info. Loading data...
+2025-06-29 20:58:57,192 - INFO - Fetching driver list...
+2025-06-29 20:58:57,507 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:58:57,764 - WARNING - Failed to load extended driver information!
+2025-06-29 20:58:57,765 - DEBUG - Exception while loading driver list
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2291, in _drivers_from_f1_api
+    f1di = api.driver_info(self.api_path, livedata=livedata)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1535, in driver_info
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:58:57,884 - WARNING - No result data for this session available on Ergast! (This is expected for recent sessions)
+2025-06-29 20:58:57,884 - WARNING - Failed to load driver list and session results!
+2025-06-29 20:58:57,890 - INFO - No cached data found for session_status_data. Loading data...
+2025-06-29 20:58:57,890 - INFO - Fetching session status data...
+2025-06-29 20:58:58,310 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:58:58,532 - WARNING - Failed to load session status data!
+2025-06-29 20:58:58,534 - DEBUG - Traceback for failure in session status data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2052, in _load_session_status_data
+    session_status = api.session_status_data(self.api_path,
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1333, in session_status_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:58:58,535 - INFO - No cached data found for lap_count. Loading data...
+2025-06-29 20:58:58,537 - INFO - Fetching lap count data...
+2025-06-29 20:58:58,846 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:58:59,070 - WARNING - Failed to load total lap count!
+2025-06-29 20:58:59,071 - DEBUG - Traceback for failure in total lap count
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2034, in _load_total_lap_count
+    lap_count = api.lap_count(self.api_path, livedata=livedata)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1476, in lap_count
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:58:59,072 - INFO - No cached data found for track_status_data. Loading data...
+2025-06-29 20:58:59,073 - INFO - Fetching track status data...
+2025-06-29 20:58:59,373 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:58:59,631 - WARNING - Failed to load track status data!
+2025-06-29 20:58:59,633 - DEBUG - Traceback for failure in track status data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2021, in _load_track_status_data
+    track_status = api.track_status_data(self.api_path, livedata=livedata)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1277, in track_status_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:58:59,634 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-06-29 20:58:59,635 - INFO - Fetching timing data...
+2025-06-29 20:58:59,915 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:00,136 - WARNING - Failed to load timing data!
+2025-06-29 20:59:00,137 - DEBUG - Traceback for failure in lap timing data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 1476, in _load_laps_data
+    = api._extended_timing_data(self.api_path, livedata=livedata)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 200, in _extended_timing_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:00,281 - WARNING - Cannot load lap times for first lap from Ergast. Timing data is not available for this session.
+2025-06-29 20:59:00,281 - INFO - No cached data found for car_data. Loading data...
+2025-06-29 20:59:00,282 - INFO - Fetching car data...
+2025-06-29 20:59:00,706 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:00,945 - WARNING - Car telemetry data is unavailable!
+2025-06-29 20:59:00,947 - INFO - No cached data found for position_data. Loading data...
+2025-06-29 20:59:00,948 - INFO - Fetching position data...
+2025-06-29 20:59:01,235 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:01,438 - WARNING - Car position data is unavailable!
+2025-06-29 20:59:01,439 - WARNING - Failed to determine `Session.t0_date`!
+2025-06-29 20:59:01,439 - INFO - No cached data found for weather_data. Loading data...
+2025-06-29 20:59:01,441 - INFO - Fetching weather data...
+2025-06-29 20:59:01,799 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:02,011 - WARNING - Failed to load weather data!
+2025-06-29 20:59:02,013 - DEBUG - Traceback for failure in weather data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2442, in _load_weather_data
+    weather_data = api.weather_data(self.api_path, livedata=livedata)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1613, in weather_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:02,014 - INFO - No cached data found for race_control_messages. Loading data...
+2025-06-29 20:59:02,015 - INFO - Fetching race control messages...
+2025-06-29 20:59:02,344 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:02,598 - WARNING - Failed to load race control messages!
+2025-06-29 20:59:02,599 - DEBUG - Traceback for failure in race control messages
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2449, in _load_race_control_messages
+    race_control_messages = api.race_control_messages(self.api_path,
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1404, in race_control_messages
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:02,603 - INFO - Finished loading data for 0 drivers: []
+2025-06-29 20:59:02,604 - ERROR - [PROCESS FAIL] hungarian_grand_prix: The data you are trying to access has not been loaded yet. See `Session.load`
+2025-06-29 20:59:02,624 - INFO - Loading data for Dutch Grand Prix - Race [v3.5.3]
+2025-06-29 20:59:02,624 - INFO - No cached data found for session_info. Loading data...
+2025-06-29 20:59:02,625 - INFO - Fetching session info data...
+2025-06-29 20:59:02,905 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:03,126 - WARNING - Failed to load session info data!
+2025-06-29 20:59:03,126 - DEBUG - Traceback for failure in session info data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 1470, in _load_session_info
+    self._session_info = api.session_info(self.api_path,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1687, in session_info
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:03,127 - INFO - No cached data found for driver_info. Loading data...
+2025-06-29 20:59:03,128 - INFO - Fetching driver list...
+2025-06-29 20:59:03,298 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:03,634 - WARNING - Failed to load extended driver information!
+2025-06-29 20:59:03,636 - DEBUG - Exception while loading driver list
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2291, in _drivers_from_f1_api
+    f1di = api.driver_info(self.api_path, livedata=livedata)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1535, in driver_info
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:03,778 - WARNING - No result data for this session available on Ergast! (This is expected for recent sessions)
+2025-06-29 20:59:03,779 - WARNING - Failed to load driver list and session results!
+2025-06-29 20:59:03,791 - INFO - No cached data found for session_status_data. Loading data...
+2025-06-29 20:59:03,792 - INFO - Fetching session status data...
+2025-06-29 20:59:04,177 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:04,396 - WARNING - Failed to load session status data!
+2025-06-29 20:59:04,398 - DEBUG - Traceback for failure in session status data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2052, in _load_session_status_data
+    session_status = api.session_status_data(self.api_path,
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1333, in session_status_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:04,399 - INFO - No cached data found for lap_count. Loading data...
+2025-06-29 20:59:04,400 - INFO - Fetching lap count data...
+2025-06-29 20:59:04,582 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:04,907 - WARNING - Failed to load total lap count!
+2025-06-29 20:59:04,910 - DEBUG - Traceback for failure in total lap count
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2034, in _load_total_lap_count
+    lap_count = api.lap_count(self.api_path, livedata=livedata)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1476, in lap_count
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:04,911 - INFO - No cached data found for track_status_data. Loading data...
+2025-06-29 20:59:04,912 - INFO - Fetching track status data...
+2025-06-29 20:59:05,208 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:05,420 - WARNING - Failed to load track status data!
+2025-06-29 20:59:05,422 - DEBUG - Traceback for failure in track status data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2021, in _load_track_status_data
+    track_status = api.track_status_data(self.api_path, livedata=livedata)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1277, in track_status_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:05,423 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-06-29 20:59:05,423 - INFO - Fetching timing data...
+2025-06-29 20:59:05,753 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:05,970 - WARNING - Failed to load timing data!
+2025-06-29 20:59:05,972 - DEBUG - Traceback for failure in lap timing data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 1476, in _load_laps_data
+    = api._extended_timing_data(self.api_path, livedata=livedata)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 200, in _extended_timing_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:06,122 - WARNING - Cannot load lap times for first lap from Ergast. Timing data is not available for this session.
+2025-06-29 20:59:06,123 - INFO - No cached data found for car_data. Loading data...
+2025-06-29 20:59:06,124 - INFO - Fetching car data...
+2025-06-29 20:59:06,540 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:06,765 - WARNING - Car telemetry data is unavailable!
+2025-06-29 20:59:06,767 - INFO - No cached data found for position_data. Loading data...
+2025-06-29 20:59:06,767 - INFO - Fetching position data...
+2025-06-29 20:59:06,954 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:07,279 - WARNING - Car position data is unavailable!
+2025-06-29 20:59:07,281 - WARNING - Failed to determine `Session.t0_date`!
+2025-06-29 20:59:07,282 - INFO - No cached data found for weather_data. Loading data...
+2025-06-29 20:59:07,283 - INFO - Fetching weather data...
+2025-06-29 20:59:07,569 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:07,779 - WARNING - Failed to load weather data!
+2025-06-29 20:59:07,780 - DEBUG - Traceback for failure in weather data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2442, in _load_weather_data
+    weather_data = api.weather_data(self.api_path, livedata=livedata)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1613, in weather_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:07,782 - INFO - No cached data found for race_control_messages. Loading data...
+2025-06-29 20:59:07,783 - INFO - Fetching race control messages...
+2025-06-29 20:59:08,124 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:08,337 - WARNING - Failed to load race control messages!
+2025-06-29 20:59:08,338 - DEBUG - Traceback for failure in race control messages
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2449, in _load_race_control_messages
+    race_control_messages = api.race_control_messages(self.api_path,
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1404, in race_control_messages
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:08,339 - INFO - Finished loading data for 0 drivers: []
+2025-06-29 20:59:08,340 - ERROR - [PROCESS FAIL] dutch_grand_prix: The data you are trying to access has not been loaded yet. See `Session.load`
+2025-06-29 20:59:08,355 - INFO - Loading data for Italian Grand Prix - Race [v3.5.3]
+2025-06-29 20:59:08,356 - INFO - No cached data found for session_info. Loading data...
+2025-06-29 20:59:08,356 - INFO - Fetching session info data...
+2025-06-29 20:59:08,659 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:08,887 - WARNING - Failed to load session info data!
+2025-06-29 20:59:08,888 - DEBUG - Traceback for failure in session info data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 1470, in _load_session_info
+    self._session_info = api.session_info(self.api_path,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1687, in session_info
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:08,889 - INFO - No cached data found for driver_info. Loading data...
+2025-06-29 20:59:08,890 - INFO - Fetching driver list...
+2025-06-29 20:59:09,202 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:09,425 - WARNING - Failed to load extended driver information!
+2025-06-29 20:59:09,427 - DEBUG - Exception while loading driver list
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2291, in _drivers_from_f1_api
+    f1di = api.driver_info(self.api_path, livedata=livedata)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1535, in driver_info
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:09,575 - WARNING - No result data for this session available on Ergast! (This is expected for recent sessions)
+2025-06-29 20:59:09,576 - WARNING - Failed to load driver list and session results!
+2025-06-29 20:59:09,588 - INFO - No cached data found for session_status_data. Loading data...
+2025-06-29 20:59:09,589 - INFO - Fetching session status data...
+2025-06-29 20:59:09,855 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:10,185 - WARNING - Failed to load session status data!
+2025-06-29 20:59:10,187 - DEBUG - Traceback for failure in session status data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2052, in _load_session_status_data
+    session_status = api.session_status_data(self.api_path,
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1333, in session_status_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:10,188 - INFO - No cached data found for lap_count. Loading data...
+2025-06-29 20:59:10,189 - INFO - Fetching lap count data...
+2025-06-29 20:59:10,587 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:10,849 - WARNING - Failed to load total lap count!
+2025-06-29 20:59:10,850 - DEBUG - Traceback for failure in total lap count
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2034, in _load_total_lap_count
+    lap_count = api.lap_count(self.api_path, livedata=livedata)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1476, in lap_count
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:10,851 - INFO - No cached data found for track_status_data. Loading data...
+2025-06-29 20:59:10,852 - INFO - Fetching track status data...
+2025-06-29 20:59:11,149 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:11,380 - WARNING - Failed to load track status data!
+2025-06-29 20:59:11,381 - DEBUG - Traceback for failure in track status data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2021, in _load_track_status_data
+    track_status = api.track_status_data(self.api_path, livedata=livedata)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1277, in track_status_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:11,382 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-06-29 20:59:11,383 - INFO - Fetching timing data...
+2025-06-29 20:59:11,745 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:11,960 - WARNING - Failed to load timing data!
+2025-06-29 20:59:11,962 - DEBUG - Traceback for failure in lap timing data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 1476, in _load_laps_data
+    = api._extended_timing_data(self.api_path, livedata=livedata)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 200, in _extended_timing_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:12,123 - WARNING - Cannot load lap times for first lap from Ergast. Timing data is not available for this session.
+2025-06-29 20:59:12,124 - INFO - No cached data found for car_data. Loading data...
+2025-06-29 20:59:12,124 - INFO - Fetching car data...
+2025-06-29 20:59:12,541 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:12,815 - WARNING - Car telemetry data is unavailable!
+2025-06-29 20:59:12,816 - INFO - No cached data found for position_data. Loading data...
+2025-06-29 20:59:12,817 - INFO - Fetching position data...
+2025-06-29 20:59:13,127 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:13,333 - WARNING - Car position data is unavailable!
+2025-06-29 20:59:13,334 - WARNING - Failed to determine `Session.t0_date`!
+2025-06-29 20:59:13,334 - INFO - No cached data found for weather_data. Loading data...
+2025-06-29 20:59:13,335 - INFO - Fetching weather data...
+2025-06-29 20:59:13,661 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:13,879 - WARNING - Failed to load weather data!
+2025-06-29 20:59:13,883 - DEBUG - Traceback for failure in weather data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2442, in _load_weather_data
+    weather_data = api.weather_data(self.api_path, livedata=livedata)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1613, in weather_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:13,884 - INFO - No cached data found for race_control_messages. Loading data...
+2025-06-29 20:59:13,884 - INFO - Fetching race control messages...
+2025-06-29 20:59:14,085 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:14,408 - WARNING - Failed to load race control messages!
+2025-06-29 20:59:14,409 - DEBUG - Traceback for failure in race control messages
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2449, in _load_race_control_messages
+    race_control_messages = api.race_control_messages(self.api_path,
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1404, in race_control_messages
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:14,410 - INFO - Finished loading data for 0 drivers: []
+2025-06-29 20:59:14,411 - ERROR - [PROCESS FAIL] italian_grand_prix: The data you are trying to access has not been loaded yet. See `Session.load`
+2025-06-29 20:59:14,429 - INFO - Loading data for Azerbaijan Grand Prix - Race [v3.5.3]
+2025-06-29 20:59:14,430 - INFO - No cached data found for session_info. Loading data...
+2025-06-29 20:59:14,430 - INFO - Fetching session info data...
+2025-06-29 20:59:14,566 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:14,940 - WARNING - Failed to load session info data!
+2025-06-29 20:59:14,941 - DEBUG - Traceback for failure in session info data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 1470, in _load_session_info
+    self._session_info = api.session_info(self.api_path,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1687, in session_info
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:14,942 - INFO - No cached data found for driver_info. Loading data...
+2025-06-29 20:59:14,943 - INFO - Fetching driver list...
+2025-06-29 20:59:15,228 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:15,451 - WARNING - Failed to load extended driver information!
+2025-06-29 20:59:15,452 - DEBUG - Exception while loading driver list
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2291, in _drivers_from_f1_api
+    f1di = api.driver_info(self.api_path, livedata=livedata)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1535, in driver_info
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:15,596 - WARNING - No result data for this session available on Ergast! (This is expected for recent sessions)
+2025-06-29 20:59:15,597 - WARNING - Failed to load driver list and session results!
+2025-06-29 20:59:15,607 - INFO - No cached data found for session_status_data. Loading data...
+2025-06-29 20:59:15,608 - INFO - Fetching session status data...
+2025-06-29 20:59:16,008 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:16,209 - WARNING - Failed to load session status data!
+2025-06-29 20:59:16,210 - DEBUG - Traceback for failure in session status data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2052, in _load_session_status_data
+    session_status = api.session_status_data(self.api_path,
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1333, in session_status_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:16,211 - INFO - No cached data found for lap_count. Loading data...
+2025-06-29 20:59:16,212 - INFO - Fetching lap count data...
+2025-06-29 20:59:16,543 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:16,772 - WARNING - Failed to load total lap count!
+2025-06-29 20:59:16,774 - DEBUG - Traceback for failure in total lap count
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2034, in _load_total_lap_count
+    lap_count = api.lap_count(self.api_path, livedata=livedata)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1476, in lap_count
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:16,776 - INFO - No cached data found for track_status_data. Loading data...
+2025-06-29 20:59:16,776 - INFO - Fetching track status data...
+2025-06-29 20:59:17,081 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:17,352 - WARNING - Failed to load track status data!
+2025-06-29 20:59:17,354 - DEBUG - Traceback for failure in track status data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2021, in _load_track_status_data
+    track_status = api.track_status_data(self.api_path, livedata=livedata)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1277, in track_status_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:17,355 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-06-29 20:59:17,356 - INFO - Fetching timing data...
+2025-06-29 20:59:17,520 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:17,889 - WARNING - Failed to load timing data!
+2025-06-29 20:59:17,890 - DEBUG - Traceback for failure in lap timing data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 1476, in _load_laps_data
+    = api._extended_timing_data(self.api_path, livedata=livedata)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 200, in _extended_timing_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:18,017 - WARNING - Cannot load lap times for first lap from Ergast. Timing data is not available for this session.
+2025-06-29 20:59:18,018 - INFO - No cached data found for car_data. Loading data...
+2025-06-29 20:59:18,018 - INFO - Fetching car data...
+2025-06-29 20:59:18,506 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:18,741 - WARNING - Car telemetry data is unavailable!
+2025-06-29 20:59:18,743 - INFO - No cached data found for position_data. Loading data...
+2025-06-29 20:59:18,743 - INFO - Fetching position data...
+2025-06-29 20:59:19,038 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:19,291 - WARNING - Car position data is unavailable!
+2025-06-29 20:59:19,292 - WARNING - Failed to determine `Session.t0_date`!
+2025-06-29 20:59:19,293 - INFO - No cached data found for weather_data. Loading data...
+2025-06-29 20:59:19,294 - INFO - Fetching weather data...
+2025-06-29 20:59:19,576 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:19,806 - WARNING - Failed to load weather data!
+2025-06-29 20:59:19,807 - DEBUG - Traceback for failure in weather data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2442, in _load_weather_data
+    weather_data = api.weather_data(self.api_path, livedata=livedata)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1613, in weather_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:19,809 - INFO - No cached data found for race_control_messages. Loading data...
+2025-06-29 20:59:19,810 - INFO - Fetching race control messages...
+2025-06-29 20:59:20,112 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:20,321 - WARNING - Failed to load race control messages!
+2025-06-29 20:59:20,322 - DEBUG - Traceback for failure in race control messages
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2449, in _load_race_control_messages
+    race_control_messages = api.race_control_messages(self.api_path,
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1404, in race_control_messages
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:20,324 - INFO - Finished loading data for 0 drivers: []
+2025-06-29 20:59:20,325 - ERROR - [PROCESS FAIL] azerbaijan_grand_prix: The data you are trying to access has not been loaded yet. See `Session.load`
+2025-06-29 20:59:20,347 - INFO - Loading data for Singapore Grand Prix - Race [v3.5.3]
+2025-06-29 20:59:20,348 - INFO - No cached data found for session_info. Loading data...
+2025-06-29 20:59:20,348 - INFO - Fetching session info data...
+2025-06-29 20:59:20,655 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:20,852 - WARNING - Failed to load session info data!
+2025-06-29 20:59:20,854 - DEBUG - Traceback for failure in session info data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 1470, in _load_session_info
+    self._session_info = api.session_info(self.api_path,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1687, in session_info
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:20,855 - INFO - No cached data found for driver_info. Loading data...
+2025-06-29 20:59:20,856 - INFO - Fetching driver list...
+2025-06-29 20:59:21,204 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:21,477 - WARNING - Failed to load extended driver information!
+2025-06-29 20:59:21,478 - DEBUG - Exception while loading driver list
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2291, in _drivers_from_f1_api
+    f1di = api.driver_info(self.api_path, livedata=livedata)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1535, in driver_info
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:21,599 - WARNING - No result data for this session available on Ergast! (This is expected for recent sessions)
+2025-06-29 20:59:21,599 - WARNING - Failed to load driver list and session results!
+2025-06-29 20:59:21,614 - INFO - No cached data found for session_status_data. Loading data...
+2025-06-29 20:59:21,614 - INFO - Fetching session status data...
+2025-06-29 20:59:22,015 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:22,226 - WARNING - Failed to load session status data!
+2025-06-29 20:59:22,226 - DEBUG - Traceback for failure in session status data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2052, in _load_session_status_data
+    session_status = api.session_status_data(self.api_path,
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1333, in session_status_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:22,227 - INFO - No cached data found for lap_count. Loading data...
+2025-06-29 20:59:22,227 - INFO - Fetching lap count data...
+2025-06-29 20:59:22,547 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:22,759 - WARNING - Failed to load total lap count!
+2025-06-29 20:59:22,761 - DEBUG - Traceback for failure in total lap count
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2034, in _load_total_lap_count
+    lap_count = api.lap_count(self.api_path, livedata=livedata)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1476, in lap_count
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:22,762 - INFO - No cached data found for track_status_data. Loading data...
+2025-06-29 20:59:22,762 - INFO - Fetching track status data...
+2025-06-29 20:59:22,948 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:23,276 - WARNING - Failed to load track status data!
+2025-06-29 20:59:23,277 - DEBUG - Traceback for failure in track status data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2021, in _load_track_status_data
+    track_status = api.track_status_data(self.api_path, livedata=livedata)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1277, in track_status_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:23,279 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-06-29 20:59:23,279 - INFO - Fetching timing data...
+2025-06-29 20:59:23,584 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:23,791 - WARNING - Failed to load timing data!
+2025-06-29 20:59:23,792 - DEBUG - Traceback for failure in lap timing data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 1476, in _load_laps_data
+    = api._extended_timing_data(self.api_path, livedata=livedata)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 200, in _extended_timing_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:23,965 - WARNING - Cannot load lap times for first lap from Ergast. Timing data is not available for this session.
+2025-06-29 20:59:23,966 - INFO - No cached data found for car_data. Loading data...
+2025-06-29 20:59:23,966 - INFO - Fetching car data...
+2025-06-29 20:59:24,385 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:24,584 - WARNING - Car telemetry data is unavailable!
+2025-06-29 20:59:24,586 - INFO - No cached data found for position_data. Loading data...
+2025-06-29 20:59:24,587 - INFO - Fetching position data...
+2025-06-29 20:59:24,953 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:25,165 - WARNING - Car position data is unavailable!
+2025-06-29 20:59:25,167 - WARNING - Failed to determine `Session.t0_date`!
+2025-06-29 20:59:25,168 - INFO - No cached data found for weather_data. Loading data...
+2025-06-29 20:59:25,169 - INFO - Fetching weather data...
+2025-06-29 20:59:25,493 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:25,698 - WARNING - Failed to load weather data!
+2025-06-29 20:59:25,699 - DEBUG - Traceback for failure in weather data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2442, in _load_weather_data
+    weather_data = api.weather_data(self.api_path, livedata=livedata)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1613, in weather_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:25,703 - INFO - No cached data found for race_control_messages. Loading data...
+2025-06-29 20:59:25,704 - INFO - Fetching race control messages...
+2025-06-29 20:59:26,083 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:26,292 - WARNING - Failed to load race control messages!
+2025-06-29 20:59:26,293 - DEBUG - Traceback for failure in race control messages
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2449, in _load_race_control_messages
+    race_control_messages = api.race_control_messages(self.api_path,
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1404, in race_control_messages
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:26,296 - INFO - Finished loading data for 0 drivers: []
+2025-06-29 20:59:26,297 - ERROR - [PROCESS FAIL] singapore_grand_prix: The data you are trying to access has not been loaded yet. See `Session.load`
+2025-06-29 20:59:26,323 - INFO - Loading data for Mexico City Grand Prix - Race [v3.5.3]
+2025-06-29 20:59:26,324 - INFO - No cached data found for session_info. Loading data...
+2025-06-29 20:59:26,325 - INFO - Fetching session info data...
+2025-06-29 20:59:26,483 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:26,794 - WARNING - Failed to load session info data!
+2025-06-29 20:59:26,795 - DEBUG - Traceback for failure in session info data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 1470, in _load_session_info
+    self._session_info = api.session_info(self.api_path,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1687, in session_info
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:26,796 - INFO - No cached data found for driver_info. Loading data...
+2025-06-29 20:59:26,797 - INFO - Fetching driver list...
+2025-06-29 20:59:27,133 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:27,387 - WARNING - Failed to load extended driver information!
+2025-06-29 20:59:27,387 - DEBUG - Exception while loading driver list
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2291, in _drivers_from_f1_api
+    f1di = api.driver_info(self.api_path, livedata=livedata)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1535, in driver_info
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:27,510 - WARNING - No result data for this session available on Ergast! (This is expected for recent sessions)
+2025-06-29 20:59:27,511 - WARNING - Failed to load driver list and session results!
+2025-06-29 20:59:27,525 - INFO - No cached data found for session_status_data. Loading data...
+2025-06-29 20:59:27,526 - INFO - Fetching session status data...
+2025-06-29 20:59:27,945 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:28,139 - WARNING - Failed to load session status data!
+2025-06-29 20:59:28,140 - DEBUG - Traceback for failure in session status data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2052, in _load_session_status_data
+    session_status = api.session_status_data(self.api_path,
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1333, in session_status_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:28,142 - INFO - No cached data found for lap_count. Loading data...
+2025-06-29 20:59:28,143 - INFO - Fetching lap count data...
+2025-06-29 20:59:28,478 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:28,674 - WARNING - Failed to load total lap count!
+2025-06-29 20:59:28,675 - DEBUG - Traceback for failure in total lap count
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2034, in _load_total_lap_count
+    lap_count = api.lap_count(self.api_path, livedata=livedata)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1476, in lap_count
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:28,676 - INFO - No cached data found for track_status_data. Loading data...
+2025-06-29 20:59:28,677 - INFO - Fetching track status data...
+2025-06-29 20:59:29,026 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:29,258 - WARNING - Failed to load track status data!
+2025-06-29 20:59:29,260 - DEBUG - Traceback for failure in track status data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2021, in _load_track_status_data
+    track_status = api.track_status_data(self.api_path, livedata=livedata)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1277, in track_status_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:29,261 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-06-29 20:59:29,262 - INFO - Fetching timing data...
+2025-06-29 20:59:29,557 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:29,747 - WARNING - Failed to load timing data!
+2025-06-29 20:59:29,749 - DEBUG - Traceback for failure in lap timing data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 1476, in _load_laps_data
+    = api._extended_timing_data(self.api_path, livedata=livedata)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 200, in _extended_timing_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:29,934 - WARNING - Cannot load lap times for first lap from Ergast. Timing data is not available for this session.
+2025-06-29 20:59:29,936 - INFO - No cached data found for car_data. Loading data...
+2025-06-29 20:59:29,936 - INFO - Fetching car data...
+2025-06-29 20:59:30,343 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:30,566 - WARNING - Car telemetry data is unavailable!
+2025-06-29 20:59:30,568 - INFO - No cached data found for position_data. Loading data...
+2025-06-29 20:59:30,568 - INFO - Fetching position data...
+2025-06-29 20:59:30,740 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:31,043 - WARNING - Car position data is unavailable!
+2025-06-29 20:59:31,044 - WARNING - Failed to determine `Session.t0_date`!
+2025-06-29 20:59:31,045 - INFO - No cached data found for weather_data. Loading data...
+2025-06-29 20:59:31,045 - INFO - Fetching weather data...
+2025-06-29 20:59:31,383 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:31,594 - WARNING - Failed to load weather data!
+2025-06-29 20:59:31,595 - DEBUG - Traceback for failure in weather data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2442, in _load_weather_data
+    weather_data = api.weather_data(self.api_path, livedata=livedata)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1613, in weather_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:31,596 - INFO - No cached data found for race_control_messages. Loading data...
+2025-06-29 20:59:31,597 - INFO - Fetching race control messages...
+2025-06-29 20:59:31,929 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:32,149 - WARNING - Failed to load race control messages!
+2025-06-29 20:59:32,151 - DEBUG - Traceback for failure in race control messages
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2449, in _load_race_control_messages
+    race_control_messages = api.race_control_messages(self.api_path,
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1404, in race_control_messages
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:32,153 - INFO - Finished loading data for 0 drivers: []
+2025-06-29 20:59:32,154 - ERROR - [PROCESS FAIL] mexico_city_grand_prix: The data you are trying to access has not been loaded yet. See `Session.load`
+2025-06-29 20:59:32,175 - INFO - Loading data for Las Vegas Grand Prix - Race [v3.5.3]
+2025-06-29 20:59:32,176 - INFO - No cached data found for session_info. Loading data...
+2025-06-29 20:59:32,176 - INFO - Fetching session info data...
+2025-06-29 20:59:32,469 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:32,692 - WARNING - Failed to load session info data!
+2025-06-29 20:59:32,693 - DEBUG - Traceback for failure in session info data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 1470, in _load_session_info
+    self._session_info = api.session_info(self.api_path,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1687, in session_info
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:32,695 - INFO - No cached data found for driver_info. Loading data...
+2025-06-29 20:59:32,695 - INFO - Fetching driver list...
+2025-06-29 20:59:33,015 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:33,234 - WARNING - Failed to load extended driver information!
+2025-06-29 20:59:33,235 - DEBUG - Exception while loading driver list
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2291, in _drivers_from_f1_api
+    f1di = api.driver_info(self.api_path, livedata=livedata)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1535, in driver_info
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:33,394 - WARNING - No result data for this session available on Ergast! (This is expected for recent sessions)
+2025-06-29 20:59:33,395 - WARNING - Failed to load driver list and session results!
+2025-06-29 20:59:33,405 - INFO - No cached data found for session_status_data. Loading data...
+2025-06-29 20:59:33,406 - INFO - Fetching session status data...
+2025-06-29 20:59:33,808 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:34,077 - WARNING - Failed to load session status data!
+2025-06-29 20:59:34,079 - DEBUG - Traceback for failure in session status data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2052, in _load_session_status_data
+    session_status = api.session_status_data(self.api_path,
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1333, in session_status_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:34,080 - INFO - No cached data found for lap_count. Loading data...
+2025-06-29 20:59:34,080 - INFO - Fetching lap count data...
+2025-06-29 20:59:34,389 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:34,615 - WARNING - Failed to load total lap count!
+2025-06-29 20:59:34,617 - DEBUG - Traceback for failure in total lap count
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2034, in _load_total_lap_count
+    lap_count = api.lap_count(self.api_path, livedata=livedata)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1476, in lap_count
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:34,618 - INFO - No cached data found for track_status_data. Loading data...
+2025-06-29 20:59:34,619 - INFO - Fetching track status data...
+2025-06-29 20:59:34,923 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:35,132 - WARNING - Failed to load track status data!
+2025-06-29 20:59:35,134 - DEBUG - Traceback for failure in track status data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2021, in _load_track_status_data
+    track_status = api.track_status_data(self.api_path, livedata=livedata)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1277, in track_status_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:35,135 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-06-29 20:59:35,136 - INFO - Fetching timing data...
+2025-06-29 20:59:35,328 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:35,644 - WARNING - Failed to load timing data!
+2025-06-29 20:59:35,646 - DEBUG - Traceback for failure in lap timing data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 1476, in _load_laps_data
+    = api._extended_timing_data(self.api_path, livedata=livedata)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 200, in _extended_timing_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:35,793 - WARNING - Cannot load lap times for first lap from Ergast. Timing data is not available for this session.
+2025-06-29 20:59:35,794 - INFO - No cached data found for car_data. Loading data...
+2025-06-29 20:59:35,795 - INFO - Fetching car data...
+2025-06-29 20:59:36,214 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:36,437 - WARNING - Car telemetry data is unavailable!
+2025-06-29 20:59:36,438 - INFO - No cached data found for position_data. Loading data...
+2025-06-29 20:59:36,439 - INFO - Fetching position data...
+2025-06-29 20:59:36,749 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:37,035 - WARNING - Car position data is unavailable!
+2025-06-29 20:59:37,037 - WARNING - Failed to determine `Session.t0_date`!
+2025-06-29 20:59:37,037 - INFO - No cached data found for weather_data. Loading data...
+2025-06-29 20:59:37,038 - INFO - Fetching weather data...
+2025-06-29 20:59:37,201 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:37,518 - WARNING - Failed to load weather data!
+2025-06-29 20:59:37,520 - DEBUG - Traceback for failure in weather data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2442, in _load_weather_data
+    weather_data = api.weather_data(self.api_path, livedata=livedata)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1613, in weather_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:37,521 - INFO - No cached data found for race_control_messages. Loading data...
+2025-06-29 20:59:37,522 - INFO - Fetching race control messages...
+2025-06-29 20:59:37,840 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:38,036 - WARNING - Failed to load race control messages!
+2025-06-29 20:59:38,037 - DEBUG - Traceback for failure in race control messages
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2449, in _load_race_control_messages
+    race_control_messages = api.race_control_messages(self.api_path,
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1404, in race_control_messages
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:38,039 - INFO - Finished loading data for 0 drivers: []
+2025-06-29 20:59:38,040 - ERROR - [PROCESS FAIL] las_vegas_grand_prix: The data you are trying to access has not been loaded yet. See `Session.load`
+2025-06-29 20:59:38,061 - INFO - Loading data for Abu Dhabi Grand Prix - Race [v3.5.3]
+2025-06-29 20:59:38,062 - INFO - No cached data found for session_info. Loading data...
+2025-06-29 20:59:38,062 - INFO - Fetching session info data...
+2025-06-29 20:59:38,415 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:38,658 - WARNING - Failed to load session info data!
+2025-06-29 20:59:38,659 - DEBUG - Traceback for failure in session info data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 1470, in _load_session_info
+    self._session_info = api.session_info(self.api_path,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1687, in session_info
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:38,659 - INFO - No cached data found for driver_info. Loading data...
+2025-06-29 20:59:38,660 - INFO - Fetching driver list...
+2025-06-29 20:59:38,950 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:39,155 - WARNING - Failed to load extended driver information!
+2025-06-29 20:59:39,156 - DEBUG - Exception while loading driver list
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2291, in _drivers_from_f1_api
+    f1di = api.driver_info(self.api_path, livedata=livedata)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1535, in driver_info
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:39,323 - WARNING - No result data for this session available on Ergast! (This is expected for recent sessions)
+2025-06-29 20:59:39,324 - WARNING - Failed to load driver list and session results!
+2025-06-29 20:59:39,338 - INFO - No cached data found for session_status_data. Loading data...
+2025-06-29 20:59:39,338 - INFO - Fetching session status data...
+2025-06-29 20:59:39,769 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:39,982 - WARNING - Failed to load session status data!
+2025-06-29 20:59:39,983 - DEBUG - Traceback for failure in session status data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2052, in _load_session_status_data
+    session_status = api.session_status_data(self.api_path,
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1333, in session_status_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:39,984 - INFO - No cached data found for lap_count. Loading data...
+2025-06-29 20:59:39,985 - INFO - Fetching lap count data...
+2025-06-29 20:59:40,311 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:40,578 - WARNING - Failed to load total lap count!
+2025-06-29 20:59:40,579 - DEBUG - Traceback for failure in total lap count
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2034, in _load_total_lap_count
+    lap_count = api.lap_count(self.api_path, livedata=livedata)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1476, in lap_count
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:40,580 - INFO - No cached data found for track_status_data. Loading data...
+2025-06-29 20:59:40,581 - INFO - Fetching track status data...
+2025-06-29 20:59:40,878 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:41,084 - WARNING - Failed to load track status data!
+2025-06-29 20:59:41,086 - DEBUG - Traceback for failure in track status data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2021, in _load_track_status_data
+    track_status = api.track_status_data(self.api_path, livedata=livedata)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1277, in track_status_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:41,087 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-06-29 20:59:41,088 - INFO - Fetching timing data...
+2025-06-29 20:59:41,401 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:41,612 - WARNING - Failed to load timing data!
+2025-06-29 20:59:41,614 - DEBUG - Traceback for failure in lap timing data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 1476, in _load_laps_data
+    = api._extended_timing_data(self.api_path, livedata=livedata)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 200, in _extended_timing_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:41,770 - WARNING - Cannot load lap times for first lap from Ergast. Timing data is not available for this session.
+2025-06-29 20:59:41,771 - INFO - No cached data found for car_data. Loading data...
+2025-06-29 20:59:41,772 - INFO - Fetching car data...
+2025-06-29 20:59:42,181 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:42,394 - WARNING - Car telemetry data is unavailable!
+2025-06-29 20:59:42,396 - INFO - No cached data found for position_data. Loading data...
+2025-06-29 20:59:42,396 - INFO - Fetching position data...
+2025-06-29 20:59:42,718 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:42,952 - WARNING - Car position data is unavailable!
+2025-06-29 20:59:42,953 - WARNING - Failed to determine `Session.t0_date`!
+2025-06-29 20:59:42,953 - INFO - No cached data found for weather_data. Loading data...
+2025-06-29 20:59:42,954 - INFO - Fetching weather data...
+2025-06-29 20:59:43,113 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:43,465 - WARNING - Failed to load weather data!
+2025-06-29 20:59:43,466 - DEBUG - Traceback for failure in weather data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2442, in _load_weather_data
+    weather_data = api.weather_data(self.api_path, livedata=livedata)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1613, in weather_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:43,467 - INFO - No cached data found for race_control_messages. Loading data...
+2025-06-29 20:59:43,467 - INFO - Fetching race control messages...
+2025-06-29 20:59:43,750 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-06-29 20:59:44,009 - WARNING - Failed to load race control messages!
+2025-06-29 20:59:44,011 - DEBUG - Traceback for failure in race control messages
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2449, in _load_race_control_messages
+    race_control_messages = api.race_control_messages(self.api_path,
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1404, in race_control_messages
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-06-29 20:59:44,013 - INFO - Finished loading data for 0 drivers: []
+2025-06-29 20:59:44,013 - ERROR - [PROCESS FAIL] abu_dhabi_grand_prix: The data you are trying to access has not been loaded yet. See `Session.load`
+2025-10-26 11:09:39,584 - INFO - Loading data for Australian Grand Prix - Race [v3.5.3]
+2025-10-26 11:09:39,585 - INFO - Using cached data for session_info
+2025-10-26 11:09:39,585 - INFO - Using cached data for driver_info
+2025-10-26 11:09:40,264 - INFO - Using cached data for session_status_data
+2025-10-26 11:09:40,265 - INFO - Using cached data for lap_count
+2025-10-26 11:09:40,266 - INFO - Using cached data for track_status_data
+2025-10-26 11:09:40,274 - INFO - Using cached data for _extended_timing_data
+2025-10-26 11:09:40,276 - INFO - Using cached data for timing_app_data
+2025-10-26 11:09:40,276 - INFO - Processing timing data...
+2025-10-26 11:09:41,156 - INFO - Using cached data for car_data
+2025-10-26 11:09:41,284 - INFO - Using cached data for position_data
+2025-10-26 11:09:42,521 - INFO - Using cached data for weather_data
+2025-10-26 11:09:42,522 - INFO - Using cached data for race_control_messages
+2025-10-26 11:09:42,525 - WARNING - Driver 4 completed the race distance 00:00.022000 before the recorded end of the session.
+2025-10-26 11:09:42,580 - INFO - Finished loading data for 20 drivers: ['4', '1', '63', '12', '23', '18', '27', '16', '81', '44', '10', '22', '31', '87', '30', '5', '14', '55', '7', '6']
+2025-10-26 11:09:45,099 - INFO - [EXPORT OK] australian_grand_prix
+2025-10-26 11:09:45,109 - INFO - Loading data for Japanese Grand Prix - Race [v3.5.3]
+2025-10-26 11:09:45,110 - INFO - Using cached data for session_info
+2025-10-26 11:09:45,114 - INFO - Using cached data for driver_info
+2025-10-26 11:09:45,319 - INFO - Using cached data for session_status_data
+2025-10-26 11:09:45,320 - INFO - Using cached data for lap_count
+2025-10-26 11:09:45,321 - INFO - Using cached data for track_status_data
+2025-10-26 11:09:45,339 - INFO - Using cached data for _extended_timing_data
+2025-10-26 11:09:45,345 - INFO - Using cached data for timing_app_data
+2025-10-26 11:09:45,346 - INFO - Processing timing data...
+2025-10-26 11:09:46,055 - INFO - Using cached data for car_data
+2025-10-26 11:09:46,114 - INFO - Using cached data for position_data
+2025-10-26 11:09:46,993 - INFO - Using cached data for weather_data
+2025-10-26 11:09:46,995 - INFO - Using cached data for race_control_messages
+2025-10-26 11:09:47,016 - INFO - Finished loading data for 20 drivers: ['1', '4', '81', '16', '63', '12', '44', '6', '23', '87', '14', '22', '10', '55', '7', '27', '30', '31', '5', '18']
+2025-10-26 11:09:47,684 - INFO - [EXPORT OK] japanese_grand_prix
+2025-10-26 11:09:47,692 - INFO - Loading data for Bahrain Grand Prix - Race [v3.5.3]
+2025-10-26 11:09:47,693 - INFO - Using cached data for session_info
+2025-10-26 11:09:47,694 - INFO - Using cached data for driver_info
+2025-10-26 11:09:47,892 - INFO - Using cached data for session_status_data
+2025-10-26 11:09:47,894 - INFO - Using cached data for lap_count
+2025-10-26 11:09:47,895 - INFO - Using cached data for track_status_data
+2025-10-26 11:09:47,901 - INFO - Using cached data for _extended_timing_data
+2025-10-26 11:09:47,905 - INFO - Using cached data for timing_app_data
+2025-10-26 11:09:47,905 - INFO - Processing timing data...
+2025-10-26 11:09:48,271 - WARNING - Driver 63: Lap timing integrity check failed for 3 lap(s)
+2025-10-26 11:09:48,603 - INFO - Using cached data for car_data
+2025-10-26 11:09:48,731 - INFO - Using cached data for position_data
+2025-10-26 11:09:49,848 - INFO - Using cached data for weather_data
+2025-10-26 11:09:49,849 - INFO - Using cached data for race_control_messages
+2025-10-26 11:09:49,885 - INFO - Finished loading data for 20 drivers: ['81', '63', '4', '16', '44', '1', '10', '31', '22', '87', '12', '23', '6', '7', '14', '30', '18', '5', '55', '27']
+2025-10-26 11:09:50,678 - INFO - [EXPORT OK] bahrain_grand_prix
+2025-10-26 11:09:50,688 - INFO - Loading data for Saudi Arabian Grand Prix - Race [v3.5.3]
+2025-10-26 11:09:50,689 - INFO - Using cached data for session_info
+2025-10-26 11:09:50,689 - INFO - Using cached data for driver_info
+2025-10-26 11:09:50,873 - INFO - Using cached data for session_status_data
+2025-10-26 11:09:50,874 - INFO - Using cached data for lap_count
+2025-10-26 11:09:50,874 - INFO - Using cached data for track_status_data
+2025-10-26 11:09:50,879 - INFO - Using cached data for _extended_timing_data
+2025-10-26 11:09:50,881 - INFO - Using cached data for timing_app_data
+2025-10-26 11:09:50,882 - INFO - Processing timing data...
+2025-10-26 11:09:51,488 - INFO - Using cached data for car_data
+2025-10-26 11:09:51,570 - INFO - Using cached data for position_data
+2025-10-26 11:09:52,530 - INFO - Using cached data for weather_data
+2025-10-26 11:09:52,532 - INFO - Using cached data for race_control_messages
+2025-10-26 11:09:52,555 - INFO - Finished loading data for 20 drivers: ['81', '1', '16', '4', '63', '12', '44', '55', '23', '6', '14', '30', '87', '31', '27', '18', '7', '5', '22', '10']
+2025-10-26 11:09:53,255 - INFO - [EXPORT OK] saudi_arabian_grand_prix
+2025-10-26 11:09:53,262 - INFO - Loading data for Emilia Romagna Grand Prix - Race [v3.5.3]
+2025-10-26 11:09:53,263 - INFO - Using cached data for session_info
+2025-10-26 11:09:53,264 - INFO - Using cached data for driver_info
+2025-10-26 11:09:53,452 - INFO - Using cached data for session_status_data
+2025-10-26 11:09:53,453 - INFO - Using cached data for lap_count
+2025-10-26 11:09:53,454 - INFO - Using cached data for track_status_data
+2025-10-26 11:09:53,460 - INFO - Using cached data for _extended_timing_data
+2025-10-26 11:09:53,461 - INFO - Using cached data for timing_app_data
+2025-10-26 11:09:53,461 - INFO - Processing timing data...
+2025-10-26 11:09:54,130 - INFO - Using cached data for car_data
+2025-10-26 11:09:54,191 - INFO - Using cached data for position_data
+2025-10-26 11:09:55,112 - INFO - Using cached data for weather_data
+2025-10-26 11:09:55,113 - INFO - Using cached data for race_control_messages
+2025-10-26 11:09:55,144 - INFO - Finished loading data for 20 drivers: ['1', '4', '81', '44', '23', '16', '63', '55', '6', '22', '14', '27', '10', '30', '18', '43', '87', '5', '12', '31']
+2025-10-26 11:09:55,868 - INFO - [EXPORT OK] emilia_romagna_grand_prix
+2025-10-26 11:09:55,876 - INFO - Loading data for Monaco Grand Prix - Race [v3.5.3]
+2025-10-26 11:09:55,877 - INFO - Using cached data for session_info
+2025-10-26 11:09:55,877 - INFO - Using cached data for driver_info
+2025-10-26 11:09:56,070 - INFO - Using cached data for session_status_data
+2025-10-26 11:09:56,071 - INFO - Using cached data for lap_count
+2025-10-26 11:09:56,072 - INFO - Using cached data for track_status_data
+2025-10-26 11:09:56,080 - INFO - Using cached data for _extended_timing_data
+2025-10-26 11:09:56,081 - INFO - Using cached data for timing_app_data
+2025-10-26 11:09:56,082 - INFO - Processing timing data...
+2025-10-26 11:09:56,871 - INFO - Using cached data for car_data
+2025-10-26 11:09:56,935 - INFO - Using cached data for position_data
+2025-10-26 11:09:58,010 - INFO - Using cached data for weather_data
+2025-10-26 11:09:58,018 - INFO - Using cached data for race_control_messages
+2025-10-26 11:09:58,057 - INFO - Finished loading data for 20 drivers: ['4', '16', '81', '1', '44', '6', '31', '30', '23', '55', '63', '87', '43', '5', '18', '27', '22', '12', '14', '10']
+2025-10-26 11:09:58,727 - INFO - [EXPORT OK] monaco_grand_prix
+2025-10-26 11:09:58,735 - INFO - Loading data for Spanish Grand Prix - Race [v3.5.3]
+2025-10-26 11:09:58,736 - INFO - Using cached data for session_info
+2025-10-26 11:09:58,737 - INFO - Using cached data for driver_info
+2025-10-26 11:09:58,935 - INFO - Using cached data for session_status_data
+2025-10-26 11:09:58,935 - INFO - Using cached data for lap_count
+2025-10-26 11:09:58,937 - INFO - Using cached data for track_status_data
+2025-10-26 11:09:58,941 - INFO - Using cached data for _extended_timing_data
+2025-10-26 11:09:58,945 - INFO - Using cached data for timing_app_data
+2025-10-26 11:09:58,945 - INFO - Processing timing data...
+2025-10-26 11:09:59,627 - INFO - Using cached data for car_data
+2025-10-26 11:09:59,705 - INFO - Using cached data for position_data
+2025-10-26 11:10:00,777 - INFO - Using cached data for weather_data
+2025-10-26 11:10:00,779 - INFO - Using cached data for race_control_messages
+2025-10-26 11:10:00,815 - INFO - Finished loading data for 19 drivers: ['81', '4', '16', '63', '27', '44', '6', '10', '14', '1', '30', '5', '22', '55', '43', '31', '87', '12', '23']
+2025-10-26 11:10:01,331 - INFO - [EXPORT OK] spanish_grand_prix
+2025-10-26 11:10:01,338 - INFO - Loading data for Canadian Grand Prix - Race [v3.5.3]
+2025-10-26 11:10:01,339 - INFO - Using cached data for session_info
+2025-10-26 11:10:01,340 - INFO - Using cached data for driver_info
+2025-10-26 11:10:01,515 - DEBUG - Failed to parse timestamp '-1:52:09.782' in Ergastresponse.
+2025-10-26 11:10:01,525 - INFO - Using cached data for session_status_data
+2025-10-26 11:10:01,526 - INFO - Using cached data for lap_count
+2025-10-26 11:10:01,528 - INFO - Using cached data for track_status_data
+2025-10-26 11:10:01,534 - INFO - Using cached data for _extended_timing_data
+2025-10-26 11:10:01,535 - INFO - Using cached data for timing_app_data
+2025-10-26 11:10:01,535 - INFO - Processing timing data...
+2025-10-26 11:10:02,354 - INFO - Using cached data for car_data
+2025-10-26 11:10:02,450 - INFO - Using cached data for position_data
+2025-10-26 11:10:03,509 - INFO - Using cached data for weather_data
+2025-10-26 11:10:03,511 - INFO - Using cached data for race_control_messages
+2025-10-26 11:10:03,548 - INFO - Finished loading data for 20 drivers: ['63', '1', '12', '81', '16', '44', '14', '27', '31', '55', '87', '22', '43', '5', '10', '6', '18', '4', '30', '23']
+2025-10-26 11:10:04,253 - INFO - [EXPORT OK] canadian_grand_prix
+2025-10-26 11:10:04,260 - INFO - Loading data for Austrian Grand Prix - Race [v3.5.3]
+2025-10-26 11:10:04,261 - INFO - Using cached data for session_info
+2025-10-26 11:10:04,262 - INFO - Using cached data for driver_info
+2025-10-26 11:10:04,438 - INFO - Using cached data for session_status_data
+2025-10-26 11:10:04,439 - INFO - Using cached data for lap_count
+2025-10-26 11:10:04,440 - INFO - Using cached data for track_status_data
+2025-10-26 11:10:04,446 - INFO - Using cached data for _extended_timing_data
+2025-10-26 11:10:04,447 - INFO - Using cached data for timing_app_data
+2025-10-26 11:10:04,448 - INFO - Processing timing data...
+2025-10-26 11:10:05,147 - INFO - Using cached data for car_data
+2025-10-26 11:10:05,246 - INFO - Using cached data for position_data
+2025-10-26 11:10:06,265 - INFO - Using cached data for weather_data
+2025-10-26 11:10:06,267 - INFO - Using cached data for race_control_messages
+2025-10-26 11:10:06,292 - INFO - Finished loading data for 20 drivers: ['4', '81', '16', '44', '63', '30', '14', '5', '27', '31', '87', '6', '10', '18', '43', '22', '23', '1', '12', '55']
+2025-10-26 11:10:07,005 - INFO - [EXPORT OK] austrian_grand_prix
+2025-10-26 11:10:07,013 - INFO - Loading data for British Grand Prix - Race [v3.5.3]
+2025-10-26 11:10:07,013 - INFO - No cached data found for session_info. Loading data...
+2025-10-26 11:10:07,013 - INFO - Fetching session info data...
+2025-10-26 11:10:07,652 - INFO - Data has been written to cache!
+2025-10-26 11:10:07,653 - INFO - No cached data found for driver_info. Loading data...
+2025-10-26 11:10:07,653 - INFO - Fetching driver list...
+2025-10-26 11:10:08,154 - INFO - Data has been written to cache!
+2025-10-26 11:10:08,341 - INFO - No cached data found for session_status_data. Loading data...
+2025-10-26 11:10:08,341 - INFO - Fetching session status data...
+2025-10-26 11:10:08,903 - INFO - Data has been written to cache!
+2025-10-26 11:10:08,905 - INFO - No cached data found for lap_count. Loading data...
+2025-10-26 11:10:08,905 - INFO - Fetching lap count data...
+2025-10-26 11:10:09,404 - INFO - Data has been written to cache!
+2025-10-26 11:10:09,405 - INFO - No cached data found for track_status_data. Loading data...
+2025-10-26 11:10:09,406 - INFO - Fetching track status data...
+2025-10-26 11:10:09,916 - INFO - Data has been written to cache!
+2025-10-26 11:10:09,918 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-10-26 11:10:09,919 - INFO - Fetching timing data...
+2025-10-26 11:10:11,763 - INFO - Parsing timing data...
+2025-10-26 11:10:12,356 - INFO - Data has been written to cache!
+2025-10-26 11:10:12,358 - INFO - No cached data found for timing_app_data. Loading data...
+2025-10-26 11:10:12,358 - INFO - Fetching timing app data...
+2025-10-26 11:10:12,908 - INFO - Data has been written to cache!
+2025-10-26 11:10:12,909 - INFO - Processing timing data...
+2025-10-26 11:10:13,730 - INFO - No cached data found for car_data. Loading data...
+2025-10-26 11:10:13,731 - INFO - Fetching car data...
+2025-10-26 11:10:15,374 - INFO - Parsing car data...
+2025-10-26 11:10:17,496 - INFO - Data has been written to cache!
+2025-10-26 11:10:17,498 - INFO - No cached data found for position_data. Loading data...
+2025-10-26 11:10:17,498 - INFO - Fetching position data...
+2025-10-26 11:10:18,255 - INFO - Parsing position data...
+2025-10-26 11:10:20,310 - WARNING - Driver 30: Position data is incomplete!
+2025-10-26 11:10:20,317 - WARNING - Driver 31: Position data is incomplete!
+2025-10-26 11:10:20,323 - WARNING - Driver  2: Position data is incomplete!
+2025-10-26 11:10:20,330 - WARNING - Driver  3: Position data is incomplete!
+2025-10-26 11:10:20,336 - WARNING - Driver  7: Position data is incomplete!
+2025-10-26 11:10:20,342 - WARNING - Driver  8: Position data is incomplete!
+2025-10-26 11:10:20,348 - WARNING - Driver  9: Position data is incomplete!
+2025-10-26 11:10:20,353 - WARNING - Driver 11: Position data is incomplete!
+2025-10-26 11:10:20,361 - WARNING - Driver 15: Position data is incomplete!
+2025-10-26 11:10:20,368 - WARNING - Driver 17: Position data is incomplete!
+2025-10-26 11:10:20,374 - WARNING - Driver 19: Position data is incomplete!
+2025-10-26 11:10:20,379 - WARNING - Driver 20: Position data is incomplete!
+2025-10-26 11:10:20,385 - WARNING - Driver 21: Position data is incomplete!
+2025-10-26 11:10:20,390 - WARNING - Driver 24: Position data is incomplete!
+2025-10-26 11:10:20,396 - WARNING - Driver 25: Position data is incomplete!
+2025-10-26 11:10:20,401 - WARNING - Driver 26: Position data is incomplete!
+2025-10-26 11:10:20,413 - WARNING - Driver 28: Position data is incomplete!
+2025-10-26 11:10:20,419 - WARNING - Driver 29: Position data is incomplete!
+2025-10-26 11:10:20,425 - WARNING - Driver 43: Position data is incomplete!
+2025-10-26 11:10:20,432 - WARNING - Driver 44: Position data is incomplete!
+2025-10-26 11:10:20,438 - WARNING - Driver 55: Position data is incomplete!
+2025-10-26 11:10:20,444 - WARNING - Driver 63: Position data is incomplete!
+2025-10-26 11:10:20,451 - WARNING - Driver 81: Position data is incomplete!
+2025-10-26 11:10:20,457 - WARNING - Driver 87: Position data is incomplete!
+2025-10-26 11:10:20,463 - WARNING - Driver 241: Position data is incomplete!
+2025-10-26 11:10:20,468 - WARNING - Driver 242: Position data is incomplete!
+2025-10-26 11:10:20,474 - WARNING - Driver 243: Position data is incomplete!
+2025-10-26 11:10:20,776 - INFO - Data has been written to cache!
+2025-10-26 11:10:21,877 - INFO - No cached data found for weather_data. Loading data...
+2025-10-26 11:10:21,878 - INFO - Fetching weather data...
+2025-10-26 11:10:22,386 - INFO - Data has been written to cache!
+2025-10-26 11:10:22,388 - INFO - No cached data found for race_control_messages. Loading data...
+2025-10-26 11:10:22,389 - INFO - Fetching race control messages...
+2025-10-26 11:10:23,055 - INFO - Data has been written to cache!
+2025-10-26 11:10:23,146 - INFO - Finished loading data for 20 drivers: ['4', '81', '27', '44', '1', '10', '18', '23', '14', '63', '87', '55', '31', '16', '22', '12', '6', '5', '30', '43']
+2025-10-26 11:10:23,793 - INFO - [EXPORT OK] british_grand_prix
+2025-10-26 11:10:23,801 - INFO - Loading data for Hungarian Grand Prix - Race [v3.5.3]
+2025-10-26 11:10:23,802 - INFO - No cached data found for session_info. Loading data...
+2025-10-26 11:10:23,802 - INFO - Fetching session info data...
+2025-10-26 11:10:24,277 - INFO - Data has been written to cache!
+2025-10-26 11:10:24,278 - INFO - No cached data found for driver_info. Loading data...
+2025-10-26 11:10:24,278 - INFO - Fetching driver list...
+2025-10-26 11:10:24,770 - INFO - Data has been written to cache!
+2025-10-26 11:10:24,947 - INFO - No cached data found for session_status_data. Loading data...
+2025-10-26 11:10:24,947 - INFO - Fetching session status data...
+2025-10-26 11:10:25,532 - INFO - Data has been written to cache!
+2025-10-26 11:10:25,534 - INFO - No cached data found for lap_count. Loading data...
+2025-10-26 11:10:25,535 - INFO - Fetching lap count data...
+2025-10-26 11:10:26,034 - INFO - Data has been written to cache!
+2025-10-26 11:10:26,034 - INFO - No cached data found for track_status_data. Loading data...
+2025-10-26 11:10:26,035 - INFO - Fetching track status data...
+2025-10-26 11:10:26,515 - INFO - Data has been written to cache!
+2025-10-26 11:10:26,516 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-10-26 11:10:26,517 - INFO - Fetching timing data...
+2025-10-26 11:10:28,560 - INFO - Parsing timing data...
+2025-10-26 11:10:29,250 - INFO - Data has been written to cache!
+2025-10-26 11:10:29,251 - INFO - No cached data found for timing_app_data. Loading data...
+2025-10-26 11:10:29,251 - INFO - Fetching timing app data...
+2025-10-26 11:10:30,081 - INFO - Data has been written to cache!
+2025-10-26 11:10:30,083 - INFO - Processing timing data...
+2025-10-26 11:10:30,828 - INFO - No cached data found for car_data. Loading data...
+2025-10-26 11:10:30,829 - INFO - Fetching car data...
+2025-10-26 11:10:31,670 - INFO - Parsing car data...
+2025-10-26 11:10:33,784 - INFO - Data has been written to cache!
+2025-10-26 11:10:33,785 - INFO - No cached data found for position_data. Loading data...
+2025-10-26 11:10:33,785 - INFO - Fetching position data...
+2025-10-26 11:10:34,552 - INFO - Parsing position data...
+2025-10-26 11:10:36,784 - INFO - Data has been written to cache!
+2025-10-26 11:10:37,775 - INFO - No cached data found for weather_data. Loading data...
+2025-10-26 11:10:37,776 - INFO - Fetching weather data...
+2025-10-26 11:10:38,319 - INFO - Data has been written to cache!
+2025-10-26 11:10:38,321 - INFO - No cached data found for race_control_messages. Loading data...
+2025-10-26 11:10:38,322 - INFO - Fetching race control messages...
+2025-10-26 11:10:38,838 - INFO - Data has been written to cache!
+2025-10-26 11:10:38,873 - INFO - Finished loading data for 20 drivers: ['4', '81', '63', '16', '14', '5', '18', '30', '1', '12', '6', '44', '27', '55', '23', '31', '22', '43', '10', '87']
+2025-10-26 11:10:39,627 - INFO - [EXPORT OK] hungarian_grand_prix
+2025-10-26 11:10:39,635 - INFO - Loading data for Dutch Grand Prix - Race [v3.5.3]
+2025-10-26 11:10:39,636 - INFO - No cached data found for session_info. Loading data...
+2025-10-26 11:10:39,636 - INFO - Fetching session info data...
+2025-10-26 11:10:40,132 - INFO - Data has been written to cache!
+2025-10-26 11:10:40,133 - INFO - No cached data found for driver_info. Loading data...
+2025-10-26 11:10:40,133 - INFO - Fetching driver list...
+2025-10-26 11:10:40,637 - INFO - Data has been written to cache!
+2025-10-26 11:10:40,815 - DEBUG - Failed to parse timestamp '-1:47:38.638' in Ergastresponse.
+2025-10-26 11:10:40,830 - INFO - No cached data found for session_status_data. Loading data...
+2025-10-26 11:10:40,831 - INFO - Fetching session status data...
+2025-10-26 11:10:41,373 - INFO - Data has been written to cache!
+2025-10-26 11:10:41,374 - INFO - No cached data found for lap_count. Loading data...
+2025-10-26 11:10:41,374 - INFO - Fetching lap count data...
+2025-10-26 11:10:41,873 - INFO - Data has been written to cache!
+2025-10-26 11:10:41,874 - INFO - No cached data found for track_status_data. Loading data...
+2025-10-26 11:10:41,874 - INFO - Fetching track status data...
+2025-10-26 11:10:42,380 - INFO - Data has been written to cache!
+2025-10-26 11:10:42,382 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-10-26 11:10:42,383 - INFO - Fetching timing data...
+2025-10-26 11:10:44,575 - INFO - Parsing timing data...
+2025-10-26 11:10:45,228 - INFO - Data has been written to cache!
+2025-10-26 11:10:45,229 - INFO - No cached data found for timing_app_data. Loading data...
+2025-10-26 11:10:45,229 - INFO - Fetching timing app data...
+2025-10-26 11:10:45,773 - INFO - Data has been written to cache!
+2025-10-26 11:10:45,773 - INFO - Processing timing data...
+2025-10-26 11:10:46,420 - INFO - No cached data found for car_data. Loading data...
+2025-10-26 11:10:46,421 - INFO - Fetching car data...
+2025-10-26 11:10:48,148 - INFO - Parsing car data...
+2025-10-26 11:10:50,123 - INFO - Data has been written to cache!
+2025-10-26 11:10:50,123 - INFO - No cached data found for position_data. Loading data...
+2025-10-26 11:10:50,124 - INFO - Fetching position data...
+2025-10-26 11:10:50,875 - INFO - Parsing position data...
+2025-10-26 11:10:53,117 - WARNING - Driver 241: Position data is incomplete!
+2025-10-26 11:10:53,126 - WARNING - Driver 242: Position data is incomplete!
+2025-10-26 11:10:53,132 - WARNING - Driver 243: Position data is incomplete!
+2025-10-26 11:10:53,299 - INFO - Data has been written to cache!
+2025-10-26 11:10:54,335 - INFO - No cached data found for weather_data. Loading data...
+2025-10-26 11:10:54,335 - INFO - Fetching weather data...
+2025-10-26 11:10:54,855 - INFO - Data has been written to cache!
+2025-10-26 11:10:54,857 - INFO - No cached data found for race_control_messages. Loading data...
+2025-10-26 11:10:54,857 - INFO - Fetching race control messages...
+2025-10-26 11:10:55,356 - INFO - Data has been written to cache!
+2025-10-26 11:10:55,416 - INFO - Finished loading data for 20 drivers: ['81', '1', '6', '63', '23', '87', '18', '14', '22', '31', '43', '30', '55', '27', '5', '12', '10', '4', '16', '44']
+2025-10-26 11:10:56,078 - INFO - [EXPORT OK] dutch_grand_prix
+2025-10-26 11:10:56,085 - INFO - Loading data for Italian Grand Prix - Race [v3.5.3]
+2025-10-26 11:10:56,085 - INFO - No cached data found for session_info. Loading data...
+2025-10-26 11:10:56,086 - INFO - Fetching session info data...
+2025-10-26 11:10:56,577 - INFO - Data has been written to cache!
+2025-10-26 11:10:56,579 - INFO - No cached data found for driver_info. Loading data...
+2025-10-26 11:10:56,579 - INFO - Fetching driver list...
+2025-10-26 11:10:57,096 - INFO - Data has been written to cache!
+2025-10-26 11:10:57,346 - INFO - No cached data found for session_status_data. Loading data...
+2025-10-26 11:10:57,347 - INFO - Fetching session status data...
+2025-10-26 11:10:57,903 - INFO - Data has been written to cache!
+2025-10-26 11:10:57,905 - INFO - No cached data found for lap_count. Loading data...
+2025-10-26 11:10:57,906 - INFO - Fetching lap count data...
+2025-10-26 11:10:58,425 - INFO - Data has been written to cache!
+2025-10-26 11:10:58,426 - INFO - No cached data found for track_status_data. Loading data...
+2025-10-26 11:10:58,427 - INFO - Fetching track status data...
+2025-10-26 11:10:58,903 - INFO - Data has been written to cache!
+2025-10-26 11:10:58,906 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-10-26 11:10:58,907 - INFO - Fetching timing data...
+2025-10-26 11:11:00,836 - INFO - Parsing timing data...
+2025-10-26 11:11:01,281 - INFO - Data has been written to cache!
+2025-10-26 11:11:01,282 - INFO - No cached data found for timing_app_data. Loading data...
+2025-10-26 11:11:01,282 - INFO - Fetching timing app data...
+2025-10-26 11:11:02,162 - INFO - Data has been written to cache!
+2025-10-26 11:11:02,162 - INFO - Processing timing data...
+2025-10-26 11:11:02,717 - INFO - No cached data found for car_data. Loading data...
+2025-10-26 11:11:02,718 - INFO - Fetching car data...
+2025-10-26 11:11:03,503 - INFO - Parsing car data...
+2025-10-26 11:11:05,209 - INFO - Data has been written to cache!
+2025-10-26 11:11:05,210 - INFO - No cached data found for position_data. Loading data...
+2025-10-26 11:11:05,210 - INFO - Fetching position data...
+2025-10-26 11:11:05,958 - INFO - Parsing position data...
+2025-10-26 11:11:07,668 - INFO - Data has been written to cache!
+2025-10-26 11:11:08,547 - INFO - No cached data found for weather_data. Loading data...
+2025-10-26 11:11:08,547 - INFO - Fetching weather data...
+2025-10-26 11:11:09,060 - INFO - Data has been written to cache!
+2025-10-26 11:11:09,062 - INFO - No cached data found for race_control_messages. Loading data...
+2025-10-26 11:11:09,063 - INFO - Fetching race control messages...
+2025-10-26 11:11:09,591 - INFO - Data has been written to cache!
+2025-10-26 11:11:09,632 - INFO - Finished loading data for 20 drivers: ['1', '4', '81', '16', '63', '44', '23', '5', '12', '6', '55', '87', '22', '30', '31', '10', '43', '18', '14', '27']
+2025-10-26 11:11:10,288 - INFO - [EXPORT OK] italian_grand_prix
+2025-10-26 11:11:10,296 - INFO - Loading data for Azerbaijan Grand Prix - Race [v3.5.3]
+2025-10-26 11:11:10,296 - INFO - No cached data found for session_info. Loading data...
+2025-10-26 11:11:10,296 - INFO - Fetching session info data...
+2025-10-26 11:11:10,794 - INFO - Data has been written to cache!
+2025-10-26 11:11:10,794 - INFO - No cached data found for driver_info. Loading data...
+2025-10-26 11:11:10,795 - INFO - Fetching driver list...
+2025-10-26 11:11:11,284 - INFO - Data has been written to cache!
+2025-10-26 11:11:11,480 - INFO - No cached data found for session_status_data. Loading data...
+2025-10-26 11:11:11,480 - INFO - Fetching session status data...
+2025-10-26 11:11:12,047 - INFO - Data has been written to cache!
+2025-10-26 11:11:12,049 - INFO - No cached data found for lap_count. Loading data...
+2025-10-26 11:11:12,050 - INFO - Fetching lap count data...
+2025-10-26 11:11:12,572 - INFO - Data has been written to cache!
+2025-10-26 11:11:12,573 - INFO - No cached data found for track_status_data. Loading data...
+2025-10-26 11:11:12,574 - INFO - Fetching track status data...
+2025-10-26 11:11:13,096 - INFO - Data has been written to cache!
+2025-10-26 11:11:13,098 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-10-26 11:11:13,099 - INFO - Fetching timing data...
+2025-10-26 11:11:14,159 - INFO - Parsing timing data...
+2025-10-26 11:11:14,778 - INFO - Data has been written to cache!
+2025-10-26 11:11:14,778 - INFO - No cached data found for timing_app_data. Loading data...
+2025-10-26 11:11:14,779 - INFO - Fetching timing app data...
+2025-10-26 11:11:15,311 - INFO - Data has been written to cache!
+2025-10-26 11:11:15,311 - INFO - Processing timing data...
+2025-10-26 11:11:15,879 - INFO - No cached data found for car_data. Loading data...
+2025-10-26 11:11:15,880 - INFO - Fetching car data...
+2025-10-26 11:11:16,714 - INFO - Parsing car data...
+2025-10-26 11:11:18,767 - INFO - Data has been written to cache!
+2025-10-26 11:11:18,768 - INFO - No cached data found for position_data. Loading data...
+2025-10-26 11:11:18,769 - INFO - Fetching position data...
+2025-10-26 11:11:19,578 - INFO - Parsing position data...
+2025-10-26 11:11:21,493 - WARNING - Driver  2: Position data is incomplete!
+2025-10-26 11:11:21,498 - WARNING - Driver  3: Position data is incomplete!
+2025-10-26 11:11:21,504 - WARNING - Driver  7: Position data is incomplete!
+2025-10-26 11:11:21,509 - WARNING - Driver  8: Position data is incomplete!
+2025-10-26 11:11:21,515 - WARNING - Driver  9: Position data is incomplete!
+2025-10-26 11:11:21,520 - WARNING - Driver 11: Position data is incomplete!
+2025-10-26 11:11:21,525 - WARNING - Driver 15: Position data is incomplete!
+2025-10-26 11:11:21,530 - WARNING - Driver 17: Position data is incomplete!
+2025-10-26 11:11:21,535 - WARNING - Driver 19: Position data is incomplete!
+2025-10-26 11:11:21,541 - WARNING - Driver 20: Position data is incomplete!
+2025-10-26 11:11:21,547 - WARNING - Driver 21: Position data is incomplete!
+2025-10-26 11:11:21,552 - WARNING - Driver 24: Position data is incomplete!
+2025-10-26 11:11:21,558 - WARNING - Driver 25: Position data is incomplete!
+2025-10-26 11:11:21,563 - WARNING - Driver 26: Position data is incomplete!
+2025-10-26 11:11:21,568 - WARNING - Driver 28: Position data is incomplete!
+2025-10-26 11:11:21,574 - WARNING - Driver 29: Position data is incomplete!
+2025-10-26 11:11:21,580 - WARNING - Driver 30: Position data is incomplete!
+2025-10-26 11:11:21,586 - WARNING - Driver 31: Position data is incomplete!
+2025-10-26 11:11:21,592 - WARNING - Driver 43: Position data is incomplete!
+2025-10-26 11:11:21,598 - WARNING - Driver 44: Position data is incomplete!
+2025-10-26 11:11:21,604 - WARNING - Driver 55: Position data is incomplete!
+2025-10-26 11:11:21,611 - WARNING - Driver 63: Position data is incomplete!
+2025-10-26 11:11:21,617 - WARNING - Driver 81: Position data is incomplete!
+2025-10-26 11:11:21,622 - WARNING - Driver 87: Position data is incomplete!
+2025-10-26 11:11:21,628 - WARNING - Driver 241: Position data is incomplete!
+2025-10-26 11:11:21,633 - WARNING - Driver 242: Position data is incomplete!
+2025-10-26 11:11:21,638 - WARNING - Driver 243: Position data is incomplete!
+2025-10-26 11:11:21,891 - INFO - Data has been written to cache!
+2025-10-26 11:11:22,990 - INFO - No cached data found for weather_data. Loading data...
+2025-10-26 11:11:22,991 - INFO - Fetching weather data...
+2025-10-26 11:11:23,517 - INFO - Data has been written to cache!
+2025-10-26 11:11:23,518 - INFO - No cached data found for race_control_messages. Loading data...
+2025-10-26 11:11:23,518 - INFO - Fetching race control messages...
+2025-10-26 11:11:24,031 - INFO - Data has been written to cache!
+2025-10-26 11:11:24,037 - WARNING - Driver 1 completed the race distance 00:00.015000 before the recorded end of the session.
+2025-10-26 11:11:24,060 - INFO - Finished loading data for 20 drivers: ['1', '63', '55', '12', '30', '22', '4', '44', '16', '6', '5', '87', '23', '31', '14', '27', '18', '10', '43', '81']
+2025-10-26 11:11:24,805 - INFO - [EXPORT OK] azerbaijan_grand_prix
+2025-10-26 11:11:24,820 - INFO - Loading data for Singapore Grand Prix - Race [v3.5.3]
+2025-10-26 11:11:24,821 - INFO - No cached data found for session_info. Loading data...
+2025-10-26 11:11:24,822 - INFO - Fetching session info data...
+2025-10-26 11:11:25,343 - INFO - Data has been written to cache!
+2025-10-26 11:11:25,344 - INFO - No cached data found for driver_info. Loading data...
+2025-10-26 11:11:25,345 - INFO - Fetching driver list...
+2025-10-26 11:11:25,855 - INFO - Data has been written to cache!
+2025-10-26 11:11:26,048 - INFO - No cached data found for session_status_data. Loading data...
+2025-10-26 11:11:26,048 - INFO - Fetching session status data...
+2025-10-26 11:11:26,618 - INFO - Data has been written to cache!
+2025-10-26 11:11:26,620 - INFO - No cached data found for lap_count. Loading data...
+2025-10-26 11:11:26,621 - INFO - Fetching lap count data...
+2025-10-26 11:11:27,127 - INFO - Data has been written to cache!
+2025-10-26 11:11:27,128 - INFO - No cached data found for track_status_data. Loading data...
+2025-10-26 11:11:27,129 - INFO - Fetching track status data...
+2025-10-26 11:11:27,619 - INFO - Data has been written to cache!
+2025-10-26 11:11:27,621 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-10-26 11:11:27,622 - INFO - Fetching timing data...
+2025-10-26 11:11:28,831 - INFO - Parsing timing data...
+2025-10-26 11:11:29,414 - INFO - Data has been written to cache!
+2025-10-26 11:11:29,415 - INFO - No cached data found for timing_app_data. Loading data...
+2025-10-26 11:11:29,415 - INFO - Fetching timing app data...
+2025-10-26 11:11:30,234 - INFO - Data has been written to cache!
+2025-10-26 11:11:30,234 - INFO - Processing timing data...
+2025-10-26 11:11:30,837 - INFO - No cached data found for car_data. Loading data...
+2025-10-26 11:11:30,837 - INFO - Fetching car data...
+2025-10-26 11:11:31,671 - INFO - Parsing car data...
+2025-10-26 11:11:33,784 - INFO - Data has been written to cache!
+2025-10-26 11:11:33,786 - INFO - No cached data found for position_data. Loading data...
+2025-10-26 11:11:33,786 - INFO - Fetching position data...
+2025-10-26 11:11:34,549 - INFO - Parsing position data...
+2025-10-26 11:11:36,432 - WARNING - Driver  3: Position data is incomplete!
+2025-10-26 11:11:36,437 - WARNING - Driver 11: Position data is incomplete!
+2025-10-26 11:11:36,442 - WARNING - Driver 20: Position data is incomplete!
+2025-10-26 11:11:36,448 - WARNING - Driver 24: Position data is incomplete!
+2025-10-26 11:11:36,454 - WARNING - Driver 77: Position data is incomplete!
+2025-10-26 11:11:36,460 - WARNING - Driver  5: Position data is incomplete!
+2025-10-26 11:11:36,467 - WARNING - Driver  6: Position data is incomplete!
+2025-10-26 11:11:36,474 - WARNING - Driver 12: Position data is incomplete!
+2025-10-26 11:11:36,480 - WARNING - Driver 30: Position data is incomplete!
+2025-10-26 11:11:36,487 - WARNING - Driver 87: Position data is incomplete!
+2025-10-26 11:11:36,660 - INFO - Data has been written to cache!
+2025-10-26 11:11:37,668 - INFO - No cached data found for weather_data. Loading data...
+2025-10-26 11:11:37,668 - INFO - Fetching weather data...
+2025-10-26 11:11:38,190 - INFO - Data has been written to cache!
+2025-10-26 11:11:38,192 - INFO - No cached data found for race_control_messages. Loading data...
+2025-10-26 11:11:38,192 - INFO - Fetching race control messages...
+2025-10-26 11:11:38,690 - INFO - Data has been written to cache!
+2025-10-26 11:11:38,731 - INFO - Finished loading data for 20 drivers: ['63', '1', '4', '81', '12', '16', '14', '44', '87', '55', '6', '22', '18', '23', '30', '43', '5', '31', '10', '27']
+2025-10-26 11:11:39,413 - INFO - [EXPORT OK] singapore_grand_prix
+2025-10-26 11:11:39,458 - INFO - Loading data for Mexico City Grand Prix - Race [v3.5.3]
+2025-10-26 11:11:39,458 - INFO - No cached data found for session_info. Loading data...
+2025-10-26 11:11:39,459 - INFO - Fetching session info data...
+2025-10-26 11:11:39,947 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:11:40,381 - WARNING - Failed to load session info data!
+2025-10-26 11:11:40,382 - DEBUG - Traceback for failure in session info data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 1470, in _load_session_info
+    self._session_info = api.session_info(self.api_path,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1687, in session_info
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-10-26 11:11:40,388 - INFO - No cached data found for driver_info. Loading data...
+2025-10-26 11:11:40,388 - INFO - Fetching driver list...
+2025-10-26 11:11:40,889 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:11:41,170 - WARNING - Failed to load extended driver information!
+2025-10-26 11:11:41,171 - DEBUG - Exception while loading driver list
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2291, in _drivers_from_f1_api
+    f1di = api.driver_info(self.api_path, livedata=livedata)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1535, in driver_info
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-10-26 11:11:41,355 - WARNING - No result data for this session available on Ergast! (This is expected for recent sessions)
+2025-10-26 11:11:41,356 - WARNING - Failed to load driver list and session results!
+2025-10-26 11:11:41,366 - INFO - No cached data found for session_status_data. Loading data...
+2025-10-26 11:11:41,367 - INFO - Fetching session status data...
+2025-10-26 11:11:41,905 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:11:42,207 - WARNING - Failed to load session status data!
+2025-10-26 11:11:42,209 - DEBUG - Traceback for failure in session status data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2052, in _load_session_status_data
+    session_status = api.session_status_data(self.api_path,
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1333, in session_status_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-10-26 11:11:42,211 - INFO - No cached data found for lap_count. Loading data...
+2025-10-26 11:11:42,211 - INFO - Fetching lap count data...
+2025-10-26 11:11:42,700 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:11:42,998 - WARNING - Failed to load total lap count!
+2025-10-26 11:11:43,000 - DEBUG - Traceback for failure in total lap count
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2034, in _load_total_lap_count
+    lap_count = api.lap_count(self.api_path, livedata=livedata)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1476, in lap_count
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-10-26 11:11:43,001 - INFO - No cached data found for track_status_data. Loading data...
+2025-10-26 11:11:43,002 - INFO - Fetching track status data...
+2025-10-26 11:11:43,489 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:11:43,785 - WARNING - Failed to load track status data!
+2025-10-26 11:11:43,786 - DEBUG - Traceback for failure in track status data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2021, in _load_track_status_data
+    track_status = api.track_status_data(self.api_path, livedata=livedata)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1277, in track_status_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-10-26 11:11:43,788 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-10-26 11:11:43,789 - INFO - Fetching timing data...
+2025-10-26 11:11:44,284 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:11:44,586 - WARNING - Failed to load timing data!
+2025-10-26 11:11:44,587 - DEBUG - Traceback for failure in lap timing data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 1476, in _load_laps_data
+    = api._extended_timing_data(self.api_path, livedata=livedata)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 200, in _extended_timing_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-10-26 11:11:44,964 - WARNING - Cannot load lap times for first lap from Ergast. Timing data is not available for this session.
+2025-10-26 11:11:44,965 - INFO - No cached data found for car_data. Loading data...
+2025-10-26 11:11:44,966 - INFO - Fetching car data...
+2025-10-26 11:11:45,453 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:11:45,767 - WARNING - Car telemetry data is unavailable!
+2025-10-26 11:11:45,769 - INFO - No cached data found for position_data. Loading data...
+2025-10-26 11:11:45,770 - INFO - Fetching position data...
+2025-10-26 11:11:46,249 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:11:46,540 - WARNING - Car position data is unavailable!
+2025-10-26 11:11:46,542 - WARNING - Failed to determine `Session.t0_date`!
+2025-10-26 11:11:46,543 - INFO - No cached data found for weather_data. Loading data...
+2025-10-26 11:11:46,544 - INFO - Fetching weather data...
+2025-10-26 11:11:47,031 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:11:47,316 - WARNING - Failed to load weather data!
+2025-10-26 11:11:47,318 - DEBUG - Traceback for failure in weather data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2442, in _load_weather_data
+    weather_data = api.weather_data(self.api_path, livedata=livedata)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1613, in weather_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-10-26 11:11:47,319 - INFO - No cached data found for race_control_messages. Loading data...
+2025-10-26 11:11:47,320 - INFO - Fetching race control messages...
+2025-10-26 11:11:47,819 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:11:48,113 - WARNING - Failed to load race control messages!
+2025-10-26 11:11:48,115 - DEBUG - Traceback for failure in race control messages
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2449, in _load_race_control_messages
+    race_control_messages = api.race_control_messages(self.api_path,
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1404, in race_control_messages
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-10-26 11:11:48,118 - INFO - Finished loading data for 0 drivers: []
+2025-10-26 11:11:48,119 - ERROR - [PROCESS FAIL] mexico_city_grand_prix: The data you are trying to access has not been loaded yet. See `Session.load`
+2025-10-26 11:11:48,143 - INFO - Loading data for Las Vegas Grand Prix - Race [v3.5.3]
+2025-10-26 11:11:48,144 - INFO - No cached data found for session_info. Loading data...
+2025-10-26 11:11:48,145 - INFO - Fetching session info data...
+2025-10-26 11:11:48,631 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:11:48,954 - WARNING - Failed to load session info data!
+2025-10-26 11:11:48,955 - DEBUG - Traceback for failure in session info data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 1470, in _load_session_info
+    self._session_info = api.session_info(self.api_path,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1687, in session_info
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-10-26 11:11:48,957 - INFO - No cached data found for driver_info. Loading data...
+2025-10-26 11:11:48,957 - INFO - Fetching driver list...
+2025-10-26 11:11:49,445 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:11:49,735 - WARNING - Failed to load extended driver information!
+2025-10-26 11:11:49,735 - DEBUG - Exception while loading driver list
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2291, in _drivers_from_f1_api
+    f1di = api.driver_info(self.api_path, livedata=livedata)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1535, in driver_info
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-10-26 11:11:49,918 - WARNING - No result data for this session available on Ergast! (This is expected for recent sessions)
+2025-10-26 11:11:49,920 - WARNING - Failed to load driver list and session results!
+2025-10-26 11:11:49,933 - INFO - No cached data found for session_status_data. Loading data...
+2025-10-26 11:11:49,934 - INFO - Fetching session status data...
+2025-10-26 11:11:50,472 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:11:50,850 - WARNING - Failed to load session status data!
+2025-10-26 11:11:50,852 - DEBUG - Traceback for failure in session status data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2052, in _load_session_status_data
+    session_status = api.session_status_data(self.api_path,
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1333, in session_status_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-10-26 11:11:50,853 - INFO - No cached data found for lap_count. Loading data...
+2025-10-26 11:11:50,854 - INFO - Fetching lap count data...
+2025-10-26 11:11:51,343 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:11:51,647 - WARNING - Failed to load total lap count!
+2025-10-26 11:11:51,648 - DEBUG - Traceback for failure in total lap count
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2034, in _load_total_lap_count
+    lap_count = api.lap_count(self.api_path, livedata=livedata)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1476, in lap_count
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-10-26 11:11:51,649 - INFO - No cached data found for track_status_data. Loading data...
+2025-10-26 11:11:51,649 - INFO - Fetching track status data...
+2025-10-26 11:11:52,137 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:11:52,443 - WARNING - Failed to load track status data!
+2025-10-26 11:11:52,445 - DEBUG - Traceback for failure in track status data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2021, in _load_track_status_data
+    track_status = api.track_status_data(self.api_path, livedata=livedata)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1277, in track_status_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-10-26 11:11:52,446 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-10-26 11:11:52,447 - INFO - Fetching timing data...
+2025-10-26 11:11:52,942 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:11:53,240 - WARNING - Failed to load timing data!
+2025-10-26 11:11:53,242 - DEBUG - Traceback for failure in lap timing data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 1476, in _load_laps_data
+    = api._extended_timing_data(self.api_path, livedata=livedata)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 200, in _extended_timing_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-10-26 11:11:53,422 - WARNING - Cannot load lap times for first lap from Ergast. Timing data is not available for this session.
+2025-10-26 11:11:53,423 - INFO - No cached data found for car_data. Loading data...
+2025-10-26 11:11:53,423 - INFO - Fetching car data...
+2025-10-26 11:11:53,995 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:11:54,307 - WARNING - Car telemetry data is unavailable!
+2025-10-26 11:11:54,309 - INFO - No cached data found for position_data. Loading data...
+2025-10-26 11:11:54,310 - INFO - Fetching position data...
+2025-10-26 11:11:54,782 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:11:55,045 - WARNING - Car position data is unavailable!
+2025-10-26 11:11:55,046 - WARNING - Failed to determine `Session.t0_date`!
+2025-10-26 11:11:55,046 - INFO - No cached data found for weather_data. Loading data...
+2025-10-26 11:11:55,047 - INFO - Fetching weather data...
+2025-10-26 11:11:55,540 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:11:55,813 - WARNING - Failed to load weather data!
+2025-10-26 11:11:55,815 - DEBUG - Traceback for failure in weather data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2442, in _load_weather_data
+    weather_data = api.weather_data(self.api_path, livedata=livedata)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1613, in weather_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-10-26 11:11:55,816 - INFO - No cached data found for race_control_messages. Loading data...
+2025-10-26 11:11:55,817 - INFO - Fetching race control messages...
+2025-10-26 11:11:56,312 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:11:56,616 - WARNING - Failed to load race control messages!
+2025-10-26 11:11:56,617 - DEBUG - Traceback for failure in race control messages
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2449, in _load_race_control_messages
+    race_control_messages = api.race_control_messages(self.api_path,
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1404, in race_control_messages
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-10-26 11:11:56,619 - INFO - Finished loading data for 0 drivers: []
+2025-10-26 11:11:56,620 - ERROR - [PROCESS FAIL] las_vegas_grand_prix: The data you are trying to access has not been loaded yet. See `Session.load`
+2025-10-26 11:11:56,648 - INFO - Loading data for Abu Dhabi Grand Prix - Race [v3.5.3]
+2025-10-26 11:11:56,649 - INFO - No cached data found for session_info. Loading data...
+2025-10-26 11:11:56,649 - INFO - Fetching session info data...
+2025-10-26 11:11:57,136 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:11:57,426 - WARNING - Failed to load session info data!
+2025-10-26 11:11:57,428 - DEBUG - Traceback for failure in session info data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 1470, in _load_session_info
+    self._session_info = api.session_info(self.api_path,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1687, in session_info
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-10-26 11:11:57,429 - INFO - No cached data found for driver_info. Loading data...
+2025-10-26 11:11:57,430 - INFO - Fetching driver list...
+2025-10-26 11:11:57,924 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:11:58,214 - WARNING - Failed to load extended driver information!
+2025-10-26 11:11:58,215 - DEBUG - Exception while loading driver list
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2291, in _drivers_from_f1_api
+    f1di = api.driver_info(self.api_path, livedata=livedata)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1535, in driver_info
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-10-26 11:11:58,397 - WARNING - No result data for this session available on Ergast! (This is expected for recent sessions)
+2025-10-26 11:11:58,398 - WARNING - Failed to load driver list and session results!
+2025-10-26 11:11:58,409 - INFO - No cached data found for session_status_data. Loading data...
+2025-10-26 11:11:58,410 - INFO - Fetching session status data...
+2025-10-26 11:11:59,014 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:11:59,296 - WARNING - Failed to load session status data!
+2025-10-26 11:11:59,297 - DEBUG - Traceback for failure in session status data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2052, in _load_session_status_data
+    session_status = api.session_status_data(self.api_path,
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1333, in session_status_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-10-26 11:11:59,298 - INFO - No cached data found for lap_count. Loading data...
+2025-10-26 11:11:59,299 - INFO - Fetching lap count data...
+2025-10-26 11:11:59,795 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:12:00,105 - WARNING - Failed to load total lap count!
+2025-10-26 11:12:00,107 - DEBUG - Traceback for failure in total lap count
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2034, in _load_total_lap_count
+    lap_count = api.lap_count(self.api_path, livedata=livedata)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1476, in lap_count
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-10-26 11:12:00,108 - INFO - No cached data found for track_status_data. Loading data...
+2025-10-26 11:12:00,109 - INFO - Fetching track status data...
+2025-10-26 11:12:00,610 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:12:00,885 - WARNING - Failed to load track status data!
+2025-10-26 11:12:00,886 - DEBUG - Traceback for failure in track status data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2021, in _load_track_status_data
+    track_status = api.track_status_data(self.api_path, livedata=livedata)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1277, in track_status_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-10-26 11:12:00,887 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-10-26 11:12:00,888 - INFO - Fetching timing data...
+2025-10-26 11:12:01,359 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:12:01,664 - WARNING - Failed to load timing data!
+2025-10-26 11:12:01,664 - DEBUG - Traceback for failure in lap timing data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 1476, in _load_laps_data
+    = api._extended_timing_data(self.api_path, livedata=livedata)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 200, in _extended_timing_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-10-26 11:12:01,846 - WARNING - Cannot load lap times for first lap from Ergast. Timing data is not available for this session.
+2025-10-26 11:12:01,846 - INFO - No cached data found for car_data. Loading data...
+2025-10-26 11:12:01,847 - INFO - Fetching car data...
+2025-10-26 11:12:02,411 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:12:02,787 - WARNING - Car telemetry data is unavailable!
+2025-10-26 11:12:02,789 - INFO - No cached data found for position_data. Loading data...
+2025-10-26 11:12:02,789 - INFO - Fetching position data...
+2025-10-26 11:12:03,271 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:12:03,624 - WARNING - Car position data is unavailable!
+2025-10-26 11:12:03,625 - WARNING - Failed to determine `Session.t0_date`!
+2025-10-26 11:12:03,626 - INFO - No cached data found for weather_data. Loading data...
+2025-10-26 11:12:03,626 - INFO - Fetching weather data...
+2025-10-26 11:12:04,115 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:12:04,388 - WARNING - Failed to load weather data!
+2025-10-26 11:12:04,389 - DEBUG - Traceback for failure in weather data
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2442, in _load_weather_data
+    weather_data = api.weather_data(self.api_path, livedata=livedata)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1613, in weather_data
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-10-26 11:12:04,390 - INFO - No cached data found for race_control_messages. Loading data...
+2025-10-26 11:12:04,391 - INFO - Fetching race control messages...
+2025-10-26 11:12:04,862 - DEBUG - Falling back to livetiming mirror (https://livetiming-mirror.fastf1.dev)
+2025-10-26 11:12:05,151 - WARNING - Failed to load race control messages!
+2025-10-26 11:12:05,153 - DEBUG - Traceback for failure in race control messages
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/logger.py", line 151, in __wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/core.py", line 2449, in _load_race_control_messages
+    race_control_messages = api.race_control_messages(self.api_path,
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/req.py", line 479, in _cached_api_request
+    data = func(api_path, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/fastf1/_api.py", line 1404, in race_control_messages
+    raise SessionNotAvailableError(
+fastf1._api.SessionNotAvailableError: No data for this session! If this session only finished recently, please try again in a few minutes.
+2025-10-26 11:12:05,154 - INFO - Finished loading data for 0 drivers: []
+2025-10-26 11:12:05,155 - ERROR - [PROCESS FAIL] abu_dhabi_grand_prix: The data you are trying to access has not been loaded yet. See `Session.load`
