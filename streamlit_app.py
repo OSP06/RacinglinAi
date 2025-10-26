@@ -200,7 +200,7 @@ if model_option == "LSTM Tyre Forecast":
 
         preds = model(X).detach().numpy()
         rmse = np.sqrt(mean_squared_error(y.numpy(), preds))
-        st.metric("📉 RMSE", f"{rmse:.3f} sec")
+        st.metric("📉 RMSE = mean_squared_error(y, preds, squared=False)", f"{rmse:.3f} sec")
 
         pred_seq = scaled[-window:]
         forecast = []
