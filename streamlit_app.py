@@ -229,7 +229,7 @@ elif model_option == "Lap Time Regressor":
     preds = model.predict(X)
     rmse = np.sqrt(mean_squared_error(y, preds))
     # rmse = mean_squared_error(y, preds, squared=False)
-    st.metric("📉 RMSE", f"{rmse:.3f} sec")
+    st.metric("📉 RMSE = mean_squared_error(y, preds, squared=False)", f"{rmse:.3f} sec")
     fig = px.scatter(x=y, y=preds, labels={"x": "Actual Lap Time", "y": "Predicted"}, title="Linear Regression: Lap Time Prediction")
     st.plotly_chart(fig, use_container_width=True)
 
