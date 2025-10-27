@@ -20,14 +20,26 @@ TEAM_COLORS = {
     'AlphaTauri': '#2B4562', 'Alfa Romeo': '#900000', 'Williams': '#005AFF',
     'Haas F1 Team': '#B6BABD', 'Other': '#AAAAAA'
 }
-
-@st.cache_data
+@st.cache_data(ttl=60) 
 def load_data():
     all_dfs = []
-    for year in range(2018, 2026):
-        df = pd.read_csv(f"data/processed/all_races_combined_{year}.csv")
-        df["SeasonYear"] = year
-        all_dfs.append(df)
+    available_years = range(2018, 2026)
+    for year in available_years:
+        try:
+            file_path = f"data/processed/all_races_combined_{year}.csv"
+            df = pd.read_csv(file_path)
+            df["SeasonYear"] = year
+            all_dfs.append(df)
+            print(f"✅ Loaded {year}: {len(df)} records, {df['GrandPrix'].nunique()} GPs")
+        except FileNotFoundError:
+            print(f"⚠️ File not found for {year}")
+            continue
+        except Exception as e:
+            print(f"❌ Error loading {year}: {e}")
+            continue
+    if not all_dfs:
+        st.error("❌ No data files loaded!")
+        st.stop()
     df = pd.concat(all_dfs, ignore_index=True)
     df = df.dropna(subset=["LapTimeSeconds", "TyreLife", "Compound"])
     df["Team"] = df["Team"].fillna("Other")
