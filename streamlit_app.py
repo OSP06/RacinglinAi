@@ -116,7 +116,7 @@ def plot_circuit_map(season: int, gp: str):
 if selected_season != "All" and selected_gp != "All":
     plot_circuit_map(int(selected_season), selected_gp)
 
-st.title("RacingLineAI v8.4: AI-Powered Race Insights")
+st.title("RacingLineAI : AI-Powered Race Insights")
 
 # ---------------------- Visual Analysis ----------------------
 st.header("Race Pace Summary")
