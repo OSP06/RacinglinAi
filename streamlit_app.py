@@ -12,7 +12,7 @@ import torch
 import torch.nn as nn
 
 # ---------------------- Config & Load ----------------------
-st.set_page_config("RacingLineAI v8.4", layout="wide")
+st.set_page_config("RacingLineAI", layout="wide")
 
 TEAM_COLORS = {
     'Red Bull Racing': '#1E41FF', 'Ferrari': '#DC0000', 'Mercedes': '#00D2BE',
