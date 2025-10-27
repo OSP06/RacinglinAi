@@ -48,7 +48,7 @@ df, driver_colors = load_data()
 # ---------------------- Sidebar Filters ----------------------
 
 def info_icon(text):
-    return f'<span title="{text}" style="cursor: help;">ℹ️</span>'
+    return f'<span title="{text}" style="cursor: help;"></span>'
 
 st.sidebar.title("🏎️ Filters")
 
@@ -65,7 +65,7 @@ st.sidebar.markdown(f"**Drivers** {info_icon(driver_info)}", unsafe_allow_html=T
 driver_pool = df if selected_season == "All" else df[df["SeasonYear"] == int(selected_season)]
 driver_pool = driver_pool if selected_gp == "All" else driver_pool[driver_pool["GrandPrix"] == selected_gp]
 available_drivers = sorted(driver_pool["Driver"].unique())
-defaults = [d for d in ["VER", "LEC"] if d in available_drivers]
+defaults = [d for d in ["VER", "NOR"] if d in available_drivers]
 selected_drivers = st.sidebar.multiselect("Drivers", available_drivers, default=defaults or available_drivers[:2])
 
 st.sidebar.markdown("---")
@@ -87,7 +87,7 @@ if filtered_df.empty:
     st.stop()
 
 # ---------------------- Circuit Layout ----------------------
-st.subheader("🗺️ Circuit Layout")
+st.subheader("Circuit Layout")
 def plot_circuit_map(season: int, gp: str):
     try:
         session = get_session(season, gp, 'R')
@@ -104,10 +104,10 @@ def plot_circuit_map(season: int, gp: str):
 if selected_season != "All" and selected_gp != "All":
     plot_circuit_map(int(selected_season), selected_gp)
 
-st.title("🏁 RacingLineAI v8.4: AI-Powered Race Insights")
+st.title("RacingLineAI v8.4: AI-Powered Race Insights")
 
 # ---------------------- Visual Analysis ----------------------
-st.header("📊 Race Pace Summary")
+st.header("Race Pace Summary")
 summary = filtered_df.groupby("Driver").agg(
     AvgLap=("LapTimeSeconds", "mean"),
     FastestLap=("LapTimeSeconds", "min"),
@@ -115,7 +115,7 @@ summary = filtered_df.groupby("Driver").agg(
 ).reset_index()
 st.dataframe(summary.round(2), use_container_width=True)
 
-with st.expander("📉 Gap to Leader by Lap"):
+with st.expander("Gap to Leader by Lap"):
     gap_df = filtered_df.copy()
     gap_df["LeaderLap"] = gap_df.groupby("LapNumber")["LapTimeSeconds"].transform("min")
     gap_df["GapToLeader"] = gap_df["LapTimeSeconds"] - gap_df["LeaderLap"]
@@ -126,7 +126,7 @@ with st.expander("📉 Gap to Leader by Lap"):
     st.plotly_chart(fig, use_container_width=True)
     st.caption("Shows how far each driver is behind the race leader on each lap — helpful to understand race pace and gaps during the race.")
 
-with st.expander("📉 Grip Degradation vs Tyre Life"):
+with st.expander("Grip Degradation vs Tyre Life"):
     slope_df = filtered_df.dropna(subset=["TrackTemp"])
     grouped = slope_df.groupby(["Driver_Season", "TyreLife"]).LapTimeSeconds.mean().reset_index()
     fig = px.line(grouped, x="TyreLife", y="LapTimeSeconds", color="Driver_Season",
@@ -136,7 +136,7 @@ with st.expander("📉 Grip Degradation vs Tyre Life"):
     st.plotly_chart(fig, use_container_width=True)
     st.caption("Visualizes tyre degradation by showing average lap time versus tyre life. Steeper curves indicate faster tyre wear.")
 
-with st.expander("📊 Sector Dominance per Driver (Team Colors)"):
+with st.expander("Sector Dominance per Driver (Team Colors)"):
     sector_pref = filtered_df.groupby(["Driver", "BestSector"]).size().reset_index(name="Count")
     sector_pref["BestSector"] = sector_pref["BestSector"].map({1: "S1", 2: "S2", 3: "S3"})
     driver_teams = filtered_df.drop_duplicates("Driver")[["Driver", "Team"]].set_index("Driver")["Team"].to_dict()
@@ -150,13 +150,13 @@ with st.expander("📊 Sector Dominance per Driver (Team Colors)"):
     st.plotly_chart(fig, use_container_width=True)
     st.caption("Displays the count of best sector times per driver, color-coded by team — highlights driver strengths in different track sectors.")
 
-with st.expander("🔢 Delta to Fastest Lap"):
+with st.expander("Delta to Fastest Lap"):
     fig = px.line(filtered_df, x="LapNumber", y="DeltaToFastestLap", color="Driver_Season", template="plotly_dark", color_discrete_map=driver_colors)
     fig.update_layout(title="Delta to Fastest Lap Over Race")
     st.plotly_chart(fig, use_container_width=True)
     st.caption("Shows how much slower each lap is compared to the driver's fastest lap in the race.")
 
-with st.expander("🛋️ Stint Type Pace (Team Colors)"):
+with st.expander("Stint Type Pace (Team Colors)"):
     if "Stint" in filtered_df.columns:
         stint_max = filtered_df.groupby("Driver")["Stint"].transform("max")
         filtered_df["StintType"] = np.where(filtered_df["Stint"] == 1, "Opening", np.where(filtered_df["Stint"] == stint_max, "Closing", "Mid"))
@@ -166,11 +166,11 @@ with st.expander("🛋️ Stint Type Pace (Team Colors)"):
         st.caption("Shows lap time variation across opening, mid, and closing stints of tyre usage.")
 
 # ---------------------- Predictive Intelligence ----------------------
-st.header("🧠 Predictive Intelligence")
+st.header("Predictive Intelligence")
 model_option = st.selectbox("Choose Model", ["LSTM Tyre Forecast", "Lap Time Regressor", "Strategy Predictor"])
 
 if model_option == "LSTM Tyre Forecast":
-    st.caption("🔮 Forecasts lap times over tyre life using a trained LSTM model. Helps visualize performance degradation beyond available data.")
+    st.caption("Forecasts lap times over tyre life using a trained LSTM model. Helps visualize performance degradation beyond available data.")
     sel_driver = st.selectbox("Driver", sorted(filtered_df["Driver_Season"].unique()))
     sel_comp = st.selectbox("Compound", sorted(filtered_df["Compound"].unique()))
     df_model = filtered_df[(filtered_df["Driver_Season"] == sel_driver) & (filtered_df["Compound"] == sel_comp)]
@@ -200,7 +200,7 @@ if model_option == "LSTM Tyre Forecast":
 
         preds = model(X).detach().numpy()
         rmse = np.sqrt(mean_squared_error(y.numpy(), preds))
-        st.metric("📉 RMSE = mean_squared_error(y, preds, squared=False)", f"{rmse:.3f} sec")
+        st.metric("RMSE = mean_squared_error(y, preds, squared=False)", f"{rmse:.3f} sec")
 
         pred_seq = scaled[-window:]
         forecast = []
@@ -221,7 +221,7 @@ if model_option == "LSTM Tyre Forecast":
         st.info("Not enough data for LSTM model (need > 20 laps)")
 
 elif model_option == "Lap Time Regressor":
-    st.caption("📈 Predicts lap time based on tyre life, compound type, and track temperature using a linear regression model.")
+    st.caption("Predicts lap time based on tyre life, compound type, and track temperature using a linear regression model.")
     df_reg = filtered_df.dropna(subset=["TrackTemp"])
     df_reg["CompoundCode"] = df_reg["Compound"].astype("category").cat.codes
     X = df_reg[["TrackTemp", "TyreLife", "CompoundCode"]]; y = df_reg["LapTimeSeconds"]
@@ -229,7 +229,7 @@ elif model_option == "Lap Time Regressor":
     preds = model.predict(X)
     rmse = np.sqrt(mean_squared_error(y, preds))
     # rmse = mean_squared_error(y, preds, squared=False)
-    st.metric("📉 RMSE = mean_squared_error(y, preds, squared=False)", f"{rmse:.3f} sec")
+    st.metric("RMSE = mean_squared_error(y, preds, squared=False)", f"{rmse:.3f} sec")
     fig = px.scatter(x=y, y=preds, labels={"x": "Actual Lap Time", "y": "Predicted"}, title="Linear Regression: Lap Time Prediction")
     st.plotly_chart(fig, use_container_width=True)
 

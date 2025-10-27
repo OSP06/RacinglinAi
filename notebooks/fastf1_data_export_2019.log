@@ -1101,3 +1101,976 @@ This might be a bug and should be reported.
 2025-06-19 15:35:00,179 - INFO - Data has been written to cache!
 2025-06-19 15:35:00,206 - INFO - Finished loading data for 20 drivers: ['44', '33', '16', '77', '5', '23', '11', '4', '26', '55', '3', '27', '7', '20', '8', '99', '63', '10', '88', '18']
 2025-06-19 15:35:01,025 - INFO - [EXPORT OK] abu_dhabi_grand_prix
+2025-10-27 10:27:21,833 - INFO - Loading data for Australian Grand Prix - Race [v3.5.3]
+2025-10-27 10:27:21,837 - INFO - Using cached data for session_info
+2025-10-27 10:27:21,841 - INFO - Using cached data for driver_info
+2025-10-27 10:27:22,713 - INFO - Using cached data for session_status_data
+2025-10-27 10:27:22,722 - INFO - Using cached data for lap_count
+2025-10-27 10:27:22,726 - INFO - Using cached data for track_status_data
+2025-10-27 10:27:22,738 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:27:22,749 - INFO - Using cached data for timing_app_data
+2025-10-27 10:27:22,752 - INFO - Processing timing data...
+2025-10-27 10:27:23,648 - WARNING - Driver 16: Lap timing integrity check failed for 1 lap(s)
+2025-10-27 10:27:24,364 - INFO - Using cached data for car_data
+2025-10-27 10:27:24,411 - INFO - Using cached data for position_data
+2025-10-27 10:27:26,483 - INFO - Using cached data for weather_data
+2025-10-27 10:27:26,489 - INFO - Using cached data for race_control_messages
+2025-10-27 10:27:26,495 - WARNING - Driver 77 completed the race distance 00:00.387000 before the recorded end of the session.
+2025-10-27 10:27:26,563 - INFO - Finished loading data for 20 drivers: ['77', '44', '33', '5', '16', '20', '27', '7', '18', '26', '10', '4', '11', '23', '99', '63', '88', '8', '3', '55']
+2025-10-27 10:27:30,104 - INFO - [EXPORT OK] australian_grand_prix
+2025-10-27 10:27:30,149 - INFO - Loading data for Bahrain Grand Prix - Race [v3.5.3]
+2025-10-27 10:27:30,155 - INFO - Using cached data for session_info
+2025-10-27 10:27:30,158 - INFO - Using cached data for driver_info
+2025-10-27 10:27:30,490 - INFO - Using cached data for session_status_data
+2025-10-27 10:27:30,495 - INFO - Using cached data for lap_count
+2025-10-27 10:27:30,497 - INFO - Using cached data for track_status_data
+2025-10-27 10:27:30,525 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:27:30,531 - INFO - Using cached data for timing_app_data
+2025-10-27 10:27:30,532 - INFO - Processing timing data...
+2025-10-27 10:27:32,003 - INFO - Using cached data for car_data
+2025-10-27 10:27:32,049 - INFO - Using cached data for position_data
+2025-10-27 10:27:34,435 - INFO - Using cached data for weather_data
+2025-10-27 10:27:34,439 - INFO - Using cached data for race_control_messages
+2025-10-27 10:27:34,447 - WARNING - Driver 44 completed the race distance 00:00.070000 before the recorded end of the session.
+2025-10-27 10:27:34,594 - INFO - Finished loading data for 20 drivers: ['44', '77', '16', '33', '5', '4', '7', '10', '23', '11', '99', '26', '20', '18', '63', '88', '27', '3', '55', '8']
+2025-10-27 10:27:35,612 - INFO - [EXPORT OK] bahrain_grand_prix
+2025-10-27 10:27:35,636 - INFO - Loading data for Chinese Grand Prix - Race [v3.5.3]
+2025-10-27 10:27:35,642 - INFO - Using cached data for session_info
+2025-10-27 10:27:35,648 - INFO - Using cached data for driver_info
+2025-10-27 10:27:35,952 - INFO - Using cached data for session_status_data
+2025-10-27 10:27:35,955 - INFO - Using cached data for lap_count
+2025-10-27 10:27:35,960 - INFO - Using cached data for track_status_data
+2025-10-27 10:27:35,991 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:27:36,001 - INFO - Using cached data for timing_app_data
+2025-10-27 10:27:36,001 - INFO - Processing timing data...
+2025-10-27 10:27:37,668 - INFO - Using cached data for car_data
+2025-10-27 10:27:37,798 - INFO - Using cached data for position_data
+2025-10-27 10:27:40,562 - INFO - Using cached data for weather_data
+2025-10-27 10:27:40,572 - INFO - Using cached data for race_control_messages
+2025-10-27 10:27:40,584 - WARNING - Driver 44 completed the race distance 00:00.423000 before the recorded end of the session.
+2025-10-27 10:27:40,633 - INFO - Finished loading data for 20 drivers: ['44', '77', '5', '33', '16', '10', '3', '11', '7', '23', '8', '18', '20', '55', '99', '63', '88', '4', '26', '27']
+2025-10-27 10:27:41,896 - INFO - [EXPORT OK] chinese_grand_prix
+2025-10-27 10:27:41,927 - INFO - Loading data for Azerbaijan Grand Prix - Race [v3.5.3]
+2025-10-27 10:27:41,948 - INFO - Using cached data for session_info
+2025-10-27 10:27:41,951 - INFO - Using cached data for driver_info
+2025-10-27 10:27:42,126 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/4/results.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/4/results.json
+2025-10-27 10:27:42,172 - INFO - Using cached data for session_status_data
+2025-10-27 10:27:42,176 - INFO - Using cached data for lap_count
+2025-10-27 10:27:42,179 - INFO - Using cached data for track_status_data
+2025-10-27 10:27:42,213 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:27:42,231 - INFO - Using cached data for timing_app_data
+2025-10-27 10:27:42,236 - INFO - Processing timing data...
+2025-10-27 10:27:43,917 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/4/laps/1.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/4/laps/1.json
+2025-10-27 10:27:44,029 - INFO - Using cached data for car_data
+2025-10-27 10:27:44,096 - INFO - Using cached data for position_data
+2025-10-27 10:27:46,910 - INFO - Using cached data for weather_data
+2025-10-27 10:27:46,925 - INFO - Using cached data for race_control_messages
+2025-10-27 10:27:46,934 - WARNING - Driver 77 completed the race distance 00:00.075000 before the recorded end of the session.
+2025-10-27 10:27:47,041 - INFO - Finished loading data for 20 drivers: ['77', '44', '5', '33', '16', '11', '55', '4', '18', '7', '23', '99', '20', '27', '63', '88', '10', '8', '26', '3']
+2025-10-27 10:27:48,577 - INFO - [EXPORT OK] azerbaijan_grand_prix
+2025-10-27 10:27:48,627 - INFO - Loading data for Spanish Grand Prix - Race [v3.5.3]
+2025-10-27 10:27:48,635 - INFO - Using cached data for session_info
+2025-10-27 10:27:48,641 - INFO - Using cached data for driver_info
+2025-10-27 10:27:48,906 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/5/results.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/5/results.json
+2025-10-27 10:27:48,941 - INFO - Using cached data for session_status_data
+2025-10-27 10:27:48,943 - INFO - Using cached data for lap_count
+2025-10-27 10:27:48,948 - INFO - Using cached data for track_status_data
+2025-10-27 10:27:48,981 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:27:48,985 - INFO - Using cached data for timing_app_data
+2025-10-27 10:27:48,986 - INFO - Processing timing data...
+2025-10-27 10:27:50,477 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/5/laps/1.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/5/laps/1.json
+2025-10-27 10:27:50,645 - INFO - Using cached data for car_data
+2025-10-27 10:27:50,786 - INFO - Using cached data for position_data
+2025-10-27 10:27:52,890 - INFO - Using cached data for weather_data
+2025-10-27 10:27:52,909 - INFO - Using cached data for race_control_messages
+2025-10-27 10:27:52,917 - WARNING - Driver 44 completed the race distance 00:00.059000 before the recorded end of the session.
+2025-10-27 10:27:53,057 - INFO - Finished loading data for 20 drivers: ['44', '77', '33', '5', '16', '10', '20', '55', '26', '8', '23', '3', '27', '7', '11', '99', '63', '88', '18', '4']
+2025-10-27 10:27:54,673 - INFO - [EXPORT OK] spanish_grand_prix
+2025-10-27 10:27:54,723 - INFO - Loading data for Monaco Grand Prix - Race [v3.5.3]
+2025-10-27 10:27:54,744 - INFO - Using cached data for session_info
+2025-10-27 10:27:54,749 - INFO - Using cached data for driver_info
+2025-10-27 10:27:55,049 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/6/results.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/6/results.json
+2025-10-27 10:27:55,087 - INFO - Using cached data for session_status_data
+2025-10-27 10:27:55,094 - INFO - Using cached data for lap_count
+2025-10-27 10:27:55,097 - INFO - Using cached data for track_status_data
+2025-10-27 10:27:55,144 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:27:55,156 - INFO - Using cached data for timing_app_data
+2025-10-27 10:27:55,157 - INFO - Processing timing data...
+2025-10-27 10:27:56,769 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/6/laps/1.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/6/laps/1.json
+2025-10-27 10:27:57,002 - INFO - Using cached data for car_data
+2025-10-27 10:27:57,093 - INFO - Using cached data for position_data
+2025-10-27 10:27:59,258 - INFO - Using cached data for weather_data
+2025-10-27 10:27:59,286 - INFO - Using cached data for race_control_messages
+2025-10-27 10:27:59,302 - WARNING - Driver 44 completed the race distance 00:00.087000 before the recorded end of the session.
+2025-10-27 10:27:59,344 - INFO - Finished loading data for 20 drivers: ['44', '5', '77', '33', '10', '55', '26', '23', '3', '8', '4', '11', '27', '20', '63', '18', '7', '88', '99', '16']
+2025-10-27 10:28:00,694 - INFO - [EXPORT OK] monaco_grand_prix
+2025-10-27 10:28:00,743 - INFO - Loading data for Canadian Grand Prix - Race [v3.5.3]
+2025-10-27 10:28:00,746 - INFO - Using cached data for session_info
+2025-10-27 10:28:00,751 - INFO - Using cached data for driver_info
+2025-10-27 10:28:00,931 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/7/results.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/7/results.json
+2025-10-27 10:28:00,958 - INFO - Using cached data for session_status_data
+2025-10-27 10:28:00,963 - INFO - Using cached data for lap_count
+2025-10-27 10:28:00,967 - INFO - Using cached data for track_status_data
+2025-10-27 10:28:00,992 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:28:01,002 - INFO - Using cached data for timing_app_data
+2025-10-27 10:28:01,003 - INFO - Processing timing data...
+2025-10-27 10:28:02,715 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/7/laps/1.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/7/laps/1.json
+2025-10-27 10:28:02,858 - INFO - Using cached data for car_data
+2025-10-27 10:28:02,944 - INFO - Using cached data for position_data
+2025-10-27 10:28:04,937 - INFO - Using cached data for weather_data
+2025-10-27 10:28:04,967 - INFO - Using cached data for race_control_messages
+2025-10-27 10:28:04,980 - WARNING - Driver 5 completed the race distance 00:00.190000 before the recorded end of the session.
+2025-10-27 10:28:05,080 - INFO - Finished loading data for 20 drivers: ['44', '5', '16', '77', '33', '3', '27', '10', '18', '26', '55', '11', '99', '8', '7', '63', '20', '88', '23', '4']
+2025-10-27 10:28:06,103 - INFO - [EXPORT OK] canadian_grand_prix
+2025-10-27 10:28:06,171 - INFO - Loading data for French Grand Prix - Race [v3.5.3]
+2025-10-27 10:28:06,182 - INFO - Using cached data for session_info
+2025-10-27 10:28:06,186 - INFO - Using cached data for driver_info
+2025-10-27 10:28:06,547 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/8/results.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/8/results.json
+2025-10-27 10:28:06,558 - INFO - Using cached data for session_status_data
+2025-10-27 10:28:06,560 - INFO - Using cached data for lap_count
+2025-10-27 10:28:06,562 - INFO - Using cached data for track_status_data
+2025-10-27 10:28:06,585 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:28:06,591 - INFO - Using cached data for timing_app_data
+2025-10-27 10:28:06,592 - INFO - Processing timing data...
+2025-10-27 10:28:07,366 - WARNING - Driver 27: Lap timing integrity check failed for 1 lap(s)
+2025-10-27 10:28:08,200 - INFO - Using cached data for car_data
+2025-10-27 10:28:08,292 - INFO - Using cached data for position_data
+2025-10-27 10:28:10,511 - INFO - Using cached data for weather_data
+2025-10-27 10:28:10,526 - INFO - Using cached data for race_control_messages
+2025-10-27 10:28:10,531 - WARNING - Driver 44 completed the race distance 00:00.126000 before the recorded end of the session.
+2025-10-27 10:28:10,567 - INFO - Finished loading data for 20 drivers: ['44', '77', '16', '33', '5', '55', '7', '27', '4', '10', '3', '11', '18', '26', '23', '99', '20', '88', '63', '8']
+2025-10-27 10:28:11,559 - INFO - [EXPORT OK] french_grand_prix
+2025-10-27 10:28:11,592 - INFO - Loading data for Austrian Grand Prix - Race [v3.5.3]
+2025-10-27 10:28:11,603 - INFO - Using cached data for session_info
+2025-10-27 10:28:11,612 - INFO - Using cached data for driver_info
+2025-10-27 10:28:11,821 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/9/results.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/9/results.json
+2025-10-27 10:28:11,857 - INFO - Using cached data for session_status_data
+2025-10-27 10:28:11,860 - INFO - Using cached data for lap_count
+2025-10-27 10:28:11,861 - INFO - Using cached data for track_status_data
+2025-10-27 10:28:11,882 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:28:11,891 - INFO - Using cached data for timing_app_data
+2025-10-27 10:28:11,895 - INFO - Processing timing data...
+2025-10-27 10:28:13,410 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/9/laps/1.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/9/laps/1.json
+2025-10-27 10:28:13,533 - INFO - Using cached data for car_data
+2025-10-27 10:28:13,679 - INFO - Using cached data for position_data
+2025-10-27 10:28:16,660 - INFO - Using cached data for weather_data
+2025-10-27 10:28:16,689 - INFO - Using cached data for race_control_messages
+2025-10-27 10:28:16,694 - WARNING - Driver 33 completed the race distance 00:00.042000 before the recorded end of the session.
+2025-10-27 10:28:16,790 - INFO - Finished loading data for 20 drivers: ['33', '16', '77', '5', '44', '4', '10', '55', '7', '99', '11', '3', '27', '18', '23', '8', '26', '63', '20', '88']
+2025-10-27 10:28:18,037 - INFO - [EXPORT OK] austrian_grand_prix
+2025-10-27 10:28:18,070 - INFO - Loading data for British Grand Prix - Race [v3.5.3]
+2025-10-27 10:28:18,073 - INFO - Using cached data for session_info
+2025-10-27 10:28:18,074 - INFO - Using cached data for driver_info
+2025-10-27 10:28:18,510 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/10/results.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/10/results.json
+2025-10-27 10:28:18,580 - INFO - Using cached data for session_status_data
+2025-10-27 10:28:18,586 - INFO - Using cached data for lap_count
+2025-10-27 10:28:18,592 - INFO - Using cached data for track_status_data
+2025-10-27 10:28:18,614 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:28:18,630 - INFO - Using cached data for timing_app_data
+2025-10-27 10:28:18,635 - INFO - Processing timing data...
+2025-10-27 10:28:20,276 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/10/laps/1.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/10/laps/1.json
+2025-10-27 10:28:20,396 - INFO - Using cached data for car_data
+2025-10-27 10:28:20,456 - INFO - Using cached data for position_data
+2025-10-27 10:28:24,364 - INFO - Using cached data for weather_data
+2025-10-27 10:28:24,390 - INFO - Using cached data for race_control_messages
+2025-10-27 10:28:24,407 - WARNING - Driver 44 completed the race distance 00:00.042000 before the recorded end of the session.
+2025-10-27 10:28:24,495 - INFO - Finished loading data for 20 drivers: ['44', '77', '16', '10', '33', '55', '3', '7', '26', '27', '4', '23', '18', '63', '88', '5', '11', '99', '8', '20']
+2025-10-27 10:28:26,086 - INFO - [EXPORT OK] british_grand_prix
+2025-10-27 10:28:26,115 - INFO - Loading data for German Grand Prix - Race [v3.5.3]
+2025-10-27 10:28:26,118 - INFO - Using cached data for session_info
+2025-10-27 10:28:26,120 - INFO - Using cached data for driver_info
+2025-10-27 10:28:26,298 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/11/results.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/11/results.json
+2025-10-27 10:28:26,333 - INFO - Using cached data for session_status_data
+2025-10-27 10:28:26,341 - INFO - Using cached data for lap_count
+2025-10-27 10:28:26,346 - INFO - Using cached data for track_status_data
+2025-10-27 10:28:26,371 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:28:26,384 - INFO - Using cached data for timing_app_data
+2025-10-27 10:28:26,386 - INFO - Processing timing data...
+2025-10-27 10:28:28,031 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/11/laps/1.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/11/laps/1.json
+2025-10-27 10:28:28,182 - INFO - Using cached data for car_data
+2025-10-27 10:28:28,262 - INFO - Using cached data for position_data
+2025-10-27 10:28:31,380 - INFO - Using cached data for weather_data
+2025-10-27 10:28:31,406 - INFO - Using cached data for race_control_messages
+2025-10-27 10:28:31,414 - WARNING - Driver 33 completed the race distance 00:00.090000 before the recorded end of the session.
+2025-10-27 10:28:31,645 - INFO - Finished loading data for 20 drivers: ['33', '5', '26', '18', '55', '23', '8', '20', '44', '88', '63', '7', '99', '10', '77', '27', '16', '4', '3', '11']
+2025-10-27 10:28:32,924 - INFO - [EXPORT OK] german_grand_prix
+2025-10-27 10:28:32,944 - INFO - Loading data for Hungarian Grand Prix - Race [v3.5.3]
+2025-10-27 10:28:32,947 - INFO - Using cached data for session_info
+2025-10-27 10:28:32,952 - INFO - Using cached data for driver_info
+2025-10-27 10:28:33,134 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/12/results.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/12/results.json
+2025-10-27 10:28:33,211 - INFO - Using cached data for session_status_data
+2025-10-27 10:28:33,218 - INFO - Using cached data for lap_count
+2025-10-27 10:28:33,239 - INFO - Using cached data for track_status_data
+2025-10-27 10:28:33,263 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:28:33,288 - INFO - Using cached data for timing_app_data
+2025-10-27 10:28:33,290 - INFO - Processing timing data...
+2025-10-27 10:28:35,357 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/12/laps/1.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/12/laps/1.json
+2025-10-27 10:28:35,498 - INFO - Using cached data for car_data
+2025-10-27 10:28:35,577 - INFO - Using cached data for position_data
+2025-10-27 10:28:38,507 - INFO - Using cached data for weather_data
+2025-10-27 10:28:38,529 - INFO - Using cached data for race_control_messages
+2025-10-27 10:28:38,545 - WARNING - Driver 44 completed the race distance 00:00.069000 before the recorded end of the session.
+2025-10-27 10:28:38,644 - INFO - Finished loading data for 20 drivers: ['44', '33', '5', '16', '55', '10', '7', '77', '4', '23', '11', '27', '20', '3', '26', '63', '18', '99', '88', '8']
+2025-10-27 10:28:40,351 - INFO - [EXPORT OK] hungarian_grand_prix
+2025-10-27 10:28:40,378 - INFO - Loading data for Belgian Grand Prix - Race [v3.5.3]
+2025-10-27 10:28:40,382 - INFO - Using cached data for session_info
+2025-10-27 10:28:40,385 - INFO - Using cached data for driver_info
+2025-10-27 10:28:40,582 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/13/results.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/13/results.json
+2025-10-27 10:28:40,655 - INFO - Using cached data for session_status_data
+2025-10-27 10:28:40,664 - INFO - Using cached data for lap_count
+2025-10-27 10:28:40,669 - INFO - Using cached data for track_status_data
+2025-10-27 10:28:40,693 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:28:40,699 - INFO - Using cached data for timing_app_data
+2025-10-27 10:28:40,701 - INFO - Processing timing data...
+2025-10-27 10:28:41,879 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/13/laps/1.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/13/laps/1.json
+2025-10-27 10:28:41,987 - INFO - Using cached data for car_data
+2025-10-27 10:28:42,081 - INFO - Using cached data for position_data
+2025-10-27 10:28:44,420 - INFO - Using cached data for weather_data
+2025-10-27 10:28:44,431 - INFO - Using cached data for race_control_messages
+2025-10-27 10:28:44,439 - WARNING - Driver 16 completed the race distance 00:00.211000 before the recorded end of the session.
+2025-10-27 10:28:44,666 - INFO - Finished loading data for 20 drivers: ['16', '44', '77', '5', '23', '11', '26', '27', '10', '18', '4', '20', '8', '3', '63', '7', '88', '99', '55', '33']
+2025-10-27 10:28:45,759 - INFO - [EXPORT OK] belgian_grand_prix
+2025-10-27 10:28:45,786 - INFO - Loading data for Italian Grand Prix - Race [v3.5.3]
+2025-10-27 10:28:45,789 - INFO - Using cached data for session_info
+2025-10-27 10:28:45,791 - INFO - Using cached data for driver_info
+2025-10-27 10:28:45,961 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/14/results.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/14/results.json
+2025-10-27 10:28:45,987 - INFO - Using cached data for session_status_data
+2025-10-27 10:28:46,215 - INFO - Using cached data for lap_count
+2025-10-27 10:28:46,237 - INFO - Using cached data for track_status_data
+2025-10-27 10:28:46,268 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:28:46,302 - INFO - Using cached data for timing_app_data
+2025-10-27 10:28:46,303 - INFO - Processing timing data...
+2025-10-27 10:28:47,801 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/14/laps/1.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/14/laps/1.json
+2025-10-27 10:28:48,191 - INFO - Using cached data for car_data
+2025-10-27 10:28:48,348 - INFO - Using cached data for position_data
+2025-10-27 10:28:50,600 - INFO - Using cached data for weather_data
+2025-10-27 10:28:50,605 - INFO - Using cached data for race_control_messages
+2025-10-27 10:28:50,611 - WARNING - Driver 16 completed the race distance 00:00.092000 before the recorded end of the session.
+2025-10-27 10:28:50,713 - INFO - Finished loading data for 20 drivers: ['16', '77', '44', '3', '27', '23', '11', '33', '99', '4', '10', '18', '5', '63', '7', '8', '88', '20', '26', '55']
+2025-10-27 10:28:51,879 - INFO - [EXPORT OK] italian_grand_prix
+2025-10-27 10:28:51,926 - INFO - Loading data for Singapore Grand Prix - Race [v3.5.3]
+2025-10-27 10:28:51,932 - INFO - Using cached data for session_info
+2025-10-27 10:28:51,936 - INFO - Using cached data for driver_info
+2025-10-27 10:28:52,116 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/15/results.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/15/results.json
+2025-10-27 10:28:52,483 - INFO - Using cached data for session_status_data
+2025-10-27 10:28:52,487 - INFO - Using cached data for lap_count
+2025-10-27 10:28:52,491 - INFO - Using cached data for track_status_data
+2025-10-27 10:28:52,543 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:28:52,556 - INFO - Using cached data for timing_app_data
+2025-10-27 10:28:52,557 - INFO - Processing timing data...
+2025-10-27 10:28:54,048 - WARNING - Driver 18: Lap timing integrity check failed for 1 lap(s)
+2025-10-27 10:28:54,345 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/15/laps/1.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/15/laps/1.json
+2025-10-27 10:28:54,550 - INFO - Using cached data for car_data
+2025-10-27 10:28:54,657 - INFO - Using cached data for position_data
+2025-10-27 10:28:57,431 - INFO - Using cached data for weather_data
+2025-10-27 10:28:57,441 - INFO - Using cached data for race_control_messages
+2025-10-27 10:28:57,450 - WARNING - Driver 5 completed the race distance 00:00.171000 before the recorded end of the session.
+2025-10-27 10:28:57,584 - INFO - Finished loading data for 20 drivers: ['5', '16', '33', '44', '77', '23', '4', '10', '27', '99', '8', '55', '18', '3', '26', '88', '20', '7', '11', '63']
+2025-10-27 10:28:58,977 - INFO - [EXPORT OK] singapore_grand_prix
+2025-10-27 10:28:58,992 - INFO - Loading data for Russian Grand Prix - Race [v3.5.3]
+2025-10-27 10:28:58,994 - INFO - Using cached data for session_info
+2025-10-27 10:28:58,998 - INFO - Using cached data for driver_info
+2025-10-27 10:28:59,258 - INFO - Using cached data for session_status_data
+2025-10-27 10:28:59,262 - INFO - Using cached data for lap_count
+2025-10-27 10:28:59,264 - INFO - Using cached data for track_status_data
+2025-10-27 10:28:59,296 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:28:59,300 - INFO - Using cached data for timing_app_data
+2025-10-27 10:28:59,308 - INFO - Processing timing data...
+2025-10-27 10:29:00,818 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/16/laps/1.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/16/laps/1.json
+2025-10-27 10:29:00,918 - INFO - Using cached data for car_data
+2025-10-27 10:29:00,986 - INFO - Using cached data for position_data
+2025-10-27 10:29:03,493 - INFO - Using cached data for weather_data
+2025-10-27 10:29:03,510 - INFO - Using cached data for race_control_messages
+2025-10-27 10:29:03,527 - WARNING - Driver 44 completed the race distance 00:00.308000 before the recorded end of the session.
+2025-10-27 10:29:03,577 - INFO - Finished loading data for 20 drivers: ['44', '77', '16', '33', '23', '55', '11', '4', '20', '27', '18', '26', '7', '10', '99', '88', '63', '5', '3', '8']
+2025-10-27 10:29:05,027 - INFO - [EXPORT OK] russian_grand_prix
+2025-10-27 10:29:05,055 - INFO - Loading data for Japanese Grand Prix - Race [v3.5.3]
+2025-10-27 10:29:05,058 - INFO - Using cached data for session_info
+2025-10-27 10:29:05,060 - INFO - Using cached data for driver_info
+2025-10-27 10:29:05,225 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/17/results.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/17/results.json
+2025-10-27 10:29:05,246 - INFO - Using cached data for session_status_data
+2025-10-27 10:29:05,251 - INFO - Using cached data for lap_count
+2025-10-27 10:29:05,255 - INFO - Using cached data for track_status_data
+2025-10-27 10:29:05,262 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:29:05,268 - INFO - Using cached data for timing_app_data
+2025-10-27 10:29:05,269 - INFO - Processing timing data...
+2025-10-27 10:29:06,668 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/17/laps/1.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/17/laps/1.json
+2025-10-27 10:29:06,779 - INFO - Using cached data for car_data
+2025-10-27 10:29:06,868 - INFO - Using cached data for position_data
+2025-10-27 10:29:09,480 - INFO - Using cached data for weather_data
+2025-10-27 10:29:09,494 - INFO - Using cached data for race_control_messages
+2025-10-27 10:29:09,504 - WARNING - Driver 77 completed the race distance 00:00.224000 before the recorded end of the session.
+2025-10-27 10:29:09,597 - INFO - Finished loading data for 20 drivers: ['77', '5', '44', '23', '55', '16', '10', '11', '18', '26', '4', '7', '8', '99', '20', '63', '88', '33', '3', '27']
+2025-10-27 10:29:10,981 - INFO - [EXPORT OK] japanese_grand_prix
+2025-10-27 10:29:11,013 - INFO - Loading data for Mexican Grand Prix - Race [v3.5.3]
+2025-10-27 10:29:11,016 - INFO - Using cached data for session_info
+2025-10-27 10:29:11,020 - INFO - Using cached data for driver_info
+2025-10-27 10:29:11,201 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/18/results.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/18/results.json
+2025-10-27 10:29:11,247 - INFO - Using cached data for session_status_data
+2025-10-27 10:29:11,251 - INFO - Using cached data for lap_count
+2025-10-27 10:29:11,256 - INFO - Using cached data for track_status_data
+2025-10-27 10:29:11,275 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:29:11,280 - INFO - Using cached data for timing_app_data
+2025-10-27 10:29:11,282 - INFO - Processing timing data...
+2025-10-27 10:29:12,468 - WARNING - Driver  5: Lap timing integrity check failed for 1 lap(s)
+2025-10-27 10:29:12,866 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/18/laps/1.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/18/laps/1.json
+2025-10-27 10:29:12,960 - INFO - Using cached data for car_data
+2025-10-27 10:29:13,032 - INFO - Using cached data for position_data
+2025-10-27 10:29:15,648 - INFO - Using cached data for weather_data
+2025-10-27 10:29:15,661 - INFO - Using cached data for race_control_messages
+2025-10-27 10:29:15,667 - WARNING - Driver 44 completed the race distance 00:00.798000 before the recorded end of the session.
+2025-10-27 10:29:15,790 - INFO - Finished loading data for 20 drivers: ['44', '5', '77', '16', '23', '33', '11', '3', '10', '27', '26', '18', '55', '99', '20', '63', '8', '88', '7', '4']
+2025-10-27 10:29:17,298 - INFO - [EXPORT OK] mexican_grand_prix
+2025-10-27 10:29:17,348 - INFO - Loading data for United States Grand Prix - Race [v3.5.3]
+2025-10-27 10:29:17,358 - INFO - Using cached data for session_info
+2025-10-27 10:29:17,360 - INFO - Using cached data for driver_info
+2025-10-27 10:29:17,658 - INFO - Using cached data for session_status_data
+2025-10-27 10:29:17,661 - INFO - Using cached data for lap_count
+2025-10-27 10:29:17,662 - INFO - Using cached data for track_status_data
+2025-10-27 10:29:17,671 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:29:17,675 - INFO - Using cached data for timing_app_data
+2025-10-27 10:29:17,676 - INFO - Processing timing data...
+2025-10-27 10:29:18,528 - WARNING - Driver  4: Lap timing integrity check failed for 1 lap(s)
+2025-10-27 10:29:18,895 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/19/laps/1.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/19/laps/1.json
+2025-10-27 10:29:19,016 - INFO - Using cached data for car_data
+2025-10-27 10:29:19,115 - INFO - Using cached data for position_data
+2025-10-27 10:29:21,694 - INFO - Using cached data for weather_data
+2025-10-27 10:29:21,951 - INFO - Using cached data for race_control_messages
+2025-10-27 10:29:21,959 - WARNING - Driver 77 completed the race distance 00:00.080000 before the recorded end of the session.
+2025-10-27 10:29:22,031 - INFO - Finished loading data for 20 drivers: ['77', '44', '33', '16', '23', '3', '4', '55', '27', '11', '7', '26', '18', '99', '8', '10', '63', '20', '88', '5']
+2025-10-27 10:29:23,138 - INFO - [EXPORT OK] united_states_grand_prix
+2025-10-27 10:29:23,174 - INFO - Loading data for Brazilian Grand Prix - Race [v3.5.3]
+2025-10-27 10:29:23,179 - INFO - Using cached data for session_info
+2025-10-27 10:29:23,180 - INFO - Using cached data for driver_info
+2025-10-27 10:29:23,357 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/20/results.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/20/results.json
+2025-10-27 10:29:23,388 - INFO - Using cached data for session_status_data
+2025-10-27 10:29:23,394 - INFO - Using cached data for lap_count
+2025-10-27 10:29:23,398 - INFO - Using cached data for track_status_data
+2025-10-27 10:29:23,418 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:29:23,428 - INFO - Using cached data for timing_app_data
+2025-10-27 10:29:23,429 - INFO - Processing timing data...
+2025-10-27 10:29:24,357 - WARNING - Driver 20: Lap timing integrity check failed for 1 lap(s)
+2025-10-27 10:29:24,688 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/20/laps/1.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/20/laps/1.json
+2025-10-27 10:29:24,819 - INFO - Using cached data for car_data
+2025-10-27 10:29:25,018 - INFO - Using cached data for position_data
+2025-10-27 10:29:27,084 - INFO - Using cached data for weather_data
+2025-10-27 10:29:27,092 - INFO - Using cached data for race_control_messages
+2025-10-27 10:29:27,095 - WARNING - Driver 33 completed the race distance 00:00.145000 before the recorded end of the session.
+2025-10-27 10:29:27,172 - INFO - Finished loading data for 20 drivers: ['33', '10', '55', '7', '99', '3', '44', '4', '11', '26', '20', '63', '8', '23', '27', '88', '5', '16', '18', '77']
+2025-10-27 10:29:27,817 - INFO - [EXPORT OK] brazilian_grand_prix
+2025-10-27 10:29:27,830 - INFO - Loading data for Abu Dhabi Grand Prix - Race [v3.5.3]
+2025-10-27 10:29:27,835 - INFO - Using cached data for session_info
+2025-10-27 10:29:27,838 - INFO - Using cached data for driver_info
+2025-10-27 10:29:28,001 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/21/results.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/21/results.json
+2025-10-27 10:29:28,019 - INFO - Using cached data for session_status_data
+2025-10-27 10:29:28,022 - INFO - Using cached data for lap_count
+2025-10-27 10:29:28,024 - INFO - Using cached data for track_status_data
+2025-10-27 10:29:28,060 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:29:28,066 - INFO - Using cached data for timing_app_data
+2025-10-27 10:29:28,066 - INFO - Processing timing data...
+2025-10-27 10:29:28,594 - WARNING - Driver  4: Lap timing integrity check failed for 1 lap(s)
+2025-10-27 10:29:28,606 - WARNING - Driver 55: Lap timing integrity check failed for 1 lap(s)
+2025-10-27 10:29:28,846 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/21/laps/1.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/21/laps/1.json
+2025-10-27 10:29:28,920 - INFO - Using cached data for car_data
+2025-10-27 10:29:29,020 - INFO - Using cached data for position_data
+2025-10-27 10:29:30,305 - INFO - Using cached data for weather_data
+2025-10-27 10:29:30,307 - INFO - Using cached data for race_control_messages
+2025-10-27 10:29:30,329 - INFO - Finished loading data for 20 drivers: ['44', '33', '16', '77', '5', '23', '11', '4', '26', '55', '3', '27', '7', '20', '8', '99', '63', '10', '88', '18']
+2025-10-27 10:29:31,051 - INFO - [EXPORT OK] abu_dhabi_grand_prix
+2025-10-27 10:43:46,360 - INFO - Loading data for Australian Grand Prix - Race [v3.5.3]
+2025-10-27 10:43:46,361 - INFO - Using cached data for session_info
+2025-10-27 10:43:46,362 - INFO - Using cached data for driver_info
+2025-10-27 10:43:46,403 - INFO - Using cached data for session_status_data
+2025-10-27 10:43:46,404 - INFO - Using cached data for lap_count
+2025-10-27 10:43:46,405 - INFO - Using cached data for track_status_data
+2025-10-27 10:43:46,465 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:43:46,470 - INFO - Using cached data for timing_app_data
+2025-10-27 10:43:46,470 - INFO - Processing timing data...
+2025-10-27 10:43:47,462 - WARNING - Driver 16: Lap timing integrity check failed for 1 lap(s)
+2025-10-27 10:43:47,700 - INFO - Using cached data for car_data
+2025-10-27 10:43:47,797 - INFO - Using cached data for position_data
+2025-10-27 10:43:48,954 - INFO - Using cached data for weather_data
+2025-10-27 10:43:48,957 - INFO - Using cached data for race_control_messages
+2025-10-27 10:43:48,964 - WARNING - Driver 77 completed the race distance 00:00.387000 before the recorded end of the session.
+2025-10-27 10:43:49,017 - INFO - Finished loading data for 20 drivers: ['77', '44', '33', '5', '16', '20', '27', '7', '18', '26', '10', '4', '11', '23', '99', '63', '88', '8', '3', '55']
+2025-10-27 10:43:49,624 - INFO - [EXPORT OK] australian_grand_prix
+2025-10-27 10:43:49,632 - INFO - Loading data for Bahrain Grand Prix - Race [v3.5.3]
+2025-10-27 10:43:49,633 - INFO - Using cached data for session_info
+2025-10-27 10:43:49,635 - INFO - Using cached data for driver_info
+2025-10-27 10:43:49,661 - INFO - Using cached data for session_status_data
+2025-10-27 10:43:49,663 - INFO - Using cached data for lap_count
+2025-10-27 10:43:49,664 - INFO - Using cached data for track_status_data
+2025-10-27 10:43:49,678 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:43:49,681 - INFO - Using cached data for timing_app_data
+2025-10-27 10:43:49,682 - INFO - Processing timing data...
+2025-10-27 10:43:50,646 - INFO - Using cached data for car_data
+2025-10-27 10:43:50,736 - INFO - Using cached data for position_data
+2025-10-27 10:43:52,447 - INFO - Using cached data for weather_data
+2025-10-27 10:43:52,454 - INFO - Using cached data for race_control_messages
+2025-10-27 10:43:52,460 - WARNING - Driver 44 completed the race distance 00:00.070000 before the recorded end of the session.
+2025-10-27 10:43:52,554 - INFO - Finished loading data for 20 drivers: ['44', '77', '16', '33', '5', '4', '7', '10', '23', '11', '99', '26', '20', '18', '63', '88', '27', '3', '55', '8']
+2025-10-27 10:43:53,011 - INFO - [EXPORT OK] bahrain_grand_prix
+2025-10-27 10:43:53,027 - INFO - Loading data for Chinese Grand Prix - Race [v3.5.3]
+2025-10-27 10:43:53,029 - INFO - Using cached data for session_info
+2025-10-27 10:43:53,030 - INFO - Using cached data for driver_info
+2025-10-27 10:43:53,048 - INFO - Using cached data for session_status_data
+2025-10-27 10:43:53,052 - INFO - Using cached data for lap_count
+2025-10-27 10:43:53,054 - INFO - Using cached data for track_status_data
+2025-10-27 10:43:53,066 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:43:53,068 - INFO - Using cached data for timing_app_data
+2025-10-27 10:43:53,068 - INFO - Processing timing data...
+2025-10-27 10:43:53,899 - INFO - Using cached data for car_data
+2025-10-27 10:43:53,956 - INFO - Using cached data for position_data
+2025-10-27 10:43:56,610 - INFO - Using cached data for weather_data
+2025-10-27 10:43:56,622 - INFO - Using cached data for race_control_messages
+2025-10-27 10:43:56,628 - WARNING - Driver 44 completed the race distance 00:00.423000 before the recorded end of the session.
+2025-10-27 10:43:56,672 - INFO - Finished loading data for 20 drivers: ['44', '77', '5', '33', '16', '10', '3', '11', '7', '23', '8', '18', '20', '55', '99', '63', '88', '4', '26', '27']
+2025-10-27 10:43:57,345 - INFO - [EXPORT OK] chinese_grand_prix
+2025-10-27 10:43:57,416 - INFO - Loading data for Azerbaijan Grand Prix - Race [v3.5.3]
+2025-10-27 10:43:57,422 - INFO - Using cached data for session_info
+2025-10-27 10:43:57,424 - INFO - Using cached data for driver_info
+2025-10-27 10:43:58,205 - INFO - Using cached data for session_status_data
+2025-10-27 10:43:58,216 - INFO - Using cached data for lap_count
+2025-10-27 10:43:58,219 - INFO - Using cached data for track_status_data
+2025-10-27 10:43:58,239 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:43:58,246 - INFO - Using cached data for timing_app_data
+2025-10-27 10:43:58,248 - INFO - Processing timing data...
+2025-10-27 10:44:00,047 - INFO - Using cached data for car_data
+2025-10-27 10:44:00,176 - INFO - Using cached data for position_data
+2025-10-27 10:44:03,332 - INFO - Using cached data for weather_data
+2025-10-27 10:44:03,355 - INFO - Using cached data for race_control_messages
+2025-10-27 10:44:03,369 - WARNING - Driver 77 completed the race distance 00:00.075000 before the recorded end of the session.
+2025-10-27 10:44:03,483 - INFO - Finished loading data for 20 drivers: ['77', '44', '5', '33', '16', '11', '55', '4', '18', '7', '23', '99', '20', '27', '63', '88', '10', '8', '26', '3']
+2025-10-27 10:44:03,958 - INFO - [EXPORT OK] azerbaijan_grand_prix
+2025-10-27 10:44:04,009 - INFO - Loading data for Spanish Grand Prix - Race [v3.5.3]
+2025-10-27 10:44:04,019 - INFO - Using cached data for session_info
+2025-10-27 10:44:04,033 - INFO - Using cached data for driver_info
+2025-10-27 10:44:04,294 - INFO - Using cached data for session_status_data
+2025-10-27 10:44:04,319 - INFO - Using cached data for lap_count
+2025-10-27 10:44:04,329 - INFO - Using cached data for track_status_data
+2025-10-27 10:44:04,375 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:44:04,377 - INFO - Using cached data for timing_app_data
+2025-10-27 10:44:04,378 - INFO - Processing timing data...
+2025-10-27 10:44:06,697 - INFO - Using cached data for car_data
+2025-10-27 10:44:06,774 - INFO - Using cached data for position_data
+2025-10-27 10:44:10,344 - INFO - Using cached data for weather_data
+2025-10-27 10:44:10,372 - INFO - Using cached data for race_control_messages
+2025-10-27 10:44:10,381 - WARNING - Driver 44 completed the race distance 00:00.059000 before the recorded end of the session.
+2025-10-27 10:44:10,476 - INFO - Finished loading data for 20 drivers: ['44', '77', '33', '5', '16', '10', '20', '55', '26', '8', '23', '3', '27', '7', '11', '99', '63', '88', '18', '4']
+2025-10-27 10:44:11,351 - INFO - [EXPORT OK] spanish_grand_prix
+2025-10-27 10:44:11,392 - INFO - Loading data for Monaco Grand Prix - Race [v3.5.3]
+2025-10-27 10:44:11,403 - INFO - Using cached data for session_info
+2025-10-27 10:44:11,406 - INFO - Using cached data for driver_info
+2025-10-27 10:44:11,705 - INFO - Using cached data for session_status_data
+2025-10-27 10:44:11,714 - INFO - Using cached data for lap_count
+2025-10-27 10:44:11,723 - INFO - Using cached data for track_status_data
+2025-10-27 10:44:11,772 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:44:11,783 - INFO - Using cached data for timing_app_data
+2025-10-27 10:44:11,784 - INFO - Processing timing data...
+2025-10-27 10:44:13,722 - INFO - Using cached data for car_data
+2025-10-27 10:44:13,816 - INFO - Using cached data for position_data
+2025-10-27 10:44:16,610 - INFO - Using cached data for weather_data
+2025-10-27 10:44:16,616 - INFO - Using cached data for race_control_messages
+2025-10-27 10:44:16,620 - WARNING - Driver 44 completed the race distance 00:00.087000 before the recorded end of the session.
+2025-10-27 10:44:16,670 - INFO - Finished loading data for 20 drivers: ['44', '5', '77', '33', '10', '55', '26', '23', '3', '8', '4', '11', '27', '20', '63', '18', '7', '88', '99', '16']
+2025-10-27 10:44:17,451 - INFO - [EXPORT OK] monaco_grand_prix
+2025-10-27 10:44:17,485 - INFO - Loading data for Canadian Grand Prix - Race [v3.5.3]
+2025-10-27 10:44:17,488 - INFO - Using cached data for session_info
+2025-10-27 10:44:17,490 - INFO - Using cached data for driver_info
+2025-10-27 10:44:17,742 - INFO - Using cached data for session_status_data
+2025-10-27 10:44:17,748 - INFO - Using cached data for lap_count
+2025-10-27 10:44:17,753 - INFO - Using cached data for track_status_data
+2025-10-27 10:44:17,779 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:44:17,787 - INFO - Using cached data for timing_app_data
+2025-10-27 10:44:17,789 - INFO - Processing timing data...
+2025-10-27 10:44:20,052 - INFO - Using cached data for car_data
+2025-10-27 10:44:20,170 - INFO - Using cached data for position_data
+2025-10-27 10:44:22,044 - INFO - Using cached data for weather_data
+2025-10-27 10:44:22,049 - INFO - Using cached data for race_control_messages
+2025-10-27 10:44:22,057 - WARNING - Driver 5 completed the race distance 00:00.190000 before the recorded end of the session.
+2025-10-27 10:44:22,107 - INFO - Finished loading data for 20 drivers: ['44', '5', '16', '77', '33', '3', '27', '10', '18', '26', '55', '11', '99', '8', '7', '63', '20', '88', '23', '4']
+2025-10-27 10:44:22,398 - INFO - [EXPORT OK] canadian_grand_prix
+2025-10-27 10:44:22,407 - INFO - Loading data for French Grand Prix - Race [v3.5.3]
+2025-10-27 10:44:22,408 - INFO - Using cached data for session_info
+2025-10-27 10:44:22,409 - INFO - Using cached data for driver_info
+2025-10-27 10:44:22,686 - INFO - Using cached data for session_status_data
+2025-10-27 10:44:22,688 - INFO - Using cached data for lap_count
+2025-10-27 10:44:22,693 - INFO - Using cached data for track_status_data
+2025-10-27 10:44:22,714 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:44:22,723 - INFO - Using cached data for timing_app_data
+2025-10-27 10:44:22,727 - INFO - Processing timing data...
+2025-10-27 10:44:23,894 - WARNING - Driver 27: Lap timing integrity check failed for 1 lap(s)
+2025-10-27 10:44:24,149 - INFO - Using cached data for car_data
+2025-10-27 10:44:24,227 - INFO - Using cached data for position_data
+2025-10-27 10:44:25,985 - INFO - Using cached data for weather_data
+2025-10-27 10:44:25,988 - INFO - Using cached data for race_control_messages
+2025-10-27 10:44:25,994 - WARNING - Driver 44 completed the race distance 00:00.126000 before the recorded end of the session.
+2025-10-27 10:44:26,027 - INFO - Finished loading data for 20 drivers: ['44', '77', '16', '33', '5', '55', '7', '27', '4', '10', '3', '11', '18', '26', '23', '99', '20', '88', '63', '8']
+2025-10-27 10:44:26,359 - INFO - [EXPORT OK] french_grand_prix
+2025-10-27 10:44:26,384 - INFO - Loading data for Austrian Grand Prix - Race [v3.5.3]
+2025-10-27 10:44:26,390 - INFO - Using cached data for session_info
+2025-10-27 10:44:26,393 - INFO - Using cached data for driver_info
+2025-10-27 10:44:26,592 - INFO - Using cached data for session_status_data
+2025-10-27 10:44:26,593 - INFO - Using cached data for lap_count
+2025-10-27 10:44:26,594 - INFO - Using cached data for track_status_data
+2025-10-27 10:44:26,606 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:44:26,609 - INFO - Using cached data for timing_app_data
+2025-10-27 10:44:26,609 - INFO - Processing timing data...
+2025-10-27 10:44:27,945 - INFO - Using cached data for car_data
+2025-10-27 10:44:28,012 - INFO - Using cached data for position_data
+2025-10-27 10:44:29,591 - INFO - Using cached data for weather_data
+2025-10-27 10:44:29,594 - INFO - Using cached data for race_control_messages
+2025-10-27 10:44:29,598 - WARNING - Driver 33 completed the race distance 00:00.042000 before the recorded end of the session.
+2025-10-27 10:44:29,639 - INFO - Finished loading data for 20 drivers: ['33', '16', '77', '5', '44', '4', '10', '55', '7', '99', '11', '3', '27', '18', '23', '8', '26', '63', '20', '88']
+2025-10-27 10:44:30,054 - INFO - [EXPORT OK] austrian_grand_prix
+2025-10-27 10:44:30,065 - INFO - Loading data for British Grand Prix - Race [v3.5.3]
+2025-10-27 10:44:30,067 - INFO - Using cached data for session_info
+2025-10-27 10:44:30,068 - INFO - Using cached data for driver_info
+2025-10-27 10:44:30,294 - INFO - Using cached data for session_status_data
+2025-10-27 10:44:30,297 - INFO - Using cached data for lap_count
+2025-10-27 10:44:30,300 - INFO - Using cached data for track_status_data
+2025-10-27 10:44:30,314 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:44:30,319 - INFO - Using cached data for timing_app_data
+2025-10-27 10:44:30,320 - INFO - Processing timing data...
+2025-10-27 10:44:31,366 - INFO - Using cached data for car_data
+2025-10-27 10:44:31,435 - INFO - Using cached data for position_data
+2025-10-27 10:44:33,341 - INFO - Using cached data for weather_data
+2025-10-27 10:44:33,346 - INFO - Using cached data for race_control_messages
+2025-10-27 10:44:33,354 - WARNING - Driver 44 completed the race distance 00:00.042000 before the recorded end of the session.
+2025-10-27 10:44:33,412 - INFO - Finished loading data for 20 drivers: ['44', '77', '16', '10', '33', '55', '3', '7', '26', '27', '4', '23', '18', '63', '88', '5', '11', '99', '8', '20']
+2025-10-27 10:44:33,827 - INFO - [EXPORT OK] british_grand_prix
+2025-10-27 10:44:33,861 - INFO - Loading data for German Grand Prix - Race [v3.5.3]
+2025-10-27 10:44:33,871 - INFO - Using cached data for session_info
+2025-10-27 10:44:33,873 - INFO - Using cached data for driver_info
+2025-10-27 10:44:34,164 - INFO - Using cached data for session_status_data
+2025-10-27 10:44:34,169 - INFO - Using cached data for lap_count
+2025-10-27 10:44:34,173 - INFO - Using cached data for track_status_data
+2025-10-27 10:44:34,182 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:44:34,186 - INFO - Using cached data for timing_app_data
+2025-10-27 10:44:34,189 - INFO - Processing timing data...
+2025-10-27 10:44:35,641 - INFO - Using cached data for car_data
+2025-10-27 10:44:35,750 - INFO - Using cached data for position_data
+2025-10-27 10:44:38,037 - INFO - Using cached data for weather_data
+2025-10-27 10:44:38,080 - INFO - Using cached data for race_control_messages
+2025-10-27 10:44:38,091 - WARNING - Driver 33 completed the race distance 00:00.090000 before the recorded end of the session.
+2025-10-27 10:44:38,364 - INFO - Finished loading data for 20 drivers: ['33', '5', '26', '18', '55', '23', '8', '20', '44', '88', '63', '7', '99', '10', '77', '27', '16', '4', '3', '11']
+2025-10-27 10:44:39,115 - INFO - [EXPORT OK] german_grand_prix
+2025-10-27 10:44:39,141 - INFO - Loading data for Hungarian Grand Prix - Race [v3.5.3]
+2025-10-27 10:44:39,145 - INFO - Using cached data for session_info
+2025-10-27 10:44:39,146 - INFO - Using cached data for driver_info
+2025-10-27 10:44:39,429 - INFO - Using cached data for session_status_data
+2025-10-27 10:44:39,433 - INFO - Using cached data for lap_count
+2025-10-27 10:44:39,435 - INFO - Using cached data for track_status_data
+2025-10-27 10:44:39,455 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:44:39,458 - INFO - Using cached data for timing_app_data
+2025-10-27 10:44:39,458 - INFO - Processing timing data...
+2025-10-27 10:44:41,436 - INFO - Using cached data for car_data
+2025-10-27 10:44:41,656 - INFO - Using cached data for position_data
+2025-10-27 10:44:46,040 - INFO - Using cached data for weather_data
+2025-10-27 10:44:46,073 - INFO - Using cached data for race_control_messages
+2025-10-27 10:44:46,085 - WARNING - Driver 44 completed the race distance 00:00.069000 before the recorded end of the session.
+2025-10-27 10:44:46,262 - INFO - Finished loading data for 20 drivers: ['44', '33', '5', '16', '55', '10', '7', '77', '4', '23', '11', '27', '20', '3', '26', '63', '18', '99', '88', '8']
+2025-10-27 10:44:47,346 - INFO - [EXPORT OK] hungarian_grand_prix
+2025-10-27 10:44:47,397 - INFO - Loading data for Belgian Grand Prix - Race [v3.5.3]
+2025-10-27 10:44:47,400 - INFO - Using cached data for session_info
+2025-10-27 10:44:47,405 - INFO - Using cached data for driver_info
+2025-10-27 10:44:47,662 - INFO - Using cached data for session_status_data
+2025-10-27 10:44:47,670 - INFO - Using cached data for lap_count
+2025-10-27 10:44:47,674 - INFO - Using cached data for track_status_data
+2025-10-27 10:44:47,697 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:44:47,706 - INFO - Using cached data for timing_app_data
+2025-10-27 10:44:47,714 - INFO - Processing timing data...
+2025-10-27 10:44:48,961 - INFO - Using cached data for car_data
+2025-10-27 10:44:49,038 - INFO - Using cached data for position_data
+2025-10-27 10:44:51,453 - INFO - Using cached data for weather_data
+2025-10-27 10:44:51,463 - INFO - Using cached data for race_control_messages
+2025-10-27 10:44:51,468 - WARNING - Driver 16 completed the race distance 00:00.211000 before the recorded end of the session.
+2025-10-27 10:44:51,542 - INFO - Finished loading data for 20 drivers: ['16', '44', '77', '5', '23', '11', '26', '27', '10', '18', '4', '20', '8', '3', '63', '7', '88', '99', '55', '33']
+2025-10-27 10:44:51,980 - INFO - [EXPORT OK] belgian_grand_prix
+2025-10-27 10:44:51,999 - INFO - Loading data for Italian Grand Prix - Race [v3.5.3]
+2025-10-27 10:44:52,002 - INFO - Using cached data for session_info
+2025-10-27 10:44:52,004 - INFO - Using cached data for driver_info
+2025-10-27 10:44:52,223 - INFO - Using cached data for session_status_data
+2025-10-27 10:44:52,229 - INFO - Using cached data for lap_count
+2025-10-27 10:44:52,233 - INFO - Using cached data for track_status_data
+2025-10-27 10:44:52,256 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:44:52,262 - INFO - Using cached data for timing_app_data
+2025-10-27 10:44:52,262 - INFO - Processing timing data...
+2025-10-27 10:44:53,512 - INFO - Using cached data for car_data
+2025-10-27 10:44:53,609 - INFO - Using cached data for position_data
+2025-10-27 10:44:55,966 - INFO - Using cached data for weather_data
+2025-10-27 10:44:55,975 - INFO - Using cached data for race_control_messages
+2025-10-27 10:44:55,984 - WARNING - Driver 16 completed the race distance 00:00.092000 before the recorded end of the session.
+2025-10-27 10:44:56,072 - INFO - Finished loading data for 20 drivers: ['16', '77', '44', '3', '27', '23', '11', '33', '99', '4', '10', '18', '5', '63', '7', '8', '88', '20', '26', '55']
+2025-10-27 10:44:56,498 - INFO - [EXPORT OK] italian_grand_prix
+2025-10-27 10:44:56,520 - INFO - Loading data for Singapore Grand Prix - Race [v3.5.3]
+2025-10-27 10:44:56,526 - INFO - Using cached data for session_info
+2025-10-27 10:44:56,529 - INFO - Using cached data for driver_info
+2025-10-27 10:44:56,768 - INFO - Using cached data for session_status_data
+2025-10-27 10:44:56,772 - INFO - Using cached data for lap_count
+2025-10-27 10:44:56,777 - INFO - Using cached data for track_status_data
+2025-10-27 10:44:56,799 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:44:56,802 - INFO - Using cached data for timing_app_data
+2025-10-27 10:44:56,803 - INFO - Processing timing data...
+2025-10-27 10:44:57,725 - WARNING - Driver 18: Lap timing integrity check failed for 1 lap(s)
+2025-10-27 10:44:58,073 - INFO - Using cached data for car_data
+2025-10-27 10:44:58,155 - INFO - Using cached data for position_data
+2025-10-27 10:45:01,124 - INFO - Using cached data for weather_data
+2025-10-27 10:45:01,144 - INFO - Using cached data for race_control_messages
+2025-10-27 10:45:01,158 - WARNING - Driver 5 completed the race distance 00:00.171000 before the recorded end of the session.
+2025-10-27 10:45:01,261 - INFO - Finished loading data for 20 drivers: ['5', '16', '33', '44', '77', '23', '4', '10', '27', '99', '8', '55', '18', '3', '26', '88', '20', '7', '11', '63']
+2025-10-27 10:45:01,781 - INFO - [EXPORT OK] singapore_grand_prix
+2025-10-27 10:45:01,809 - INFO - Loading data for Russian Grand Prix - Race [v3.5.3]
+2025-10-27 10:45:01,813 - INFO - Using cached data for session_info
+2025-10-27 10:45:01,815 - INFO - Using cached data for driver_info
+2025-10-27 10:45:01,846 - INFO - Using cached data for session_status_data
+2025-10-27 10:45:01,848 - INFO - Using cached data for lap_count
+2025-10-27 10:45:01,849 - INFO - Using cached data for track_status_data
+2025-10-27 10:45:01,858 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:45:01,861 - INFO - Using cached data for timing_app_data
+2025-10-27 10:45:01,863 - INFO - Processing timing data...
+2025-10-27 10:45:02,915 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/16/laps/1.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/16/laps/1.json
+2025-10-27 10:45:02,972 - INFO - Using cached data for car_data
+2025-10-27 10:45:03,022 - INFO - Using cached data for position_data
+2025-10-27 10:45:05,216 - INFO - Using cached data for weather_data
+2025-10-27 10:45:05,224 - INFO - Using cached data for race_control_messages
+2025-10-27 10:45:05,231 - WARNING - Driver 44 completed the race distance 00:00.308000 before the recorded end of the session.
+2025-10-27 10:45:05,270 - INFO - Finished loading data for 20 drivers: ['44', '77', '16', '33', '23', '55', '11', '4', '20', '27', '18', '26', '7', '10', '99', '88', '63', '5', '3', '8']
+2025-10-27 10:45:05,636 - INFO - [EXPORT OK] russian_grand_prix
+2025-10-27 10:45:05,658 - INFO - Loading data for Japanese Grand Prix - Race [v3.5.3]
+2025-10-27 10:45:05,659 - INFO - Using cached data for session_info
+2025-10-27 10:45:05,660 - INFO - Using cached data for driver_info
+2025-10-27 10:45:05,833 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/17/results.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/17/results.json
+2025-10-27 10:45:05,863 - INFO - Using cached data for session_status_data
+2025-10-27 10:45:05,864 - INFO - Using cached data for lap_count
+2025-10-27 10:45:05,865 - INFO - Using cached data for track_status_data
+2025-10-27 10:45:05,875 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:45:05,877 - INFO - Using cached data for timing_app_data
+2025-10-27 10:45:05,878 - INFO - Processing timing data...
+2025-10-27 10:45:06,963 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/17/laps/1.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/17/laps/1.json
+2025-10-27 10:45:07,133 - INFO - Using cached data for car_data
+2025-10-27 10:45:07,216 - INFO - Using cached data for position_data
+2025-10-27 10:45:09,606 - INFO - Using cached data for weather_data
+2025-10-27 10:45:09,627 - INFO - Using cached data for race_control_messages
+2025-10-27 10:45:09,645 - WARNING - Driver 77 completed the race distance 00:00.224000 before the recorded end of the session.
+2025-10-27 10:45:09,729 - INFO - Finished loading data for 20 drivers: ['77', '5', '44', '23', '55', '16', '10', '11', '18', '26', '4', '7', '8', '99', '20', '63', '88', '33', '3', '27']
+2025-10-27 10:45:10,392 - INFO - [EXPORT OK] japanese_grand_prix
+2025-10-27 10:45:10,421 - INFO - Loading data for Mexican Grand Prix - Race [v3.5.3]
+2025-10-27 10:45:10,426 - INFO - Using cached data for session_info
+2025-10-27 10:45:10,427 - INFO - Using cached data for driver_info
+2025-10-27 10:45:10,712 - INFO - Using cached data for session_status_data
+2025-10-27 10:45:10,718 - INFO - Using cached data for lap_count
+2025-10-27 10:45:10,720 - INFO - Using cached data for track_status_data
+2025-10-27 10:45:10,755 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:45:10,762 - INFO - Using cached data for timing_app_data
+2025-10-27 10:45:10,765 - INFO - Processing timing data...
+2025-10-27 10:45:11,792 - WARNING - Driver  5: Lap timing integrity check failed for 1 lap(s)
+2025-10-27 10:45:12,171 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/18/laps/1.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/18/laps/1.json
+2025-10-27 10:45:12,263 - INFO - Using cached data for car_data
+2025-10-27 10:45:12,342 - INFO - Using cached data for position_data
+2025-10-27 10:45:15,468 - INFO - Using cached data for weather_data
+2025-10-27 10:45:15,471 - INFO - Using cached data for race_control_messages
+2025-10-27 10:45:15,480 - WARNING - Driver 44 completed the race distance 00:00.798000 before the recorded end of the session.
+2025-10-27 10:45:15,527 - INFO - Finished loading data for 20 drivers: ['44', '5', '77', '16', '23', '33', '11', '3', '10', '27', '26', '18', '55', '99', '20', '63', '8', '88', '7', '4']
+2025-10-27 10:45:16,013 - INFO - [EXPORT OK] mexican_grand_prix
+2025-10-27 10:45:16,036 - INFO - Loading data for United States Grand Prix - Race [v3.5.3]
+2025-10-27 10:45:16,042 - INFO - Using cached data for session_info
+2025-10-27 10:45:16,043 - INFO - Using cached data for driver_info
+2025-10-27 10:45:16,062 - INFO - Using cached data for session_status_data
+2025-10-27 10:45:16,066 - INFO - Using cached data for lap_count
+2025-10-27 10:45:16,067 - INFO - Using cached data for track_status_data
+2025-10-27 10:45:16,077 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:45:16,081 - INFO - Using cached data for timing_app_data
+2025-10-27 10:45:16,084 - INFO - Processing timing data...
+2025-10-27 10:45:16,764 - WARNING - Driver  4: Lap timing integrity check failed for 1 lap(s)
+2025-10-27 10:45:17,021 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/19/laps/1.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/19/laps/1.json
+2025-10-27 10:45:17,328 - INFO - Using cached data for car_data
+2025-10-27 10:45:17,443 - INFO - Using cached data for position_data
+2025-10-27 10:45:20,484 - INFO - Using cached data for weather_data
+2025-10-27 10:45:20,489 - INFO - Using cached data for race_control_messages
+2025-10-27 10:45:20,495 - WARNING - Driver 77 completed the race distance 00:00.080000 before the recorded end of the session.
+2025-10-27 10:45:20,576 - INFO - Finished loading data for 20 drivers: ['77', '44', '33', '16', '23', '3', '4', '55', '27', '11', '7', '26', '18', '99', '8', '10', '63', '20', '88', '5']
+2025-10-27 10:45:21,025 - INFO - [EXPORT OK] united_states_grand_prix
+2025-10-27 10:45:21,078 - INFO - Loading data for Brazilian Grand Prix - Race [v3.5.3]
+2025-10-27 10:45:21,084 - INFO - Using cached data for session_info
+2025-10-27 10:45:21,086 - INFO - Using cached data for driver_info
+2025-10-27 10:45:21,273 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/20/results.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/20/results.json
+2025-10-27 10:45:21,316 - INFO - Using cached data for session_status_data
+2025-10-27 10:45:21,324 - INFO - Using cached data for lap_count
+2025-10-27 10:45:21,327 - INFO - Using cached data for track_status_data
+2025-10-27 10:45:21,365 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:45:21,372 - INFO - Using cached data for timing_app_data
+2025-10-27 10:45:21,377 - INFO - Processing timing data...
+2025-10-27 10:45:22,431 - WARNING - Driver 20: Lap timing integrity check failed for 1 lap(s)
+2025-10-27 10:45:22,829 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/20/laps/1.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/20/laps/1.json
+2025-10-27 10:45:22,940 - INFO - Using cached data for car_data
+2025-10-27 10:45:24,065 - INFO - Using cached data for position_data
+2025-10-27 10:45:25,994 - INFO - Using cached data for weather_data
+2025-10-27 10:45:26,006 - INFO - Using cached data for race_control_messages
+2025-10-27 10:45:26,014 - WARNING - Driver 33 completed the race distance 00:00.145000 before the recorded end of the session.
+2025-10-27 10:45:26,134 - INFO - Finished loading data for 20 drivers: ['33', '10', '55', '7', '99', '3', '44', '4', '11', '26', '20', '63', '8', '23', '27', '88', '5', '16', '18', '77']
+2025-10-27 10:45:26,792 - INFO - [EXPORT OK] brazilian_grand_prix
+2025-10-27 10:45:26,810 - INFO - Loading data for Abu Dhabi Grand Prix - Race [v3.5.3]
+2025-10-27 10:45:26,813 - INFO - Using cached data for session_info
+2025-10-27 10:45:26,817 - INFO - Using cached data for driver_info
+2025-10-27 10:45:26,990 - WARNING - Request for URL https://api.jolpi.ca/ergast/f1/2019/21/results.json failed; using cached response
+Traceback (most recent call last):
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests_cache/session.py", line 291, in _resend
+    response.raise_for_status()
+  File "/Users/ompatel/Downloads/RacinglinAi/.venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://api.jolpi.ca/ergast/f1/2019/21/results.json
+2025-10-27 10:45:27,016 - INFO - Using cached data for session_status_data
+2025-10-27 10:45:27,023 - INFO - Using cached data for lap_count
+2025-10-27 10:45:27,028 - INFO - Using cached data for track_status_data
+2025-10-27 10:45:27,082 - INFO - Using cached data for _extended_timing_data
+2025-10-27 10:45:27,102 - INFO - Using cached data for timing_app_data
+2025-10-27 10:45:27,104 - INFO - Processing timing data...
+2025-10-27 10:45:28,154 - WARNING - Driver  4: Lap timing integrity check failed for 1 lap(s)
+2025-10-27 10:45:28,183 - WARNING - Driver 55: Lap timing integrity check failed for 1 lap(s)
+2025-10-27 10:45:28,604 - INFO - Using cached data for car_data
+2025-10-27 10:45:28,747 - INFO - Using cached data for position_data
+2025-10-27 10:45:33,602 - INFO - Using cached data for weather_data
+2025-10-27 10:45:33,614 - INFO - Using cached data for race_control_messages
+2025-10-27 10:45:33,662 - INFO - Finished loading data for 20 drivers: ['44', '33', '16', '77', '5', '23', '11', '4', '26', '55', '3', '27', '7', '20', '8', '99', '63', '10', '88', '18']
+2025-10-27 10:45:35,096 - INFO - [EXPORT OK] abu_dhabi_grand_prix
