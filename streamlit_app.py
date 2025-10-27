@@ -148,19 +148,38 @@ with st.expander("Grip Degradation vs Tyre Life"):
     st.plotly_chart(fig, use_container_width=True)
     st.caption("Visualizes tyre degradation by showing average lap time versus tyre life. Steeper curves indicate faster tyre wear.")
 
-with st.expander("Sector Dominance per Driver (Team Colors)"):
+with st.expander("Sector Dominance per Driver"):
     sector_pref = filtered_df.groupby(["Driver", "BestSector"]).size().reset_index(name="Count")
     sector_pref["BestSector"] = sector_pref["BestSector"].map({1: "S1", 2: "S2", 3: "S3"})
     driver_teams = filtered_df.drop_duplicates("Driver")[["Driver", "Team"]].set_index("Driver")["Team"].to_dict()
     sector_pref["Team"] = sector_pref["Driver"].map(driver_teams)
     sector_pref["Color"] = sector_pref["Team"].map(TEAM_COLORS).fillna(TEAM_COLORS["Other"])
     fig = go.Figure()
-    for sector in ["S1", "S2", "S3"]:
-        data = sector_pref[sector_pref["BestSector"] == sector]
-        fig.add_trace(go.Bar(x=data["Driver"], y=data["Count"], name=sector, marker_color=data["Color"]))
-    fig.update_layout(barmode="stack", template="plotly_dark", title="Best Sector Count per Driver (Colored by Team)", xaxis_title="Driver", yaxis_title="Best Sector Count")
+    for driver in sector_pref["Driver"].unique():
+        # Filter the data for the current driver
+        driver_data = sector_pref[sector_pref["Driver"] == driver]
+        # Get the single, consistent team color for this driver's bars
+        team_color = driver_data["Color"].iloc[0] 
+        # X-axis will be the sector, Y-axis will be the count.
+        fig.add_trace(go.Bar(
+            x=driver_data["BestSector"],
+            y=driver_data["Count"],
+            name=driver,  # Name for the legend (the driver's name)
+            marker_color=team_color,
+            # Add hover information to show the sector clearly
+            hovertemplate='<b>Driver: %{name}</b><br>Sector: %{x}<br>Count: %{y}<extra></extra>',
+        ))
+    # set the x-axis to be categorical (S1, S2, S3)
+    fig.update_layout(
+        barmode="group", # Changed from 'stack' to 'group'
+        template="plotly_dark", 
+        title="Best Sector Count per Driver (Colored by Team)", 
+        xaxis_title="Track Sector", 
+        yaxis_title="Best Sector Count",
+        xaxis={'type': 'category'} # Ensure sectors are treated as categories
+    )
     st.plotly_chart(fig, use_container_width=True)
-    st.caption("Displays the count of best sector times per driver, color-coded by team — highlights driver strengths in different track sectors.")
+    st.caption("Displays the count of best sector times per driver, color-coded by team. The bars are grouped by driver, showing their S1, S2, and S3 performance side-by-side.")
 
 with st.expander("Delta to Fastest Lap"):
     fig = px.line(filtered_df, x="LapNumber", y="DeltaToFastestLap", color="Driver_Season", template="plotly_dark", color_discrete_map=driver_colors)
@@ -168,7 +187,7 @@ with st.expander("Delta to Fastest Lap"):
     st.plotly_chart(fig, use_container_width=True)
     st.caption("Shows how much slower each lap is compared to the driver's fastest lap in the race.")
 
-with st.expander("Stint Type Pace (Team Colors)"):
+with st.expander("Stint Type Pace"):
     if "Stint" in filtered_df.columns:
         stint_max = filtered_df.groupby("Driver")["Stint"].transform("max")
         filtered_df["StintType"] = np.where(filtered_df["Stint"] == 1, "Opening", np.where(filtered_df["Stint"] == stint_max, "Closing", "Mid"))
