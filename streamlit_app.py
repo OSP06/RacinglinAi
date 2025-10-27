@@ -114,7 +114,10 @@ def plot_circuit_map(season: int, gp: str):
         st.error(f"Could not load circuit layout: {e}")
 
 if selected_season != "All" and selected_gp != "All":
-    plot_circuit_map(int(selected_season), selected_gp)
+    try:
+        plot_circuit_map(int(selected_season), selected_gp)
+    except ValueError:
+        st.error("Invalid season selected for circuit plot.")
 
 st.title("RacingLineAI : AI-Powered Race Insights")
 
@@ -253,15 +256,24 @@ if model_option == "LSTM Tyre Forecast":
 
 elif model_option == "Lap Time Regressor":
     st.caption("Predicts lap time based on tyre life, compound type, and track temperature using a linear regression model.")
-    df_reg = filtered_df.dropna(subset=["TrackTemp"])
+    
+    df_reg = filtered_df.dropna(subset=["TrackTemp", "LapTimeSeconds"])
+    #Calculate the median lap time for clean racing laps
+    median_lap = df_reg["LapTimeSeconds"].median()
+    #Filter out laps that are 3 seconds slower than the median
+    CLEAN_LAP_THRESHOLD = 3.0  # seconds
+    df_reg = df_reg[df_reg["LapTimeSeconds"] < (median_lap + CLEAN_LAP_THRESHOLD)]
+    # Use LapNumber as a proxy for diminishing fuel load, highly predictive feature for lap time improvement
     df_reg["CompoundCode"] = df_reg["Compound"].astype("category").cat.codes
-    X = df_reg[["TrackTemp", "TyreLife", "CompoundCode"]]; y = df_reg["LapTimeSeconds"]
+    # X includes 'LapNumber' as a proxy for fuel load/weight reduction
+    X = df_reg[["TrackTemp", "TyreLife", "CompoundCode", "LapNumber"]]
+    y = df_reg["LapTimeSeconds"]
     model = LinearRegression().fit(X, y)
     preds = model.predict(X)
-    rmse = np.sqrt(mean_squared_error(y, preds))
-    # rmse = mean_squared_error(y, preds, squared=False)
-    st.metric("RMSE = mean_squared_error(y, preds, squared=False)", f"{rmse:.3f} sec")
-    fig = px.scatter(x=y, y=preds, labels={"x": "Actual Lap Time", "y": "Predicted"}, title="Linear Regression: Lap Time Prediction")
+    rmse = np.sqrt(mean_squared_error(y, preds)) 
+    st.metric("RMSE (Clean Data)", f"{rmse:.3f} sec")
+    fig = px.scatter(x=y, y=preds, labels={"x": "Actual Lap Time (Clean)", "y": "Predicted"}, 
+                    title="Linear Regression: Lap Time Prediction")
     st.plotly_chart(fig, use_container_width=True)
 
 elif model_option == "Strategy Predictor":
