@@ -1,0 +1,19 @@
+Driver,Team,FastestLap,Position,LapsCompleted
+HAM,Mercedes,105.412,1.0,39
+RAI,Ferrari,106.523,2.0,40
+PER,Force India,106.206,3.0,40
+VET,Ferrari,105.53,4.0,39
+SAI,Renault,106.856,5.0,40
+LEC,Sauber,107.403,6.0,39
+ALO,McLaren,107.449,7.0,40
+STR,Williams,106.815,8.0,40
+VAN,McLaren,107.666,9.0,42
+HAR,Toro Rosso,108.288,10.0,40
+ERI,Sauber,107.925,11.0,45
+GAS,Toro Rosso,108.035,12.0,41
+MAG,Haas F1 Team,108.155,13.0,41
+BOT,Mercedes,105.149,14.0,36
+GRO,Haas F1 Team,106.88,15.0,36
+VER,Red Bull Racing,105.771,16.0,34
+RIC,Red Bull Racing,105.419,17.0,34
+HUL,Renault,108.867,18.0,5

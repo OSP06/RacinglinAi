@@ -1,0 +1,650 @@
+Driver,TyreLife,AvgLapTime,Compound,Team
+ALB,2,91.49449999999999,Soft,Toro Rosso
+ALB,3,90.555,Soft,Toro Rosso
+ALB,4,90.61250000000001,Soft,Toro Rosso
+ALB,5,90.39500000000001,Soft,Toro Rosso
+ALB,6,90.75550000000001,Soft,Toro Rosso
+ALB,7,90.63550000000001,Soft,Toro Rosso
+ALB,8,90.62049999999999,Soft,Toro Rosso
+ALB,9,90.92750000000001,Soft,Toro Rosso
+ALB,10,90.5995,Soft,Toro Rosso
+ALB,11,91.0685,Soft,Toro Rosso
+ALB,12,92.071,Soft,Toro Rosso
+ALB,13,91.5955,Soft,Toro Rosso
+ALB,14,90.335,Medium,Toro Rosso
+ALB,15,89.927,Medium,Toro Rosso
+ALB,17,90.207,Medium,Toro Rosso
+ALB,18,89.457,Medium,Toro Rosso
+ALB,19,89.376,Medium,Toro Rosso
+ALB,20,89.265,Medium,Toro Rosso
+ALB,21,90.648,Medium,Toro Rosso
+ALB,22,89.308,Medium,Toro Rosso
+ALB,23,89.302,Medium,Toro Rosso
+ALB,24,89.168,Medium,Toro Rosso
+ALB,25,89.015,Medium,Toro Rosso
+ALB,26,88.765,Medium,Toro Rosso
+ALB,27,88.595,Medium,Toro Rosso
+ALB,28,88.491,Medium,Toro Rosso
+ALB,29,88.188,Medium,Toro Rosso
+ALB,30,88.897,Medium,Toro Rosso
+ALB,31,89.106,Medium,Toro Rosso
+ALB,32,88.835,Medium,Toro Rosso
+ALB,33,88.944,Medium,Toro Rosso
+ALB,34,89.79,Medium,Toro Rosso
+ALB,35,93.487,Medium,Toro Rosso
+ALB,36,89.708,Medium,Toro Rosso
+ALB,37,89.275,Medium,Toro Rosso
+ALB,38,89.853,Medium,Toro Rosso
+ALB,39,89.939,Medium,Toro Rosso
+ALB,40,89.74,Medium,Toro Rosso
+ALB,41,89.659,Medium,Toro Rosso
+ALB,42,90.894,Medium,Toro Rosso
+ALB,43,91.073,Medium,Toro Rosso
+BOT,2,87.338,Medium,Mercedes
+BOT,3,87.45,Medium,Mercedes
+BOT,4,87.757,Medium,Mercedes
+BOT,5,88.5865,Soft,Mercedes
+BOT,6,88.4525,Soft,Mercedes
+BOT,7,88.089,Soft,Mercedes
+BOT,8,88.759,Soft,Mercedes
+BOT,9,88.15,Soft,Mercedes
+BOT,10,88.07249999999999,Soft,Mercedes
+BOT,11,88.289,Soft,Mercedes
+BOT,12,88.137,Soft,Mercedes
+BOT,13,88.2465,Soft,Mercedes
+BOT,14,88.04650000000001,Soft,Mercedes
+BOT,15,87.99549999999999,Soft,Mercedes
+BOT,16,88.1805,Soft,Mercedes
+BOT,17,87.78649999999999,Soft,Mercedes
+BOT,18,87.63,Soft,Mercedes
+BOT,19,87.4885,Soft,Mercedes
+BOT,20,87.887,Soft,Mercedes
+BOT,21,87.8715,Soft,Mercedes
+BOT,22,87.708,Soft,Mercedes
+BOT,23,87.66149999999999,Soft,Mercedes
+BOT,24,87.56899999999999,Soft,Mercedes
+BOT,25,87.8575,Soft,Mercedes
+BOT,26,87.071,Medium,Mercedes
+BOT,27,87.238,Medium,Mercedes
+BOT,28,88.09,Medium,Mercedes
+BOT,29,89.226,Medium,Mercedes
+BOT,30,87.172,Medium,Mercedes
+BOT,31,87.608,Medium,Mercedes
+BOT,32,86.83,Medium,Mercedes
+BOT,33,88.732,Medium,Mercedes
+BOT,34,85.58,Medium,Mercedes
+BOT,35,88.161,Medium,Mercedes
+GAS,2,89.407,Medium,Red Bull Racing
+GAS,3,89.486,Medium,Red Bull Racing
+GAS,4,90.138,Medium,Red Bull Racing
+GAS,5,90.28800000000001,Medium,Red Bull Racing
+GAS,6,89.61949999999999,Medium,Red Bull Racing
+GAS,7,89.40950000000001,Medium,Red Bull Racing
+GAS,8,89.631,Medium,Red Bull Racing
+GAS,9,89.511,Medium,Red Bull Racing
+GAS,10,89.84,Medium,Red Bull Racing
+GAS,11,89.37049999999999,Medium,Red Bull Racing
+GAS,12,89.47399999999999,Medium,Red Bull Racing
+GAS,13,91.249,Medium,Red Bull Racing
+GAS,14,89.63,Medium,Red Bull Racing
+GAS,15,89.326,Medium,Red Bull Racing
+GAS,16,88.8965,Medium,Red Bull Racing
+GAS,17,88.90549999999999,Medium,Red Bull Racing
+GAS,18,89.28999999999999,Medium,Red Bull Racing
+GAS,19,89.179,Medium,Red Bull Racing
+GAS,20,89.174,Medium,Red Bull Racing
+GAS,21,89.155,Medium,Red Bull Racing
+GAS,22,89.675,Medium,Red Bull Racing
+GAS,23,89.645,Medium,Red Bull Racing
+GAS,24,89.354,Medium,Red Bull Racing
+GAS,25,89.272,Medium,Red Bull Racing
+GAS,26,88.985,Medium,Red Bull Racing
+GAS,27,88.412,Medium,Red Bull Racing
+GAS,28,88.451,Medium,Red Bull Racing
+GAS,29,88.713,Medium,Red Bull Racing
+GAS,30,88.627,Medium,Red Bull Racing
+GAS,32,88.825,Medium,Red Bull Racing
+GAS,33,89.207,Medium,Red Bull Racing
+GAS,34,88.974,Medium,Red Bull Racing
+GAS,35,89.59,Medium,Red Bull Racing
+GAS,36,89.661,Medium,Red Bull Racing
+GIO,2,91.07,Medium,Alfa Romeo Racing
+GIO,3,92.742,Medium,Alfa Romeo Racing
+GIO,4,90.512,Medium,Alfa Romeo Racing
+GIO,5,92.0435,Medium,Alfa Romeo Racing
+GIO,6,90.405,Medium,Alfa Romeo Racing
+GIO,7,91.5035,Medium,Alfa Romeo Racing
+GIO,8,90.408,Medium,Alfa Romeo Racing
+GIO,9,90.1225,Medium,Alfa Romeo Racing
+GIO,10,90.22649999999999,Medium,Alfa Romeo Racing
+GIO,11,90.126,Medium,Alfa Romeo Racing
+GIO,12,89.955,Medium,Alfa Romeo Racing
+GIO,13,89.8375,Medium,Alfa Romeo Racing
+GIO,14,89.859,Medium,Alfa Romeo Racing
+GIO,15,90.45349999999999,Medium,Alfa Romeo Racing
+GIO,16,90.2375,Medium,Alfa Romeo Racing
+GIO,17,90.321,Medium,Alfa Romeo Racing
+GIO,18,90.7975,Medium,Alfa Romeo Racing
+GIO,19,91.00200000000001,Medium,Alfa Romeo Racing
+GIO,20,90.018,Medium,Alfa Romeo Racing
+GIO,21,89.874,Medium,Alfa Romeo Racing
+GIO,22,90.012,Medium,Alfa Romeo Racing
+GIO,23,89.929,Medium,Alfa Romeo Racing
+GIO,24,89.9625,Medium,Alfa Romeo Racing
+GIO,25,90.072,Medium,Alfa Romeo Racing
+GIO,26,93.3665,Medium,Alfa Romeo Racing
+GIO,27,89.284,Soft,Alfa Romeo Racing
+GIO,28,88.925,Soft,Alfa Romeo Racing
+GIO,29,89.076,Soft,Alfa Romeo Racing
+GIO,30,89.322,Soft,Alfa Romeo Racing
+GRO,2,88.462,Medium,Haas F1 Team
+GRO,3,89.159,Medium,Haas F1 Team
+GRO,4,89.709,Medium,Haas F1 Team
+GRO,5,90.856,Soft,Haas F1 Team
+GRO,6,90.7695,Soft,Haas F1 Team
+GRO,7,90.872,Soft,Haas F1 Team
+GRO,8,90.74350000000001,Soft,Haas F1 Team
+GRO,9,90.584,Soft,Haas F1 Team
+GRO,10,90.6865,Soft,Haas F1 Team
+GRO,11,90.9235,Soft,Haas F1 Team
+GRO,12,90.036,Soft,Haas F1 Team
+GRO,13,89.6815,Soft,Haas F1 Team
+GRO,14,90.0365,Soft,Haas F1 Team
+GRO,15,90.853,Soft,Haas F1 Team
+GRO,16,90.07,Soft,Haas F1 Team
+GRO,17,90.555,Soft,Haas F1 Team
+HAM,2,88.801,Medium,Mercedes
+HAM,3,88.667,Medium,Mercedes
+HAM,4,89.367,Medium,Mercedes
+HAM,5,89.54650000000001,Soft,Mercedes
+HAM,6,88.7615,Soft,Mercedes
+HAM,7,88.735,Soft,Mercedes
+HAM,8,88.834,Soft,Mercedes
+HAM,9,88.9855,Soft,Mercedes
+HAM,10,88.892,Soft,Mercedes
+HAM,11,88.595,Soft,Mercedes
+HAM,12,88.922,Soft,Mercedes
+HAM,13,89.127,Soft,Mercedes
+HAM,14,88.7325,Soft,Mercedes
+HAM,15,88.62,Soft,Mercedes
+HAM,16,88.616,Soft,Mercedes
+HAM,17,88.2245,Soft,Mercedes
+HAM,18,87.771,Medium,Mercedes
+HAM,19,87.538,Medium,Mercedes
+HAM,20,87.376,Medium,Mercedes
+HAM,21,87.553,Medium,Mercedes
+HAM,22,88.356,Medium,Mercedes
+HAM,23,88.149,Medium,Mercedes
+HAM,24,88.043,Medium,Mercedes
+HAM,25,88.196,Medium,Mercedes
+HAM,26,88.282,Medium,Mercedes
+HAM,27,87.576,Medium,Mercedes
+HAM,28,87.927,Medium,Mercedes
+HAM,29,87.76,Medium,Mercedes
+HAM,30,87.61,Medium,Mercedes
+HAM,31,87.567,Medium,Mercedes
+HAM,32,87.098,Medium,Mercedes
+HAM,33,87.224,Medium,Mercedes
+HAM,34,87.728,Medium,Mercedes
+HAM,35,87.567,Medium,Mercedes
+HAM,36,87.653,Medium,Mercedes
+HAM,37,87.933,Medium,Mercedes
+HAM,38,87.134,Medium,Mercedes
+HAM,39,87.19,Medium,Mercedes
+HAM,40,87.042,Medium,Mercedes
+HAM,41,86.924,Medium,Mercedes
+HAM,42,86.057,Medium,Mercedes
+HAM,43,86.627,Medium,Mercedes
+HUL,2,90.952,Soft,Renault
+HUL,3,90.1765,Soft,Renault
+HUL,4,90.44149999999999,Soft,Renault
+HUL,5,90.8615,Soft,Renault
+HUL,6,90.0865,Soft,Renault
+HUL,7,90.231,Soft,Renault
+HUL,8,90.15299999999999,Soft,Renault
+HUL,9,90.19149999999999,Soft,Renault
+HUL,10,89.8655,Soft,Renault
+HUL,11,89.84700000000001,Soft,Renault
+HUL,12,89.93549999999999,Soft,Renault
+HUL,13,89.127,Hard,Renault
+HUL,14,89.137,Hard,Renault
+HUL,15,89.13,Hard,Renault
+HUL,16,88.848,Hard,Renault
+HUL,17,89.03,Hard,Renault
+HUL,19,89.169,Hard,Renault
+HUL,20,89.052,Hard,Renault
+HUL,21,89.001,Hard,Renault
+HUL,22,89.05,Hard,Renault
+HUL,23,88.97,Hard,Renault
+HUL,24,88.967,Hard,Renault
+HUL,25,88.921,Hard,Renault
+HUL,26,88.548,Hard,Renault
+HUL,27,88.765,Hard,Renault
+HUL,28,88.573,Hard,Renault
+HUL,29,88.601,Hard,Renault
+HUL,30,88.745,Hard,Renault
+HUL,31,88.766,Hard,Renault
+HUL,32,88.942,Hard,Renault
+HUL,33,88.763,Hard,Renault
+HUL,34,88.796,Hard,Renault
+HUL,35,88.667,Hard,Renault
+HUL,36,88.788,Hard,Renault
+HUL,37,88.676,Hard,Renault
+HUL,38,88.902,Hard,Renault
+HUL,39,88.444,Hard,Renault
+HUL,40,88.615,Hard,Renault
+HUL,41,88.492,Hard,Renault
+HUL,42,91.215,Hard,Renault
+HUL,43,88.805,Hard,Renault
+HUL,44,88.711,Hard,Renault
+KUB,2,90.8005,Medium,Williams
+KUB,3,91.9245,Medium,Williams
+KUB,4,91.38566666666668,Medium,Williams
+KUB,5,91.57866666666666,Medium,Williams
+KUB,6,92.007,Medium,Williams
+KUB,7,91.082,Medium,Williams
+KUB,8,91.87866666666667,Medium,Williams
+KUB,9,91.7265,Soft,Williams
+KUB,10,91.56599999999999,Medium,Williams
+KUB,11,91.617,Medium,Williams
+KUB,12,91.407,Medium,Williams
+KUB,13,92.07133333333333,Medium,Williams
+KUB,14,91.9625,Medium,Williams
+KUB,15,91.2655,Medium,Williams
+KUB,17,92.374,Medium,Williams
+KUB,18,92.339,Medium,Williams
+KUB,19,95.249,Medium,Williams
+KUB,20,94.511,Medium,Williams
+KUB,22,92.234,Medium,Williams
+KUB,23,92.265,Medium,Williams
+KUB,24,92.343,Medium,Williams
+KUB,25,92.58,Medium,Williams
+KUB,26,91.779,Medium,Williams
+KVY,2,92.335,Medium,Toro Rosso
+KVY,3,89.57249999999999,Medium,Toro Rosso
+KVY,4,89.84649999999999,Medium,Toro Rosso
+KVY,5,89.82849999999999,Medium,Toro Rosso
+KVY,6,91.192,Medium,Toro Rosso
+KVY,7,89.5795,Medium,Toro Rosso
+KVY,8,89.6015,Medium,Toro Rosso
+KVY,9,89.93950000000001,Medium,Toro Rosso
+KVY,10,89.92150000000001,Medium,Toro Rosso
+KVY,11,89.59450000000001,Medium,Toro Rosso
+KVY,12,92.713,Medium,Toro Rosso
+KVY,13,89.56700000000001,Medium,Toro Rosso
+KVY,14,89.00450000000001,Medium,Toro Rosso
+KVY,15,88.631,Medium,Toro Rosso
+KVY,16,88.7195,Medium,Toro Rosso
+KVY,17,88.732,Medium,Toro Rosso
+KVY,18,89.0535,Medium,Toro Rosso
+KVY,19,88.852,Medium,Toro Rosso
+KVY,20,88.95599999999999,Medium,Toro Rosso
+KVY,21,88.65899999999999,Medium,Toro Rosso
+KVY,22,89.03800000000001,Medium,Toro Rosso
+KVY,23,89.10300000000001,Medium,Toro Rosso
+KVY,24,88.914,Medium,Toro Rosso
+KVY,25,89.304,Medium,Toro Rosso
+KVY,26,90.419,Hard,Toro Rosso
+KVY,27,89.075,Hard,Toro Rosso
+KVY,28,88.094,Hard,Toro Rosso
+KVY,29,87.849,Hard,Toro Rosso
+KVY,30,88.975,Hard,Toro Rosso
+KVY,31,89.037,Hard,Toro Rosso
+KVY,32,88.999,Hard,Toro Rosso
+LEC,2,87.24,Hard,Ferrari
+LEC,4,87.752,Hard,Ferrari
+LEC,5,89.3745,Soft,Ferrari
+LEC,6,89.074,Soft,Ferrari
+LEC,7,88.85300000000001,Soft,Ferrari
+LEC,8,88.63999999999999,Soft,Ferrari
+LEC,9,89.084,Soft,Ferrari
+LEC,10,88.999,Soft,Ferrari
+LEC,11,88.82499999999999,Soft,Ferrari
+LEC,12,90.179,Soft,Ferrari
+LEC,13,87.576,Hard,Ferrari
+LEC,14,88.76050000000001,Soft,Ferrari
+LEC,15,88.689,Soft,Ferrari
+LEC,16,88.4505,Soft,Ferrari
+LEC,17,88.4125,Soft,Ferrari
+LEC,18,88.512,Soft,Ferrari
+LEC,19,88.2125,Soft,Ferrari
+LEC,20,88.34899999999999,Soft,Ferrari
+LEC,21,88.54050000000001,Soft,Ferrari
+LEC,22,88.375,Soft,Ferrari
+LEC,23,89.44200000000001,Soft,Ferrari
+LEC,24,88.55799999999999,Soft,Ferrari
+LEC,25,89.48150000000001,Soft,Ferrari
+LEC,26,89.537,Soft,Ferrari
+LEC,27,89.7365,Soft,Ferrari
+LEC,28,89.5565,Soft,Ferrari
+LEC,29,89.824,Soft,Ferrari
+LEC,30,88.10050000000001,Soft,Ferrari
+MAG,2,88.877,Medium,Haas F1 Team
+MAG,3,91.436,Medium,Haas F1 Team
+MAG,4,90.606,Medium,Haas F1 Team
+MAG,5,90.3155,Soft,Haas F1 Team
+MAG,6,89.982,Soft,Haas F1 Team
+MAG,7,90.186,Soft,Haas F1 Team
+MAG,8,89.767,Soft,Haas F1 Team
+MAG,9,89.8805,Soft,Haas F1 Team
+MAG,10,89.71350000000001,Soft,Haas F1 Team
+MAG,11,89.666,Soft,Haas F1 Team
+MAG,12,90.037,Soft,Haas F1 Team
+MAG,13,89.924,Soft,Haas F1 Team
+MAG,14,89.811,Soft,Haas F1 Team
+MAG,15,89.7525,Soft,Haas F1 Team
+MAG,16,89.7815,Soft,Haas F1 Team
+MAG,18,88.936,Medium,Haas F1 Team
+MAG,19,88.805,Medium,Haas F1 Team
+MAG,20,89.212,Medium,Haas F1 Team
+MAG,21,89.041,Medium,Haas F1 Team
+MAG,22,89.015,Medium,Haas F1 Team
+MAG,23,88.926,Medium,Haas F1 Team
+MAG,24,88.86,Medium,Haas F1 Team
+MAG,25,88.47,Medium,Haas F1 Team
+MAG,26,88.351,Medium,Haas F1 Team
+MAG,27,88.432,Medium,Haas F1 Team
+MAG,28,88.207,Medium,Haas F1 Team
+MAG,29,89.368,Medium,Haas F1 Team
+MAG,30,88.605,Medium,Haas F1 Team
+MAG,31,88.979,Medium,Haas F1 Team
+MAG,32,89.316,Medium,Haas F1 Team
+MAG,33,88.697,Medium,Haas F1 Team
+MAG,34,88.665,Medium,Haas F1 Team
+MAG,35,88.785,Medium,Haas F1 Team
+MAG,36,88.511,Medium,Haas F1 Team
+MAG,37,88.6,Medium,Haas F1 Team
+MAG,38,88.411,Medium,Haas F1 Team
+MAG,39,88.309,Medium,Haas F1 Team
+MAG,40,88.425,Medium,Haas F1 Team
+MAG,41,88.614,Medium,Haas F1 Team
+MAG,42,88.182,Medium,Haas F1 Team
+MAG,43,88.406,Medium,Haas F1 Team
+MAG,44,88.783,Medium,Haas F1 Team
+NOR,2,88.555,Hard,McLaren
+NOR,3,89.118,Hard,McLaren
+NOR,4,89.938,Hard,McLaren
+NOR,5,91.453,Soft,McLaren
+NOR,6,90.91,Soft,McLaren
+NOR,7,91.249,Soft,McLaren
+NOR,8,90.914,Soft,McLaren
+NOR,9,91.104,Soft,McLaren
+NOR,10,90.9125,Soft,McLaren
+NOR,11,90.189,Soft,McLaren
+NOR,12,89.82249999999999,Soft,McLaren
+NOR,13,89.989,Soft,McLaren
+NOR,14,89.9615,Soft,McLaren
+NOR,15,91.415,Soft,McLaren
+NOR,16,90.359,Soft,McLaren
+NOR,17,89.686,Soft,McLaren
+NOR,18,88.994,Hard,McLaren
+NOR,19,88.946,Hard,McLaren
+NOR,20,89.088,Hard,McLaren
+NOR,21,88.866,Hard,McLaren
+NOR,22,88.734,Hard,McLaren
+NOR,23,89.115,Hard,McLaren
+NOR,24,89.253,Hard,McLaren
+NOR,25,88.758,Hard,McLaren
+NOR,26,89.173,Hard,McLaren
+NOR,27,91.525,Hard,McLaren
+NOR,28,89.6,Hard,McLaren
+NOR,29,89.765,Hard,McLaren
+NOR,30,89.168,Hard,McLaren
+NOR,31,89.329,Hard,McLaren
+NOR,32,89.777,Hard,McLaren
+NOR,33,89.401,Hard,McLaren
+NOR,34,91.57,Hard,McLaren
+NOR,35,90.451,Hard,McLaren
+NOR,36,92.058,Hard,McLaren
+NOR,37,92.138,Hard,McLaren
+NOR,38,90.759,Hard,McLaren
+NOR,39,91.025,Hard,McLaren
+NOR,40,90.822,Hard,McLaren
+NOR,41,90.819,Hard,McLaren
+NOR,42,91.074,Hard,McLaren
+PER,2,89.916,Hard,Racing Point
+PER,3,89.675,Hard,Racing Point
+PER,4,90.215,Hard,Racing Point
+PER,5,90.88550000000001,Soft,Racing Point
+PER,6,90.6455,Soft,Racing Point
+PER,7,90.88149999999999,Soft,Racing Point
+PER,8,90.4405,Soft,Racing Point
+PER,9,90.86449999999999,Soft,Racing Point
+PER,10,90.951,Soft,Racing Point
+PER,11,90.71950000000001,Soft,Racing Point
+PER,12,90.87700000000001,Soft,Racing Point
+PER,13,91.39699999999999,Soft,Racing Point
+PER,14,90.2705,Soft,Racing Point
+PER,15,90.234,Soft,Racing Point
+PER,16,89.835,Hard,Racing Point
+PER,18,89.686,Hard,Racing Point
+PER,19,89.037,Hard,Racing Point
+PER,20,89.162,Hard,Racing Point
+PER,21,89.016,Hard,Racing Point
+PER,22,89.381,Hard,Racing Point
+PER,23,88.808,Hard,Racing Point
+PER,24,89.264,Hard,Racing Point
+PER,25,91.415,Hard,Racing Point
+PER,26,89.176,Hard,Racing Point
+PER,27,88.732,Hard,Racing Point
+PER,28,88.485,Hard,Racing Point
+PER,29,88.688,Hard,Racing Point
+PER,30,88.664,Hard,Racing Point
+PER,31,88.939,Hard,Racing Point
+PER,32,88.738,Hard,Racing Point
+PER,33,88.834,Hard,Racing Point
+PER,34,89.781,Hard,Racing Point
+PER,35,88.928,Hard,Racing Point
+PER,36,89.246,Hard,Racing Point
+PER,37,90.191,Hard,Racing Point
+PER,38,92.162,Hard,Racing Point
+PER,39,91.98,Hard,Racing Point
+PER,40,90.966,Hard,Racing Point
+PER,41,90.95,Hard,Racing Point
+PER,42,90.797,Hard,Racing Point
+PER,43,90.821,Hard,Racing Point
+PER,44,91.061,Hard,Racing Point
+RAI,2,89.255,Medium,Alfa Romeo Racing
+RAI,3,89.19,Medium,Alfa Romeo Racing
+RAI,4,90.028,Medium,Alfa Romeo Racing
+RAI,5,90.35499999999999,Soft,Alfa Romeo Racing
+RAI,6,90.3295,Soft,Alfa Romeo Racing
+RAI,7,90.756,Soft,Alfa Romeo Racing
+RAI,8,90.4375,Soft,Alfa Romeo Racing
+RAI,9,90.424,Soft,Alfa Romeo Racing
+RAI,10,90.3845,Soft,Alfa Romeo Racing
+RAI,11,90.07050000000001,Soft,Alfa Romeo Racing
+RAI,12,89.9285,Soft,Alfa Romeo Racing
+RAI,13,90.088,Soft,Alfa Romeo Racing
+RAI,14,89.7885,Soft,Alfa Romeo Racing
+RAI,15,88.793,Medium,Alfa Romeo Racing
+RAI,16,89.172,Medium,Alfa Romeo Racing
+RAI,17,89.298,Medium,Alfa Romeo Racing
+RAI,18,89.181,Medium,Alfa Romeo Racing
+RAI,20,88.86,Medium,Alfa Romeo Racing
+RAI,21,88.936,Medium,Alfa Romeo Racing
+RAI,22,89.031,Medium,Alfa Romeo Racing
+RAI,23,88.667,Medium,Alfa Romeo Racing
+RAI,24,88.748,Medium,Alfa Romeo Racing
+RAI,25,89.193,Medium,Alfa Romeo Racing
+RAI,26,88.916,Medium,Alfa Romeo Racing
+RAI,27,88.786,Medium,Alfa Romeo Racing
+RAI,28,88.731,Medium,Alfa Romeo Racing
+RAI,29,88.599,Medium,Alfa Romeo Racing
+RAI,30,88.831,Medium,Alfa Romeo Racing
+RAI,31,88.442,Medium,Alfa Romeo Racing
+RAI,32,88.577,Medium,Alfa Romeo Racing
+RAI,33,88.404,Medium,Alfa Romeo Racing
+RAI,34,88.729,Medium,Alfa Romeo Racing
+RAI,35,88.39,Medium,Alfa Romeo Racing
+RAI,36,88.628,Medium,Alfa Romeo Racing
+RAI,37,88.774,Medium,Alfa Romeo Racing
+RAI,38,88.905,Medium,Alfa Romeo Racing
+RAI,39,88.42,Medium,Alfa Romeo Racing
+RAI,40,88.27,Medium,Alfa Romeo Racing
+RAI,41,88.9,Medium,Alfa Romeo Racing
+RAI,42,89.768,Medium,Alfa Romeo Racing
+RAI,43,89.66,Medium,Alfa Romeo Racing
+RAI,44,88.8,Medium,Alfa Romeo Racing
+RAI,45,89.085,Medium,Alfa Romeo Racing
+RIC,2,92.091,Hard,Renault
+RIC,3,90.48,Hard,Renault
+RIC,4,90.631,Hard,Renault
+RIC,5,90.38,Hard,Renault
+RIC,6,90.092,Hard,Renault
+RIC,7,90.352,Hard,Renault
+RIC,8,90.185,Hard,Renault
+RIC,9,90.229,Hard,Renault
+RIC,10,90.223,Hard,Renault
+RIC,11,90.166,Hard,Renault
+RIC,12,90.078,Hard,Renault
+RIC,13,90.083,Hard,Renault
+RIC,14,90.667,Hard,Renault
+RIC,15,90.239,Hard,Renault
+RIC,16,91.569,Hard,Renault
+RIC,17,89.848,Hard,Renault
+RIC,18,90.027,Hard,Renault
+RIC,19,89.921,Hard,Renault
+RIC,20,90.464,Hard,Renault
+RIC,21,90.419,Hard,Renault
+RIC,22,90.246,Hard,Renault
+RIC,23,90.11,Hard,Renault
+RIC,24,90.501,Hard,Renault
+RIC,25,92.156,Hard,Renault
+RIC,26,91.034,Hard,Renault
+RIC,27,90.733,Hard,Renault
+RUS,2,90.543,Medium,Williams
+RUS,3,90.53766666666667,Medium,Williams
+RUS,4,91.0495,Medium,Williams
+RUS,5,90.56766666666665,Medium,Williams
+RUS,6,91.229,Medium,Williams
+RUS,7,90.69,Medium,Williams
+RUS,8,91.996,Medium,Williams
+RUS,9,91.46233333333333,Medium,Williams
+RUS,10,91.23700000000001,Medium,Williams
+RUS,11,91.052,Medium,Williams
+RUS,12,92.117,Medium,Williams
+RUS,13,90.71666666666665,Medium,Williams
+RUS,14,91.32366666666667,Medium,Williams
+RUS,15,91.99600000000001,Medium,Williams
+RUS,16,92.137,Medium,Williams
+RUS,17,92.299,Medium,Williams
+RUS,18,92.118,Medium,Williams
+RUS,19,91.928,Medium,Williams
+RUS,20,91.645,Medium,Williams
+RUS,21,93.069,Medium,Williams
+RUS,22,91.812,Medium,Williams
+RUS,23,91.693,Medium,Williams
+RUS,24,91.681,Medium,Williams
+RUS,25,91.605,Medium,Williams
+SAI,2,92.34,Soft,McLaren
+SAI,3,91.467,Soft,McLaren
+SAI,4,91.696,Soft,McLaren
+SAI,5,91.698,Soft,McLaren
+SAI,6,91.054,Soft,McLaren
+SAI,7,91.317,Soft,McLaren
+SAI,8,91.259,Soft,McLaren
+SAI,9,90.899,Soft,McLaren
+STR,2,89.791,Medium,Racing Point
+STR,3,89.7885,Medium,Racing Point
+STR,4,91.612,Medium,Racing Point
+STR,5,90.072,Medium,Racing Point
+STR,6,89.98349999999999,Medium,Racing Point
+STR,7,90.0655,Medium,Racing Point
+STR,8,90.0945,Medium,Racing Point
+STR,9,89.8935,Medium,Racing Point
+STR,10,90.126,Medium,Racing Point
+STR,11,89.8375,Medium,Racing Point
+STR,12,89.8905,Medium,Racing Point
+STR,13,89.796,Medium,Racing Point
+STR,14,89.39500000000001,Medium,Racing Point
+STR,15,89.277,Medium,Racing Point
+STR,16,89.00550000000001,Medium,Racing Point
+STR,17,89.1395,Medium,Racing Point
+STR,18,88.97749999999999,Medium,Racing Point
+STR,19,88.84649999999999,Medium,Racing Point
+STR,20,88.83449999999999,Medium,Racing Point
+STR,21,88.9005,Medium,Racing Point
+STR,22,88.97800000000001,Medium,Racing Point
+STR,23,89.13550000000001,Medium,Racing Point
+STR,24,88.82499999999999,Medium,Racing Point
+STR,25,89.07300000000001,Medium,Racing Point
+STR,26,89.904,Medium,Racing Point
+STR,27,88.014,Hard,Racing Point
+STR,28,89.224,Hard,Racing Point
+STR,29,88.922,Hard,Racing Point
+STR,30,88.914,Hard,Racing Point
+VER,2,87.638,Medium,Red Bull Racing
+VER,3,87.959,Medium,Red Bull Racing
+VER,4,87.547,Medium,Red Bull Racing
+VER,5,89.0565,Soft,Red Bull Racing
+VER,6,89.37,Soft,Red Bull Racing
+VER,7,88.423,Soft,Red Bull Racing
+VER,8,88.6195,Soft,Red Bull Racing
+VER,9,88.6005,Soft,Red Bull Racing
+VER,10,88.5735,Soft,Red Bull Racing
+VER,11,88.67150000000001,Soft,Red Bull Racing
+VER,12,88.727,Soft,Red Bull Racing
+VER,13,88.74600000000001,Soft,Red Bull Racing
+VER,14,88.769,Soft,Red Bull Racing
+VER,15,88.7135,Soft,Red Bull Racing
+VER,16,88.61099999999999,Soft,Red Bull Racing
+VER,17,88.398,Soft,Red Bull Racing
+VER,18,88.32,Soft,Red Bull Racing
+VER,19,88.1555,Soft,Red Bull Racing
+VER,20,88.4025,Soft,Red Bull Racing
+VER,21,88.1565,Soft,Red Bull Racing
+VER,22,87.89349999999999,Soft,Red Bull Racing
+VER,23,87.982,Soft,Red Bull Racing
+VER,24,88.856,Soft,Red Bull Racing
+VER,25,88.077,Soft,Red Bull Racing
+VER,26,87.95750000000001,Soft,Red Bull Racing
+VER,27,88.8245,Soft,Red Bull Racing
+VER,28,86.983,Medium,Red Bull Racing
+VER,29,86.54,Medium,Red Bull Racing
+VER,30,86.862,Medium,Red Bull Racing
+VER,31,86.61,Medium,Red Bull Racing
+VER,32,86.256,Medium,Red Bull Racing
+VER,33,87.184,Medium,Red Bull Racing
+VET,2,87.954,Medium,Ferrari
+VET,3,88.561,Medium,Ferrari
+VET,4,88.657,Medium,Ferrari
+VET,5,89.67150000000001,Soft,Ferrari
+VET,6,89.299,Soft,Ferrari
+VET,7,88.9125,Soft,Ferrari
+VET,8,88.912,Soft,Ferrari
+VET,9,89.1515,Soft,Ferrari
+VET,10,89.06,Soft,Ferrari
+VET,11,89.22800000000001,Soft,Ferrari
+VET,12,88.996,Soft,Ferrari
+VET,13,89.0495,Soft,Ferrari
+VET,14,89.0025,Soft,Ferrari
+VET,15,88.6545,Soft,Ferrari
+VET,16,88.566,Soft,Ferrari
+VET,18,88.489,Medium,Ferrari
+VET,19,88.658,Medium,Ferrari
+VET,20,88.736,Medium,Ferrari
+VET,21,88.494,Medium,Ferrari
+VET,22,88.557,Medium,Ferrari
+VET,23,88.607,Medium,Ferrari
+VET,24,88.561,Medium,Ferrari
+VET,25,88.555,Medium,Ferrari
+VET,26,88.203,Medium,Ferrari
+VET,27,88.215,Medium,Ferrari
+VET,28,88.389,Medium,Ferrari
+VET,29,88.585,Medium,Ferrari
+VET,30,88.275,Medium,Ferrari
+VET,31,88.249,Medium,Ferrari
+VET,32,88.214,Medium,Ferrari
+VET,33,88.4,Medium,Ferrari
+VET,34,88.38,Medium,Ferrari
+VET,35,88.432,Medium,Ferrari
+VET,36,88.746,Medium,Ferrari
+VET,37,88.706,Medium,Ferrari
+VET,38,88.644,Medium,Ferrari
+VET,39,89.006,Medium,Ferrari
+VET,40,89.438,Medium,Ferrari
+VET,41,89.159,Medium,Ferrari
+VET,42,89.683,Medium,Ferrari
+VET,43,90.057,Medium,Ferrari
+VET,44,90.822,Medium,Ferrari

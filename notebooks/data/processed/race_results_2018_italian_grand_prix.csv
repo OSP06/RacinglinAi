@@ -1,0 +1,21 @@
+Position,Driver,Team,Points,Status
+1.0,HAM,Mercedes,25.0,Finished
+2.0,RAI,Ferrari,18.0,Finished
+3.0,BOT,Mercedes,15.0,Finished
+4.0,VET,Ferrari,12.0,Finished
+5.0,VER,Red Bull Racing,10.0,Finished
+6.0,OCO,Racing Point,8.0,Finished
+7.0,PER,Racing Point,6.0,Finished
+8.0,SAI,Renault,4.0,Finished
+9.0,STR,Williams,2.0,+1 Lap
+10.0,SIR,Williams,1.0,+1 Lap
+11.0,LEC,Sauber,0.0,+1 Lap
+12.0,VAN,McLaren,0.0,+1 Lap
+13.0,HUL,Renault,0.0,+1 Lap
+14.0,GAS,Toro Rosso,0.0,+1 Lap
+15.0,ERI,Sauber,0.0,+1 Lap
+16.0,MAG,Haas F1 Team,0.0,+1 Lap
+17.0,RIC,Red Bull Racing,0.0,Engine
+18.0,ALO,McLaren,0.0,Engine
+19.0,HAR,Toro Rosso,0.0,Brakes
+20.0,GRO,Haas F1 Team,0.0,Disqualified
