@@ -902,7 +902,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 with st.spinner('📊 Analyzing race statistics...'):
     create_section_header("Race Statistics")
 
-# Race Summary
+# Race Sum
 create_subsection_header("Race Summary")
 create_explainer(
     "What This Shows",
