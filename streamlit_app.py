@@ -900,7 +900,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 # ======================= STATS SECTION =======================
 
 with st.spinner('📊 Analyzing race statistics...'):
-    create_section_header("Stats & Analytics")
+    create_section_header(" Race Statistics ")
 
 # Race Summary
 create_subsection_header("Race Summary")
@@ -1706,19 +1706,6 @@ with tab3:
                     
                         # Display accurate pit stop count
                         st.markdown(f"<br><strong>Total Pit Stops:</strong> {actual_strategy['total_stops']}", unsafe_allow_html=True)
-                    
-                        # Debug toggle (can be removed in production)
-                        if st.checkbox("🔍 Show Debug Info", key="debug_pitstops"):
-                            st.markdown(f"""
-                            <div style="background: rgba(50,50,50,0.5); padding: 10px; border-radius: 5px; font-size: 12px; margin-top: 10px;">
-                            <strong>Debug Information:</strong><br>
-                            • Compound Changes Detected: {actual_strategy['compound_changes']}<br>
-                            • Stint Changes: {actual_strategy['stint_changes']}<br>
-                            • Total Stints: {len(actual_strategy['stints'])}<br>
-                            • Total Pit Stops Used: {actual_strategy['total_stops']}<br>
-                            • Method: {'Compound-based' if actual_strategy['compound_changes'] > actual_strategy['stint_changes'] else 'Stint-based'}
-                            </div>
-                            """, unsafe_allow_html=True)
                     
                         st.markdown('</div>', unsafe_allow_html=True)
                 
