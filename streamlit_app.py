@@ -900,9 +900,9 @@ st.markdown("<br>", unsafe_allow_html=True)
 # ======================= STATS SECTION =======================
 
 with st.spinner('📊 Analyzing race statistics...'):
-    create_section_header("Race Statistics")
+    create_section_header("Stats & Analytics")
 
-# Race Sum
+# Race Summary
 create_subsection_header("Race Summary")
 create_explainer(
     "What This Shows",
@@ -1328,9 +1328,9 @@ with tab1:
                                     ),
                                     font=dict(family='Inter')
                                 )
-                                st.plotly_chart(fig, use_container_width=True, key="lstm_chart")
+                                st.plotly_chart(fig, use_container_width=True, key=f"lstm_chart_{compound}")
             
-                                show_loss = st.checkbox("📉 View Training Loss Curve", key="show_lstm_loss")
+                                show_loss = st.checkbox("📉 View Training Loss Curve", key=f"show_lstm_loss_{compound}")
                                 if show_loss:
                                     loss_fig = go.Figure()
                                     loss_fig.add_trace(go.Scatter(
@@ -1350,7 +1350,7 @@ with tab1:
                                         paper_bgcolor='rgba(0,0,0,0)',
                                         font=dict(family='Inter')
                                     )
-                                    st.plotly_chart(loss_fig, use_container_width=True, key="lstm_loss_chart")
+                                    st.plotly_chart(loss_fig, use_container_width=True, key=f"lstm_loss_chart_{compound}")
                     else:
                         st.info("ℹ️ Not enough data for LSTM model (need > 20 laps). Try selecting a different compound.")
 
@@ -1386,7 +1386,7 @@ with tab2:
     
     # Only proceed if driver is selected
     if sel_driver_reg == "":
-        st.info("Please select a driver to view regression analysis")
+        st.info(" Please select a driver to view regression analysis")
     else:
         df_reg = temp_df[temp_df["Driver_Season"] == sel_driver_reg].dropna(subset=["TrackTemp", "LapTimeSeconds"])
         
@@ -1563,7 +1563,7 @@ with tab3:
     
     # Only proceed if driver is selected
     if sel_driver_strat == "":
-        st.info("Please select a driver to view strategy predictions")
+        st.info(" Please select a driver to view strategy predictions")
     else:
         driver_strat_df = temp_df[temp_df["Driver"] == sel_driver_strat]
         
