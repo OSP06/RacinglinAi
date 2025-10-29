@@ -11,6 +11,7 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
 import torch
 import torch.nn as nn
+import gc  # For garbage collection
 
 # ======================= PAGE CONFIG =======================
 st.set_page_config(
@@ -605,9 +606,10 @@ def create_podium_display(podium):
     html += '</div>'
     st.markdown(html, unsafe_allow_html=True)
 
+@st.cache_data(show_spinner=False)
 def get_actual_pit_strategy(season, gp, driver, race_data):
-    """Extract actual pit strategy with accurate pit stop counting"""
-    driver_data = race_data[race_data['Driver'] == driver].sort_values('LapNumber')
+    """Extract actual pit strategy with accurate pit stop counting and validation"""
+    driver_data = race_data[race_data['Driver'] == driver].sort_values('LapNumber').copy()
     
     if driver_data.empty:
         return None
@@ -629,24 +631,30 @@ def get_actual_pit_strategy(season, gp, driver, race_data):
         
         prev_compound = current_compound
     
-    # Method 2: Use Stint column if available
+    # Method 2: Use Stint column if available (more accurate)
     stints = []
     stint_based_stops = 0
     
     if 'Stint' in driver_data.columns:
-        stint_info = driver_data.groupby('Stint').agg({
+        # Get unique stints and their info
+        stint_info = driver_data.groupby('Stint', as_index=False).agg({
             'LapNumber': ['min', 'max', 'count'],
             'Compound': 'first'
-        }).reset_index()
+        })
+        
+        stint_info.columns = ['Stint', 'start_lap', 'end_lap', 'length', 'compound']
         
         for _, stint in stint_info.iterrows():
             stints.append({
                 'stint': int(stint['Stint']),
-                'start_lap': int(stint[('LapNumber', 'min')]),
-                'end_lap': int(stint[('LapNumber', 'max')]),
-                'length': int(stint[('LapNumber', 'count')]),
-                'compound': stint[('Compound', 'first')]
+                'start_lap': int(stint['start_lap']),
+                'end_lap': int(stint['end_lap']),
+                'length': int(stint['length']),
+                'compound': stint['compound']
             })
+        
+        # Sort stints by stint number
+        stints = sorted(stints, key=lambda x: x['stint'])
         
         # Stint-based pit stop count
         stint_based_stops = len(stints) - 1 if len(stints) > 0 else 0
@@ -655,26 +663,56 @@ def get_actual_pit_strategy(season, gp, driver, race_data):
     compound_based_stops = len(pit_stops)
     total_stops = max(compound_based_stops, stint_based_stops)
     
+    # Validate: Check if stints cover the full race
+    if stints:
+        last_stint_end = stints[-1]['end_lap']
+        max_lap_in_data = driver_data['LapNumber'].max()
+        
+        # If there's a gap, add a note
+        coverage_complete = (last_stint_end >= max_lap_in_data - 1)
+    else:
+        coverage_complete = False
+    
     return {
         'pit_stops': pit_stops,
         'stints': stints,
         'total_stops': total_stops,
         'compound_changes': compound_based_stops,
-        'stint_changes': stint_based_stops
+        'stint_changes': stint_based_stops,
+        'coverage_complete': coverage_complete
     }
 
 # ======================= DATA LOADING =======================
 
-@st.cache_data(ttl=60)
+@st.cache_data(ttl=3600, show_spinner="Loading F1 data...")  # Cache for 1 hour
 def load_data():
+    """Load and optimize F1 data with efficient dtypes"""
     all_dfs = []
     available_years = range(2018, 2026)
+    
+    # Optimize dtypes for memory efficiency
+    dtype_spec = {
+        'Driver': 'category',
+        'Team': 'category',
+        'Compound': 'category',
+        'GrandPrix': 'category',
+        'LapNumber': 'int16',
+        'Position': 'int8',
+        'TyreLife': 'int16',
+        'Stint': 'int8',
+        'LapTimeSeconds': 'float32',
+        'TrackTemp': 'float32',
+        'AirTemp': 'float32',
+        'Sector1TimeSeconds': 'float32',
+        'Sector2TimeSeconds': 'float32',
+        'Sector3TimeSeconds': 'float32'
+    }
     
     for year in available_years:
         try:
             file_path = f"data/processed/all_races_combined_{year}.csv"
-            df = pd.read_csv(file_path)
-            df["SeasonYear"] = year
+            df = pd.read_csv(file_path, dtype=dtype_spec, low_memory=True)
+            df["SeasonYear"] = pd.to_numeric(year, downcast='integer')
             all_dfs.append(df)
         except FileNotFoundError:
             continue
@@ -686,21 +724,27 @@ def load_data():
         st.stop()
     
     df = pd.concat(all_dfs, ignore_index=True)
+    
+    # Optimize memory
     df = df.dropna(subset=["LapTimeSeconds", "TyreLife", "Compound"])
-    df["Team"] = df["Team"].fillna("Other")
+    df["Team"] = df["Team"].fillna("Other").astype('category')
     df["TeamColor"] = df["Team"].map(TEAM_COLORS).fillna(TEAM_COLORS["Other"])
     
     driver_team_map = df.drop_duplicates(["Driver", "SeasonYear"])[["Driver", "SeasonYear", "Team"]]
     driver_team_map["Driver_Season"] = driver_team_map["Driver"] + " (" + driver_team_map["SeasonYear"].astype(str) + ")"
     driver_team_map["Color"] = driver_team_map["Team"].map(TEAM_COLORS).fillna(TEAM_COLORS["Other"])
     driver_colors = dict(zip(driver_team_map["Driver_Season"], driver_team_map["Color"]))
-    df["Driver_Season"] = df["Driver"] + " (" + df["SeasonYear"].astype(str) + ")"
+    df["Driver_Season"] = (df["Driver"] + " (" + df["SeasonYear"].astype(str) + ")").astype('category')
     df["DriverColor"] = df["Driver_Season"].map(driver_colors)
     
     if all(col in df.columns for col in ["Sector1TimeSeconds", "Sector2TimeSeconds", "Sector3TimeSeconds"]):
-        df["BestSector"] = df[["Sector1TimeSeconds", "Sector2TimeSeconds", "Sector3TimeSeconds"]].idxmin(axis=1).str.extract(r'(\d)').astype(float).fillna(0).astype(int)
+        df["BestSector"] = df[["Sector1TimeSeconds", "Sector2TimeSeconds", "Sector3TimeSeconds"]].idxmin(axis=1).str.extract(r'(\d)').astype('int8').fillna(0)
     
     df["DeltaToFastestLap"] = df.groupby("Driver")["LapTimeSeconds"].transform(lambda x: x - x.min())
+    
+    # Explicitly clean up
+    del driver_team_map
+    gc.collect()
     
     return df, driver_colors
 
@@ -1129,6 +1173,45 @@ This section uses advanced machine learning algorithms to analyze historical F1 
 
 tab1, tab2, tab3 = st.tabs(["LSTM Forecast", "Lap Time Regression", "Strategy Predictor"])
 
+# ======================= LSTM HELPER FUNCTIONS =======================
+
+@st.cache_resource(show_spinner="Training LSTM model...")
+def train_lstm_model(X_train_np, y_train_np, epochs=100):
+    """Train LSTM model with caching to avoid retraining"""
+    X_train = torch.tensor(X_train_np).float()
+    y_train = torch.tensor(y_train_np).float()
+    
+    class LSTMModel(nn.Module):
+        def __init__(self):
+            super().__init__()
+            self.lstm = nn.LSTM(input_size=1, hidden_size=64, batch_first=True)
+            self.fc = nn.Linear(64, 1)
+        
+        def forward(self, x):
+            x, _ = self.lstm(x)
+            return self.fc(x[:, -1, :])
+    
+    model = LSTMModel()
+    loss_fn = nn.MSELoss()
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
+    
+    losses = []
+    for epoch in range(epochs):
+        optimizer.zero_grad()
+        output = model(X_train).squeeze()
+        loss = loss_fn(output, y_train.squeeze())
+        loss.backward()
+        optimizer.step()
+        losses.append(loss.item())
+    
+    model.eval()
+    
+    # Clean up tensors
+    del X_train, y_train, optimizer
+    gc.collect()
+    
+    return model, losses
+
 # TAB 1: LSTM
 with tab1:
     create_subsection_header("LSTM Neural Network Forecasting")
@@ -1196,29 +1279,8 @@ with tab1:
                                 X_train, X_test = X[:split_idx], X[split_idx:]
                                 y_train, y_test = y[:split_idx], y[split_idx:]
             
-                                class LSTMModel(nn.Module):
-                                    def __init__(self):
-                                        super().__init__()
-                                        self.lstm = nn.LSTM(input_size=1, hidden_size=64, batch_first=True)
-                                        self.fc = nn.Linear(64, 1)
-                
-                                    def forward(self, x):
-                                        x, _ = self.lstm(x)
-                                        return self.fc(x[:, -1, :])
-            
-                                model = LSTMModel()
-                                loss_fn = nn.MSELoss()
-                                optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
-            
-                                losses = []
-                                with st.spinner("🔄 Training LSTM model..."):
-                                    for epoch in range(100):
-                                        optimizer.zero_grad()
-                                        output = model(X_train).squeeze()
-                                        loss = loss_fn(output, y_train.squeeze())
-                                        loss.backward()
-                                        optimizer.step()
-                                        losses.append(loss.item())
+                                # Use cached training function
+                                model, losses = train_lstm_model(X_train.numpy(), y_train.numpy())
             
                                 model.eval()
                                 with torch.no_grad():
@@ -1228,6 +1290,10 @@ with tab1:
                                 y_test_actual = scaler.inverse_transform(y_test.numpy())
             
                                 rmse = np.sqrt(mean_squared_error(y_test_actual, test_preds_actual))
+                                
+                                # Clean up large tensors
+                                del X, y, X_train, X_test, y_train, y_test, test_preds
+                                gc.collect()
             
                                 col1, col2 = st.columns(2)
                                 with col1:
@@ -1354,6 +1420,14 @@ with tab1:
                     else:
                         st.info("ℹ️ Not enough data for LSTM model (need > 20 laps). Try selecting a different compound.")
 
+# ======================= REGRESSION HELPER FUNCTIONS =======================
+
+@st.cache_resource(show_spinner="Training regression model...")
+def train_regression_model(X_train_np, y_train_np):
+    """Train linear regression model with caching"""
+    model = LinearRegression().fit(X_train_np, y_train_np)
+    return model
+
 # TAB 2: REGRESSION
 with tab2:
     create_subsection_header("Linear Regression Analysis")
@@ -1400,7 +1474,8 @@ with tab2:
         
             X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
         
-            model_reg = LinearRegression().fit(X_train, y_train)
+            # Use cached regression training
+            model_reg = train_regression_model(X_train.values, y_train.values)
             y_pred_train = model_reg.predict(X_train)
             y_pred_test = model_reg.predict(X_test)
         
@@ -1408,6 +1483,10 @@ with tab2:
             rmse_test = np.sqrt(mean_squared_error(y_test, y_pred_test))
             r2_train = r2_score(y_train, y_pred_train)
             r2_test = r2_score(y_test, y_pred_test)
+            
+            # Clean up
+            del X, y, X_train, y_train
+            gc.collect()
         
             col1, col2, col3, col4 = st.columns(4)
             with col1:
@@ -1706,6 +1785,11 @@ with tab3:
                     
                         # Display accurate pit stop count
                         st.markdown(f"<br><strong>Total Pit Stops:</strong> {actual_strategy['total_stops']}", unsafe_allow_html=True)
+                        
+                        # Add validation warning if data incomplete
+                        if not actual_strategy.get('coverage_complete', True):
+                            st.markdown("<br>", unsafe_allow_html=True)
+                            st.warning("⚠️ Actual race data may be incomplete")
                     
                         st.markdown('</div>', unsafe_allow_html=True)
                 
@@ -1714,22 +1798,28 @@ with tab3:
                         st.markdown('<div class="comparison-panel">', unsafe_allow_html=True)
                         st.markdown('<div class="panel-title">🤖 AI Model Prediction</div>', unsafe_allow_html=True)
                     
-                        # Generate model predictions based on learned patterns
+                        # Generate model predictions based on learned patterns - FIXED to cover all laps
                         predicted_data = []
                         lap_counter = 0
                         stint_num = 1
                     
                         # Sort compounds by performance (best average lap time first)
-                        sorted_compounds = model_predictions.sort_values('Avg_Pace').head(3)
-                    
-                        for _, compound_row in sorted_compounds.iterrows():
+                        sorted_compounds = model_predictions.sort_values('Avg_Pace')
+                        
+                        # Keep cycling through compounds until we cover all race laps
+                        compound_index = 0
+                        while lap_counter < total_race_laps:
+                            # Get next compound (cycle through if needed)
+                            compound_row = sorted_compounds.iloc[compound_index % len(sorted_compounds)]
                             compound = compound_row['Compound']
                             pred_length = int(compound_row['Predicted_Stint_Length'])
                         
                             start_lap = lap_counter + 1
-                            end_lap = min(lap_counter + pred_length, total_race_laps)
+                            # Make sure we don't exceed total race laps
+                            remaining_laps = total_race_laps - lap_counter
+                            end_lap = lap_counter + min(pred_length, remaining_laps)
                         
-                            if start_lap < total_race_laps:
+                            if start_lap <= total_race_laps:
                                 predicted_data.append({
                                     "Stint": stint_num,
                                     "Laps": f"{start_lap}-{end_lap}",
@@ -1738,8 +1828,10 @@ with tab3:
                                 })
                                 lap_counter = end_lap
                                 stint_num += 1
-                        
-                            if lap_counter >= total_race_laps:
+                                compound_index += 1
+                            
+                            # Safety check to prevent infinite loop
+                            if stint_num > 10:  # Max 10 stints
                                 break
                     
                         if not predicted_data:
@@ -1781,6 +1873,56 @@ with tab3:
                         </div>
                     </div>
                     """, unsafe_allow_html=True)
+                    
+                    # Accuracy validation section
+                    with st.expander("🔍 Verify Strategy Accuracy"):
+                        st.markdown("### Data Validation Checklist")
+                        
+                        col_v1, col_v2 = st.columns(2)
+                        
+                        with col_v1:
+                            st.markdown("**Actual Race Strategy:**")
+                            if actual_strategy['stints']:
+                                last_stint = actual_strategy['stints'][-1]
+                                st.success(f"✅ {len(actual_strategy['stints'])} stints detected")
+                                st.info(f"📊 Last lap recorded: {last_stint['end_lap']}")
+                                st.info(f"🏁 Total pit stops: {actual_strategy['total_stops']}")
+                                if actual_strategy.get('coverage_complete', False):
+                                    st.success("✅ Full race coverage")
+                                else:
+                                    st.warning("⚠️ May have missing laps")
+                        
+                        with col_v2:
+                            st.markdown("**AI Prediction:**")
+                            if predicted_data:
+                                last_pred = predicted_data[-1]
+                                st.success(f"✅ {len(predicted_data)} stints predicted")
+                                try:
+                                    last_lap = int(last_pred['Laps'].split('-')[1])
+                                    st.info(f"📊 Last lap predicted: {last_lap}")
+                                    st.info(f"🏁 Predicted pit stops: {predicted_stops}")
+                                    if last_lap >= total_race_laps:
+                                        st.success(f"✅ Full race covered ({total_race_laps} laps)")
+                                    else:
+                                        st.error(f"❌ Missing {total_race_laps - last_lap} laps!")
+                                except:
+                                    st.warning("⚠️ Could not verify lap coverage")
+                        
+                        st.markdown("---")
+                        st.markdown("**How to interpret:**")
+                        st.markdown("""
+                        - ✅ **Green**: Data looks good
+                        - ⚠️ **Yellow**: Potential data quality issue (still usable)
+                        - ❌ **Red**: Data issue detected (predictions may be incomplete)
+                        """)
+                        
+                        st.markdown("**Common issues:**")
+                        st.markdown("""
+                        - Missing laps at race end (DNF, data collection stopped early)
+                        - Safety car laps may show different compound usage
+                        - Formation lap typically not included
+                        """)
+
             else:
                     st.info("📊 Actual race strategy data not available for this driver/race combination.")
         else:
@@ -1794,7 +1936,7 @@ st.markdown("<br><br>", unsafe_allow_html=True)
 st.markdown("""
 <div style="text-align: center; padding: 50px 20px; border-top: 1px solid rgba(255, 255, 255, 0.08);">
     <div style="font-size: 14px; color: #555; margin-bottom: 10px; font-family: 'Inter', sans-serif; font-weight: 500; letter-spacing: 2px;">
-        RACINGLINEAI v13.4
+        RACINGLINEAI v14.0 - Optimized
     </div>
     <div style="font-size: 12px; color: #444; font-family: 'Inter', sans-serif;">
         Built by Om Patel • PyTorch • FastF1 • Streamlit • Plotly
