@@ -89,7 +89,7 @@ export default function HomePage() {
                     src="/images/hero.png"
                     alt="RacingLineAI Dashboard Preview"
                     fill
-                    className="object-cover"
+                    className="object-contain p-4"
                     priority
                   />
                   
