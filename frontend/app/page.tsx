@@ -80,7 +80,7 @@ export default function HomePage() {
                         Add your hero image here
                       </p>
                       <p className="text-xs text-gray-600">
-                        /public/images/hero.png
+                        /public/images/hero1.png
                       </p>
                     </div>
                   </div>
