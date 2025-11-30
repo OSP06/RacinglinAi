@@ -64,7 +64,7 @@ export default function HomePage() {
                   <div className="flex h-full items-center justify-center">
                     <div className="text-center">
                       <svg
-                        className="mx-auto h-24 w-24 text-gray-600"
+                        className="mx-auto h-30 w-30 text-gray-600"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -80,7 +80,7 @@ export default function HomePage() {
                         Add your hero image here
                       </p>
                       <p className="text-xs text-gray-600">
-                        /public/images/hero1.png
+                        /public/images/hero.png
                       </p>
                     </div>
                   </div>
