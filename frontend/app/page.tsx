@@ -59,7 +59,7 @@ export default function HomePage() {
 
               {/* Hero Image */}
               <div className="relative lg:mt-0">
-                <div className="relative aspect-video overflow-hidden rounded-2xl bg-[#1a1a1a] border border-[#333]">
+                <div className="relative min-h-[500px] md:min-h-[600px] lg:min-h-[700px] overflow-hidden rounded-2xl bg-[#1a1a1a] border border-[#333]">
                   {/* TODO: Replace with your actual image */}
                   {/* Place your image in /public/images/hero.png or hero.jpg */}
 
@@ -67,7 +67,7 @@ export default function HomePage() {
                   <div className="flex h-full items-center justify-center">
                     <div className="text-center">
                       <svg
-                        className="mx-auto h-24 w-24 text-gray-600"
+                        className="mx-auto h-30 w-30 text-gray-600"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -88,15 +88,14 @@ export default function HomePage() {
                     </div>
                   </div>
 
-                  {/* Uncomment and use this when you add your image:
+                  {/* Uncomment and use this when you add your image: */}
                   <Image
                     src="/images/hero.png"
                     alt="RacingLineAI Dashboard Preview"
                     fill
-                    className="object-cover"
+                    className="object-contain p-4"
                     priority
                   />
-                  */}
                 </div>
               </div>
             </div>
