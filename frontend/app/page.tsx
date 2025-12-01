@@ -58,7 +58,7 @@ export default function HomePage() {
               </div>
 
               {/* Hero Image */}
-              <div className="relative lg:mt-0">
+              <div className="relative lg:mt-0 max-w-4xl mx-auto">
                 <div className="relative aspect-video overflow-hidden rounded-2xl bg-[#1a1a1a] border border-[#333]">
                   
                   <div className="flex h-full items-center justify-center">
