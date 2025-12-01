@@ -86,7 +86,7 @@ export default function HomePage() {
                   </div>
 
                   <Image
-                      src="/images/hero.png"
+                      src="/public/images/hero.png"
                       alt="RacingLineAI F1 Car Technical Breakdown"
                       width={1024}
                       height={1024}
