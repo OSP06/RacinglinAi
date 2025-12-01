@@ -86,11 +86,12 @@ export default function HomePage() {
                   </div>
 
                   <Image
-                    src="/images/hero.png"
-                    alt="RacingLineAI Dashboard Preview"
-                    fill
-                    className="object-contain p-4"
-                    priority
+                      src="/images/hero.png"
+                      alt="RacingLineAI F1 Car Technical Breakdown"
+                      width={1024}
+                      height={1024}
+                      className="block max-w-full h-auto lg:max-w-none lg:h-auto"
+                      priority
                   />
                   
                 </div>
