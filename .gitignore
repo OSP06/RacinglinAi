@@ -12,3 +12,13 @@ data/processed/*
 .venv/
 env/
 venv/
+
+# Mac system files
+.DS_Store
+**/.DS_Store
+
+# Log files
+*.log
+
+# Duplicate data folders
+notebooks/data/

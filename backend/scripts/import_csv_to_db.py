@@ -199,8 +199,8 @@ def main():
     session = SessionLocal()
 
     try:
-        # Path to CSV files (relative to RacinglinAi directory)
-        data_dir = Path(__file__).parent.parent.parent / "RacinglinAi" / "data" / "processed"
+        # Path to CSV files (relative to backend/scripts directory)
+        data_dir = Path(__file__).parent.parent.parent / "data" / "processed"
 
         logger.info(f"Looking for CSV files in {data_dir}")
 
