@@ -58,14 +58,14 @@ export default function HomePage() {
               </div>
 
               {/* Hero Image */}
-              <div className="relative lg:mt-0 flex justify-center">
-                <div className="relative w-full max-w-[1024px] aspect-square overflow-hidden rounded-2xl bg-[#1a1a1a] border border-[#333]">
+              <div className="relative lg:mt-0 flex justify-center items-center">
+                <div className="relative w-full max-w-[1024px] aspect-square">
                   <Image
                     src="/images/hero.png"
                     alt="RacingLineAI Dashboard Preview"
                     width={1024}
                     height={1024}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full"
                     priority
                   />
                 </div>
