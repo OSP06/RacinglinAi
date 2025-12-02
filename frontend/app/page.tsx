@@ -93,7 +93,6 @@ export default function HomePage() {
                       className="block max-w-full h-auto lg:max-w-none lg:h-auto"
                       priority
                   />
-                  
                 </div>
               </div>
             </div>
