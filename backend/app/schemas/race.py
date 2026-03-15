@@ -76,6 +76,11 @@ class LapBase(BaseModel):
     sector2_time_seconds: Optional[float] = None
     sector3_time_seconds: Optional[float] = None
 
+    # Sector percentages (fraction of lap time)
+    sector1_pct: Optional[float] = None
+    sector2_pct: Optional[float] = None
+    sector3_pct: Optional[float] = None
+
     # Speed traps
     speed_i1: Optional[float] = None
     speed_i2: Optional[float] = None
@@ -97,10 +102,19 @@ class LapBase(BaseModel):
     # Track status
     track_status: Optional[TrackStatus] = None
 
+    # Computed / analytical fields
+    delta_to_fastest_lap: Optional[float] = None
+
     # Flags
     is_personal_best: bool = False
     is_valid_lap: bool = True
     is_accurate: bool = True
+
+    # Pit lap flags (derived from is_pit_lap + lap position in stint)
+    # is_pit_out_lap  → first lap after leaving pit lane
+    # is_pit_in_lap   → last lap before entering pit lane
+    is_pit_out_lap: bool = False
+    is_pit_in_lap: bool = False
 
 
 class LapResponse(LapBase):
