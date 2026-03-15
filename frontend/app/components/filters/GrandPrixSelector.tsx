@@ -10,15 +10,13 @@ export function GrandPrixSelector() {
   const { data: races, isLoading } = useQuery({
     queryKey: ['races', season],
     queryFn: () => (season ? apiClient.getRacesBySeason(season) : Promise.resolve([])),
-    enabled: !!season, // Only fetch when season is selected
+    enabled: !!season,
   });
 
   if (!season) {
     return (
       <div className="w-full">
-        <label className="block text-sm font-medium text-gray-400 mb-2">
-          Grand Prix
-        </label>
+        <label className="block text-sm font-medium text-gray-400 mb-2">Grand Prix</label>
         <select
           disabled
           className="w-full px-4 py-2 bg-[#0a0a0a] border border-[#333] rounded-md text-gray-500 cursor-not-allowed"
@@ -32,9 +30,7 @@ export function GrandPrixSelector() {
   if (isLoading) {
     return (
       <div className="w-full">
-        <label className="block text-sm font-medium text-gray-300 mb-2">
-          Grand Prix
-        </label>
+        <label className="block text-sm font-medium text-gray-300 mb-2">Grand Prix</label>
         <div className="h-10 bg-[#1a1a1a] border border-[#333] rounded-md animate-pulse" />
       </div>
     );
@@ -42,21 +38,20 @@ export function GrandPrixSelector() {
 
   return (
     <div className="w-full">
-      <label
-        htmlFor="gp-select"
-        className="block text-sm font-medium text-gray-300 mb-2"
-      >
+      <label htmlFor="gp-select" className="block text-sm font-medium text-gray-300 mb-2">
         Grand Prix
       </label>
       <select
         id="gp-select"
         value={grandPrix || ''}
         onChange={(e) => setGrandPrix(e.target.value || null)}
-        className="w-full px-4 py-2 bg-[#1a1a1a] border border-[#333] rounded-md text-white focus:outline-none focus:ring-2 focus:ring-[#3671C6] focus:border-transparent transition-all"
+        className="w-full px-4 py-2 bg-[#1a1a1a] border border-[#333] rounded-md text-white
+                   focus:outline-none focus:ring-2 focus:ring-[#3671C6] focus:border-transparent transition-all"
       >
         <option value="">All Races</option>
         {races
-          ?.sort((a, b) => a.round_number || 0 - (b.round_number || 0))
+          /* FIX: wrap each operand in parentheses to avoid precedence bug */
+          ?.sort((a, b) => (a.round_number ?? 0) - (b.round_number ?? 0))
           .map((race) => (
             <option key={race.id} value={race.gp_slug}>
               {race.grand_prix} ({race.circuit_short || race.circuit_name})
