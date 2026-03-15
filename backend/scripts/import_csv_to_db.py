@@ -1,6 +1,9 @@
 """
 CSV to Database Migration Script
-Imports existing race data CSVs into PostgreSQL database
+Imports existing race data CSVs into PostgreSQL database.
+
+Column mapping covers both the original Streamlit CSV schema and any
+enriched columns that may exist in newer exports.
 """
 
 import sys
@@ -15,212 +18,263 @@ from sqlalchemy.orm import sessionmaker
 import logging
 from pathlib import Path
 
-from app.models.database import Base, Season, Race, Lap, WeatherData, CompoundType, StintType, TrackStatusType
+from app.models.database import (
+    Base, Season, Race, Lap, WeatherData,
+    CompoundType, StintType, TrackStatusType,
+)
 from app.core.config import settings
 
-# Configure logging
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
 )
 logger = logging.getLogger(__name__)
 
 
+# --------------------------------------------------------------------------- #
+#  Helpers                                                                     #
+# --------------------------------------------------------------------------- #
+
+def _safe_float(row, *keys) -> float | None:
+    for k in keys:
+        v = row.get(k)
+        if v is not None and not (isinstance(v, float) and np.isnan(v)):
+            try:
+                return float(v)
+            except (ValueError, TypeError):
+                pass
+    return None
+
+
+def _safe_int(row, *keys) -> int | None:
+    v = _safe_float(row, *keys)
+    return int(v) if v is not None else None
+
+
+def _safe_bool(row, *keys, default=False) -> bool:
+    for k in keys:
+        v = row.get(k)
+        if v is not None and not (isinstance(v, float) and np.isnan(v)):
+            if isinstance(v, bool):
+                return v
+            if isinstance(v, (int, float)):
+                return bool(v)
+            if str(v).lower() in ("true", "1", "yes"):
+                return True
+            if str(v).lower() in ("false", "0", "no"):
+                return False
+    return default
+
+
+def _safe_str(row, *keys) -> str | None:
+    for k in keys:
+        v = row.get(k)
+        if v is not None and not (isinstance(v, float) and np.isnan(v)):
+            s = str(v).strip()
+            if s and s.lower() not in ("nan", "none", "nat"):
+                return s
+    return None
+
+
+def _map_compound(value: str | None) -> CompoundType:
+    if value is None:
+        return CompoundType.MEDIUM
+    v = str(value).strip().upper()
+    return CompoundType.__members__.get(v, CompoundType.MEDIUM)
+
+
+def _map_stint_type(value: str | None) -> StintType:
+    if value is None:
+        return StintType.MID
+    v = str(value).strip().upper()
+    return StintType.__members__.get(v, StintType.MID)
+
+
+def _map_track_status(row: dict) -> TrackStatusType:
+    if _safe_bool(row, "IsSC", "is_sc"):
+        return TrackStatusType.SC
+    if _safe_bool(row, "IsVSC", "is_vsc"):
+        return TrackStatusType.VSC
+    if _safe_bool(row, "IsRedFlag", "is_red_flag"):
+        return TrackStatusType.RED
+    return TrackStatusType.GREEN
+
+
+# --------------------------------------------------------------------------- #
+#  Core import                                                                 #
+# --------------------------------------------------------------------------- #
+
 def create_database_tables(engine):
-    """Create all database tables"""
-    logger.info("Creating database tables...")
+    logger.info("Creating / verifying database tables …")
     Base.metadata.create_all(bind=engine)
-    logger.info("Tables created successfully")
+    logger.info("Tables ready")
 
 
 def import_season_data(csv_path: str, session, season_year: int):
-    """
-    Import data from a season CSV file
+    logger.info(f"Importing {csv_path}")
+    df = pd.read_csv(csv_path, low_memory=False)
+    # Normalise column names to strip accidental whitespace
+    df.columns = [c.strip() for c in df.columns]
+    logger.info(f"  {len(df)} rows, columns: {list(df.columns)[:10]} …")
 
-    Args:
-        csv_path: Path to CSV file
-        session: Database session
-        season_year: Season year
-    """
-    logger.info(f"Importing data from {csv_path}")
-
-    # Read CSV
-    df = pd.read_csv(csv_path)
-    logger.info(f"Loaded {len(df)} rows from CSV")
-
-    # Get or create season
+    # Get / create season
     season = session.query(Season).filter(Season.year == season_year).first()
     if not season:
         season = Season(year=season_year)
         session.add(season)
         session.commit()
-        logger.info(f"Created season {season_year}")
 
-    # Group by race
-    races = df.groupby(['GrandPrix', 'GP_Slug'])
+    # Group by grand prix
+    gp_col = next((c for c in df.columns if c.lower() in ("grandprix", "grand_prix")), None)
+    slug_col = next((c for c in df.columns if c.lower() in ("gp_slug", "gpslug")), None)
+
+    if gp_col is None:
+        logger.error("Cannot find GrandPrix column — skipping file")
+        return
+
+    group_cols = [gp_col]
+    if slug_col:
+        group_cols.append(slug_col)
 
     race_count = 0
     lap_count = 0
 
-    for (grand_prix, gp_slug), race_data in races:
-        logger.info(f"Processing race: {grand_prix}")
+    for group_key, race_data in df.groupby(group_cols):
+        grand_prix = group_key if isinstance(group_key, str) else group_key[0]
+        gp_slug = (group_key[1] if len(group_key) > 1 else grand_prix).lower().replace(" ", "_")
 
-        # Get race details from first row
-        first_row = race_data.iloc[0]
+        first = race_data.iloc[0].to_dict()
 
-        # Check if race already exists
-        existing_race = session.query(Race).filter(
+        existing = session.query(Race).filter(
             Race.season_id == season.id,
-            Race.gp_slug == gp_slug.lower()
+            Race.gp_slug == gp_slug,
         ).first()
 
-        if existing_race:
-            logger.info(f"Race {grand_prix} already exists, skipping...")
+        if existing:
+            logger.info(f"  [{season_year}] {grand_prix} already imported — skipping")
             continue
 
-        # Create race
+        # Parse event date
+        raw_date = _safe_str(first, "EventDate", "event_date", "Date", "date")
+        try:
+            event_date = pd.to_datetime(raw_date)
+        except Exception:
+            event_date = datetime(season_year, 1, 1)
+
         race = Race(
             season_id=season.id,
             grand_prix=grand_prix,
-            gp_slug=gp_slug.lower(),
-            event_date=pd.to_datetime(first_row['EventDate']),
+            gp_slug=gp_slug,
+            event_date=event_date,
             round_number=race_count + 1,
-            circuit_name=first_row['CircuitName'] if 'CircuitName' in first_row else grand_prix,
-            circuit_short=first_row['CircuitShort'] if 'CircuitShort' in first_row else None,
-            circuit_country=first_row['CircuitCountry'] if 'CircuitCountry' in first_row else None,
-            track_length_km=first_row['TrackLengthKM'] if 'TrackLengthKM' in first_row else None,
-            altitude_m=first_row['AltitudeM'] if 'AltitudeM' in first_row else None,
-            circuit_type=first_row['CircuitType'] if 'CircuitType' in first_row else None
+            circuit_name=_safe_str(first, "CircuitName", "circuit_name") or grand_prix,
+            circuit_short=_safe_str(first, "CircuitShort", "circuit_short"),
+            circuit_country=_safe_str(first, "CircuitCountry", "circuit_country"),
+            track_length_km=_safe_float(first, "TrackLengthKM", "track_length_km"),
+            altitude_m=_safe_float(first, "AltitudeM", "altitude_m"),
+            circuit_type=_safe_str(first, "CircuitType", "circuit_type"),
         )
-
         session.add(race)
-        session.flush()  # Get race ID
+        session.flush()
         race_count += 1
 
-        # Import laps
-        for _, row in race_data.iterrows():
-            # Map compound
-            compound_str = str(row['Compound']).upper() if 'Compound' in row and pd.notna(row['Compound']) else 'MEDIUM'
-            try:
-                compound = CompoundType[compound_str]
-            except KeyError:
-                compound = CompoundType.MEDIUM
+        for _, row_series in race_data.iterrows():
+            row = row_series.to_dict()
 
-            # Map stint type
-            stint_type_str = str(row['StintType']).upper() if 'StintType' in row and pd.notna(row['StintType']) else 'MID'
-            try:
-                stint_type = StintType[stint_type_str]
-            except KeyError:
-                stint_type = StintType.MID
-
-            # Map track status
-            track_status_str = 'GREEN'
-            if 'IsSC' in row and row['IsSC']:
-                track_status_str = 'SC'
-            elif 'IsVSC' in row and row['IsVSC']:
-                track_status_str = 'VSC'
-            elif 'IsRedFlag' in row and row['IsRedFlag']:
-                track_status_str = 'RED'
-
-            try:
-                track_status = TrackStatusType[track_status_str]
-            except KeyError:
-                track_status = TrackStatusType.GREEN
-
-            # Create lap
             lap = Lap(
                 race_id=race.id,
-                driver=str(row['Driver']).upper(),
-                driver_number=int(row['DriverNumber']) if 'DriverNumber' in row and pd.notna(row['DriverNumber']) else None,
-                team=str(row['Team']),
-                lap_number=int(row['LapNumber']),
-                lap_time=str(row['LapTime']) if 'LapTime' in row and pd.notna(row['LapTime']) else None,
-                lap_time_seconds=float(row['LapTimeSeconds']) if 'LapTimeSeconds' in row and pd.notna(row['LapTimeSeconds']) else None,
-                lap_start_time=str(row['LapStartTime']) if 'LapStartTime' in row and pd.notna(row['LapStartTime']) else None,
-                sector1_time=str(row['Sector1Time']) if 'Sector1Time' in row and pd.notna(row['Sector1Time']) else None,
-                sector1_time_seconds=float(row['Sector1TimeSeconds']) if 'Sector1TimeSeconds' in row and pd.notna(row['Sector1TimeSeconds']) else None,
-                sector2_time=str(row['Sector2Time']) if 'Sector2Time' in row and pd.notna(row['Sector2Time']) else None,
-                sector2_time_seconds=float(row['Sector2TimeSeconds']) if 'Sector2TimeSeconds' in row and pd.notna(row['Sector2TimeSeconds']) else None,
-                sector3_time=str(row['Sector3Time']) if 'Sector3Time' in row and pd.notna(row['Sector3Time']) else None,
-                sector3_time_seconds=float(row['Sector3TimeSeconds']) if 'Sector3TimeSeconds' in row and pd.notna(row['Sector3TimeSeconds']) else None,
-                sector1_pct=float(row['Sector1Pct']) if 'Sector1Pct' in row and pd.notna(row['Sector1Pct']) else None,
-                sector2_pct=float(row['Sector2Pct']) if 'Sector2Pct' in row and pd.notna(row['Sector2Pct']) else None,
-                sector3_pct=float(row['Sector3Pct']) if 'Sector3Pct' in row and pd.notna(row['Sector3Pct']) else None,
-                speed_fl=float(row['SpeedFL']) if 'SpeedFL' in row and pd.notna(row['SpeedFL']) else None,
-                compound=compound,
-                tyre_life=int(row['TyreLife']) if 'TyreLife' in row and pd.notna(row['TyreLife']) else None,
-                is_fresh_tyre=bool(row['FreshTyre']) if 'FreshTyre' in row and pd.notna(row['FreshTyre']) else False,
-                stint=int(row['Stint']) if 'Stint' in row and pd.notna(row['Stint']) else None,
-                stint_type=stint_type,
-                stint_length=int(row['StintLength']) if 'StintLength' in row and pd.notna(row['StintLength']) else None,
-                is_pit_lap=bool(row['PitLap']) if 'PitLap' in row and pd.notna(row['PitLap']) else False,
-                pit_duration=float(row['PitDuration']) if 'PitDuration' in row and pd.notna(row['PitDuration']) else None,
-                position=int(row['Position']) if 'Position' in row and pd.notna(row['Position']) else None,
-                track_status=track_status,
-                best_sector=int(row['BestSector']) if 'BestSector' in row and pd.notna(row['BestSector']) else None,
-                delta_to_fastest_lap=float(row['DeltaToFastestLap']) if 'DeltaToFastestLap' in row and pd.notna(row['DeltaToFastestLap']) else None,
-                is_personal_best=bool(row['IsPersonalBest']) if 'IsPersonalBest' in row and pd.notna(row['IsPersonalBest']) else False,
-                is_valid_lap=bool(row['IsValidLap']) if 'IsValidLap' in row and pd.notna(row['IsValidLap']) else True,
-                is_accurate=bool(row['IsAccurate']) if 'IsAccurate' in row and pd.notna(row['IsAccurate']) else True,
-                is_wet_lap=bool(row['IsWetLap']) if 'IsWetLap' in row and pd.notna(row['IsWetLap']) else False,
-                is_dry_lap=bool(row['IsDryLap']) if 'IsDryLap' in row and pd.notna(row['IsDryLap']) else True,
-                is_sc=bool(row['IsSC']) if 'IsSC' in row and pd.notna(row['IsSC']) else False,
-                is_vsc=bool(row['IsVSC']) if 'IsVSC' in row and pd.notna(row['IsVSC']) else False,
-                is_red_flag=bool(row['IsRedFlag']) if 'IsRedFlag' in row and pd.notna(row['IsRedFlag']) else False,
-                is_dnf=bool(row['IsDNF']) if 'IsDNF' in row and pd.notna(row['IsDNF']) else False
+                driver=(_safe_str(row, "Driver", "driver") or "UNK").upper(),
+                driver_number=_safe_int(row, "DriverNumber", "driver_number"),
+                team=_safe_str(row, "Team", "team") or "Unknown",
+                lap_number=_safe_int(row, "LapNumber", "lap_number") or 0,
+                lap_time=_safe_str(row, "LapTime", "lap_time"),
+                lap_time_seconds=_safe_float(row, "LapTimeSeconds", "lap_time_seconds"),
+                lap_start_time=_safe_str(row, "LapStartTime", "lap_start_time"),
+                # Sector times
+                sector1_time=_safe_str(row, "Sector1Time", "sector1_time"),
+                sector1_time_seconds=_safe_float(row, "Sector1TimeSeconds", "sector1_time_seconds"),
+                sector2_time=_safe_str(row, "Sector2Time", "sector2_time"),
+                sector2_time_seconds=_safe_float(row, "Sector2TimeSeconds", "sector2_time_seconds"),
+                sector3_time=_safe_str(row, "Sector3Time", "sector3_time"),
+                sector3_time_seconds=_safe_float(row, "Sector3TimeSeconds", "sector3_time_seconds"),
+                # Sector percentages
+                sector1_pct=_safe_float(row, "Sector1Pct", "sector1_pct"),
+                sector2_pct=_safe_float(row, "Sector2Pct", "sector2_pct"),
+                sector3_pct=_safe_float(row, "Sector3Pct", "sector3_pct"),
+                # Speed traps
+                speed_i1=_safe_float(row, "SpeedI1", "speed_i1"),
+                speed_i2=_safe_float(row, "SpeedI2", "speed_i2"),
+                speed_fl=_safe_float(row, "SpeedFL", "speed_fl"),
+                speed_st=_safe_float(row, "SpeedST", "speed_st"),
+                # Tyre
+                compound=_map_compound(_safe_str(row, "Compound", "compound")),
+                tyre_life=_safe_int(row, "TyreLife", "tyre_life"),
+                is_fresh_tyre=_safe_bool(row, "FreshTyre", "is_fresh_tyre"),
+                # Stint
+                stint=_safe_int(row, "Stint", "stint"),
+                stint_type=_map_stint_type(_safe_str(row, "StintType", "stint_type")),
+                stint_length=_safe_int(row, "StintLength", "stint_length"),
+                # Pit
+                is_pit_lap=_safe_bool(row, "PitLap", "is_pit_lap"),
+                pit_in_time=_safe_str(row, "PitInTime", "pit_in_time"),
+                pit_out_time=_safe_str(row, "PitOutTime", "pit_out_time"),
+                pit_duration=_safe_float(row, "PitDuration", "pit_duration"),
+                # Position / status
+                position=_safe_int(row, "Position", "position"),
+                track_status=_map_track_status(row),
+                # Analytical
+                best_sector=_safe_int(row, "BestSector", "best_sector"),
+                delta_to_fastest_lap=_safe_float(row, "DeltaToFastestLap", "delta_to_fastest_lap"),
+                avg_lap_time=_safe_float(row, "AvgLapTime", "avg_lap_time"),
+                # Flags
+                is_personal_best=_safe_bool(row, "IsPersonalBest", "is_personal_best"),
+                is_valid_lap=_safe_bool(row, "IsValidLap", "is_valid_lap", default=True),
+                is_accurate=_safe_bool(row, "IsAccurate", "is_accurate", default=True),
+                is_wet_lap=_safe_bool(row, "IsWetLap", "is_wet_lap"),
+                is_dry_lap=_safe_bool(row, "IsDryLap", "is_dry_lap", default=True),
+                is_sc=_safe_bool(row, "IsSC", "is_sc"),
+                is_vsc=_safe_bool(row, "IsVSC", "is_vsc"),
+                is_red_flag=_safe_bool(row, "IsRedFlag", "is_red_flag"),
+                is_dnf=_safe_bool(row, "IsDNF", "is_dnf"),
             )
-
             session.add(lap)
             lap_count += 1
 
-            # Commit in batches
-            if lap_count % 1000 == 0:
+            if lap_count % 2000 == 0:
                 session.commit()
-                logger.info(f"Committed {lap_count} laps...")
+                logger.info(f"  … committed {lap_count} laps")
 
         session.commit()
-        logger.info(f"Race {grand_prix} imported with {len(race_data)} laps")
+        logger.info(f"  [{season_year}] {grand_prix}: {len(race_data)} laps imported")
 
-    logger.info(f"Season {season_year} complete: {race_count} races, {lap_count} laps")
+    logger.info(f"Season {season_year}: {race_count} races, {lap_count} laps total")
 
 
 def main():
-    """Main import function"""
-    logger.info("Starting CSV to Database import...")
-
-    # Create database connection
+    logger.info("Starting CSV → DB import")
     engine = create_engine(settings.DATABASE_URL)
     SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-
-    # Create tables
     create_database_tables(engine)
-
-    # Create session
     session = SessionLocal()
 
     try:
-        # Path to CSV files (relative to backend/scripts directory)
         data_dir = Path(__file__).parent.parent.parent / "data" / "processed"
+        logger.info(f"CSV directory: {data_dir}")
 
-        logger.info(f"Looking for CSV files in {data_dir}")
-
-        # Import each season
-        for year in range(2018, 2026):  # 2018-2025
+        for year in range(2018, 2027):   # covers up to 2026 season
             csv_file = data_dir / f"all_races_combined_{year}.csv"
-
             if csv_file.exists():
                 try:
                     import_season_data(str(csv_file), session, year)
                 except Exception as e:
-                    logger.error(f"Error importing {year}: {str(e)}")
+                    logger.error(f"Error importing {year}: {e}")
                     session.rollback()
             else:
-                logger.warning(f"CSV file not found: {csv_file}")
+                logger.warning(f"Not found: {csv_file}")
 
-        logger.info("Import completed successfully!")
-
+        logger.info("Import complete")
     except Exception as e:
-        logger.error(f"Import failed: {str(e)}")
+        logger.error(f"Import failed: {e}")
         session.rollback()
         raise
     finally:
