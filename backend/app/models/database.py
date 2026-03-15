@@ -8,13 +8,13 @@ from sqlalchemy import (
 )
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
+from sqlalchemy.ext.hybrid import hybrid_property
 import enum
 
 Base = declarative_base()
 
 
 class CompoundType(str, enum.Enum):
-    """Tyre compound types"""
     SOFT = "SOFT"
     MEDIUM = "MEDIUM"
     HARD = "HARD"
@@ -23,14 +23,12 @@ class CompoundType(str, enum.Enum):
 
 
 class StintType(str, enum.Enum):
-    """Stint types"""
     OPENING = "OPENING"
     MID = "MID"
     CLOSING = "CLOSING"
 
 
 class TrackStatusType(str, enum.Enum):
-    """Track status types"""
     GREEN = "GREEN"
     YELLOW = "YELLOW"
     SC = "SC"
@@ -39,30 +37,25 @@ class TrackStatusType(str, enum.Enum):
 
 
 class Season(Base):
-    """F1 Season"""
     __tablename__ = "seasons"
 
     id = Column(Integer, primary_key=True, index=True)
     year = Column(Integer, unique=True, nullable=False, index=True)
 
-    # Relationships
     races = relationship("Race", back_populates="season")
 
 
 class Race(Base):
-    """F1 Race Event"""
     __tablename__ = "races"
 
     id = Column(Integer, primary_key=True, index=True)
     season_id = Column(Integer, ForeignKey("seasons.id"), nullable=False)
 
-    # Race details
     grand_prix = Column(String, nullable=False)
     gp_slug = Column(String, nullable=False, index=True)
     event_date = Column(DateTime, nullable=False)
     round_number = Column(Integer)
 
-    # Circuit details
     circuit_name = Column(String, nullable=False)
     circuit_short = Column(String)
     circuit_country = Column(String)
@@ -70,19 +63,16 @@ class Race(Base):
     altitude_m = Column(Float)
     circuit_type = Column(String)
 
-    # Relationships
     season = relationship("Season", back_populates="races")
     laps = relationship("Lap", back_populates="race")
     weather_data = relationship("WeatherData", back_populates="race")
 
-    # Indexes
     __table_args__ = (
         Index('idx_race_season_gp', 'season_id', 'gp_slug'),
     )
 
 
 class Lap(Base):
-    """Individual lap data"""
     __tablename__ = "laps"
 
     id = Column(Integer, primary_key=True, index=True)
@@ -113,10 +103,10 @@ class Lap(Base):
     sector3_pct = Column(Float)
 
     # Speed traps
-    speed_i1 = Column(Float)  # Intermediate 1 speed
-    speed_i2 = Column(Float)  # Intermediate 2 speed
-    speed_fl = Column(Float)  # Finish line speed
-    speed_st = Column(Float)  # Speed trap
+    speed_i1 = Column(Float)
+    speed_i2 = Column(Float)
+    speed_fl = Column(Float)
+    speed_st = Column(Float)
 
     # Tyre information
     compound = Column(SQLEnum(CompoundType))
@@ -128,7 +118,8 @@ class Lap(Base):
     stint_type = Column(SQLEnum(StintType))
     stint_length = Column(Integer)
 
-    # Pit stop
+    # Pit stop — stored as a single flag; is_pit_out_lap / is_pit_in_lap
+    # are derived as hybrid properties so existing CSVs with PitLap still work.
     is_pit_lap = Column(Boolean, default=False)
     pit_in_time = Column(String)
     pit_out_time = Column(String)
@@ -141,7 +132,7 @@ class Lap(Base):
     track_status = Column(SQLEnum(TrackStatusType))
 
     # Calculated fields
-    best_sector = Column(Integer)  # 1, 2, or 3
+    best_sector = Column(Integer)
     delta_to_fastest_lap = Column(Float)
     avg_lap_time = Column(Float)
 
@@ -160,10 +151,31 @@ class Lap(Base):
     is_red_flag = Column(Boolean, default=False)
     is_dnf = Column(Boolean, default=False)
 
-    # Relationships
     race = relationship("Race", back_populates="laps")
 
-    # Indexes for common queries
+    # ------------------------------------------------------------------ #
+    #  Hybrid properties so the frontend receives is_pit_out_lap /        #
+    #  is_pit_in_lap without a DB schema migration.                       #
+    #  A lap is a pit-OUT lap when it's the first lap of a new stint      #
+    #  (tyre_life == 1 and it's not lap 1 of the race).                   #
+    #  A lap is a pit-IN lap when is_pit_lap is True.                     #
+    # ------------------------------------------------------------------ #
+
+    @hybrid_property
+    def is_pit_out_lap(self) -> bool:
+        """True when the driver has just left the pit lane."""
+        return bool(
+            self.tyre_life is not None
+            and self.tyre_life == 1
+            and self.lap_number is not None
+            and self.lap_number > 1
+        )
+
+    @hybrid_property
+    def is_pit_in_lap(self) -> bool:
+        """True when the driver entered the pit lane on this lap."""
+        return bool(self.is_pit_lap)
+
     __table_args__ = (
         Index('idx_lap_race_driver', 'race_id', 'driver'),
         Index('idx_lap_race_number', 'race_id', 'lap_number'),
@@ -172,17 +184,14 @@ class Lap(Base):
 
 
 class WeatherData(Base):
-    """Weather data for races"""
     __tablename__ = "weather_data"
 
     id = Column(Integer, primary_key=True, index=True)
     race_id = Column(Integer, ForeignKey("races.id"), nullable=False)
 
-    # Timestamp
     weather_time = Column(DateTime, nullable=False)
     lap_number = Column(Integer)
 
-    # Weather conditions
     air_temp = Column(Float)
     track_temp = Column(Float)
     humidity = Column(Float)
@@ -190,11 +199,8 @@ class WeatherData(Base):
     wind_speed = Column(Float)
     wind_direction = Column(Float)
     rainfall = Column(Boolean, default=False)
-
-    # Calculated
     air_density = Column(Float)
 
-    # Relationships
     race = relationship("Race", back_populates="weather_data")
 
     __table_args__ = (
@@ -203,20 +209,13 @@ class WeatherData(Base):
 
 
 class PredictionCache(Base):
-    """Cache for ML predictions"""
     __tablename__ = "prediction_cache"
 
     id = Column(Integer, primary_key=True, index=True)
-
-    # Cache key
     race_id = Column(Integer, ForeignKey("races.id"), nullable=False)
     driver = Column(String, nullable=False)
-    model_type = Column(String, nullable=False)  # 'lstm', 'regression', 'strategy'
-
-    # Prediction data (stored as JSON)
+    model_type = Column(String, nullable=False)
     prediction_data = Column(String)
-
-    # Metadata
     created_at = Column(DateTime, nullable=False)
     expires_at = Column(DateTime, nullable=False)
 
