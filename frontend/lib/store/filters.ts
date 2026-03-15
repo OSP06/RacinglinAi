@@ -5,7 +5,6 @@ interface FilterState {
   grandPrix: string | null;
   selectedDrivers: string[];
 
-  // Actions
   setSeason: (season: number | null) => void;
   setGrandPrix: (gp: string | null) => void;
   setSelectedDrivers: (drivers: string[]) => void;
@@ -14,12 +13,14 @@ interface FilterState {
 }
 
 export const useFilterStore = create<FilterState>((set) => ({
-  season: 2024, // Default to most recent season
+  // Default to 2024 so the dashboard isn't blank on first load, but
+  // clearFilters resets to null so the user starts fresh.
+  season: 2024,
   grandPrix: null,
   selectedDrivers: [],
 
-  setSeason: (season) => set({ season, grandPrix: null }), // Reset GP when season changes
-  setGrandPrix: (grandPrix) => set({ grandPrix }),
+  setSeason: (season) => set({ season, grandPrix: null, selectedDrivers: [] }),
+  setGrandPrix: (grandPrix) => set({ grandPrix, selectedDrivers: [] }),
   setSelectedDrivers: (selectedDrivers) => set({ selectedDrivers }),
 
   toggleDriver: (driver) =>
@@ -29,10 +30,6 @@ export const useFilterStore = create<FilterState>((set) => ({
         : [...state.selectedDrivers, driver],
     })),
 
-  clearFilters: () =>
-    set({
-      season: 2024,
-      grandPrix: null,
-      selectedDrivers: [],
-    }),
+  // FIX: reset to null, not hardcoded 2024
+  clearFilters: () => set({ season: null, grandPrix: null, selectedDrivers: [] }),
 }));
