@@ -13,11 +13,11 @@ class Settings(BaseSettings):
     API_V1_STR: str = "/api"
     PROJECT_NAME: str = "RacingLineAI"
 
-    # CORS
+    # CORS — wildcard subdomains handled by allow_origin_regex in main.py
     CORS_ORIGINS: List[str] = [
         "http://localhost:3000",
         "http://localhost:8000",
-        "https://*.vercel.app",
+        "https://racinglin-ai.vercel.app",
     ]
 
     # Database
