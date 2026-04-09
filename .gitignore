@@ -1,3 +1,13 @@
+# Environment files (contain secrets)
+.env
+.env.local
+.env.production
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
 .fastf1_cache/
 .sqlite
 data/processed/*

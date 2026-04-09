@@ -213,7 +213,7 @@ class LSTMPredictor:
         df['compound_encoded'] = df['compound'].map(compound_encoding).fillna(2)
 
         # Fill NaN values
-        df = df.fillna(method='ffill').fillna(method='bfill').fillna(0)
+        df = df.ffill().bfill().fillna(0)
 
         return df
 

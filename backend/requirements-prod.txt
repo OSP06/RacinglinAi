@@ -1,0 +1,24 @@
+# Web Framework
+fastapi==0.115.0
+uvicorn[standard]==0.32.0
+python-multipart==0.0.12
+
+# Database
+sqlalchemy==2.0.35
+psycopg2-binary==2.9.9
+
+# Data Processing
+pandas==2.2.3
+numpy==2.1.3
+
+# ML (lightweight — no torch)
+scikit-learn==1.5.2
+lightgbm==4.5.0
+xgboost==2.1.2
+
+# API & Utilities
+httpx==0.27.2
+aiofiles==24.1.0
+python-dotenv==1.0.1
+pydantic==2.9.2
+pydantic-settings==2.6.1

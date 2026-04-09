@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: racinglinai-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements-prod.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: CORS_ORIGINS
+        value: '["http://localhost:3000"]'
+      - key: MODELS_DIR
+        value: app/ml_models/weights
+      - key: LSTM_MODEL_PATH
+        value: app/ml_models/weights/lstm_model.pth
+      - key: REGRESSION_MODEL_PATH
+        value: app/ml_models/weights/regression_model.pkl
+      - key: STRATEGY_MODEL_PATH
+        value: app/ml_models/weights/strategy_model.pkl

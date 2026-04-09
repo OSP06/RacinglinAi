@@ -181,7 +181,7 @@ class EnhancedRegressionPredictor:
         df['fuel_tyre_interaction'] = df['fuel_load_kg'] * df['tyre_life']
 
         # Fill missing values
-        df = df.fillna(method='ffill').fillna(method='bfill').fillna(0)
+        df = df.ffill().bfill().fillna(0)
 
         return df
 

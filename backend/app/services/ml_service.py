@@ -8,10 +8,24 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 
-from app.ml_models.lstm_model import LSTMPredictor
-from app.ml_models.regression_model import EnhancedRegressionPredictor
-from app.ml_models.strategy_model import EnhancedStrategyPredictor, StrategyOption
 from app.core.config import settings
+
+try:
+    from app.ml_models.lstm_model import LSTMPredictor
+    _lstm_available = True
+except Exception:
+    LSTMPredictor = None  # type: ignore
+    _lstm_available = False
+
+try:
+    from app.ml_models.regression_model import EnhancedRegressionPredictor
+    from app.ml_models.strategy_model import EnhancedStrategyPredictor, StrategyOption
+    _ml_available = True
+except Exception:
+    EnhancedRegressionPredictor = None  # type: ignore
+    EnhancedStrategyPredictor = None    # type: ignore
+    StrategyOption = None               # type: ignore
+    _ml_available = False
 
 logger = logging.getLogger(__name__)
 
@@ -30,26 +44,32 @@ class MLService:
     async def load_models(self):
         logger.info("Loading ML models …")
 
-        self.lstm_predictor = LSTMPredictor(sequence_length=10, input_features=25)
-        try:
-            self.lstm_predictor.load_model(settings.LSTM_MODEL_PATH)
-            logger.info("LSTM model loaded from disk")
-        except (FileNotFoundError, Exception) as e:
-            logger.warning(f"LSTM model not found on disk ({e}); will train on first use")
+        if _lstm_available:
+            self.lstm_predictor = LSTMPredictor(sequence_length=10, input_features=25)
+            try:
+                self.lstm_predictor.load_model(settings.LSTM_MODEL_PATH)
+                logger.info("LSTM model loaded from disk")
+            except (FileNotFoundError, Exception) as e:
+                logger.warning(f"LSTM model not found on disk ({e}); will train on first use")
+        else:
+            logger.warning("torch not installed — LSTM predictions unavailable")
 
-        self.regression_predictor = EnhancedRegressionPredictor()
-        try:
-            self.regression_predictor.load_model(settings.REGRESSION_MODEL_PATH)
-            logger.info("Regression model loaded from disk")
-        except (FileNotFoundError, Exception) as e:
-            logger.warning(f"Regression model not found ({e}); will train on first use")
+        if _ml_available:
+            self.regression_predictor = EnhancedRegressionPredictor()
+            try:
+                self.regression_predictor.load_model(settings.REGRESSION_MODEL_PATH)
+                logger.info("Regression model loaded from disk")
+            except (FileNotFoundError, Exception) as e:
+                logger.warning(f"Regression model not found ({e}); will train on first use")
 
-        self.strategy_predictor = EnhancedStrategyPredictor()
-        try:
-            self.strategy_predictor.load_model(settings.STRATEGY_MODEL_PATH)
-            logger.info("Strategy model loaded from disk")
-        except (FileNotFoundError, Exception) as e:
-            logger.warning(f"Strategy model not found ({e}); will initialise on first use")
+            self.strategy_predictor = EnhancedStrategyPredictor()
+            try:
+                self.strategy_predictor.load_model(settings.STRATEGY_MODEL_PATH)
+                logger.info("Strategy model loaded from disk")
+            except (FileNotFoundError, Exception) as e:
+                logger.warning(f"Strategy model not found ({e}); will initialise on first use")
+        else:
+            logger.warning("ML packages not installed — regression/strategy predictions unavailable")
 
         self.models_loaded = True
         logger.info("All ML models initialised")
@@ -64,6 +84,9 @@ class MLService:
         forecast_laps: int = 15,
     ) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
         self._check_loaded()
+
+        if not _lstm_available or self.lstm_predictor is None:
+            raise RuntimeError("LSTM model not available (torch not installed)")
 
         if self.lstm_predictor.model is None:
             logger.info("Training LSTM model on provided data …")
@@ -87,6 +110,10 @@ class MLService:
         heuristic so the endpoint still returns a meaningful estimate.
         """
         self._check_loaded()
+
+        if not _ml_available or self.regression_predictor is None:
+            logger.warning("Regression model not available — using heuristic")
+            return self._regression_heuristic(lap_data), {}
 
         # ---- train if needed ---- #
         if self.regression_predictor.model is None:
@@ -132,8 +159,11 @@ class MLService:
         base_lap_time: float,
         available_compounds: List[str],
         current_lap: int = 1,
-    ) -> List[StrategyOption]:
+    ) -> List:
         self._check_loaded()
+
+        if not _ml_available or self.strategy_predictor is None:
+            raise RuntimeError("Strategy model not available (ML packages not installed)")
 
         if not self.strategy_predictor.compound_performance:
             logger.info("Analysing historical data for strategy …")
@@ -151,16 +181,22 @@ class MLService:
     # ---------------------------------------------------------------------- #
 
     async def train_lstm(self, laps_df: pd.DataFrame, epochs: int = 100) -> Dict:
+        if not _lstm_available or self.lstm_predictor is None:
+            raise RuntimeError("LSTM model not available (torch not installed)")
         history = self.lstm_predictor.train(laps_df, epochs=epochs)
         self.lstm_predictor.save_model(settings.LSTM_MODEL_PATH)
         return history
 
     async def train_regression(self, laps_df: pd.DataFrame) -> Dict:
+        if not _ml_available or self.regression_predictor is None:
+            raise RuntimeError("Regression model not available (ML packages not installed)")
         metrics = self.regression_predictor.train(laps_df)
         self.regression_predictor.save_model(settings.REGRESSION_MODEL_PATH)
         return metrics
 
     async def train_strategy(self, laps_df: pd.DataFrame) -> Dict:
+        if not _ml_available or self.strategy_predictor is None:
+            raise RuntimeError("Strategy model not available (ML packages not installed)")
         self.strategy_predictor.analyze_historical_data(laps_df)
         self.strategy_predictor.save_model(settings.STRATEGY_MODEL_PATH)
         return {
