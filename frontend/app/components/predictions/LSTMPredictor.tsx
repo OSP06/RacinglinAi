@@ -28,12 +28,13 @@ export function LSTMPredictor({ season, grandPrix }: LSTMPredictorProps) {
 
   const race = races?.find((r) => r.gp_slug === grandPrix);
 
-  // Fetch drivers for the race
-  const { data: drivers } = useQuery({
-    queryKey: ['drivers', season],
-    queryFn: () => apiClient.getDrivers(season),
-    enabled: !!season,
+  // Fetch race-specific drivers from statistics
+  const { data: statistics } = useQuery({
+    queryKey: ['race-statistics', race?.id],
+    queryFn: () => apiClient.getRaceStatistics(race!.id),
+    enabled: !!race?.id,
   });
+  const drivers = statistics?.map((s) => s.driver) ?? [];
 
   // Fetch historical laps for context
   const { data: historicalLaps } = useQuery({
@@ -215,8 +216,10 @@ export function LSTMPredictor({ season, grandPrix }: LSTMPredictorProps) {
       {/* Error Message */}
       {predictionMutation.isError && (
         <div className="mb-6 p-4 bg-red-900/20 border border-red-500/50 rounded-md">
-          <p className="text-red-400">
-            ⚠️ Error making prediction. Please try different parameters.
+          <p className="text-red-400 font-medium mb-1">⚠️ Prediction unavailable</p>
+          <p className="text-red-300 text-sm">
+            {(predictionMutation.error as any)?.response?.data?.detail ||
+              'LSTM model requires PyTorch which is not installed on this deployment.'}
           </p>
         </div>
       )}

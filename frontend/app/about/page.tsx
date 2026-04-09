@@ -30,7 +30,7 @@ export default function AboutPage() {
               <p>
                 The platform is built in two layers: a <strong className="text-white">FastAPI backend</strong> that
                 serves pre-processed lap data from a PostgreSQL database and runs the
-                ML models, and a <strong className="text-white">Next.js 14 frontend</strong> that renders
+                ML models, and a <strong className="text-white">Next.js 15 frontend</strong> that renders
                 interactive Plotly and D3 charts.
               </p>
             </div>

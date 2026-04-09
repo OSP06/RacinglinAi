@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useQuery, useMutation } from '@tanstack/react-query';
 import { apiClient } from '@/lib/api/client';
 import { COMPOUND_COLORS } from '@/lib/constants/colors';
-import { StrategyPredictionResponse } from '@/lib/types/prediction';
+import type { StrategyOption } from '@/lib/types/prediction';
 
 interface StrategyOptimizerProps {
   season: number;
@@ -16,7 +16,7 @@ export function StrategyOptimizer({ season, grandPrix }: StrategyOptimizerProps)
   const [currentLap, setCurrentLap] = useState<number>(1);
   const [availableCompounds, setAvailableCompounds] = useState<string[]>(['SOFT', 'MEDIUM', 'HARD']);
 
-  // Fetch races
+  // Fetch races to resolve race id from gp_slug
   const { data: races } = useQuery({
     queryKey: ['races', season],
     queryFn: () => apiClient.getRacesBySeason(season),
@@ -25,12 +25,14 @@ export function StrategyOptimizer({ season, grandPrix }: StrategyOptimizerProps)
 
   const race = races?.find((r) => r.gp_slug === grandPrix);
 
-  // Fetch drivers
-  const { data: drivers } = useQuery({
-    queryKey: ['drivers', season],
-    queryFn: () => apiClient.getDrivers(season),
-    enabled: !!season,
+  // Fetch race-specific drivers from statistics (not season-wide)
+  const { data: statistics } = useQuery({
+    queryKey: ['race-statistics', race?.id],
+    queryFn: () => apiClient.getRaceStatistics(race!.id),
+    enabled: !!race?.id,
   });
+
+  const drivers = statistics?.map((s) => s.driver) ?? [];
 
   // Prediction mutation
   const predictionMutation = useMutation({
@@ -39,14 +41,12 @@ export function StrategyOptimizer({ season, grandPrix }: StrategyOptimizerProps)
         throw new Error('Missing required parameters');
       }
 
-      const response = await apiClient.predictStrategy({
+      return apiClient.predictStrategy({
         race_id: race.id,
         driver: selectedDriver,
         current_lap: currentLap,
         available_compounds: availableCompounds,
       });
-
-      return response;
     },
   });
 
@@ -67,12 +67,31 @@ export function StrategyOptimizer({ season, grandPrix }: StrategyOptimizerProps)
     return COMPOUND_COLORS[compound.toUpperCase()] || '#888888';
   };
 
+  // Derived display values — computed once, not inside JSX
+  const result = predictionMutation.data;
+  const recommendedStrat: StrategyOption | null = result
+    ? (result.strategies.find((s) => s.strategy_name === result.recommended_strategy) ??
+       result.strategies[0])
+    : null;
+  const alternatives: StrategyOption[] = result
+    ? result.strategies.filter((s) => s.strategy_name !== result.recommended_strategy)
+    : [];
+
   return (
     <div className="w-full bg-[#1a1a1a] rounded-lg border border-[#333] p-6">
       <h2 className="text-2xl font-bold mb-6">Strategy Optimizer</h2>
       <p className="text-gray-400 mb-6">
         Monte Carlo simulation (1000 iterations) for optimal pit stop strategy
       </p>
+
+      {/* Race not found warning */}
+      {races && !race && (
+        <div className="mb-6 p-4 bg-yellow-900/20 border border-yellow-500/50 rounded-md">
+          <p className="text-yellow-400 text-sm">
+            No race data found for &quot;{grandPrix}&quot; in the {season} season.
+          </p>
+        </div>
+      )}
 
       {/* Configuration Form */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
@@ -84,10 +103,11 @@ export function StrategyOptimizer({ season, grandPrix }: StrategyOptimizerProps)
           <select
             value={selectedDriver}
             onChange={(e) => setSelectedDriver(e.target.value)}
-            className="w-full px-4 py-2 bg-[#0a0a0a] border border-[#333] rounded-md text-white focus:outline-none focus:ring-2 focus:ring-[#3671C6]"
+            disabled={!race}
+            className="w-full px-4 py-2 bg-[#0a0a0a] border border-[#333] rounded-md text-white focus:outline-none focus:ring-2 focus:ring-[#3671C6] disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <option value="">Select driver</option>
-            {drivers?.map((driver) => (
+            {drivers.map((driver) => (
               <option key={driver} value={driver}>
                 {driver}
               </option>
@@ -114,7 +134,7 @@ export function StrategyOptimizer({ season, grandPrix }: StrategyOptimizerProps)
         <div className="flex items-end">
           <button
             onClick={handleOptimize}
-            disabled={!selectedDriver || availableCompounds.length === 0 || predictionMutation.isPending}
+            disabled={!race || !selectedDriver || availableCompounds.length === 0 || predictionMutation.isPending}
             className="w-full px-6 py-2 bg-[#3671C6] text-white font-semibold rounded-md hover:bg-[#2a5ba8] disabled:bg-[#333] disabled:cursor-not-allowed transition-colors"
           >
             {predictionMutation.isPending ? 'Optimizing...' : 'Optimize'}
@@ -158,149 +178,130 @@ export function StrategyOptimizer({ season, grandPrix }: StrategyOptimizerProps)
       )}
 
       {/* Results */}
-      {predictionMutation.data && (
+      {result && recommendedStrat && (
         <div className="space-y-6">
           {/* Recommended Strategy */}
-          {(() => {
-            const recommendedStrat = predictionMutation.data.strategies.find(
-              (s) => s.strategy_name === predictionMutation.data.recommended_strategy
-            ) || predictionMutation.data.strategies[0];
-
-            return (
-              <div className="bg-gradient-to-br from-[#3671C6]/20 to-[#0a0a0a] border-2 border-[#3671C6] rounded-lg p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-bold">Recommended Strategy</h3>
-                  <div className="text-sm">
-                    <span className="text-gray-400">Safety Car Risk:</span>{' '}
-                    <span className="text-[#3671C6] font-bold">
-                      {(predictionMutation.data.safety_car_probability * 100).toFixed(1)}%
-                    </span>
-                  </div>
-                </div>
-
-                {/* Strategy Visualization */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {recommendedStrat.compounds.map((compound, idx) => (
-                    <div
-                      key={idx}
-                      className="px-6 py-3 rounded-lg font-bold text-lg"
-                      style={{
-                        backgroundColor: getCompoundBadgeColor(compound),
-                        color: compound === 'HARD' ? '#000000' : '#FFFFFF',
-                      }}
-                    >
-                      Stint {idx + 1}: {compound}
-                    </div>
-                  ))}
-                </div>
-
-                <p className="text-sm text-gray-400">
-                  {recommendedStrat.pit_stops.length} pit stop
-                  {recommendedStrat.pit_stops.length !== 1 ? 's' : ''}
-                </p>
+          <div className="bg-gradient-to-br from-[#3671C6]/20 to-[#0a0a0a] border-2 border-[#3671C6] rounded-lg p-6">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-xl font-bold">Recommended Strategy</h3>
+              <div className="text-sm">
+                <span className="text-gray-400">Safety Car Risk:</span>{' '}
+                <span className="text-[#3671C6] font-bold">
+                  {(result.safety_car_probability * 100).toFixed(1)}%
+                </span>
               </div>
-            );
-          })()}
+            </div>
+
+            {/* Strategy Visualization */}
+            <div className="flex flex-wrap gap-2 mb-4">
+              {recommendedStrat.compounds.map((compound, idx) => (
+                <div
+                  key={idx}
+                  className="px-6 py-3 rounded-lg font-bold text-lg"
+                  style={{
+                    backgroundColor: getCompoundBadgeColor(compound),
+                    color: compound === 'HARD' ? '#000000' : '#FFFFFF',
+                  }}
+                >
+                  Stint {idx + 1}: {compound}
+                </div>
+              ))}
+            </div>
+
+            <p className="text-sm text-gray-400">
+              {recommendedStrat.pit_stops.length} pit stop
+              {recommendedStrat.pit_stops.length !== 1 ? 's' : ''}
+            </p>
+          </div>
 
           {/* Pit Stop Windows */}
-          {(() => {
-            const recommendedStrat = predictionMutation.data.strategies.find(
-              (s) => s.strategy_name === predictionMutation.data.recommended_strategy
-            ) || predictionMutation.data.strategies[0];
-
-            return recommendedStrat.pit_stops.length > 0 && (
-              <div className="bg-[#0a0a0a] border border-[#333] rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-4">Recommended Pit Windows</h3>
-                <div className="space-y-3">
-                  {recommendedStrat.pit_stops.map((pitStop, idx) => (
-                    <div
-                      key={idx}
-                      className="flex items-center justify-between p-3 bg-[#1a1a1a] border border-[#333] rounded-md"
-                    >
-                      <div>
-                        <p className="font-semibold">Lap {pitStop.lap_number}</p>
-                        <p className="text-sm text-gray-400">
-                          {pitStop.compound_from} → {pitStop.compound_to}
-                          <span className="ml-2">({pitStop.expected_loss_seconds.toFixed(1)}s loss)</span>
-                        </p>
-                      </div>
-                      <div className="w-2 h-2 bg-[#3671C6] rounded-full"></div>
+          {recommendedStrat.pit_stops.length > 0 && (
+            <div className="bg-[#0a0a0a] border border-[#333] rounded-lg p-6">
+              <h3 className="text-lg font-semibold mb-4">Recommended Pit Windows</h3>
+              <div className="space-y-3">
+                {recommendedStrat.pit_stops.map((pitStop, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center justify-between p-3 bg-[#1a1a1a] border border-[#333] rounded-md"
+                  >
+                    <div>
+                      <p className="font-semibold">Lap {pitStop.lap_number}</p>
+                      <p className="text-sm text-gray-400">
+                        {pitStop.compound_from} → {pitStop.compound_to}
+                        <span className="ml-2">({pitStop.expected_loss_seconds.toFixed(1)}s loss)</span>
+                      </p>
                     </div>
-                  ))}
-                </div>
+                    <div className="w-2 h-2 bg-[#3671C6] rounded-full"></div>
+                  </div>
+                ))}
               </div>
-            );
-          })()}
+            </div>
+          )}
 
           {/* Alternative Strategies */}
-          {(() => {
-            const alternatives = predictionMutation.data.strategies.filter(
-              (s) => s.strategy_name !== predictionMutation.data.recommended_strategy
-            );
-
-            return alternatives.length > 0 && (
-              <div className="bg-[#0a0a0a] border border-[#333] rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-4">Alternative Strategies</h3>
-                <div className="space-y-4">
-                  {alternatives.map((alt, idx) => (
-                    <div
-                      key={idx}
-                      className="p-4 bg-[#1a1a1a] border border-[#333] rounded-lg hover:border-[#3671C6]/50 transition-colors"
-                    >
-                      {/* Strategy Name */}
-                      <div className="flex items-center gap-3 mb-3">
-                        <p className="font-semibold">{alt.strategy_name}</p>
-                        <div className="flex flex-wrap gap-2">
-                          {alt.compounds.map((compound, cIdx) => (
-                            <span
-                              key={cIdx}
-                              className="px-3 py-1 rounded text-xs font-bold"
-                              style={{
-                                backgroundColor: getCompoundBadgeColor(compound),
-                                color: compound === 'HARD' ? '#000000' : '#FFFFFF',
-                              }}
-                            >
-                              {compound}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Statistics Grid */}
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-                        <div>
-                          <p className="text-gray-400 text-xs mb-1">Expected Time</p>
-                          <p className="font-semibold">{alt.expected_race_time.toFixed(2)}s</p>
-                        </div>
-                        <div>
-                          <p className="text-gray-400 text-xs mb-1">Best Case</p>
-                          <p className="font-semibold text-green-400">
-                            {alt.percentile_10.toFixed(2)}s
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-gray-400 text-xs mb-1">Worst Case</p>
-                          <p className="font-semibold text-red-400">
-                            {alt.percentile_90.toFixed(2)}s
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-gray-400 text-xs mb-1">Win Probability</p>
-                          <p className="font-semibold text-[#3671C6]">
-                            {(alt.win_probability * 100).toFixed(1)}%</p>
-                        </div>
+          {alternatives.length > 0 && (
+            <div className="bg-[#0a0a0a] border border-[#333] rounded-lg p-6">
+              <h3 className="text-lg font-semibold mb-4">Alternative Strategies</h3>
+              <div className="space-y-4">
+                {alternatives.map((alt, idx) => (
+                  <div
+                    key={idx}
+                    className="p-4 bg-[#1a1a1a] border border-[#333] rounded-lg hover:border-[#3671C6]/50 transition-colors"
+                  >
+                    {/* Strategy Name */}
+                    <div className="flex items-center gap-3 mb-3">
+                      <p className="font-semibold">{alt.strategy_name}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {alt.compounds.map((compound, cIdx) => (
+                          <span
+                            key={cIdx}
+                            className="px-3 py-1 rounded text-xs font-bold"
+                            style={{
+                              backgroundColor: getCompoundBadgeColor(compound),
+                              color: compound === 'HARD' ? '#000000' : '#FFFFFF',
+                            }}
+                          >
+                            {compound}
+                          </span>
+                        ))}
                       </div>
                     </div>
-                  ))}
-                </div>
+
+                    {/* Statistics Grid */}
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                      <div>
+                        <p className="text-gray-400 text-xs mb-1">Expected Time</p>
+                        <p className="font-semibold">{alt.expected_race_time.toFixed(2)}s</p>
+                      </div>
+                      <div>
+                        <p className="text-gray-400 text-xs mb-1">Best Case</p>
+                        <p className="font-semibold text-green-400">
+                          {alt.percentile_10.toFixed(2)}s
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-gray-400 text-xs mb-1">Worst Case</p>
+                        <p className="font-semibold text-red-400">
+                          {alt.percentile_90.toFixed(2)}s
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-gray-400 text-xs mb-1">Win Probability</p>
+                        <p className="font-semibold text-[#3671C6]">
+                          {(alt.win_probability * 100).toFixed(1)}%
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
-            );
-          })()}
+            </div>
+          )}
         </div>
       )}
 
       {/* Empty State */}
-      {!predictionMutation.data && !predictionMutation.isPending && (
+      {!result && !predictionMutation.isPending && (
         <div className="h-[400px] bg-[#0a0a0a] border border-[#333] rounded-lg flex items-center justify-center">
           <div className="text-center">
             <svg
@@ -318,7 +319,9 @@ export function StrategyOptimizer({ season, grandPrix }: StrategyOptimizerProps)
             </svg>
             <p className="text-gray-400 mb-2">Configure and optimize strategy</p>
             <p className="text-sm text-gray-500">
-              {!selectedDriver
+              {!race
+                ? 'No race data available for this selection'
+                : !selectedDriver
                 ? 'Select a driver to begin'
                 : availableCompounds.length === 0
                 ? 'Select at least one compound'

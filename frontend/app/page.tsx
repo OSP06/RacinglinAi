@@ -58,7 +58,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Hero Image — extracted to a Client Component (needs onError handler) */}
+              {/* Hero Image — Client Component so Next.js Image can run in the browser */}
               <div className="relative lg:mt-0 max-w-4xl mx-auto w-full">
                 <HeroImage />
               </div>

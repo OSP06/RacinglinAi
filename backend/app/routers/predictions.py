@@ -118,9 +118,15 @@ async def predict_lstm(
     weather_map = _weather_map(db, request.race_id)
     laps_df = _build_laps_df(laps, weather_map)
 
-    predictions, lower_bounds, upper_bounds = await ml_service.predict_lstm(
-        laps_df, request.forecast_laps
-    )
+    try:
+        predictions, lower_bounds, upper_bounds = await ml_service.predict_lstm(
+            laps_df, request.forecast_laps
+        )
+    except RuntimeError as e:
+        raise HTTPException(
+            status_code=503,
+            detail=f"LSTM model unavailable: {e}. PyTorch is not installed on this deployment.",
+        )
 
     last_lap = laps[-1].lap_number
     prediction_points = [
@@ -262,13 +268,16 @@ async def predict_strategy(
             laps_df[laps_df["lap_time_seconds"] > 0]["lap_time_seconds"].median()
         )
 
-    strategies = await ml_service.predict_strategy(
-        laps_df,
-        total_laps,
-        base_lap_time,
-        request.available_compounds,
-        request.current_lap,
-    )
+    try:
+        strategies = await ml_service.predict_strategy(
+            laps_df,
+            total_laps,
+            base_lap_time,
+            request.available_compounds,
+            request.current_lap,
+        )
+    except RuntimeError as e:
+        raise HTTPException(status_code=503, detail=str(e))
 
     strategy_options = [
         StrategyOption(
