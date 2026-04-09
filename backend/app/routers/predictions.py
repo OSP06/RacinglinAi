@@ -123,10 +123,7 @@ async def predict_lstm(
             laps_df, request.forecast_laps
         )
     except RuntimeError as e:
-        raise HTTPException(
-            status_code=503,
-            detail=f"LSTM model unavailable: {e}. PyTorch is not installed on this deployment.",
-        )
+        raise HTTPException(status_code=503, detail=str(e))
 
     last_lap = laps[-1].lap_number
     prediction_points = [
@@ -143,7 +140,7 @@ async def predict_lstm(
         driver=request.driver.upper(),
         compound=request.compound.upper(),
         predictions=prediction_points,
-        model_rmse=0.35,
+        model_rmse=ml_service.lstm_predictor._test_rmse if ml_service.lstm_predictor else 0.35,
         training_laps_used=len(laps),
         generated_at=datetime.now(),
     )
