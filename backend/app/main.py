@@ -72,9 +72,23 @@ async def root():
 
 @app.get("/health")
 async def health_check():
-    """Detailed health check"""
+    """Detailed health check — actually tests DB connection"""
+    from sqlalchemy import text
+    from app.core.database import engine
+    db_status = "unknown"
+    db_error = None
+    try:
+        with engine.connect() as conn:
+            conn.execute(text("SELECT 1"))
+        db_status = "connected"
+    except Exception as e:
+        db_status = "error"
+        db_error = str(e)
+
     return {
-        "status": "healthy",
-        "database": "connected",
+        "status": "healthy" if db_status == "connected" else "degraded",
+        "database": db_status,
+        "database_error": db_error,
+        "database_url_prefix": str(settings.DATABASE_URL)[:40],
         "ml_models": "loaded"
     }
