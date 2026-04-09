@@ -11,7 +11,8 @@ export function DriverMultiSelect() {
 
   const { data: drivers, isLoading } = useQuery({
     queryKey: ['drivers', season],
-    queryFn: () => apiClient.getDrivers(season || undefined),
+    queryFn: () => (season ? apiClient.getDrivers(season) : Promise.resolve([])),
+    enabled: !!season,
   });
 
   const handleSelectAll = () => {

@@ -32,12 +32,13 @@ export function RegressionAnalyzer({ season, grandPrix }: RegressionAnalyzerProp
 
   const race = races?.find((r) => r.gp_slug === grandPrix);
 
-  // Fetch drivers
-  const { data: drivers } = useQuery({
-    queryKey: ['drivers', season],
-    queryFn: () => apiClient.getDrivers(season),
-    enabled: !!season,
+  // Fetch race-specific drivers from statistics
+  const { data: raceStats } = useQuery({
+    queryKey: ['race-statistics', race?.id],
+    queryFn: () => apiClient.getRaceStatistics(race!.id),
+    enabled: !!race?.id,
   });
+  const drivers = raceStats?.map((s) => s.driver) ?? [];
 
   // Prediction mutation
   const predictionMutation = useMutation({

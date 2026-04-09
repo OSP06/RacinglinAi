@@ -113,10 +113,13 @@ export function SectorPerformanceChart({ season, grandPrix, selectedDrivers = []
       driversToShow = driversToShow.slice(0, 10);
     }
 
-    // Find fastest times for delta calculation
-    const fastestS1 = Math.min(...driversToShow.map((d) => d.sector1_avg).filter((t) => t > 0));
-    const fastestS2 = Math.min(...driversToShow.map((d) => d.sector2_avg).filter((t) => t > 0));
-    const fastestS3 = Math.min(...driversToShow.map((d) => d.sector3_avg).filter((t) => t > 0));
+    // Find fastest times for delta calculation — guard against empty arrays
+    const validS1 = driversToShow.map((d) => d.sector1_avg).filter((t) => t > 0);
+    const validS2 = driversToShow.map((d) => d.sector2_avg).filter((t) => t > 0);
+    const validS3 = driversToShow.map((d) => d.sector3_avg).filter((t) => t > 0);
+    const fastestS1 = validS1.length > 0 ? Math.min(...validS1) : 0;
+    const fastestS2 = validS2.length > 0 ? Math.min(...validS2) : 0;
+    const fastestS3 = validS3.length > 0 ? Math.min(...validS3) : 0;
 
     // Create traces for each sector
     const sector1Trace = {

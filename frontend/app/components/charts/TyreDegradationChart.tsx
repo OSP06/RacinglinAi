@@ -106,7 +106,8 @@ export function TyreDegradationChart({ season, grandPrix, selectedDrivers = [] }
         const sumXY = xValues.reduce((sum, x, i) => sum + x * yValues[i], 0);
         const sumX2 = xValues.reduce((sum, x) => sum + x * x, 0);
 
-        const slope = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX);
+        const denom = n * sumX2 - sumX * sumX;
+        const slope = denom !== 0 ? (n * sumXY - sumX * sumY) / denom : 0;
         const intercept = (sumY - slope * sumX) / n;
 
         const trendX = [Math.min(...xValues), Math.max(...xValues)];

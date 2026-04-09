@@ -78,8 +78,8 @@ def _compute_race_statistics(laps: List[Lap]) -> List[RaceStatistics]:
             continue
 
         lap_times = [l.lap_time_seconds for l in valid]
-        avg_lap_time = sum(lap_times) / len(lap_times)
-        fastest_lap = min(lap_times)
+        avg_lap_time = sum(lap_times) / len(lap_times) if lap_times else 0.0
+        fastest_lap = min(lap_times) if lap_times else 0.0
         pit_stops = sum(1 for l in dlaps if l.is_pit_in_lap)
 
         positions = [l.position for l in dlaps if l.position]
@@ -159,7 +159,11 @@ async def get_race_laps(
     if max_lap is not None:
         query = query.filter(Lap.lap_number <= max_lap)
     if compound:
-        query = query.filter(Lap.compound == compound.upper())
+        from app.models.database import CompoundType as CT
+        try:
+            query = query.filter(Lap.compound == CT[compound.upper()])
+        except KeyError:
+            pass  # unknown compound — return all
     if valid_only:
         query = query.filter(Lap.is_valid_lap == True)
 

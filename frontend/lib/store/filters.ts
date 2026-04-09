@@ -13,9 +13,7 @@ interface FilterState {
 }
 
 export const useFilterStore = create<FilterState>((set) => ({
-  // Default to 2024 so the dashboard isn't blank on first load, but
-  // clearFilters resets to null so the user starts fresh.
-  season: 2024,
+  season: null,
   grandPrix: null,
   selectedDrivers: [],
 

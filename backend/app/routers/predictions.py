@@ -140,7 +140,7 @@ async def predict_lstm(
         driver=request.driver.upper(),
         compound=request.compound.upper(),
         predictions=prediction_points,
-        model_rmse=ml_service.lstm_predictor._test_rmse if ml_service.lstm_predictor else 0.35,
+        model_rmse=getattr(ml_service.lstm_predictor, '_test_rmse', 0.35),
         training_laps_used=len(laps),
         generated_at=datetime.now(),
     )

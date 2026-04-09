@@ -32,7 +32,7 @@ class Settings(BaseSettings):
 
     # ML Model Settings
     MODELS_DIR: str = "app/ml_models/weights"
-    LSTM_MODEL_PATH: str = "app/ml_models/weights/lstm_model.pth"
+    LSTM_MODEL_PATH: str = "app/ml_models/weights/lstm_model.pkl"
     REGRESSION_MODEL_PATH: str = "app/ml_models/weights/regression_model.pkl"
     STRATEGY_MODEL_PATH: str = "app/ml_models/weights/strategy_model.pkl"
 

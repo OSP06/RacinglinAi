@@ -11,6 +11,7 @@ __pycache__/
 .fastf1_cache/
 .sqlite
 data/processed/*
+!data/processed/all_races_combined_2026.csv
 !data/processed/all_races_combined_2025.csv
 !data/processed/all_races_combined_2024.csv
 !data/processed/all_races_combined_2023.csv

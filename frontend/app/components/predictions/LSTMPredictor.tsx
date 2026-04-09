@@ -31,7 +31,7 @@ export function LSTMPredictor({ season, grandPrix }: LSTMPredictorProps) {
   // Fetch race-specific drivers from statistics
   const { data: statistics } = useQuery({
     queryKey: ['race-statistics', race?.id],
-    queryFn: () => apiClient.getRaceStatistics(race!.id),
+    queryFn: () => apiClient.getRaceStatistics(race?.id ?? 0),
     enabled: !!race?.id,
   });
   const drivers = statistics?.map((s) => s.driver) ?? [];
