@@ -9,12 +9,18 @@ from typing import Generator
 
 from app.core.config import settings
 
+# Supabase (and most hosted Postgres) requires SSL for external connections
+_connect_args = {}
+if "localhost" not in settings.DATABASE_URL and "127.0.0.1" not in settings.DATABASE_URL:
+    _connect_args = {"sslmode": "require"}
+
 # Create database engine
 engine = create_engine(
     settings.DATABASE_URL,
+    connect_args=_connect_args,
     pool_pre_ping=True,
-    pool_size=10,
-    max_overflow=20
+    pool_size=5,
+    max_overflow=10
 )
 
 # Create session factory
