@@ -60,7 +60,7 @@ app.include_router(circuits.router, prefix="/api/circuits", tags=["circuits"])
 app.include_router(telemetry.router, prefix="/api/telemetry", tags=["telemetry"])
 
 
-@app.get("/")
+@app.api_route("/", methods=["GET", "HEAD"])
 async def root():
     """Health check endpoint"""
     return {
