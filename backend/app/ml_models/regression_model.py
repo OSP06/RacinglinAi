@@ -130,15 +130,22 @@ class EnhancedRegressionPredictor:
         # 9. Performance deltas
         if all(col in df.columns for col in ['sector1_time_seconds', 'sector2_time_seconds', 'sector3_time_seconds']):
             # Best sectors
-            best_s1 = df['sector1_time_seconds'].min()
-            best_s2 = df['sector2_time_seconds'].min()
-            best_s3 = df['sector3_time_seconds'].min()
+            best_s1 = df['sector1_time_seconds'].replace(0, np.nan).min()
+            best_s2 = df['sector2_time_seconds'].replace(0, np.nan).min()
+            best_s3 = df['sector3_time_seconds'].replace(0, np.nan).min()
 
-            df['s1_delta'] = df['sector1_time_seconds'] - best_s1
-            df['s2_delta'] = df['sector2_time_seconds'] - best_s2
-            df['s3_delta'] = df['sector3_time_seconds'] - best_s3
+            df['s1_delta'] = df['sector1_time_seconds'] - (best_s1 if not np.isnan(best_s1) else 0)
+            df['s2_delta'] = df['sector2_time_seconds'] - (best_s2 if not np.isnan(best_s2) else 0)
+            df['s3_delta'] = df['sector3_time_seconds'] - (best_s3 if not np.isnan(best_s3) else 0)
 
-            # Sector balance
+            # Compute sector percentages if not present (they come from ORM hybrid prop)
+            if 'sector1_pct' not in df.columns:
+                sector_total = df['sector1_time_seconds'] + df['sector2_time_seconds'] + df['sector3_time_seconds']
+                sector_total = sector_total.replace(0, np.nan)
+                df['sector1_pct'] = (df['sector1_time_seconds'] / sector_total * 100).fillna(33.33)
+                df['sector2_pct'] = (df['sector2_time_seconds'] / sector_total * 100).fillna(33.33)
+                df['sector3_pct'] = (df['sector3_time_seconds'] / sector_total * 100).fillna(33.33)
+
             df['s1_pct_delta'] = df['sector1_pct'] - 33.33
             df['s2_pct_delta'] = df['sector2_pct'] - 33.33
             df['s3_pct_delta'] = df['sector3_pct'] - 33.33

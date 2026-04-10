@@ -73,7 +73,7 @@ def _compute_race_statistics(laps: List[Lap]) -> List[RaceStatistics]:
 
     statistics = []
     for driver, dlaps in driver_laps.items():
-        valid = [l for l in dlaps if l.is_valid_lap and l.lap_time_seconds and l.lap_time_seconds > 0]
+        valid = [l for l in dlaps if l.lap_time_seconds and l.lap_time_seconds > 0]
         if not valid:
             continue
 

@@ -116,8 +116,12 @@ class MLService:
         # ---- train if needed ---- #
         if self.regression_predictor.model is None:
             if historical_df is not None and len(historical_df) >= 20:
-                logger.info("Training regression model on provided historical data …")
-                self.regression_predictor.train(historical_df)
+                try:
+                    logger.info("Training regression model on provided historical data …")
+                    self.regression_predictor.train(historical_df)
+                except Exception as e:
+                    logger.warning(f"Regression training failed ({e}); using heuristic")
+                    return self._regression_heuristic(lap_data), {}
             else:
                 logger.warning("Regression model untrained and not enough data — using heuristic")
                 return self._regression_heuristic(lap_data), {}

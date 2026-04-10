@@ -48,25 +48,30 @@ async def get_circuit_layout(
     try:
         session = fastf1.get_session(season_year, race.grand_prix, "R")
         logger.info(f"Loading telemetry for {race.grand_prix} {season_year}")
-        session.load(telemetry=True, laps=False, weather=False)
+        session.load(telemetry=True, laps=True, weather=False)
 
         fastest_lap = session.laps.pick_fastest()
-        if fastest_lap is None or fastest_lap.telemetry.empty:
+        if fastest_lap is None or len(fastest_lap) == 0:
             raise HTTPException(
                 status_code=404,
                 detail="No telemetry data available for this race",
             )
 
         telemetry = fastest_lap.get_telemetry()
+        if telemetry is None or telemetry.empty:
+            raise HTTPException(
+                status_code=404,
+                detail="No telemetry data available for this race",
+            )
 
         coordinates = []
         for _, point in telemetry.iterrows():
             coordinates.append(
                 {
-                    "x": float(point["X"]),
-                    "y": float(point["Y"]),
-                    "speed": float(point["Speed"]) if "Speed" in point else 0.0,
-                    "distance": float(point["Distance"]) if "Distance" in point else 0.0,
+                    "x": float(point["X"]) if "X" in point.index else 0.0,
+                    "y": float(point["Y"]) if "Y" in point.index else 0.0,
+                    "speed": float(point["Speed"]) if "Speed" in point.index else 0.0,
+                    "distance": float(point["Distance"]) if "Distance" in point.index else 0.0,
                 }
             )
 

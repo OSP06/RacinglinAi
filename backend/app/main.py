@@ -19,10 +19,62 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
+def _auto_import_csvs():
+    """
+    On startup, scan data/processed/ for any all_races_combined_<year>.csv files
+    and import seasons that are not yet in the database.
+    Silently skips if the data directory doesn't exist (e.g. local dev without data).
+    """
+    import os, re
+    from pathlib import Path
+    from sqlalchemy.orm import sessionmaker
+    from app.core.database import engine
+    from app.models.database import Season
+
+    data_dir = Path("data/processed")
+    if not data_dir.exists():
+        return
+
+    SessionLocal = sessionmaker(bind=engine, autocommit=False, autoflush=False)
+
+    for csv_file in sorted(data_dir.glob("all_races_combined_*.csv")):
+        m = re.search(r"all_races_combined_(\d{4})\.csv", csv_file.name)
+        if not m:
+            continue
+        year = int(m.group(1))
+
+        db = SessionLocal()
+        try:
+            season = db.query(Season).filter(Season.year == year).first()
+            if season and db.execute(
+                __import__("sqlalchemy").text(
+                    "SELECT COUNT(*) FROM races WHERE season_id = :sid"
+                ),
+                {"sid": season.id},
+            ).scalar() > 0:
+                logger.info(f"Season {year} already in DB — skipping auto-import")
+                continue
+
+            logger.info(f"Auto-importing season {year} from {csv_file} …")
+            from scripts.import_csv_to_db import import_season_data
+            import_season_data(str(csv_file), db, year)
+            logger.info(f"Season {year} import complete")
+        except Exception as e:
+            logger.error(f"Auto-import failed for {csv_file}: {e}")
+        finally:
+            db.close()
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Startup and shutdown events"""
     logger.info("Starting RacingLineAI API...")
+    # Auto-import any new season CSVs present on disk
+    try:
+        _auto_import_csvs()
+    except Exception as e:
+        logger.warning(f"Auto-import step failed (non-fatal): {e}")
+
     # Load ML models on startup
     from app.services.ml_service import MLService
     ml_service = MLService()

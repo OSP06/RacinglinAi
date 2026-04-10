@@ -97,17 +97,21 @@ async def predict_lstm(
 ):
     ml_service = req.app.state.ml_service
 
-    laps = (
-        db.query(Lap)
-        .filter(
-            Lap.race_id == request.race_id,
-            Lap.driver == request.driver.upper(),
-            Lap.compound == request.compound.upper(),
-            Lap.is_valid_lap == True,
-        )
-        .order_by(Lap.lap_number)
-        .all()
+    from app.models.database import CompoundType as CT
+    try:
+        compound_enum = CT[request.compound.upper()]
+    except KeyError:
+        compound_enum = None
+
+    query = db.query(Lap).filter(
+        Lap.race_id == request.race_id,
+        Lap.driver == request.driver.upper(),
+        Lap.lap_time_seconds > 0,
     )
+    if compound_enum is not None:
+        query = query.filter(Lap.compound == compound_enum)
+
+    laps = query.order_by(Lap.lap_number).all()
 
     if len(laps) < 5:
         raise HTTPException(
