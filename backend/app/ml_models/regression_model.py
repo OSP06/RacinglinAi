@@ -343,12 +343,16 @@ class EnhancedRegressionPredictor:
         # Create features
         features_df = self.create_features(df)
 
-        # Encode categorical
+        # Encode categorical — map unseen labels to index 0 (most common seen in training)
         for col in self.label_encoders:
             if col in features_df.columns:
-                features_df[col + '_encoded'] = self.label_encoders[col].transform(
-                    features_df[col].astype(str)
-                )
+                le = self.label_encoders[col]
+                val = features_df[col].astype(str).iloc[0]
+                if val in le.classes_:
+                    encoded = le.transform([val])[0]
+                else:
+                    encoded = 0  # fallback: first class seen during training
+                features_df[col + '_encoded'] = encoded
 
         # Prepare features
         X = features_df[self.feature_names].values

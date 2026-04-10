@@ -162,22 +162,30 @@ async def predict_regression(
 ):
     ml_service = req.app.state.ml_service
 
-    # Gather historical context for this driver
-    laps = (
+    # Fetch ALL race laps (all drivers) for training so the model sees every
+    # compound used in the race — avoids LabelEncoder unseen-label errors.
+    all_race_laps = (
         db.query(Lap)
-        .filter(Lap.race_id == request.race_id, Lap.driver == request.driver.upper())
+        .filter(Lap.race_id == request.race_id)
         .order_by(Lap.lap_number)
         .all()
     )
+    if not all_race_laps:
+        raise HTTPException(
+            status_code=400,
+            detail="No lap data for this race.",
+        )
 
-    if not laps:
+    # Confirm the requested driver exists in the race
+    driver_laps = [l for l in all_race_laps if l.driver == request.driver.upper()]
+    if not driver_laps:
         raise HTTPException(
             status_code=400,
             detail=f"No historical data for driver {request.driver}.",
         )
 
     weather_map = _weather_map(db, request.race_id)
-    historical_df = _build_laps_df(laps, weather_map)
+    historical_df = _build_laps_df(all_race_laps, weather_map)
 
     # Prepare the single lap we want to predict
     lap_data = {
@@ -189,7 +197,7 @@ async def predict_regression(
         "humidity": 50.0,
         "pressure": 1013.0,
         "driver": request.driver.upper(),
-        "team": laps[0].team,
+        "team": driver_laps[0].team,
         "position": 10,
         "stint": 1,
         "sector1_time_seconds": 0.0,

@@ -77,7 +77,7 @@ export function CircuitVisualization({ season, grandPrix }: CircuitVisualization
 
   const race = races?.find((r) => r.gp_slug === grandPrix);
 
-  // Fetch circuit layout (speed-gradient view)
+  // Fetch circuit layout (speed-gradient view) — retries on 503 (data loading)
   const { data: circuitData, isLoading, error } = useQuery({
     queryKey: ['circuit', race?.id],
     queryFn: async () => {
@@ -85,6 +85,12 @@ export function CircuitVisualization({ season, grandPrix }: CircuitVisualization
       return apiClient.getCircuitLayout(race.id) as Promise<CircuitData>;
     },
     enabled: !!race?.id,
+    retry: (failureCount: number, err: unknown) => {
+      // Retry up to 5 times on 503 (FastF1 still loading on server)
+      const status = (err as any)?.response?.status ?? (err as any)?.status;
+      return status === 503 && failureCount < 5;
+    },
+    retryDelay: 15000, // wait 15s between retries
   });
 
   // Fetch race-specific driver list for comparison selectors
@@ -336,11 +342,22 @@ export function CircuitVisualization({ season, grandPrix }: CircuitVisualization
   }
 
   if (error) {
+    const is503 = (error as any)?.response?.status === 503 || (error as any)?.status === 503;
     return (
       <div className="w-full h-[600px] bg-[#1a1a1a] rounded-lg border border-[#333] flex items-center justify-center">
         <div className="text-center text-red-400">
-          <p className="text-xl mb-2">⚠️ Error loading circuit data</p>
-          <p className="text-sm text-gray-400">Please try selecting a different race</p>
+          {is503 ? (
+            <>
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#3671C6] mx-auto mb-4" />
+              <p className="text-gray-300 text-lg mb-2">Loading circuit telemetry…</p>
+              <p className="text-sm text-gray-400">FastF1 is fetching data for this race. Retrying automatically…</p>
+            </>
+          ) : (
+            <>
+              <p className="text-xl mb-2">⚠️ Error loading circuit data</p>
+              <p className="text-sm text-gray-400">Please try selecting a different race</p>
+            </>
+          )}
         </div>
       </div>
     );
