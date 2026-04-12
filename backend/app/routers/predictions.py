@@ -208,7 +208,7 @@ async def predict_regression(
     }
 
     predicted_time, feature_importances = await ml_service.predict_regression(
-        lap_data, historical_df
+        lap_data, historical_df, race_id=request.race_id
     )
 
     # Check if the actual lap exists

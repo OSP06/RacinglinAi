@@ -77,7 +77,7 @@ export function CircuitVisualization({ season, grandPrix }: CircuitVisualization
 
   const race = races?.find((r) => r.gp_slug === grandPrix);
 
-  // Fetch circuit layout (speed-gradient view) — retries on 503 (data loading)
+  // Fetch circuit layout — retries on 202 (background thread still loading)
   const { data: circuitData, isLoading, error } = useQuery({
     queryKey: ['circuit', race?.id],
     queryFn: async () => {
@@ -86,11 +86,11 @@ export function CircuitVisualization({ season, grandPrix }: CircuitVisualization
     },
     enabled: !!race?.id,
     retry: (failureCount: number, err: unknown) => {
-      // Retry up to 5 times on 503 (FastF1 still loading on server)
       const status = (err as any)?.response?.status ?? (err as any)?.status;
-      return status === 503 && failureCount < 5;
+      // Keep retrying on 202 (loading) up to 20 attempts (~5 min total)
+      return status === 202 && failureCount < 20;
     },
-    retryDelay: 15000, // wait 15s between retries
+    retryDelay: 15000, // poll every 15s while loading
   });
 
   // Fetch race-specific driver list for comparison selectors
@@ -342,15 +342,16 @@ export function CircuitVisualization({ season, grandPrix }: CircuitVisualization
   }
 
   if (error) {
-    const is503 = (error as any)?.response?.status === 503 || (error as any)?.status === 503;
+    const status = (error as any)?.response?.status ?? (error as any)?.status;
+    const isLoading202 = status === 202;
     return (
       <div className="w-full h-[600px] bg-[#1a1a1a] rounded-lg border border-[#333] flex items-center justify-center">
         <div className="text-center text-red-400">
-          {is503 ? (
+          {isLoading202 ? (
             <>
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#3671C6] mx-auto mb-4" />
               <p className="text-gray-300 text-lg mb-2">Loading circuit telemetry…</p>
-              <p className="text-sm text-gray-400">FastF1 is fetching data for this race. Retrying automatically…</p>
+              <p className="text-sm text-gray-400">Fetching FastF1 data — first load takes ~30-60s. Retrying automatically…</p>
             </>
           ) : (
             <>

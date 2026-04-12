@@ -32,6 +32,8 @@ class MLService:
         self.regression_predictor: Optional[EnhancedRegressionPredictor] = None
         self.strategy_predictor: Optional[EnhancedStrategyPredictor] = None
         self.models_loaded = False
+        # Per-race regression model cache {race_id: EnhancedRegressionPredictor}
+        self._regression_cache: Dict[int, "EnhancedRegressionPredictor"] = {}
 
     # ---------------------------------------------------------------------- #
     #  Startup                                                                 #
@@ -100,34 +102,41 @@ class MLService:
         self,
         lap_data: Dict,
         historical_df: Optional[pd.DataFrame] = None,
+        race_id: Optional[int] = None,
     ) -> Tuple[float, Dict[str, float]]:
         """
         Predict a single lap time.
 
-        If the LightGBM model isn't trained yet, we fall back to a simple
-        heuristic so the endpoint still returns a meaningful estimate.
+        Model is cached per race_id so training only happens once per race.
+        Falls back to a heuristic if ML packages unavailable or training fails.
         """
         self._check_loaded()
 
-        if not _ml_available or self.regression_predictor is None:
+        if not _ml_available or EnhancedRegressionPredictor is None:
             logger.warning("Regression model not available — using heuristic")
             return self._regression_heuristic(lap_data), {}
 
-        # ---- train if needed ---- #
-        if self.regression_predictor.model is None:
+        # ---- use per-race cached model ---- #
+        predictor = self._regression_cache.get(race_id) if race_id else None
+
+        if predictor is None:
             if historical_df is not None and len(historical_df) >= 20:
                 try:
-                    logger.info("Training regression model on provided historical data …")
-                    self.regression_predictor.train(historical_df)
+                    logger.info(f"Training regression model for race {race_id} ({len(historical_df)} laps)…")
+                    predictor = EnhancedRegressionPredictor()
+                    predictor.train(historical_df)
+                    if race_id is not None:
+                        self._regression_cache[race_id] = predictor
+                    logger.info(f"Regression model trained and cached for race {race_id}")
                 except Exception as e:
                     logger.warning(f"Regression training failed ({e}); using heuristic")
                     return self._regression_heuristic(lap_data), {}
             else:
-                logger.warning("Regression model untrained and not enough data — using heuristic")
+                logger.warning("Not enough data to train regression model — using heuristic")
                 return self._regression_heuristic(lap_data), {}
 
         try:
-            return self.regression_predictor.predict(lap_data)
+            return predictor.predict(lap_data)
         except Exception as e:
             logger.warning(f"Regression prediction failed ({e}); falling back to heuristic")
             return self._regression_heuristic(lap_data), {}

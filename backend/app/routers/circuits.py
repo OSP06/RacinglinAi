@@ -1,11 +1,15 @@
 """
 Circuit and telemetry visualization endpoints
+
+Circuit layout coordinates are loaded from FastF1 in a background thread
+and cached in memory. The first request returns 202 (loading); subsequent
+requests return 200 with cached data. This avoids Render's ~90s proxy timeout.
 """
 
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session, joinedload
-from typing import Dict, List
-import asyncio
+from typing import Dict, List, Optional
+import threading
 import logging
 
 from app.core.database import get_db
@@ -15,57 +19,78 @@ from app.core.config import settings
 router = APIRouter()
 logger = logging.getLogger(__name__)
 
+# --------------------------------------------------------------------------- #
+#  In-memory circuit cache                                                     #
+# --------------------------------------------------------------------------- #
+
+_circuit_cache: Dict[int, Dict] = {}          # race_id → full response dict
+_circuit_loading: Dict[int, bool] = {}        # race_id → True while loading
+_circuit_error: Dict[int, str] = {}           # race_id → error message
+_cache_lock = threading.Lock()
+
 
 def _get_fastf1():
-    """Lazy-import FastF1 and enable cache."""
     import fastf1
     fastf1.Cache.enable_cache(settings.FASTF1_CACHE_DIR)
     return fastf1
 
 
-def _load_circuit_sync(season_year: int, grand_prix: str) -> List[Dict]:
-    """
-    Synchronous FastF1 load — runs in a thread executor.
-    Returns list of coordinate dicts {x, y, speed, distance}.
-    """
-    fastf1 = _get_fastf1()
+def _load_circuit_background(race_id: int, season_year: int, grand_prix: str,
+                              circuit_name: str, circuit_country: str,
+                              track_length_km: Optional[float], altitude_m: Optional[float]):
+    """Runs in a daemon thread. Loads FastF1 data and populates _circuit_cache."""
+    logger.info(f"[circuit-loader] Starting load for {grand_prix} {season_year}")
+    try:
+        fastf1 = _get_fastf1()
+        session = fastf1.get_session(season_year, grand_prix, "R")
 
-    session = fastf1.get_session(season_year, grand_prix, "R")
-    logger.info(f"Loading laps for {grand_prix} {season_year}")
+        # Load laps + telemetry — takes 30-120s on first run (cached afterward)
+        session.load(laps=True, telemetry=True, weather=False)
 
-    # Phase 1: load laps only (fast, ~2-5s) to find the fastest lap driver
-    session.load(laps=True, telemetry=False, weather=False)
+        fastest_lap = session.laps.pick_fastest()
+        if fastest_lap is None:
+            raise ValueError("No fastest lap found in session")
 
-    fastest_lap = session.laps.pick_fastest()
-    if fastest_lap is None:
-        raise ValueError("No fastest lap found")
+        telemetry = fastest_lap.get_telemetry()
+        if telemetry is None or telemetry.empty:
+            raise ValueError("Telemetry data is empty")
 
-    # Phase 2: reload with telemetry so we can call get_telemetry()
-    logger.info(f"Loading telemetry for {grand_prix} {season_year}")
-    session.load(laps=True, telemetry=True, weather=False)
+        coordinates = []
+        for _, point in telemetry.iterrows():
+            coordinates.append({
+                "x": float(point["X"]) if "X" in point.index else 0.0,
+                "y": float(point["Y"]) if "Y" in point.index else 0.0,
+                "speed": float(point["Speed"]) if "Speed" in point.index else 0.0,
+                "distance": float(point["Distance"]) if "Distance" in point.index else 0.0,
+            })
 
-    # Re-fetch fastest lap from the fully loaded session
-    fastest_lap = session.laps.pick_fastest()
-    if fastest_lap is None:
-        raise ValueError("No fastest lap after telemetry load")
+        result = {
+            "circuit_name": circuit_name,
+            "circuit_country": circuit_country,
+            "track_length_km": track_length_km,
+            "altitude_m": altitude_m,
+            "coordinates": coordinates,
+            "fastest_lap_time": str(fastest_lap["LapTime"]) if "LapTime" in fastest_lap.index else None,
+            "fastest_lap_driver": str(fastest_lap["Driver"]) if "Driver" in fastest_lap.index else None,
+        }
 
-    telemetry = fastest_lap.get_telemetry()
-    if telemetry is None or telemetry.empty:
-        raise ValueError("Telemetry is empty")
+        with _cache_lock:
+            _circuit_cache[race_id] = result
+            _circuit_loading[race_id] = False
+            _circuit_error.pop(race_id, None)
 
-    coordinates = []
-    for _, point in telemetry.iterrows():
-        coordinates.append({
-            "x": float(point["X"]) if "X" in point.index else 0.0,
-            "y": float(point["Y"]) if "Y" in point.index else 0.0,
-            "speed": float(point["Speed"]) if "Speed" in point.index else 0.0,
-            "distance": float(point["Distance"]) if "Distance" in point.index else 0.0,
-        })
+        logger.info(f"[circuit-loader] Done — {len(coordinates)} points for {grand_prix} {season_year}")
 
-    driver = str(fastest_lap["Driver"]) if "Driver" in fastest_lap.index else None
-    lap_time = str(fastest_lap["LapTime"]) if "LapTime" in fastest_lap.index else None
-    return coordinates, driver, lap_time
+    except Exception as e:
+        logger.error(f"[circuit-loader] Failed for {grand_prix} {season_year}: {e}")
+        with _cache_lock:
+            _circuit_loading[race_id] = False
+            _circuit_error[race_id] = str(e)
 
+
+# --------------------------------------------------------------------------- #
+#  Endpoints                                                                   #
+# --------------------------------------------------------------------------- #
 
 @router.get("/{race_id}/layout")
 async def get_circuit_layout(
@@ -73,10 +98,23 @@ async def get_circuit_layout(
     db: Session = Depends(get_db),
 ) -> Dict:
     """
-    Get circuit layout with speed-coloured coordinates from FastF1 telemetry.
-    FastF1 loading runs in a thread executor so it does not block the event loop.
-    Times out after 120 seconds and returns 503 (retry after cache is warm).
+    Returns circuit layout coordinates.
+    - 200: data ready (from cache)
+    - 202: still loading (try again in 15s)
+    - 500: permanent error
     """
+    with _cache_lock:
+        if race_id in _circuit_cache:
+            return _circuit_cache[race_id]
+
+        if _circuit_loading.get(race_id):
+            raise HTTPException(status_code=202, detail="Circuit data is loading — retry in 15s")
+
+        if race_id in _circuit_error:
+            err = _circuit_error[race_id]
+            raise HTTPException(status_code=500, detail=f"Failed to load circuit: {err}")
+
+    # Not cached, not loading → look up race and start background thread
     race = (
         db.query(Race)
         .options(joinedload(Race.season))
@@ -86,38 +124,31 @@ async def get_circuit_layout(
     if not race:
         raise HTTPException(status_code=404, detail="Race not found")
 
-    season_year: int = race.season.year
+    with _cache_lock:
+        # Double-check after lock (another request may have started it)
+        if race_id in _circuit_cache:
+            return _circuit_cache[race_id]
+        if _circuit_loading.get(race_id):
+            raise HTTPException(status_code=202, detail="Circuit data is loading — retry in 15s")
 
-    loop = asyncio.get_event_loop()
-    try:
-        coordinates, fastest_driver, lap_time = await asyncio.wait_for(
-            loop.run_in_executor(
-                None,
-                _load_circuit_sync,
-                season_year,
-                race.grand_prix,
-            ),
-            timeout=120.0,
-        )
-    except asyncio.TimeoutError:
-        logger.warning(f"Circuit layout timed out for {race.grand_prix} {season_year}")
-        raise HTTPException(
-            status_code=503,
-            detail="Circuit data is loading. First load takes ~30s — please try again.",
-        )
-    except Exception as e:
-        logger.error(f"Error loading circuit layout for {race.grand_prix}: {e}")
-        raise HTTPException(status_code=500, detail=f"Failed to load circuit layout: {e}")
+        _circuit_loading[race_id] = True
 
-    return {
-        "circuit_name": race.circuit_name,
-        "circuit_country": race.circuit_country,
-        "track_length_km": race.track_length_km,
-        "altitude_m": race.altitude_m,
-        "coordinates": coordinates,
-        "fastest_lap_time": lap_time,
-        "fastest_lap_driver": fastest_driver,
-    }
+    t = threading.Thread(
+        target=_load_circuit_background,
+        args=(
+            race_id,
+            race.season.year,
+            race.grand_prix,
+            race.circuit_name,
+            race.circuit_country,
+            race.track_length_km,
+            race.altitude_m,
+        ),
+        daemon=True,
+    )
+    t.start()
+    logger.info(f"Started background load for race {race_id} ({race.grand_prix})")
+    raise HTTPException(status_code=202, detail="Circuit data is loading — retry in 15s")
 
 
 @router.get("/list")
